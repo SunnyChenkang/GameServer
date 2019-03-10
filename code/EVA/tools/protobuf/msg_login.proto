@@ -1,0 +1,19 @@
+syntax = "proto2";
+package PROTOBUF;
+
+// 登录验证用户
+message PB_LoginAuthUser
+{
+	optional uint32 role_id			= 1;
+	optional string client_host		= 2;
+	optional string client_token	= 3;
+}
+
+// 用户登录
+message PB_UserLogin
+{
+	optional uint32 role_id 	   = 1;
+	optional uint32 fes_service_id = 2;
+	optional uint32 pls_service_id = 3;
+	optional string client_host	   = 4;
+}

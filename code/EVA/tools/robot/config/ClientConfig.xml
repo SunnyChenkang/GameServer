@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<client_config>
+
+  <!-- 客户端里用到的各种显示用的文本文字 -->
+  <doc id="0" str="1.存款需要手续费，收取存入金额的10%，收费上限为100,000，会员不收费\n2.取款需要输入取款密码\n3.如果忘记取款密码，可通过修改密码找回" />
+  <doc id="1" str="1.出牌方式：单击或双击\n2.胡牌说明：必须摸到4个花牌，才可以小胡，大胡随时可以胡\n3.花数说明：门前清25花" />
+  <doc id="2" str="1.金币输光了怎么办？\n可以免费领取救济金，每天有次数限制，或者向好友求助，或在商城中购买金币\n2.充值没到位怎么办？\n拨打客服电话，并提供订单号" />
+  <doc id="3" str="                                       诚信为本、信誉为始\n        全网最高信誉，从点玩游戏开始！作为国际专业的网上棋牌游戏运营商，我们承诺，为每一位客户提供最安全、最公平的气魄爱游戏，以及全方位的服务。所有游戏共同的优点安全稳定；接口简单；操作功能齐全；画面精致优雅；游戏结果公平、公正、公开！" />
+  
+  <!-- 是否可以开启GM工具 -->
+  <!-- 1是可以开启；0是不可以； -->
+  <gm bool = "1" />
+  
+  <!-- 分享文件名称 -->
+  <image name = "Name.png" />
+  
+  <!-- Bonus -->
+  <bonus id="0" str = "nj_hall_btn_bonus" /><!-- 不能领取图标 -->
+  <bonus id="1" str = "nj_hall_btn_bonus" /><!-- 可以领取图标 -->
+  <bonus id="2" str = "Prefab/Effect/MahJongHall/Bonus_texiao_fall_coin" /><!-- 领取成功特效 -->
+  
+  <!-- 积分对应的称号 -->
+  <player_title game_type="MahJong" min="-10000000" max="50" str="贫农" />
+  <player_title game_type="MahJong" min="51" max="200" str="中农" />
+  <player_title game_type="MahJong" min="201" max="500" str="富农" />
+  <player_title game_type="MahJong" min="501" max="1000" str="地主" />
+  <player_title game_type="MahJong" min="1001" max="5000" str="土豪" />
+  <player_title game_type="MahJong" min="5001" max="10000000" str="大皇帝" />
+  <player_title game_type="BlackJack" min="-10000000" max="50" str="贫农" />
+  <player_title game_type="BlackJack" min="51" max="200" str="中农" />
+  <player_title game_type="BlackJack" min="201" max="500" str="富农" />
+  <player_title game_type="BlackJack" min="501" max="1000" str="地主" />
+  <player_title game_type="BlackJack" min="1001" max="5000" str="土豪" />
+  <player_title game_type="BlackJack" min="5001" max="10000000" str="大皇帝" />
+  
+  <!-- 统计面板的游戏类型的图片 -->
+  <gametype_image game_type = "MahJong" sprite_name="statistics_label_nanjingmajiang" />
+  <gametype_image game_type = "BlackJack" sprite_name="statistics_label_bairenniuniu" />
+  <ShareID hall_id = "7001001" mail_id = "7001002" win_id = "7001003" moneyless_id = "7001004"/>
+  
+  <!-- Icon -->
+  <name_string id="0" str = "nj_player_money" />
+  <name_string id="1" str = "nj_player_rmb" />
+  
+  <!-- GiftSpine的Tween动画配置参数 -->
+  <GiftSpine game_type="MahJong"   scale="0.001" duration="1.0" offset_x="0.0" offset_y="0.0" />
+  <GiftSpine game_type="BlackJack" scale="0.001" duration="1.0" offset_x="0.0" offset_y="0.0" />
+</client_config>
+

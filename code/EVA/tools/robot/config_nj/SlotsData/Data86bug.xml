@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<slots_config row="4" col="5" wild="0" sctter="1" bonus="2" >
+
+	<icons>
+		<leaf  id="0"  rate="0,0,0,0,0"/>
+		<leaf  id="1"  rate="0,0,8,16,24"/>
+		<leaf  id="2"  rate="0,0,5,10,20"/>
+		<leaf  id="3"  rate="0,4,50,200,2000"/>
+		<leaf  id="4"  rate="0,3,30,100,1000"/>
+		<leaf  id="5"  rate="0,0,20,70,500"/>
+		<leaf  id="6"  rate="0,0,15,50,300"/>
+		<leaf  id="7"  rate="0,0,10,40,200"/>
+		<leaf  id="8"  rate="0,0,8,30,100"/>
+		<leaf  id="9"  rate="0,0,6,20,80"/>
+		<leaf  id="10" rate="0,0,5,15,60"/>
+		<leaf  id="11" rate="0,0,4,12,50"/>
+	</icons>
+
+	<lines>
+		<leaf  line="0,0,0,0,0"/>
+		<leaf  line="3,3,3,3,3"/>
+		<leaf  line="1,1,1,1,1"/>
+		<leaf  line="2,2,2,2,2"/>
+		<leaf  line="0,1,2,1,0"/>
+		<leaf  line="3,2,1,2,3"/>
+		<leaf  line="2,1,0,1,2"/>
+		<leaf  line="1,2,3,2,1"/>
+		<leaf  line="0,1,0,1,0"/>
+		<leaf  line="3,2,3,2,3"/>
+		<leaf  line="1,0,1,0,1"/>
+		<leaf  line="2,3,2,3,2"/>
+		<leaf  line="1,2,1,2,1"/>
+		<leaf  line="2,1,2,1,2"/>
+		<leaf  line="0,1,1,1,0"/>
+		<leaf  line="3,2,2,2,3"/>
+		<leaf  line="1,0,0,0,1"/>
+		<leaf  line="2,3,3,3,2"/>
+		<leaf  line="1,2,2,2,1"/>
+		<leaf  line="2,1,1,1,2"/>
+		<leaf  line="0,0,1,0,0"/>
+		<leaf  line="3,3,2,3,3"/>
+		<leaf  line="1,1,0,1,1"/>
+		<leaf  line="2,2,3,2,2"/>
+		<leaf  line="1,1,2,1,1"/>
+		<leaf  line="2,2,1,2,2"/>
+		<leaf  line="0,0,2,0,0"/>
+		<leaf  line="3,3,1,3,3"/>
+		<leaf  line="2,2,0,2,2"/>
+		<leaf  line="1,1,3,1,1"/>
+		<leaf  line="0,2,2,2,0"/>
+		<leaf  line="3,1,1,1,3"/>
+		<leaf  line="2,0,0,0,2"/>
+		<leaf  line="1,3,3,3,1"/>
+		<leaf  line="1,0,2,0,1"/>
+		<leaf  line="2,3,1,3,2"/>
+		<leaf  line="1,2,0,2,1"/>
+		<leaf  line="2,1,3,1,2"/>
+		<leaf  line="0,2,0,2,0"/>
+		<leaf  line="3,1,3,1,3"/>
+	</lines>
+	
+	<wheels>
+		<leaf wheel="4,6,3,11,10,6,1,10,6,5,11,3,7,11,6,7,11,0,10,11,2,1,4,3,4,11,11,6,4,9,0,6,11,8,3,11,11,9,5,4,1,0,9,9,6,11,11,0,10,10,5,6,11,7,3,9,11,9,11,8,11,11,1,6,11,10,10,8,10,9,11,10,8,3,5,1,10,2,5,11,11,11,11"/>
+		<leaf wheel="0,11,7,7,11,6,11,7,5,7,1,7,6,0,4,11,5,2,9,4,6,9,5,7,8,8,8,9,5,4,6,10,11,3,11,9,6,8,11,5,6,7,2,7,7,3,0,11,10,5,9,1,11,4,8,11,8,7,1,11,0,10,4,10,7,8,9,9,9,9,4,6,7,9,5,7,11,10,10,7,7,10,11,5,6,9,11,8,8,5"/>
+		<leaf wheel="5,11,7,3,4,10,7,5,4,11,5,2,8,5,1,3,4,4,11,6,6,6,6,7,9,3,6,4,11,9,1,10,4,3,1,10,4,5,3,5,0,6,8,8,8,3,5,3,1,11,11,11,11,3,2,11,6,10,0,5,11,5,3,7,4,7,6,8,3,9,11,6,8,3,8,11,3,1,3,10,11,3,10,3,11,10,4,10"/>
+		<leaf wheel="4,5,4,6,8,1,3,11,4,4,6,7,10,6,3,9,10,3,4,6,8,10,8,8,10,6,0,10,10,3,11,6,10,5,7,1,0,3,4,6,10,9,5,5,11,6,3,6,8,8,6,7,8,11,5,5,5,10,5,10,8,10,5,4,5,10,8,5,4,4,8,4,10,11,8,7,5,8,9,7,6,3,6,4"/>
+		<leaf wheel="7,2,7,8,8,10,8,9,11,6,1,3,5,5,5,4,2,9,3,5,8,0,11,7,11,4,9,10,6,8,3,5,6,8,4,6,6,3,5,8,7,8,3,8,6,8,1,3,3,8,3,4,8,11,3,6,11,6,6,3,5,4,5,5,3,3,0,8,5"/>
+	</wheels>
+
+
+	<describe text="Wild substitutes any other aymbol except Scatter and Bonus.;At least 3 Scatter symbols anywhere on the reels activate free spins.5 free spins 15 free spins 30 free spins;3 or more Bonus symbols anywhere on an active pay-line activate the Beat the Mole bonus round."/>
+	<line_rules pic="page_0" text="All symbols pay left to right on active paylines,except the Scatter and Bonus symbols.\n\nOnly the highest win is paid on each pay-line.\n\nScatter and Bonus wins are paid in addition to payline wins.\n\nAll wins are multiplied by the per-line bet." />
+	
+	<bonus_game enter_icon_num="3">
+		<select name="s1" select_count="0,0,1,1,1" select_count_clear="false" end_type="EnumCircleEnd">
+			<random name="box1" weight="10" credit="5"/>
+			<random name="box2" weight="10" credit="10"/>
+			<random name="box3" weight="10" credit="15"/>
+			<random name="box4" weight="10" credit="30"/>
+			<random name="box5" weight="10" credit="40"/>
+			<random name="box6" weight="10" credit="50"/>
+			
+			<client music="6001093" clickSound="6001092" prefab_res_path="Prefab/CasinoUI/Slots/bonusgame_long" >
+				<bonus_pos x="-453" y="235" />
+				<bonus_pos x="-317" y="235" />
+				<bonus_pos x="-179" y="235" />
+				<bonus_pos x="-43" y="235" />
+				<bonus_pos x="-453" y="123" />
+				<bonus_pos x="-317" y="123" />
+				<bonus_pos x="-179" y="123" />
+				<bonus_pos x="-43" y="123" />
+				<bonus_pos x="-453" y="24" />
+				<bonus_pos x="-317" y="24" />
+				<bonus_pos x="-179" y="24" />
+				<bonus_pos x="-43" y="24" />
+				<bonus_pos x="-453" y="-79" />
+				<bonus_pos x="-317" y="-79" />
+				<bonus_pos x="-179" y="-79" />
+				<bonus_pos x="-43" y="-79" />
+				<bonus_pos x="-453" y="-193" />
+				<bonus_pos x="-317" y="-193" />
+				<bonus_pos x="-179" y="-193" />
+				<bonus_pos x="-43" y="-193" />
+			</client>
+		</select>
+	</bonus_game>
+		
+</slots_config>

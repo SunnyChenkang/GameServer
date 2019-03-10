@@ -1,0 +1,1426 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root type="MissionPrototype">
+  <MissionPrototype pid="13001001">
+    <ID valueType="int" value="13001001" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="NanJing" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="1" isSave="false" />
+    <GROUP_INT valueType="int" value="1" isSave="false" />
+    <NAME_STRING valueType="string" value="分享游戏1次" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="分享游戏1次" isSave="false" />
+    <JUMP_INTERFACE_STRING valueType="JumpInterface" value="3,540,7000001" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="43" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="-1" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13001002">
+    <ID valueType="int" value="13001002" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="1" isSave="false" />
+    <GROUP_INT valueType="int" value="2" isSave="false" />
+    <NAME_STRING valueType="string" value="在南京麻将胡牌10局" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="在南京麻将胡牌10局" isSave="false" />
+    <JUMP_INTERFACE_STRING valueType="JumpInterface" value="2,3" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="39" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="-1" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="10" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13001003">
+    <ID valueType="int" value="13001003" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="NanJing" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="1" isSave="false" />
+    <GROUP_INT valueType="int" value="3" isSave="false" />
+    <NAME_STRING valueType="string" value="为朋友点赞10次" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="为朋友点赞10次" isSave="false" />
+    <JUMP_INTERFACE_STRING valueType="JumpInterface" value="1,505" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="49" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="-1" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="10" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002001">
+    <ID valueType="int" value="13002001" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰一万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰一万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,1" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002002">
+    <ID valueType="int" value="13002002" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰二万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰二万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,2" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002003">
+    <ID valueType="int" value="13002003" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰三万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰三万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,3" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002004">
+    <ID valueType="int" value="13002004" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰四万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰四万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,4" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002005">
+    <ID valueType="int" value="13002005" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰五万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰五万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="12/31/1899 3:00:00 AM" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,5" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002006">
+    <ID valueType="int" value="13002006" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰六万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰六万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,6" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002007">
+    <ID valueType="int" value="13002007" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰七万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰七万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,7" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002008">
+    <ID valueType="int" value="13002008" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰八万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰八万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,8" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002009">
+    <ID valueType="int" value="13002009" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰九万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰九万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,9" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002010">
+    <ID valueType="int" value="13002010" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰一条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰一条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,17" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002011">
+    <ID valueType="int" value="13002011" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰二条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰二条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,18" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002012">
+    <ID valueType="int" value="13002012" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰三条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰三条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,19" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002013">
+    <ID valueType="int" value="13002013" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰四条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰四条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,20" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002014">
+    <ID valueType="int" value="13002014" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰五条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰五条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,21" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002015">
+    <ID valueType="int" value="13002015" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰六条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰六条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,22" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002016">
+    <ID valueType="int" value="13002016" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰七条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰七条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,23" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002017">
+    <ID valueType="int" value="13002017" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰八条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰八条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,24" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002018">
+    <ID valueType="int" value="13002018" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰九条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰九条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,25" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002019">
+    <ID valueType="int" value="13002019" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰一筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰一筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,33" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002020">
+    <ID valueType="int" value="13002020" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰二筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰二筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,34" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002021">
+    <ID valueType="int" value="13002021" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰三筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰三筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,35" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002022">
+    <ID valueType="int" value="13002022" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰四筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰四筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,36" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002023">
+    <ID valueType="int" value="13002023" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰五筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰五筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,37" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002024">
+    <ID valueType="int" value="13002024" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰六筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰六筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,38" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002025">
+    <ID valueType="int" value="13002025" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰七筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰七筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,39" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002026">
+    <ID valueType="int" value="13002026" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰八筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰八筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,40" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002027">
+    <ID valueType="int" value="13002027" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="4" isSave="false" />
+    <NAME_STRING valueType="string" value="碰九筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰九筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,41" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002028">
+    <ID valueType="int" value="13002028" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="碰东风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰东风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,49" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002029">
+    <ID valueType="int" value="13002029" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="碰南风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰南风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,50" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002030">
+    <ID valueType="int" value="13002030" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="碰西风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰西风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,51" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002031">
+    <ID valueType="int" value="13002031" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="碰北风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="碰北风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="46" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,52" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002032">
+    <ID valueType="int" value="13002032" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠东风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠东风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,49" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002033">
+    <ID valueType="int" value="13002033" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠南风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠南风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,50" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002034">
+    <ID valueType="int" value="13002034" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠西风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠西风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,51" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002035">
+    <ID valueType="int" value="13002035" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠北风" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠北风" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,52" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002036">
+    <ID valueType="int" value="13002036" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠一万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠一万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,1" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002037">
+    <ID valueType="int" value="13002037" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠二万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠二万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,2" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002038">
+    <ID valueType="int" value="13002038" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠三万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠三万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,3" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002039">
+    <ID valueType="int" value="13002039" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠四万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠四万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,4" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002040">
+    <ID valueType="int" value="13002040" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠五万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠五万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,5" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002041">
+    <ID valueType="int" value="13002041" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠六万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠六万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,6" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002042">
+    <ID valueType="int" value="13002042" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠七万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠七万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,7" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002043">
+    <ID valueType="int" value="13002043" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠八万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠八万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,8" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002044">
+    <ID valueType="int" value="13002044" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠九万" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠九万" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,9" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002045">
+    <ID valueType="int" value="13002045" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠一条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠一条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,17" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002046">
+    <ID valueType="int" value="13002046" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠二条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠二条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,18" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002047">
+    <ID valueType="int" value="13002047" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠三条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠三条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,19" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002048">
+    <ID valueType="int" value="13002048" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠四条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠四条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,20" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002049">
+    <ID valueType="int" value="13002049" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠五条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠五条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,21" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002050">
+    <ID valueType="int" value="13002050" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠六条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠六条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,22" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002051">
+    <ID valueType="int" value="13002051" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠七条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠七条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,23" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002052">
+    <ID valueType="int" value="13002052" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠八条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠八条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,24" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002053">
+    <ID valueType="int" value="13002053" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠九条" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠九条" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,25" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002054">
+    <ID valueType="int" value="13002054" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠一筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠一筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,33" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002055">
+    <ID valueType="int" value="13002055" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠二筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠二筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,34" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002056">
+    <ID valueType="int" value="13002056" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠三筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠三筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,35" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002057">
+    <ID valueType="int" value="13002057" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠四筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠四筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,36" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002058">
+    <ID valueType="int" value="13002058" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠五筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠五筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,37" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002059">
+    <ID valueType="int" value="13002059" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠六筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠六筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,38" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002060">
+    <ID valueType="int" value="13002060" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠七筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠七筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,39" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002061">
+    <ID valueType="int" value="13002061" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠八筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠八筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,40" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002062">
+    <ID valueType="int" value="13002062" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="5" isSave="false" />
+    <NAME_STRING valueType="string" value="杠九筒" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="杠九筒" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="47" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="0;2,41" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002063">
+    <ID valueType="int" value="13002063" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡门前清" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡门前清" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,2;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002064">
+    <ID valueType="int" value="13002064" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡清一色" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡清一色" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,8;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002065">
+    <ID valueType="int" value="13002065" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡混一色" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡混一色" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,4;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002066">
+    <ID valueType="int" value="13002066" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡对对胡" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡对对胡" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,16;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002067">
+    <ID valueType="int" value="13002067" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡大杠开花" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡大杠开花" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,2048;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+  <MissionPrototype pid="13002068">
+    <ID valueType="int" value="13002068" isSave="false" />
+    <GAME_TYPE_STRING valueType="string" value="MahJong" isSave="false" />
+    <MISSION_TYPE_INT valueType="int" value="2" isSave="false" />
+    <GROUP_INT valueType="int" value="6" isSave="false" />
+    <NAME_STRING valueType="string" value="胡七对" isSave="false" />
+    <ICON_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="胡七对" isSave="false" />
+    <MISSION_DEFAULT_ACCEPT_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_START_TIME_CLASS valueType="MissionStartTime" value="3:0:0" isSave="false" />
+    <FINISH_TIME_STRING valueType="string" value="" isSave="false" />
+    <MISSION_LAST_TIME_INT valueType="int" value="24" isSave="false" />
+    <MISSION_PERIOD_CLASS valueType="CommaClass" value="2,1" isSave="false" />
+    <WHETHER_SHOW_PROGRESS_BOOL valueType="bool" value="True" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_INT valueType="int" value="48" isSave="false" />
+    <MISSION_EVENT_FINISHTYPE_CLASS valueType="AchCondition" value="1,64;0" isSave="false" />
+    <MISSION_PARAMETER1_INT valueType="int" value="1" isSave="false" />
+    <REWARD_MONEY_INT valueType="int" value="2000" isSave="false" />
+  </MissionPrototype>
+</root>

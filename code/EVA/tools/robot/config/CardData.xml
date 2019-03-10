@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<card_data>
+	<!-- 扑克信息 -->
+	<!-- 梅花-->
+	<texaspoker_card value="1"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/11"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="2"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/12"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="3"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/13"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="4"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/14"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="5"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/15"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="6"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/16"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="7"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/17"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="8"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/18"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="9"  color="16" color_path="Texture/UI/ch" value_path="Texture/UI/19"  center_path="Texture/UI/chp" />
+	<texaspoker_card value="10" color="16" color_path="Texture/UI/ch" value_path="Texture/UI/110" center_path="Texture/UI/chp" />
+	<texaspoker_card value="11" color="16" color_path="Texture/UI/ch" value_path="Texture/UI/111" center_path="Texture/UI/chj" />
+	<texaspoker_card value="12" color="16" color_path="Texture/UI/ch" value_path="Texture/UI/112" center_path="Texture/UI/chq" />	
+	<texaspoker_card value="13" color="16" color_path="Texture/UI/ch" value_path="Texture/UI/113" center_path="Texture/UI/chk" />
+	<!-- 方块 -->
+	<texaspoker_card value="1"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/01"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="2"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/02"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="3"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/03"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="4"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/04"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="5"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/05"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="6"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/06"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="7"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/07"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="8"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/08"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="9"  color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/09"  center_path="Texture/UI/fpp" />
+	<texaspoker_card value="10" color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/010" center_path="Texture/UI/fpp" />
+	<texaspoker_card value="11" color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/011" center_path="Texture/UI/fpj" />
+	<texaspoker_card value="12" color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/012" center_path="Texture/UI/fpq" />
+	<texaspoker_card value="13" color="0"  color_path="Texture/UI/fp" value_path="Texture/UI/013" center_path="Texture/UI/fpk" />
+	<!-- 红桃 -->
+	<texaspoker_card value="1"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/01"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="2"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/02"  center_path="Texture/UI/hxp" />	
+	<texaspoker_card value="3"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/03"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="4"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/04"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="5"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/05"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="6"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/06"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="7"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/07"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="8"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/08"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="9"  color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/09"  center_path="Texture/UI/hxp" />
+	<texaspoker_card value="10" color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/010" center_path="Texture/UI/hxp" />
+	<texaspoker_card value="11" color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/011" center_path="Texture/UI/hxj" />
+	<texaspoker_card value="12" color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/012" center_path="Texture/UI/hxq" />
+	<texaspoker_card value="13" color="32"  color_path="Texture/UI/hx" value_path="Texture/UI/013" center_path="Texture/UI/hxk" />
+	<!-- 黑桃 -->
+	<texaspoker_card value="1"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/11"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="2"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/12"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="3"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/13"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="4"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/14"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="5"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/15"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="6"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/16"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="7"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/17"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="8"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/18"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="9"  color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/19"  center_path="Texture/UI/htp" />
+	<texaspoker_card value="10" color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/110" center_path="Texture/UI/htp" />
+	<texaspoker_card value="11" color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/111" center_path="Texture/UI/htj" />
+	<texaspoker_card value="12" color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/112" center_path="Texture/UI/htq" />
+	<texaspoker_card value="13" color="48"  color_path="Texture/UI/ht" value_path="Texture/UI/113" center_path="Texture/UI/htk" />
+	<!-- 筹码 -->
+	<texaspoker_pour min_value="1"  max_value="100"  path="Texture/UI/Chips/Coin_0" />
+	<texaspoker_pour min_value="101"  max_value="1000"  path="Texture/UI/Chips/Coin_1" />
+	<texaspoker_pour min_value="1001"  max_value="10000"  path="Texture/UI/Chips/Coin_2" />
+	<texaspoker_pour min_value="10001"  max_value="100000000000000000"  path="Texture/UI/Chips/Coin_3" />
+
+</card_data>
+

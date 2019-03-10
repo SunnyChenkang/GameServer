@@ -1,0 +1,5 @@
+1`安装nodejs 环境
+2`cd xlsx2json-master这个目录
+3`npm install
+
+即可

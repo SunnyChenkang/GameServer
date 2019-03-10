@@ -1,0 +1,14 @@
+{
+  "LOGIN": {
+    "m_Name": "LOGIN",
+    "m_Desc": "游戏登录",
+    "m_Format": [
+      "PB_LoginAuthUser",
+      "UID"
+    ],
+    "m_SendToService": [
+      "EGS",
+      "PLS"
+    ]
+  }
+}

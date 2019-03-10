@@ -1,0 +1,10 @@
+ADD_SUBDIRECTORY(cdkey_gen)
+ADD_SUBDIRECTORY(tools_test)
+ADD_SUBDIRECTORY(robot)
+
+IF(WIN32)
+
+#ADD_SUBDIRECTORY(robot_launcher)
+#ADD_SUBDIRECTORY(robot_manager)
+ENDIF(WIN32)
+  

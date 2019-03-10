@@ -1,0 +1,12 @@
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): PHP ERROR/8 Undefined variable: DBName (C:\xampp\htdocs\www\public\login_geust.php:32)
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): PHP ERROR/8 Undefined variable: DBName (C:\xampp\htdocs\www\public\login_geust.php:32)
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): PHP ERROR/8 Undefined variable: DBHost (C:\xampp\htdocs\www\public\login_geust.php:32)
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): PHP ERROR/8 Undefined variable: DBUserName (C:\xampp\htdocs\www\public\login_geust.php:32)
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): [Can't access the guest_login database db: host: user: (check privileges)]
+2018-05-30 03:09:02 (192.168.8.149:/www/public/login_geust.php): 0:The database server is in maintenance, please try later (3005)\n
+2018-05-30 03:11:56 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}
+2018-05-30 03:11:56 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}
+2018-05-30 03:11:59 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}
+2018-05-30 03:12:39 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}
+2018-05-30 03:12:47 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}
+2018-05-30 03:12:55 (192.168.8.149:/www/public/login_geust.php): {"fes_host":"06070F1BC788133E2721EE11150F0004018C990647180957CD358FBA6706","account_id":"2","login_type":1,"client_host":"192.168.8.149","client_token":"CDE2AF0BFD7FC9217F37557D656FA5A3"}

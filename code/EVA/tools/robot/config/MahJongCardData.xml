@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<card_config>
+
+	<!-- 筛子 -->
+	<shai_zi id="1" tex="shaizi_01" />
+	<shai_zi id="2" tex="shaizi_02" />
+	<shai_zi id="3" tex="shaizi_03" />
+	<shai_zi id="4" tex="shaizi_04" />
+	<shai_zi id="5" tex="shaizi_05" />
+	<shai_zi id="6" tex="shaizi_06" />
+	
+	<!-- 筛子帧动画 -->
+	<shaizi_anmi speed="15" tex= "shaizi_anmi" />
+	
+	<!-- 图集 -->
+	<mahjong_card_atlas top   ="MahJong"/>
+	<mahjong_card_atlas bottom="MahJong"/>
+	<mahjong_card_atlas left  ="MahJong"/>
+	<mahjong_card_atlas right ="MahJong"/>
+	
+	<!-- 权限贴图 -->
+	<wik value="8"   tex="peng"/>
+	<wik value="32"  tex="gang"/>
+	<wik value="64"  tex="ting"/>
+	<wik value="128" tex="hu" /> 
+	<wik value="0"   tex="guo"/>
+	
+	<!--万字牌-->
+	<card value="1" tex="yi_wan"  man="10004001" wuman="10004051"/>
+	<card value="2" tex="er_wan"  man="10004002" wuman="10004052"/>
+	<card value="3" tex="san_wan" man="10004003" wuman="10004053"/>
+	<card value="4" tex="si_wan"  man="10004004" wuman="10004054"/>
+	<card value="5" tex="wu_wan"  man="10004005" wuman="10004055"/>
+	<card value="6" tex="liu_wan" man="10004006" wuman="10004056"/>
+	<card value="7" tex="qi_wan"  man="10004007" wuman="10004057"/>
+	<card value="8" tex="ba_wan"  man="10004008" wuman="10004058"/>
+	<card value="9" tex="jiu_wan" man="10004009" wuman="10004059"/>
+
+	<!--条字牌-->
+	<card value="17" tex="yi_tiao"   man="10004019" wuman="10004069"/>
+	<card value="18" tex="er_tiao"   man="10004020" wuman="10004070"/>
+	<card value="19" tex="san_tiao"  man="10004021" wuman="10004071"/>
+	<card value="20" tex="si_tiao"   man="10004022" wuman="10004072"/>
+	<card value="21" tex="wu_tiao"   man="10004023" wuman="10004073"/>
+	<card value="22" tex="liu_tiao"  man="10004024" wuman="10004074"/>
+	<card value="23" tex="qi_tiao"   man="10004025" wuman="10004075"/>
+	<card value="24" tex="ba_tiao"   man="10004026" wuman="10004076"/>
+	<card value="25" tex="jiu_tiao"  man="10004027" wuman="10004077"/>
+	
+	<!--条字牌-->
+	<card value="33" tex="yi_tong"  man="10004010" wuman="10004060"/>
+	<card value="34" tex="er_tong"  man="10004011" wuman="10004061"/>
+	<card value="35" tex="san_tong" man="10004012" wuman="10004062"/>
+	<card value="36" tex="si_tong"  man="10004013" wuman="10004063"/>
+	<card value="37" tex="wu_tong"  man="10004014" wuman="10004064"/>
+	<card value="38" tex="liu_tong" man="10004015" wuman="10004065"/>
+	<card value="39" tex="qi_tong"  man="10004016" wuman="10004066"/>
+	<card value="40" tex="ba_tong"  man="10004017" wuman="10004067"/>
+	<card value="41" tex="jiu_tong" man="10004018" wuman="10004068"/>
+	
+	<!-- 风头 -->
+	<card value="49" tex="fengdong"  man="10004028" wuman="10004078"/>
+	<card value="50" tex="fengxi" 	 man="10004030" wuman="10004080"/>
+	<card value="51" tex="fengnan"   man="10004029" wuman="10004079"/>	
+	<card value="52" tex="fengbei"   man="10004031" wuman="10004081"/>
+	<card value="53" tex="fengzhong" man="10004032" wuman="10004082"/>
+	<card value="54" tex="fengfa"    man="10004033" wuman="10004083"/>
+	<card value="55" tex="fengbai"   man="10004034" wuman="10004084"/>
+
+	<!--花牌-->
+	<card value="65" tex="huachun" man="10004035" wuman="10004085"/>
+	<card value="66" tex="huaxia"  man="10004035" wuman="10004085"/>
+	<card value="67" tex="huaqiu"  man="10004035" wuman="10004085"/>
+	<card value="68" tex="huadong" man="10004035" wuman="10004085"/>
+	<card value="69" tex="huamei"  man="10004035" wuman="10004085"/>
+	<card value="70" tex="hualan"  man="10004035" wuman="10004085"/>
+	<card value="71" tex="huazhu"  man="10004035" wuman="10004085"/>
+	<card value="72" tex="huaju"   man="10004035" wuman="10004085"/>
+	
+</card_config>
+

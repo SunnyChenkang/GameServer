@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<slots_config row="3" col="5" wild="0" sctter="1" bonus="2" >
+
+	<icons>
+		<leaf  id="0"  rate="0,0,0,0,0"/>
+		<leaf  id="1"  rate="0,0,8,16,24"/>
+		<leaf  id="2"  rate="0,0,5,10,20"/>
+		<leaf  id="3"  rate="0,10,100,500,2500"/>
+		<leaf  id="4"  rate="0,0,50,250,1500"/>
+		<leaf  id="5"  rate="0,0,25,125,750"/>
+		<leaf  id="6"  rate="0,0,20,100,400"/>
+		<leaf  id="7"  rate="0,0,15,75,250"/>
+		<leaf  id="8"  rate="0,0,10,50,150"/>
+		<leaf  id="9"  rate="0,0,5,25,100"/>
+		<leaf  id="10" rate="0,2,5,25,100"/>
+	</icons>
+
+	<lines>
+		<leaf  line="1,1,1,1,1"/>
+		<leaf  line="0,0,0,0,0"/>
+		<leaf  line="2,2,2,2,2"/>
+		<leaf  line="0,1,2,1,0"/>
+		<leaf  line="2,1,0,1,2"/>
+		<leaf  line="0,0,1,2,2"/>
+		<leaf  line="2,2,1,0,0"/>
+		<leaf  line="1,1,0,1,1"/>
+		<leaf  line="1,1,2,1,1"/>
+		<leaf  line="0,1,0,1,0"/>
+		<leaf  line="2,1,2,1,2"/>
+		<leaf  line="0,1,1,1,0"/>
+		<leaf  line="2,1,1,1,2"/>
+		<leaf  line="1,0,1,2,1"/>
+		<leaf  line="1,2,1,0,1"/>
+		<leaf  line="1,0,0,0,1"/>
+		<leaf  line="1,2,2,2,1"/>
+		<leaf  line="0,0,0,1,2"/>
+		<leaf  line="2,2,2,1,0"/>
+		<leaf  line="0,1,2,2,2"/>
+		<leaf  line="2,1,0,0,0"/>
+		<leaf  line="0,0,1,0,0"/>
+		<leaf  line="2,2,1,2,2"/>
+		<leaf  line="1,1,1,0,1"/>
+		<leaf  line="1,1,1,2,1"/>
+	</lines>
+	
+	<wheels>
+		<leaf wheel="10,6,8,2,5,7,8,6,10,4,9,1,3,9,6,7,3,10,6,10,8,2,9,0,5,8,10,9,9,8,7,6,4,8,5,6,9,6,4,5,8,2,6,10,9,3"/>
+		<leaf wheel="9,9,7,9,10,6,1,5,8,9,2,8,9,6,10,8,4,8,10,8,10,0,9,5,6,4,8,3,5,9,8,7,4,9,8,8,0,9,10,5,8,8,3"/>
+		<leaf wheel="8,7,10,5,10,8,4,9,7,5,10,7,6,7,0,9,4,1,7,6,2,10,7,9,3,10,8,4,10,7,8,2,5,9,6,1,8,4,8,8,10,9,2,7,9,8"/>
+		<leaf wheel="0,8,4,6,8,10,4,10,1,6,10,7,8,10,10,5,10,9,9,6,8,10,9,7,10,7,0,3,4,5,10,8,10,4,6,10,10,8,10,8,8,1,9,9"/>
+		<leaf wheel="2,4,8,6,3,8,10,9,9,2,10,7,7,8,0,10,10,7,4,8,10,2,5,3,8,10,10,6,10,9,6,1,0,7,8,2,8,7,10,6,9,8,4,7,9,4"/>
+	</wheels>
+
+
+	<describe text="[fff712]Wild[-] substitutes any other aymbol except [ff8212]Scatter[-] and [12fff1]Bonus[-].;[ff8212]At least 3 Scatter[-] symbols anywhere on the reels activate free spins.5 free spins 15 free spins 30 free spins;[12fff1]3 or more Bonus[-] symbols anywhere activate the Beat the Mole bonus round."/>
+	<line_rules pic="page_0" text="All symbols pay left to right on active paylines,except the [ff8212]Scatter[-] and [12fff1]Bonus[-] symbols.\n\nOnly the highest win is paid on each pay-line.\n\n[ff8212]Scatter[-] and [12fff1]Bonus[-] wins are paid in addition to payline wins.\n\nAll wins are multiplied by the per-line bet." />
+	
+	<bonus_game enter_icon_num="3">
+		<select name="s1" select_count="0,0,2,3,4" select_count_clear="false" end_type="EnumCircleEnd">
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p2" weight="10" credit="2"/>
+			<random name="p3" weight="10" credit="3"/>
+			<random name="p4" weight="10" credit="4"/>
+			<random name="p5" weight="10" credit="5"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p2" weight="10" credit="2"/>
+			<random name="p3" weight="10" credit="3"/>
+			<random name="p4" weight="10" credit="4"/>
+			<random name="p5" weight="10" credit="5"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p2" weight="10" credit="2"/>
+			<random name="p3" weight="10" credit="3"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p2" weight="10" credit="2"/>
+			<random name="p3" weight="10" credit="3"/>
+			<random name="p1" weight="10" credit="1"/>
+			<random name="p1" weight="10" credit="1"/>
+
+			<client music="6001093" clickSound="6001092" prefab_res_path="Prefab/CasinoUI/Slots/bonusgame_dcr" >
+				<bonus_pos x="-453" y="235" />
+				<bonus_pos x="-317" y="235" />
+				<bonus_pos x="-179" y="235" />
+				<bonus_pos x="-43" y="235" />
+				<bonus_pos x="-453" y="123" />
+				<bonus_pos x="-317" y="123" />
+				<bonus_pos x="-179" y="123" />
+				<bonus_pos x="-43" y="123" />
+				<bonus_pos x="-453" y="24" />
+				<bonus_pos x="-317" y="24" />
+				<bonus_pos x="-179" y="24" />
+				<bonus_pos x="-43" y="24" />
+				<bonus_pos x="-453" y="-79" />
+				<bonus_pos x="-317" y="-79" />
+				<bonus_pos x="-179" y="-79" />
+				<bonus_pos x="-43" y="-79" />
+				<bonus_pos x="-453" y="-193" />
+				<bonus_pos x="-317" y="-193" />
+				<bonus_pos x="-179" y="-193" />
+				<bonus_pos x="-43" y="-193" />
+			</client>
+			<client_show random_name="p1" sound="6001055" effect="apple" is_show = "false"/>
+			<client_show random_name="p2" sound="6001055" effect="radish" is_show = "false"/>
+			<client_show random_name="p3" sound="6001056" effect="qingcai" is_show = "false"/>
+			<client_show random_name="p4" sound="6001056" effect="corn" is_show = "false"/>
+			<client_show random_name="p5"    sound="6001057"    effect="pumpkin" is_show = "false"/>
+		</select>
+	</bonus_game>
+		
+</slots_config>

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<card_config>
+
+	<!-- 筛子 -->
+	<shai_zi id="1" tex="shaizi_01" />
+	<shai_zi id="2" tex="shaizi_02" />
+	<shai_zi id="3" tex="shaizi_03" />
+	<shai_zi id="4" tex="shaizi_04" />
+	<shai_zi id="5" tex="shaizi_05" />
+	<shai_zi id="6" tex="shaizi_06" />
+	
+	<!-- 筛子帧动画 -->
+	<shaizi_anmi speed="15" tex= "shaizi_anmi" />
+	
+	<!-- 图集 -->
+	<mahjong_card_atlas top   ="MahJong"/>
+	<mahjong_card_atlas bottom="MahJong"/>
+	<mahjong_card_atlas left  ="MahJong"/>
+	<mahjong_card_atlas right ="MahJong"/>
+	
+	<!-- 权限贴图 -->
+	<wik value="8"  tex="peng"/>
+	<wik value="32" tex="gang"/>
+	<wik value="64" tex="hu"/>
+	<wik value="0"  tex="guo"/>
+	
+	<!--万字牌-->
+	<card value="1" tex="yi_wan"  />
+	<card value="2" tex="er_wan"  />
+	<card value="3" tex="san_wan" />
+	<card value="4" tex="si_wan"  />
+	<card value="5" tex="wu_wan"  />
+	<card value="6" tex="liu_wan" />
+	<card value="7" tex="qi_wan"  />
+	<card value="8" tex="ba_wan"  />
+	<card value="9" tex="jiu_wan" />
+
+	<!--条字牌-->
+	<card value="17" tex="yi_tiao"  />
+	<card value="18" tex="er_tiao"  />
+	<card value="19" tex="san_tiao" />
+	<card value="20" tex="si_tiao"  />
+	<card value="21" tex="wu_tiao"  />
+	<card value="22" tex="liu_tiao" />
+	<card value="23" tex="qi_tiao"  />
+	<card value="24" tex="ba_tiao"  />
+	<card value="25" tex="jiu_tiao" />
+	
+	<!--条字牌-->
+	<card value="33" tex="yi_tong"  />
+	<card value="34" tex="er_tong"  />
+	<card value="35" tex="san_tong" />
+	<card value="36" tex="si_tong"  />
+	<card value="37" tex="wu_tong"  />
+	<card value="38" tex="liu_tong" />
+	<card value="39" tex="qi_tong"  />
+	<card value="40" tex="ba_tong"  />
+	<card value="41" tex="jiu_tong" />
+	
+	<!-- 风头 -->
+	<card value="49" tex="fengdong"  />
+	<card value="50" tex="fengxi" />
+	<card value="51" tex="fengnan" />	
+	<card value="52" tex="fengbei" />
+	<card value="53" tex="fengzhong" />
+	<card value="54" tex="fengfa" />
+	<card value="55" tex="fengbai" />
+
+	<!--花牌-->
+	<card value="65" tex="huachun" />
+	<card value="66" tex="huaxia" />
+	<card value="67" tex="huaqiu" />
+	<card value="68" tex="huadong" />
+	<card value="69" tex="huamei" />
+	<card value="70" tex="hualan" />
+	<card value="71" tex="huazhu" />
+	<card value="72" tex="huaju" />
+	
+</card_config>
+

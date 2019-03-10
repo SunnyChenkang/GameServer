@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<slots_config row="3" col="5" wild="2" bonus="1" >
+
+	<icons>
+		<leaf  id="0"  rate="0,0,0,0,0"/>
+		<leaf  id="1"  rate="0,0,0,0,0"/>
+		<leaf  id="2"  rate="0,4,10,40,100"/>
+		<leaf  id="3"  rate="0,4,10,40,100"/>
+		<leaf  id="4"  rate="0,3,8,32,80"/>
+		<leaf  id="5"  rate="0,2,6,24,60"/>
+		<leaf  id="6"  rate="0,0,4,16,40"/>
+		<leaf  id="7"  rate="0,0,3,12,30"/>
+		<leaf  id="8"  rate="0,0,3,12,30"/>
+		<leaf  id="9"  rate="0,0,2,8,20"/>
+		<leaf  id="10" rate="0,0,2,8,20"/>
+	</icons>
+
+	<lines>
+		<leaf  line="1,1,1,1,1"/>
+		<leaf  line="0,0,0,0,0"/>
+		<leaf  line="2,2,2,2,2"/>
+		<leaf  line="0,1,2,1,0"/>
+		<leaf  line="2,1,0,1,2"/>
+		<leaf  line="1,0,0,0,1"/>
+		<leaf  line="1,2,2,2,1"/>
+		<leaf  line="0,0,1,2,2"/>
+		<leaf  line="2,2,1,0,0"/>
+		<leaf  line="1,2,1,0,1"/>
+		<leaf  line="1,0,1,2,1"/>
+		<leaf  line="0,1,1,1,0"/>
+		<leaf  line="2,1,1,1,2"/>
+		<leaf  line="0,1,0,1,0"/>
+		<leaf  line="2,1,2,1,2"/>
+		<leaf  line="1,1,0,1,1"/>
+		<leaf  line="1,1,2,1,1"/>
+		<leaf  line="0,0,2,0,0"/>
+		<leaf  line="2,2,0,2,2"/>
+		<leaf  line="0,2,2,2,0"/>
+		<leaf  line="2,0,0,0,2"/>
+		<leaf  line="1,2,0,2,1"/>
+		<leaf  line="1,0,2,0,1"/>
+		<leaf  line="0,2,0,2,0"/>
+		<leaf  line="2,0,2,0,2"/>
+		<leaf  line="2,0,1,2,0"/>
+		<leaf  line="0,2,1,0,2"/>
+		<leaf  line="0,2,1,2,0"/>
+		<leaf  line="2,0,1,0,2"/>
+		<leaf  line="2,1,0,0,1"/>
+	</lines>
+	
+	<wheels>
+		<leaf wheel="8,5,9,2,7,8,9,10,6,7,4,10,6,7,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<leaf wheel="6,7,9,4,3,10,2,8,7,9,8,6,5,10,3,8,5,9,7,10,6,4,6,8,9,2,7,10"/>
+		<leaf wheel="8,5,7,6,10,5,8,3,9,2,10,7,9,4,8,9,6,7,6,10,7,3,2,6,5,4,9,10"/>
+		<leaf wheel="4,8,9,7,6,2,3,10,8,7,4,6,5,9,3,7,10,8,9,5,7,10,2,8,6,10,7,9"/>
+		<leaf wheel="5,3,7,2,6,9,4,10,6,8,5,7,10,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+	</wheels>
+
+	<describe text="Wild substitutes any other aymbol except Scatter and Bonus.;At least 3 Scatter symbols anywhere on the reels activate free spins.5 free spins 15 free spins 30 free spins;3 or more Bonus symbols anywhere on an active pay-line activate the Beat the Mole bonus round."/>
+	<line_rules pic="page_2" text="All symbols pay left to right on active paylines,except the Scatter and Bonus symbols.\n\nOnly the highest win is paid on each pay-line.\n\nScatter and Bonus wins are paid in addition to payline wins.\n\nAll wins are multiplied by the per-line bet." />
+
+	<feature>
+		<col_icon_change   src_icon="0">
+			<change    icon="2"   weight="6,10,7,10,8" />
+			<change    icon="3"   weight="20,10,10,10,10" />
+			<change    icon="4"   weight="10,20,10,10,10" />
+			<change    icon="5"   weight="10,10,20,10,10" />
+			<change    icon="6"   weight="20,10,10,10,10" />
+			<change    icon="7"   weight="10,20,10,10,10" />
+			<change    icon="8"   weight="10,10,20,10,10" />
+			<change    icon="9"   weight="10,10,10,20,10" />
+			<change    icon="10"  weight="10,10,10,10,20" />
+		</col_icon_change>
+		
+		<icon_override>
+		
+			<icon_random id="2" weight="10"/>
+			<icon_random id="3" weight="90"/>
+			
+			<overrride weight="1">
+				<xy row="1,2,3" col="0"/>
+			</overrride>
+			<overrride weight="1">
+				<xy row="1,2,3" col="0,1"/>
+			</overrride>
+			<overrride weight="1">
+				<xy row="1,2,3" col="0,1,2"/>
+			</overrride>
+			<overrride weight="1">
+				<xy row="1,2,3" col="1,2"/>
+			</overrride>
+			<overrride weight="1">
+				<xy row="1,2,3" col="2"/>
+			</overrride>
+			<overrride weight="1"/>
+			
+		</icon_override>
+	</feature>
+
+</slots_config>

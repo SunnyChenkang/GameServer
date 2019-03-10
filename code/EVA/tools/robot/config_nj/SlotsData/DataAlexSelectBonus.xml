@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<slots_config row="3" col="5" wild="2" sctter="0" bonus="1" >
+
+	<icons>
+		<leaf  id="0"  rate="0,0,10,0,0"/>
+		<leaf  id="1"  rate="0,0,0,0,0"/>
+		<leaf  id="2"  rate="0,0,20,60,200"/>
+		<leaf  id="3"  rate="0,0,20,60,200"/>
+		<leaf  id="4"  rate="0,0,15,50,150"/>
+		<leaf  id="5"  rate="0,0,12,40,120"/>
+		<leaf  id="6"  rate="0,0,10,30,100"/>
+		<leaf  id="7"  rate="0,0,7,25,60"/>
+		<leaf  id="8"  rate="0,0,6,20,50"/>
+		<leaf  id="9"  rate="0,0,5,15,40"/>
+		<leaf  id="10" rate="0,0,4,10,30"/>
+		<leaf  id="11" rate="0,0,3,5,20"/>
+	</icons>
+
+	<lines>
+		<leaf  line="1,1,1,1,1"/>
+		<leaf  line="0,0,0,0,0"/>
+		<leaf  line="2,2,2,2,2"/>
+		<leaf  line="0,1,2,1,0"/>
+		<leaf  line="2,1,0,1,2"/>
+		<leaf  line="1,0,0,0,1"/>
+		<leaf  line="1,2,2,2,1"/>
+		<leaf  line="0,0,1,2,2"/>
+		<leaf  line="2,2,1,0,0"/>
+		<leaf  line="1,2,1,0,1"/>
+		<leaf  line="1,0,1,2,1"/>
+		<leaf  line="0,1,1,1,0"/>
+		<leaf  line="2,1,1,1,2"/>
+		<leaf  line="0,1,0,1,0"/>
+		<leaf  line="2,1,2,1,2"/>
+		<leaf  line="1,1,0,1,1"/>
+		<leaf  line="1,1,2,1,1"/>
+		<leaf  line="0,0,2,0,0"/>
+		<leaf  line="2,2,0,2,2"/>
+		<leaf  line="0,2,2,2,0"/>
+		<leaf  line="2,0,0,0,2"/>
+		<leaf  line="1,2,0,2,1"/>
+		<leaf  line="1,0,2,0,1"/>
+		<leaf  line="0,2,0,2,0"/>
+		<leaf  line="2,0,2,0,2"/>
+		<leaf  line="2,0,1,2,0"/>
+		<leaf  line="0,2,1,0,2"/>
+		<leaf  line="0,2,1,2,0"/>
+		<leaf  line="2,0,1,0,2"/>
+		<leaf  line="2,1,0,0,1"/>
+	</lines>
+	
+	<wheels>
+		<leaf wheel="1,8,4,7,3,11,7,6,10,9,5,10,10,4,9,8,11,1,8,4,7,11,5,7,9,10,6,8,11,3,9,6,8,11"/>
+		<leaf wheel="0,7,10,8,9,2,8,9,6,0,8,7,9,6,11,10,5,0,6,10,8,7,0,11,5,6,2,5,6,9,4,11,10,5,6,7,8,9,0,11,3,8,2,3,8,9,4,11,10,6,7,4,11,10,3,9"/>
+		<leaf wheel="0,3,11,7,8,6,2,8,6,10,1,9,10,4,8,7,5,11,9,6,7,11,8,5,11,4,10,1,9,10"/>
+		<leaf wheel="0,8,6,11,2,6,11,8,3,10,4,9,6,7,5,10,7,0,8,5,9,2,5,9,11,3,0,4,9,10,8,5,11,7,10,4,9,7,11"/>
+		<leaf wheel="1,7,9,11,4,8,11,3,10,9,8,6,10,7,9,4,5,1,7,9,11,4,8,11,3,10,1,8,6,10,7,3,8,5,10"/>
+	</wheels>
+<!--
+	<wheels>
+		<leaf wheel="1,8,4,7,3,11,7,6,1,9,5,1,10,4,9,8,11,1,8,4,7,11,5,7,9,1,6,8,11,3,9,6,8,11"/>
+		<leaf wheel="0,7,1,8,9,2,8,9,6,0,8,7,9,6,11,1,5,0,6,1,8,7,0,11,5,6,2,5,6,9,4,11,1,5,6,7,8,9,0,11,3,8,2,3,8,9,4,11,1,6,7,4,11,1,3,9"/>
+		<leaf wheel="0,3,11,7,8,6,2,8,6,1,1,9,1,4,8,7,5,11,9,6,7,11,8,5,11,4,1,1,9,10"/>
+		<leaf wheel="0,8,6,11,2,6,11,8,3,1,4,9,6,7,5,1,7,0,8,5,9,2,5,9,11,3,0,4,9,1,8,5,11,7,1,4,9,7,11"/>
+		<leaf wheel="1,7,9,11,4,8,11,3,1,9,8,6,1,7,9,4,5,1,7,9,11,4,8,11,3,1,1,8,6,1,7,3,8,5,10"/>
+	</wheels>
+	-->
+	<describe text="[fff712]Wild[-] expending to fill all the reel.[fff712]Wild symbol is 3 grids long[-],which splash to fill all the reel.;[ff8212]3 Scatter[-] symbols anywhere on the reels activate 10 free spins.;[12fff1]3 Bonus[-] activate Bonus Game. [12fff1]Bonus symbol don`t appear during free spins[-]."/>
+	<line_rules pic="page_3" text="All symbols pay left to right on active paylines,except the [ff8212]Scatter[-] and [12fff1]Bonus[-] symbols.\n\nOnly the highest win is paid on each pay-line.\n\n[ff8212]Scatter[-] and [12fff1]Bonus[-] wins are paid in addition to payline wins.\n\nAll wins are multiplied by the per-line bet." />
+
+
+	<feature>
+	
+		<wild_change  fill_all="true" splash="false" />
+	</feature>
+
+	<bonus_game enter_icon_num="3">
+		<select name="s1" select_count="0,0,3,3,3,3,3,3,3,3" select_count_clear="false" end_type="EnumCircleEnd">
+			<random name="box1" weight="30">
+				<random name="1" weight="35" credit="1"/>
+				<random name="2" weight="40" credit="2"/>
+				<random name="3" weight="5" credit="3"/>
+				<random name="4" weight="5" credit="4"/>
+				<random name="5" weight="5" credit="5"/>
+				<random name="7" weight="1" credit="7"/>
+			</random>
+			<random name="box2" weight="30">
+				<random name="3" weight="30" credit="3"/>
+				<random name="4" weight="25" credit="4"/>
+				<random name="5" weight="20" credit="5"/>
+				<random name="6" weight="10" credit="6"/>
+				<random name="8" weight="5" credit="8"/>
+				<random name="9" weight="5" credit="9"/>
+				<random name="10" weight="5" credit="10"/>
+				<random name="15" weight="1" credit="15"/>
+			</random>
+			<random name="box3" weight="30">
+				<random name="92" weight="22" multiplier="2"/>
+				<random name="93" weight="20" multiplier="3"/>
+				<random name="94" weight="5" multiplier="4"/>
+				<random name="95" weight="2" multiplier="5"/>
+				<random name="90" weight="1" multiplier="10"/>
+			</random>
+			
+			<client music="6001088" clickSound="6001085" prefab_res_path="Prefab/CasinoUI/Slots/bonusgame_haidi" >
+				<bonus_pos x="-260" y="100" />
+				<bonus_pos x="0" y="-180" />
+				<bonus_pos x="250" y="100" />
+			</client>
+			
+			<client_show random_name="1,2,3,4,5,6,7,8,9,10,15,92,93,94,95,90" sound="6001085" effect="Prefab/CasinoUI/Slots/bonusgame_haidi" is_show = "false"/>
+
+		</select>
+	</bonus_game>
+	
+</slots_config>

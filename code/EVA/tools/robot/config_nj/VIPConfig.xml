@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<vip_config>
+
+
+	<!-- leve字段需要按顺序写 -->
+	
+	<level_up   level="0"   level_up_exp="200"          buy_money="1"       bonus="1"   buy_back_add_num="0"  />
+	<level_up   level="1"   level_up_exp="700"          buy_money="1.2"       bonus="2"   buy_back_add_num="0"  />
+
+	
+</vip_config>
+

@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root type="StoreItemPrototype">
+  <StoreItemPrototype pid="6001001">
+    <ID valueType="int" value="6001001" isSave="false" />
+    <NAME_STRING valueType="string" value="臭鸡蛋" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="100" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="choujidan" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6001002">
+    <ID valueType="int" value="6001002" isSave="false" />
+    <NAME_STRING valueType="string" value="手雷" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="true" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1000" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="shoulei" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001002,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6001003">
+    <ID valueType="int" value="6001003" isSave="false" />
+    <NAME_STRING valueType="string" value="鲜花" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1000" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="xianhua" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001003,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6001004">
+    <ID valueType="int" value="6001004" isSave="false" />
+    <NAME_STRING valueType="string" value="啤酒" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1000" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="pijiu" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001004,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6002001">
+    <ID valueType="int" value="6002001" isSave="false" />
+    <NAME_STRING valueType="string" value="喇叭" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="5" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="laba" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5002001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6002002">
+    <ID valueType="int" value="6002002" isSave="false" />
+    <NAME_STRING valueType="string" value="弹幕卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="5" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="danmuka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5002002,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6003001">
+    <ID valueType="int" value="6003001" isSave="false" />
+    <NAME_STRING valueType="string" value="踢人卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="50" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="tirenka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5003001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6004001">
+    <ID valueType="int" value="6004001" isSave="false" />
+    <NAME_STRING valueType="string" value="积分清零卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="100" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jifenqinglingka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5004001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6005001">
+    <ID valueType="int" value="6005001" isSave="false" />
+    <NAME_STRING valueType="string" value="好友扩容卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="100" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="haoyoukuorongka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5005001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6006001">
+    <ID valueType="int" value="6006001" isSave="false" />
+    <NAME_STRING valueType="string" value="延时道具" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="5" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yanshidaoju" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5006001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6007001">
+    <ID valueType="int" value="6007001" isSave="false" />
+    <NAME_STRING valueType="string" value="话费券" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="5" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="huafeiquan" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5007001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6008001">
+    <ID valueType="int" value="6008001" isSave="false" />
+    <NAME_STRING valueType="string" value="比赛券" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="50" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="bisaiquan" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5008001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6009001">
+    <ID valueType="int" value="6009001" isSave="false" />
+    <NAME_STRING valueType="string" value="房卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="100" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="1" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="fangka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5009001,1" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010001">
+    <ID valueType="int" value="6010001" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="促销 减价" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="200" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="1" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="cuxiao" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="30" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010002">
+    <ID valueType="int" value="6010002" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="300" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="30" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010003">
+    <ID valueType="int" value="6010003" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="额外赠送15天" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="300" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="45" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010004">
+    <ID valueType="int" value="6010004" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="+10000金币" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="300" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="cuxiao" isSave="false" />
+    <ADD_MONEY_INT valueType="int" value="10000" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="30" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010005">
+    <ID valueType="int" value="6010005" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="+20钻石" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="300" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_JEWEL_INT valueType="int" value="20" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="30" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6010006">
+    <ID valueType="int" value="6010006" isSave="false" />
+    <NAME_STRING valueType="string" value="月卡（30天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="送互动道具各20个" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="1" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="300" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yueka" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="remen" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001001,20;5001002,20;5001003,20;5001004,20" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="30" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="20000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011001">
+    <ID valueType="int" value="6011001" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="促销 减价" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="500" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="1" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="cuxiao" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="90" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="100000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011002">
+    <ID valueType="int" value="6011002" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="900" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="90" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="100000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011003">
+    <ID valueType="int" value="6011003" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="额外赠送30天" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="900" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="120" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="100000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011004">
+    <ID valueType="int" value="6011004" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="+100000金币" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="900" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="cuxiao" isSave="false" />
+    <ADD_MONEY_INT valueType="int" value="100000" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="90" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="100000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011005">
+    <ID valueType="int" value="6011005" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="+50钻" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="900" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_JEWEL_INT valueType="int" value="50" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5001001,50;5001002,50;5001003,50;5001004,50" isSave="false" />
+    <ADD_VIP_INT valueType="int" value="90" isSave="false" />
+    <FIRST_VIP_MONEY_INT valueType="int" value="100000" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6011006">
+    <ID valueType="int" value="6011006" isSave="false" />
+    <NAME_STRING valueType="string" value="季卡（90天）" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="送互动道具各50个" isSave="false" />
+    <FIRST_VIP_INT valueType="int" value="2" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="false" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="900" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <MISSION_REWARD_EXP_INT valueType="int" value="100" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jika" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="remen" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012001">
+    <ID valueType="int" value="6012001" isSave="false" />
+    <NAME_STRING valueType="string" value="红酒" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="10" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="hongjiu" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012001,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012002">
+    <ID valueType="int" value="6012002" isSave="false" />
+    <NAME_STRING valueType="string" value="啤酒" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="50" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="pijiu" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012002,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012003">
+    <ID valueType="int" value="6012003" isSave="false" />
+    <NAME_STRING valueType="string" value="冰淇淋" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="bingjiling" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012003,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012004">
+    <ID valueType="int" value="6012004" isSave="false" />
+    <NAME_STRING valueType="string" value="鸡蛋" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="500" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="egg" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012004,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012005">
+    <ID valueType="int" value="6012005" isSave="false" />
+    <NAME_STRING valueType="string" value="花" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="2" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="hua" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012005,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012006">
+    <ID valueType="int" value="6012006" isSave="false" />
+    <NAME_STRING valueType="string" value="玩具熊" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="2500" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="xiong" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012006,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012007">
+    <ID valueType="int" value="6012007" isSave="false" />
+    <NAME_STRING valueType="string" value="皮包" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="10" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="bao" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012007,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012008">
+    <ID valueType="int" value="6012008" isSave="false" />
+    <NAME_STRING valueType="string" value="爱心" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="10000" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="love" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012008,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012009">
+    <ID valueType="int" value="6012009" isSave="false" />
+    <NAME_STRING valueType="string" value="胶囊" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="100" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jiaonang" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012009,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012010">
+    <ID valueType="int" value="6012010" isSave="false" />
+    <NAME_STRING valueType="string" value="蓝玫瑰" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="99" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="lanmeigui" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012010,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012011">
+    <ID valueType="int" value="6012011" isSave="false" />
+    <NAME_STRING valueType="string" value="玫瑰" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="166" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="meigui" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012011,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012012">
+    <ID valueType="int" value="6012012" isSave="false" />
+    <NAME_STRING valueType="string" value="吻" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="350" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="kiss" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012012,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012013">
+    <ID valueType="int" value="6012013" isSave="false" />
+    <NAME_STRING valueType="string" value="手表" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="888" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="watch" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012013,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012014">
+    <ID valueType="int" value="6012014" isSave="false" />
+    <NAME_STRING valueType="string" value="戒指" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1314" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="ring" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012014,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012015">
+    <ID valueType="int" value="6012015" isSave="false" />
+    <NAME_STRING valueType="string" value="蛋糕" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1555" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="cake" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012015,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012016">
+    <ID valueType="int" value="6012016" isSave="false" />
+    <NAME_STRING valueType="string" value="船" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1888" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="ship" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012016,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012017">
+    <ID valueType="int" value="6012017" isSave="false" />
+    <NAME_STRING valueType="string" value="飞机" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="3333" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="feiji" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012017,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012018">
+    <ID valueType="int" value="6012018" isSave="false" />
+    <NAME_STRING valueType="string" value="跑车" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="3333" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="paoche" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012018,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012019">
+    <ID valueType="int" value="6012019" isSave="false" />
+    <NAME_STRING valueType="string" value="轿车" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="6888" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="jiaoche" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012019,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012020">
+    <ID valueType="int" value="6012020" isSave="false" />
+    <NAME_STRING valueType="string" value="凯迪拉克" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="8888" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="kaidilake" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012020,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012021">
+    <ID valueType="int" value="6012021" isSave="false" />
+    <NAME_STRING valueType="string" value="老爷车" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="8888" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="laoyeche" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012021,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012022">
+    <ID valueType="int" value="6012022" isSave="false" />
+    <NAME_STRING valueType="string" value="别墅" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="19999" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="house" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012022,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012023">
+    <ID valueType="int" value="6012023" isSave="false" />
+    <NAME_STRING valueType="string" value="鸭血粉丝汤" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="1" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="1000" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yaxuefensitang" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012023,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012024">
+    <ID valueType="int" value="6012024" isSave="false" />
+    <NAME_STRING valueType="string" value="云锦" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="20" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="yunjin" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012024,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012025">
+    <ID valueType="int" value="6012025" isSave="false" />
+    <NAME_STRING valueType="string" value="麻将牌" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="998" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="xiangyamajiang" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012025,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+  <StoreItemPrototype pid="6012026">
+    <ID valueType="int" value="6012026" isSave="false" />
+    <NAME_STRING valueType="string" value="折扇" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="" isSave="false" />
+    <SALE_ITEM_BOOL valueType="bool" value="true" isSave="false" />
+    <SALE_TIME_INT valueType="int" value="20160425" isSave="false" />
+    <SALE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <VIP_SALE_BOOL valueType="bool" value="false" isSave="false" />
+    <BUY_TYPE_CLASS valueType="int" value="2" isSave="false" />
+    <SALE_PRICE_STRING valueType="string" value="233" isSave="false" />
+    <SALE_LIMITED_INT valueType="int" value="99" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="Item" isSave="false" />
+    <ICON_STRING valueType="string" value="zheshan" isSave="false" />
+    <SIGN_ICON_STRING valueType="string" value="" isSave="false" />
+    <ADD_ITEM_STRING valueType="ItemBuy" value="5012026,1" isSave="false" />
+    <QUICK_PURCHASE_BOOL valueType="bool" value="True" isSave="false" />
+  </StoreItemPrototype>
+</root>

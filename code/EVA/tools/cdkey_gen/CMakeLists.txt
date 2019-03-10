@@ -1,0 +1,11 @@
+FILE(GLOB SRC *.cpp *.h)
+
+ADD_EXECUTABLE(cdkey_gen ${SRC})
+
+TARGET_LINK_LIBRARIES(cdkey_gen nelmisc)
+
+NL_DEFAULT_PROPS(cdkey_gen "EVA, Tools: CDKeyGen")
+NL_ADD_RUNTIME_FLAGS(cdkey_gen)
+
+#INSTALL(TARGETS luafun_gen RUNTIME DESTINATION ${NL_BIN_PREFIX} COMPONENT tools)
+#INSTALL(FILES luafun_gen.cfg DESTINATION ${NL_SHARE_PREFIX}/luafun_gen COMPONENT tools)

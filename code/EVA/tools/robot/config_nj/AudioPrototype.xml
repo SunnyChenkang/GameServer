@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root type="AudioPrototype">
+  <AudioPrototype pid="10001001">
+    <ID valueType="int" value="10001001" isSave="false" />
+    <TYPE_INT valueType="int" value="0" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="theme" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="1" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002001">
+    <ID valueType="int" value="10002001" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="buhua" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002002">
+    <ID valueType="int" value="10002002" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="anniu" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002003">
+    <ID valueType="int" value="10002003" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chi" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002004">
+    <ID valueType="int" value="10002004" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chupai" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002005">
+    <ID valueType="int" value="10002005" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="gang" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002006">
+    <ID valueType="int" value="10002006" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="hu" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002007">
+    <ID valueType="int" value="10002007" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="lingqian" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002008">
+    <ID valueType="int" value="10002008" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="peng" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002009">
+    <ID valueType="int" value="10002009" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="pingju" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002010">
+    <ID valueType="int" value="10002010" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="shaizi" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002011">
+    <ID valueType="int" value="10002011" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="shu" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002012">
+    <ID valueType="int" value="10002012" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="ying" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002013">
+    <ID valueType="int" value="10002013" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="zhuapai" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002014">
+    <ID valueType="int" value="10002014" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="zimo" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002015">
+    <ID valueType="int" value="10002015" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat1" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002016">
+    <ID valueType="int" value="10002016" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat2" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002017">
+    <ID valueType="int" value="10002017" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat3" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002018">
+    <ID valueType="int" value="10002018" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat4" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002019">
+    <ID valueType="int" value="10002019" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat5" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002020">
+    <ID valueType="int" value="10002020" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat6" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002021">
+    <ID valueType="int" value="10002021" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat7" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002022">
+    <ID valueType="int" value="10002022" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat8" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002023">
+    <ID valueType="int" value="10002023" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat9" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+  <AudioPrototype pid="10002024">
+    <ID valueType="int" value="10002024" isSave="false" />
+    <TYPE_INT valueType="int" value="1" isSave="false" />
+    <AUDIO_PATH_INT valueType="string" value="chat10" isSave="false" />
+    <WHETHER_LOOP_INT valueType="int" value="0" isSave="false" />
+    <DELAY_TIME_INT valueType="int" value="0" isSave="false" />
+  </AudioPrototype>
+</root>

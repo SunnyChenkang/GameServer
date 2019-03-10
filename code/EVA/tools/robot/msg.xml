@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<client_messages_description>
+<!--
+                客户端消息转发     li9chuan@qq.com   2014
+				
+				name         消息名字 (key)
+				sendto       需要转发到的服务器，可填多个  sendto="PLS EGS PDS"
+				format       转发消息结构 :
+											PID : 使用服务器的playerid填充。
+											UID : 使用userid填充。
+											PLS : 使用玩家所在player_logic_service的TServiceId填充。
+											proto消息：填写名字自动识别。
+											基础数据类型：f(float) d(double) b(bool) s(string) s8 s16 s32 s64 u8 u16 u32 u64
+										
+				protocol     客户端可以使用的网络协议(UDP TCP)，如果不填写，默认使用UDP协议收发。
+				description  描述，可打印log。  不需要调试log可在最后写xml注释。
+-->
+
+  <leaf name="LOGIN"                  sendto="EGS"   protocol="UDP"    format="UID MsgLogin"/>  
+  <leaf name="PLAYER_INFO"            sendto="EGS"   protocol="UDP"    format="UID MsgPlayerInfo"/>
+  <leaf name="CT_PLY"                 sendto="PDS"   protocol="TCP"    format="UID MsgCreatePlayer"/>
+  <leaf name="LOAD_PLAYER"            sendto="PLS"   protocol="TCP"    format="UID MsgLoadPlayer"/>
+  
+  
+  <leaf name="EG"                     sendto="EGS"   protocol="UDP"        format="PID MsgEnterGame"   description="Enter Game" />
+  <leaf name="LR"                     sendto="EGS"   protocol="UDP"        format="PID"                description="Leave Room" />
+  
+  <leaf name="SCS"                    sendto="PLS"   protocol="UDP"        format="PID"                description="SyncChecksum" />
+  <leaf name="SyncData"               sendto="EGS"   protocol="UDP"        format="UID"                description="请求服务器同步CheckSum和PlayerInfo"/>	
+  <leaf name="SPLY"                   sendto="PLS"   protocol="UDP"        format="PID"                description="请求刷新PlayerInfo" />
+  <leaf name="RMT"                    sendto="RNK"   protocol="UDP"        format="PID"                description="Ranking Money Top 10" />
+  
+  <!-- BlackJack  -->
+  <leaf name="BJ_P"                   sendto="PLS"   protocol="UDP"        format="PID MsgInt32"       description="加注" />
+  <leaf name="BJ_AC"                  sendto="PLS"   protocol="UDP"        format="PID MsgBool"        description="要牌" />
+  <leaf name="BJ_SC"                  sendto="PLS"   protocol="UDP"        format="PID"                description="分牌" />
+  <leaf name="BJ_STD"                 sendto="PLS"   protocol="UDP"        format="PID MsgBool"        description="停牌" />
+  <leaf name="BJ_BS"                  sendto="PLS"   protocol="UDP"        format="PID"                description="保险" />
+  <leaf name="BJ_BSC"                 sendto="PLS"   protocol="UDP"        format="PID"                description="跳过保险" />
+  <leaf name="BJ_DB"                  sendto="PLS"   protocol="UDP"        format="PID MsgBool"        description="双倍" />
+  <leaf name="BJ_CL"                  sendto="PLS"   protocol="UDP"        format="PID"                description="清除下注" />
+  
+  <leaf name="AM"         			  sendto="PLS"   protocol="UDP"        format="PID MsgInt64"       description="添加金钱"/> 
+  <leaf name="SM"         			  sendto="PLS"   protocol="UDP"        format="PID MsgInt64"       description="减少金钱"/> 
+  <leaf name="TRD"         			  sendto="EGS"   protocol="UDP"        format="PID "       		   description="领取奖励"/> 
+  
+</client_messages_description>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<player_config>
+
+  <!-- 头像贴图 ID=100 -->
+  <head id="0"   str="Texture/Head/texture_head_0" />
+  <head id="1"   str="Texture/Head/texture_head_1" />
+  <head id="2"   str="Texture/Head/texture_head_2" />
+  <head id="3"   str="Texture/Head/texture_head_3" />
+  <head id="4"   str="Texture/Head/texture_head_4" />
+  <head id="5"   str="Texture/Head/texture_head_5" />
+  
+  <!-- 头像贴图 ID=100 -->
+  <wrong_head str="Texture/Head/texture_head_0" />
+  
+  <!-- 性别贴图 -->
+  <sex id="0"   str="nj_player_gril" />
+  <sex id="1"   str="nj_player_boy" />
+  
+  <!-- 其他人信息面板文字 -->
+  <other id="0"   str="删除好友" />
+  <other id="1"   str="添加好友" />
+  <other id="2"   str="取消屏蔽" />
+  <other id="3"   str="屏蔽私聊" />
+  <other id="4"   str="男" />
+  <other id="5"   str="女" />
+  
+  <!-- 排名贴图 -->
+  <rank id="1"   str="first" />
+  <rank id="2"   str="second" />
+  <rank id="3"   str="third" />
+
+    <!-- 排行榜类型贴图 -->
+  <rankType id="0"   str="nj_player_money" />
+  <rankType id="1"   str="nj_player_ZAN" />
+  
+  
+   <!-- 好友排行类型贴图 -->
+  <friendType id="1"   str="nj_player_money" />
+  <friendType id="2"   str="nj_player_money" />
+  <friendType id="3"   str="nj_player_ZAN" />
+  
+  <!-- 个签为空时自动显示 -->
+  <note_null str="暂无动态" />
+  
+  <!-- 人物资料面板下方互动道具栏 -->
+  <interaction_item id="0" int="8001001"/>
+  <interaction_item id="1" int="8001002"/>
+  <interaction_item id="2" int="8001003"/>
+  <interaction_item id="3" int="8001004"/>
+  
+</player_config>
+

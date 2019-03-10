@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root type="ItemPrototype">
+  <ItemPrototype pid="5001001">
+    <ID valueType="int" value="5001001" isSave="false" />
+    <NAME_STRING valueType="string" value="臭鸡蛋" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="向一个玩家投掷一个臭鸡蛋" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="choujidan" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="10" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="True" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5001002">
+    <ID valueType="int" value="5001002" isSave="false" />
+    <NAME_STRING valueType="string" value="手雷" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="向一个玩家投掷一颗手雷" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="shoulei" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="100" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5001003">
+    <ID valueType="int" value="5001003" isSave="false" />
+    <NAME_STRING valueType="string" value="鲜花" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="送给一个玩家一朵鲜花" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="xianhua" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="100" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5001004">
+    <ID valueType="int" value="5001004" isSave="false" />
+    <NAME_STRING valueType="string" value="啤酒" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="和一个玩家愉快的碰杯" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="pijiu" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="100" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5002001">
+    <ID valueType="int" value="5002001" isSave="false" />
+    <NAME_STRING valueType="string" value="喇叭" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可发送全服跑马灯" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="laba" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5002002">
+    <ID valueType="int" value="5002002" isSave="false" />
+    <NAME_STRING valueType="string" value="弹幕卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可发送弹幕" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="danmuka" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5003001">
+    <ID valueType="int" value="5003001" isSave="false" />
+    <NAME_STRING valueType="string" value="踢人卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="将一个玩家踢出房间" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="tirenka" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5004001">
+    <ID valueType="int" value="5004001" isSave="false" />
+    <NAME_STRING valueType="string" value="积分清零卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可将游戏积分的负分清零" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="jifenqinglingka" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5005001">
+    <ID valueType="int" value="5005001" isSave="false" />
+    <NAME_STRING valueType="string" value="好友扩容卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可扩充好友上限" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="haoyoukuorongka" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5006001">
+    <ID valueType="int" value="5006001" isSave="false" />
+    <NAME_STRING valueType="string" value="延时道具" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可延长思考时间" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="yanshidaoju" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SALE_PRICE_INT valueType="int" value="1000" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5007001">
+    <ID valueType="int" value="5007001" isSave="false" />
+    <NAME_STRING valueType="string" value="话费券" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="可用来兑换更多奖励" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="huafeiquan" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SELL_ITEM_VALUE_INT valueType="int" value="2" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="True" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5008001">
+    <ID valueType="int" value="5008001" isSave="false" />
+    <NAME_STRING valueType="string" value="比赛券" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="报名比赛专用" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="bisaiquan" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SELL_ITEM_VALUE_INT valueType="int" value="10" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5009001">
+    <ID valueType="int" value="5009001" isSave="false" />
+    <NAME_STRING valueType="string" value="房卡" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="开设私人房专用" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="fangka" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SELL_ITEM_VALUE_INT valueType="int" value="15" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="0" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5010001">
+    <ID valueType="int" value="5010001" isSave="false" />
+    <NAME_STRING valueType="string" value="聚宝盆" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="获得100,000金币" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="jubaopen" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="1" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="True" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="1" isSave="false" />
+    <ITEM_USE_EFFECT_CLASS valueType="ItemUse" value="1,100000" isSave="false" />
+  </ItemPrototype>
+  <ItemPrototype pid="5011001">
+    <ID valueType="int" value="5011001" isSave="false" />
+    <NAME_STRING valueType="string" value="大礼包" isSave="false" />
+    <DESCRIBE_STRING valueType="string" value="获得互动道具，每种10个" isSave="false" />
+    <ITEM_TYPE_NAME_STRING valueType="string" value="" isSave="false" />
+    <ATLAS_FOR_ICON_STRING valueType="string" value="ItemUI" isSave="false" />
+    <ICON_STRING valueType="string" value="dalibao" isSave="false" />
+    <MAX_STACKING_INT valueType="int" value="999999" isSave="false" />
+    <SEND_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <SELL_ITEM_BOOL valueType="bool" value="False" isSave="false" />
+    <USE_ITEM_BOOL valueType="bool" value="True" isSave="false" />
+    <ITEM_USE_TYPE_INT valueType="int" value="2" isSave="false" />
+    <ITEM_USE_EFFECT_CLASS valueType="ItemUse" value="5001001,10;5001002,10;5001003,10;5001004,10" isSave="false" />
+  </ItemPrototype>
+</root>

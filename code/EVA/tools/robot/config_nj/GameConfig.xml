@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<game_config>
+
+	<init money="500" random_head="6" facebook_head="9" sex="0" />
+	<free_money  bonus_time_minute="1" bonus_money="2000" count="5"  money="1000" limit_give_out="1000" />
+	<advertising number="5"  interval_minute="30" money="1500" exitherocountbyshow="0"/>
+	<select_server_name name="CasinoTest" />
+	<mail_show_max_num value="20" />
+	<view_player_num value="5" /> <!-- 我可查看谁观察过我的个数限制 -->
+	<gift duration_hour="8" tip_max="100000"  target_tip_max="5000000"  />
+    <rename_time_limit value="15" /> <!-- 时间单位 /天数 -->
+	<friend_config init_num="10" max_num="100" />
+	<ranking  win_money_refresh="3"  />		<!-- win_money_refresh 赢钱排行榜的每天刷新时间  -->
+	<paomadeng_show count = "20"  horn_id= "5002001" />
+	<shopvip  vip = "0.2" />
+	 <!--
+			self_money_min 			身上钱必须大于这个值才可以存入，并且存钱后身上剩余的钱不能小于这个值。
+			free_save_rate_money	存入的钱小于这个值，免交易税。
+			max_save_rate_money		存入的钱大于这个值，多出的部分，不收交易税。
+			save_rate				存钱税率。
+	 -->
+	<safe_box  self_money_min="0" free_save_rate_money="100" max_save_rate_money="1000000" save_rate="0.1" />
+	
+	<!-- 快速进入 优先级 " -->
+	<fast_enter  priority="SL_C1,BJ_C3,BJ_C4,BJ_C5,BJ_C6,TP_C1,SL_2" />
+	
+	<!-- 各种奖励    roulette="钱数-转盘角度0-359 " -->
+	<timing_reward roulette_money_time="30" roulette_rate_cost="1000" tips_max="10" time="180" bind_facebook="2000" fortune_coin="300-0-51,500-52-102,700-103-154,2000-155-205,1500-206-257,200-258-308,1000-309-359" fortune_rate="5-0-48,3-49-98,8-99-148,10-149-198,2-199-248,1.5-249-359" />
+	
+	<!-- 好友上线限制 -->
+	<friend_config init_num="50" max_num="100" />
+
+	
+	<!-- 房间对应id不能改变  用于成就 -->
+	<room_config  id="1"  room_type="MJ_1"   game_type="MahJong"  challenge_type="game" game_name="南京麻将" room_name="5000金币" flower_name="100/花" enter_score="0" room_max="4" room_min="4" viewer_max="0" is_goback="0" room_icon="Texture/BackGround/hall_game_icon_1" room_bg="Texture/BackGround/nj_mahjong_room_logo_1" game_icon="Texture/BackGround/hall_game_icon_1" game_bg="Texture/BackGround/hall_game_bg" enter_game_scene="BlackJackScene" enter_room_scene="jiuguan" />
+    <room_config  id="2"  room_type="MJ_2"   game_type="MahJong"  challenge_type="game" game_name="南京麻将" room_name="3万金币" flower_name="500/花" enter_score="30000" room_max="4" room_min="4" viewer_max="0" is_goback="0" room_icon="Texture/BackGround/hall_game_icon_2" room_bg="Texture/BackGround/nj_mahjong_room_logo_2" game_icon="Texture/BackGround/hall_game_icon_2" game_bg="Texture/BackGround/hall_game_bg" enter_game_scene="BlackJackScene" enter_room_scene="jiuguan" />
+    <room_config  id="3"  room_type="MJ_3"   game_type="MahJong"  challenge_type="game" game_name="南京麻将" room_name="15万金币" flower_name="2000/花" enter_score="150000" room_max="4" room_min="4" viewer_max="0" is_goback="0" room_icon="Texture/BackGround/hall_game_icon_3" room_bg="Texture/BackGround/nj_mahjong_room_logo_3" game_icon="Texture/BackGround/hall_game_icon_3" game_bg="Texture/BackGround/hall_game_bg" enter_game_scene="BlackJackScene" enter_room_scene="jiuguan" />
+    <room_config  id="4"  room_type="MJ_4"   game_type="MahJong"  challenge_type="game" game_name="南京麻将" room_name="100万金币" flower_name="1万/花" enter_score="1000000" room_max="4" room_min="4" viewer_max="0" is_goback="0" room_icon="Texture/BackGround/hall_game_icon_4" room_bg="Texture/BackGround/nj_mahjong_room_logo_4" game_icon="Texture/BackGround/hall_game_icon_4" game_bg="Texture/BackGround/hall_game_bg" enter_game_scene="BlackJackScene" enter_room_scene="jiuguan" />
+    
+	<!-- 
+	     输入的长度限制。不能使用超过这个长度的字符串进行修改资料。
+	     name_max_long      昵称;
+	     note_max_long      个签;
+	     safe_psw_max_long  保险柜密码 ;
+	-->
+	<input  name_max_long="8" note_max_long="16" safe_psw_max_long="12" />
+	
+	<!-- 发送大喇叭冷却时间	-->
+	<cooling_config cooling_time = "30" />
+	
+	<!-- count   背包容量; -->
+	<backpack size = "50" />
+
+	<!-- 打赏类型 -->
+	<tips  type="1"  money="1000" />
+	<tips  type="2"  money="2000" />
+	<tips  type="3"  money="3000" />
+	<tips  type="4"  money="4000" />
+	
+	<!--消耗道具-->
+	<use_item_score_clear id="8004001" />
+
+	<!--各种公式-->
+	<formula>
+	
+		<score2money			     value="$a"/>											<!--积分墙积分转换到钱     $a=奖励积分     return=钱		          -->
+		<lv_need_exp                 value="int(50*int($a/5)*int($a/5)*int($a/5))+(7*(($a*$a)/3)+(56*$a)+23-($a/2)*120)"/>                               <!--玩家等级对应的经验数   $a=等级         return=需要的经验数额	 (7*(($a*$a)/3)+(56*$a)+23-($a/2)*130)*100 -->
+		<lv_up_money                 value="int($a*100)"/>                                  <!--升级给的钱数           $a=等级         return=奖励金币数额	      -->
+		
+		<add_exp_slots               value="int($a)"/>                                <!-- $a=total_bet      return=增加经验数 -->
+		<add_exp_texas               value="int($a*10)"/>                             <!-- $a=房间最小盲注   return=增加经验数 -->
+		<add_exp_texas_chal          value="int($a*10)"/>                             <!-- $a=房间最小盲注   return=增加经验数 -->
+		<add_exp_21                  value="int($a*10)"/>                             <!-- $a=房间最小筹码   return=增加经验数 -->
+		<add_exp_21_chal             value="int($a*10)"/>                             <!-- $a=房间最小筹码   return=增加经验数 -->
+		<mtt_money_circle			 value="$a*0.15+0.5"/>							  <!-- $a=总报名人数-->
+	</formula>
+	
+	
+	<cdkey>
+		<template id="1000"  money="20000" />
+		<template id="1001"  money="50000" />
+	
+	</cdkey>
+	
+	<http_api name="retmsg"   url="http://120.26.233.23/www/login/ret_msg.php"/>
+	<http_api name="login"    url="http://120.26.233.23/www/login/login.php"/>
+	<http_api name="bind"     url="http://120.26.233.23/www/login/bind.php"/>
+	<http_api name="use_key"  url="http://120.26.233.23/www/login/use_key.php"/>
+	<http_api name="pay"      url="http://120.26.233.23/www/login/cb_googlepay_casino.php"/>
+	<http_api name="report"   url="http://120.26.233.23/www/login/login_locojoy_log.php"/>
+	<http_api name="sms"      url="http://120.26.233.23/www/login/sms_check.php" SMS_NtervalTime= "60" />
+	<http_api name="alipay"   url="http://120.26.233.23/www/login/cb_alipay.php"/>
+	<http_api name="loadhead" url="http://nanjingdw.ufile.ucloud.cn/{0}"/>
+	<http_api name="activity" url="http://121.43.96.206/ActivityConfig.xml"/>
+	<http_api name="activity_texture" url="http://121.43.96.206/{0}.jpg"/>
+	
+</game_config>
+

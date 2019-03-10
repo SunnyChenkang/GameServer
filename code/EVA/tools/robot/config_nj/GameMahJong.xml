@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<game_config>
+	<!-- 南京麻将状态停留时间(毫秒) -->
+	<!-- make_banker_time  : 摇色子设置庄家   	-->
+	<!-- make_mound_time   : 摇色子设置牌墩   	-->
+	<!-- first_brand_time  : 发手牌 		  	-->
+	<!-- hand_mend_flower_time  : 手牌补花		-->
+	<!-- ahold_mend_flower_time : 抓牌补花		-->
+	<!-- action_time	   : 玩家操作		  	-->
+	<!-- showdown_time     : 结算时间         	-->
+	<!-- wait_user_choice_time       : 等待玩家操作时间 		-->
+	<!-- wait_self_choice_time  	 : 等待自己操作时间 		-->
+	<!-- wait_qianggang_cholce_time  : 等待抢杠胡玩家操作时间 	-->
+	<!-- wait_out_card_time    : 等待出牌动画时间 	-->	
+	<!-- wait_touch_card_time  : 等待碰牌完成时间 	-->	
+	<!-- wait_bar_card_time    : 等待杠牌完成时间 	-->
+	<!-- wait_eat_card_time    : 等待吃牌完成时间 	-->
+	<!-- wait_touch_finish_time: 碰牌完成时间		-->
+	<!-- wait_bar_finish_time  : 杠牌完成时间		-->
+	<!-- wait_eat_finish_time  : 吃牌完成时间		-->	
+	<!-- wait_zimohu_time  	   : 自摸胡牌时间		-->	
+	<!-- wait_dianpaohu_time   : 点炮胡牌时间		-->	
+	<!-- wait_liujuhu_time     : 流局胡牌时间		-->	
+	<!-- wait_qiangganghu_time : 抢杠胡牌时间		-->	
+	<nanjing_state_time start_game_time				="100"
+						make_banker_time    		="3000" 
+						make_mound_time     		="3000" 
+						first_brand_time    		="5000" 
+						hand_mend_flower_time    	="5000" 
+						ahold_mend_flower_time    	="5000" 
+						action_time         		="10000" 
+						showdown_time        		="0"
+						wait_user_choice_time   	="10000"
+						wait_self_choice_time   	="10000"
+						wait_qianggang_cholce_time	="10000"
+						wait_out_card_time  		="0"
+						wait_touch_card_time		="2000"
+						wait_bar_card_time  		="2000"
+						wait_eat_card_time  		="2000"
+						wait_touch_finish_time 		="0"
+						wait_bar_finish_time   		="0"
+						wait_eat_finish_time   		="0"
+						wait_zimohu_time			="12000"
+						wait_dianpaohu_time			="12000"
+						wait_liujuhu_time			="12000"
+						wait_qiangganghu_time		="12000"/>
+
+	<!-- flower_num		   : 最少需要硬花数量 -->
+	<!-- flower_score_money: 花数兑换金钱 	  -->
+	<!-- base_flower	   : 基础底花 	  	  -->
+	<!-- base_score		   : 基础积分		  -->
+	<mahjong_room_data room_type="MJ_1" flower_num="4" flower_score_money="100" base_flower="20" base_score="30" spine_name="Prefab/Spine/MahJongHall/Ganensi" spine_scale="0.4" effect_name="Prefab/Effect/MahJongHall/UI_texiao_chujichang" effect_scale="285.5" effect_point_x="465.0" />
+
+	<!-- 硬牌兑换花数-->
+	<mahjong_hard_flower_score val="2" />
+	<!-- 软花 碰牌,明杠,暗杠 东南西北 -->
+	<mahjong_mild_flower_score peng_score="2" ming_gang_score="4" an_gang_score="6" />
+	<!-- 软花 其它牌 明杠,暗杠 -->
+	<mahjong_other_flower_score ming_gang_score="2" an_gang_score="4" />
+	
+	<!--杠牌花-->
+	<mahjong_gang ming_gang_score="10" an_gang_score="10" />
+	
+	<!-- 胡牌获取花数量 -->
+	<nanjing_hu_flower val="1"     flower_num="1"   name="小胡"	/>
+	<nanjing_hu_flower val="2"     flower_num="20"  name="门前清"/>
+	<nanjing_hu_flower val="4"     flower_num="40"  name="混一色"/>
+	<nanjing_hu_flower val="8"     flower_num="60"  name="清一色"/>
+	<nanjing_hu_flower val="16"    flower_num="40"  name="对对胡"/>
+	<nanjing_hu_flower val="32"    flower_num="60"  name="全球独钓"/>
+	<nanjing_hu_flower val="64"    flower_num="80"  name="七对"/>
+	<nanjing_hu_flower val="128"   flower_num="160" name="豪华七对"/>
+	<nanjing_hu_flower val="256"   flower_num="240" name="超豪华七对"/>
+	<nanjing_hu_flower val="512"   flower_num="320" name="超超豪华七对"/>
+	<nanjing_hu_flower val="1024"  flower_num="60"  name="压绝"/>
+	<nanjing_hu_flower val="2048"  flower_num="111" name="大杠开花"/>
+	<nanjing_hu_flower val="4096"  flower_num="20"  name="小杠开花"/>
+	<nanjing_hu_flower val="8192"  flower_num="320" name="天胡"/>
+	<nanjing_hu_flower val="16384" flower_num="160" name="地胡"/>
+	<nanjing_hu_flower val="32768" flower_num="60"  name="无花果"/>
+	<nanjing_hu_flower val="65536" flower_num="20"  name="海底捞月"/>
+	
+</game_config>

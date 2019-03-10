@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<slots_config row="3" col="5" wild="2" bonus="1" >
+
+	<icons>
+		<leaf  id="0"  rate="0,0,0,0,0"/>
+		<leaf  id="1"  rate="0,0,0,0,0"/>
+		<leaf  id="2"  rate="0,4,10,40,100"/>
+		<leaf  id="3"  rate="0,4,10,40,100"/>
+		<leaf  id="4"  rate="0,3,8,32,80"/>
+		<leaf  id="5"  rate="0,2,6,24,60"/>
+		<leaf  id="6"  rate="0,0,4,16,40"/>
+		<leaf  id="7"  rate="0,0,3,12,30"/>
+		<leaf  id="8"  rate="0,0,3,12,30"/>
+		<leaf  id="9"  rate="0,0,2,8,20"/>
+		<leaf  id="10" rate="0,0,2,8,20"/>
+	</icons>
+
+	<lines>
+		<leaf  line="1,1,1,1,1"/>
+		<leaf  line="0,0,0,0,0"/>
+		<leaf  line="2,2,2,2,2"/>
+		<leaf  line="0,1,2,1,0"/>
+		<leaf  line="2,1,0,1,2"/>
+		<leaf  line="1,0,0,0,1"/>
+		<leaf  line="1,2,2,2,1"/>
+		<leaf  line="0,0,1,2,2"/>
+		<leaf  line="2,2,1,0,0"/>
+		<leaf  line="1,2,1,0,1"/>
+		<leaf  line="1,0,1,2,1"/>
+		<leaf  line="0,1,1,1,0"/>
+		<leaf  line="2,1,1,1,2"/>
+		<leaf  line="0,1,0,1,0"/>
+		<leaf  line="2,1,2,1,2"/>
+		<leaf  line="1,1,0,1,1"/>
+		<leaf  line="1,1,2,1,1"/>
+		<leaf  line="0,0,2,0,0"/>
+		<leaf  line="2,2,0,2,2"/>
+		<leaf  line="0,2,2,2,0"/>
+		<leaf  line="2,0,0,0,2"/>
+		<leaf  line="1,2,0,2,1"/>
+		<leaf  line="1,0,2,0,1"/>
+		<leaf  line="0,2,0,2,0"/>
+		<leaf  line="2,0,2,0,2"/>
+		<leaf  line="2,0,1,2,0"/>
+		<leaf  line="0,2,1,0,2"/>
+		<leaf  line="0,2,1,2,0"/>
+		<leaf  line="2,0,1,0,2"/>
+		<leaf  line="2,1,0,0,1"/>
+	</lines>
+	
+	<wheels>
+		<leaf wheel="8,5,7,6,10,9,2,10,8,6,4,10,3,7,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,4,2,5,9,6,5,7,10,6,4,9,8,7,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<leaf wheel="6,7,9,1,3,7,2,4,10,9,8,1,5,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,8,5,6,7,1,10,4,6,8,1,2,7,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<leaf wheel="8,5,7,1,10,5,8,3,9,2,10,7,9,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,9,6,7,8,1,10,3,2,6,1,4,9,6,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<leaf wheel="4,6,1,7,9,2,3,10,8,7,1,6,5,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,1,10,8,4,5,7,6,2,8,10,1,7,9,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+		<leaf wheel="5,3,7,2,6,9,4,10,6,8,5,7,10,0,0,0,0,0,0,0,0,0,0,0,0,0,3,8,4,2,10,7,9,8,5,6,4,9,7,10,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
+	</wheels>
+
+	<describe text="Wild substitutes any other aymbol except Scatter and Bonus.;At least 3 Scatter symbols anywhere on the reels activate free spins.5 free spins 15 free spins 30 free spins;3 or more Bonus symbols anywhere on an active pay-line activate the Beat the Mole bonus round."/>
+	<line_rules pic="page_2" text="All symbols pay left to right on active paylines,except the Scatter and Bonus symbols.\n\nOnly the highest win is paid on each pay-line.\n\nScatter and Bonus wins are paid in addition to payline wins.\n\nAll wins are multiplied by the per-line bet." />
+
+	<feature>
+		<col_icon_change   src_icon="0">
+			<change    icon="2"   weights="6,10,7,10,8" />
+			<change    icon="3"   weights="20,10,10,10,10" />
+			<change    icon="4"   weights="10,20,10,10,10" />
+			<change    icon="5"   weights="10,10,20,10,10" />
+			<change    icon="6"   weights="20,10,10,10,10" />
+			<change    icon="7"   weights="10,20,10,10,10" />
+			<change    icon="8"   weights="10,10,20,10,10" />
+			<change    icon="9"   weights="10,10,10,20,10" />
+			<change    icon="10"  weights="10,10,10,10,20" />
+		</col_icon_change>
+	</feature>
+
+	<bonus_game enter_icon_num="3">
+		<select name="s1" select_count="0,0,1,1,1,1,1,1,1,1,1" end_type="EnumCircleEnd">
+			<random name="box1" weight="-1" enter_fg="DataAlexIConSFG.xml" >
+				<random weight="20" free_spins="4"/>
+				<random weight="20" free_spins="5"/>
+				<random weight="15" free_spins="6"/>
+				<random weight="14" free_spins="7"/>
+				<random weight="9"  free_spins="5"/>
+				<random weight="5"  free_spins="9"/>
+			</random>
+			<random name="box2" weight="-1" enter_fg="DataAlexIConSFG.xml" >
+				<random weight="20" free_spins="4" />
+				<random weight="20" free_spins="5"/>
+				<random weight="15" free_spins="6"/>
+				<random weight="14" free_spins="7"/>
+				<random weight="9"  free_spins="5"/>
+				<random weight="5"  free_spins="9"/>
+			</random>
+			<random name="box3" weight="-1" enter_fg="DataAlexIConSFG.xml" >
+				<random weight="20" free_spins="4" />
+				<random weight="20" free_spins="5"/>
+				<random weight="15" free_spins="6"/>
+				<random weight="14" free_spins="7"/>
+				<random weight="9"  free_spins="5"/>
+				<random weight="5"  free_spins="9"/>
+			</random>
+			
+			<client music="6001088" clickSound="6001085" prefab_res_path="Prefab/CasinoUI/Slots/bonusgame_haidi" >
+				<bonus_pos x="-260" y="100" />
+				<bonus_pos x="-15" y="-130" />
+				<bonus_pos x="200" y="100" />
+			</client>
+		</select>
+	</bonus_game>
+	
+</slots_config>

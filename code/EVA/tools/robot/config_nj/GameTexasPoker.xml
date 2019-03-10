@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<game_config>
+	<!-- 状态停留时间 -->
+	<!-- actionTime: 操作时间	(单个玩家)-->
+	<!-- startPer  : 开始翻牌前 (单个玩家)-->
+	<!-- endPer    : 结束翻牌前 (单个玩家)-->
+	<!-- startFlop : 开始翻牌   (单个玩家)-->
+	<!-- endFlop   : 结束翻牌   (单个玩家)-->
+	<!-- startTurn : 开始转机   (单个玩家)-->
+	<!-- endTurn   : 结束转机   (单个玩家)-->
+	<!-- startRiver: 开始河界   (单个玩家)-->
+	<!-- endRiver  : 结束河界   (单个玩家)-->
+	<!-- showDown  : 结算时间   (单个玩家)-->
+	<!-- cleanJunk : 清理数据   (全部玩家)-->
+	<!-- closeRoom : 关闭房间   (全部玩家)-->
+	<!-- showDownInterim: 结算过渡期 (全部玩家)-->
+	<texaspoker_state_time actionTime="10000" startPer="250" endPer="10" startFlop="10" endFlop="1500" startTurn="10" endTurn="1500" startRiver="10" endRiver="1500" showDownInterim="600" showDown="3000" cleanJunk="0" closeRoom="10000" />
+	<!-- 飞牌时间 -->
+	<texaspoker_pour_time pour_duration="100" pour_delay="150" />
+	<texaspoker_card_time card_space="50" card_duration="100" card_delay="250" />
+	<texaspoker_table_pour_time fly_duration="350"/>
+	<texaspoker_showdown_time start_delay="0" spacing_time="3000" /> 
+	<texaspoker_flycoin_pos from="90,-80,0" to="90,-25,0" />
+	<!-- 公用配置 -->
+	<texaspoker_common_data remind_time="20" />
+	<texaspoker_Allin_SptName name="Btn_LinshiTex_13" />
+	<texaspoker_NotAllin_SptName name="Btn_LinshiTex_3" />
+	<!-- 房间具体配置 -->
+	<!-- room_type  : 房间类型-->
+	<!-- small_blind: 小盲注  -->
+	<!-- large_blind: 大盲注  -->
+	<!-- auto_stand : 需要站起次数 -->
+	<!-- double_poll: 	 大小盲注翻倍圈数 -->
+	<!-- double_time: 	 大小盲注翻倍时间(分钟) -->
+	<!-- double_time_inc 大小盲注翻倍递增时间(分钟) -->
+	<!-- multiple   : 倍率 -->
+	<!-- basePour	: 需要底注数   -->
+	<!-- reward1	: 奖金 -->
+	<!-- limit_enter_score  是否限制进入积分 -->
+	<!-- handle_self_coins: 游戏过程是否操作自己身上金钱 -->
+	<!-- pvp_seat   : 这个房间用到的座位（从荷官右边开始顺时针依次为012345678）用逗号分隔 -->
+	
+	<texaspoker_room_data room_type="TP_1"  small_blind="5"       large_blind="10"        auto_stand="3" possess_score="500"        chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="10" 		handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_2"  small_blind="25"      large_blind="50" 	      auto_stand="3" possess_score="2500"       chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="50" 		handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_3"  small_blind="500"  	  large_blind="1000"      auto_stand="3" possess_score="50000"      chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="1000" 		handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_4"  small_blind="10000"   large_blind="20000"     auto_stand="3" possess_score="1000000"    chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="20000" 		handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_5"  small_blind="50000"   large_blind="100000"    auto_stand="3" possess_score="5000000"    chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="100000" 	  handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_6"  small_blind="1000000" large_blind="2000000"   auto_stand="3" possess_score="100000000"  chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="2000000" 	  handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_7"  small_blind="5000000" large_blind="10000000"  auto_stand="3" possess_score="500000000"  chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="10000000" 	handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_8"  small_blind="10000000" large_blind="20000000" auto_stand="3" possess_score="1000000000" chall_min_num="6" chall_max_num="1000" double_poll="0" double_time="0" double_time_inc="0" multiple="0" basePour="20000000" 	handle_self_coins="1" reward1="0" reward2="0"   reward3="0"   pvp_seat="0,1,2,3,4,5,6,7,8"/>
+	<texaspoker_room_data room_type="TP_C1" small_blind="10" 	  large_blind="20"      auto_stand="0" possess_score="1000"      chall_min_num="6" chall_max_num="1000" double_poll="5" double_time="0" double_time_inc="0" multiple="2" basePour="0"  		handle_self_coins="0" reward1="2500" reward2="1500" reward3="1000" pvp_seat="0,2,4,6,8"/>
+    <texaspoker_room_data room_type="TP_C2" small_blind="10" 	  large_blind="20"      auto_stand="0" possess_score="1000"      chall_min_num="6" chall_max_num="1000" double_poll="5" double_time="0" double_time_inc="0" multiple="2" basePour="0"  		handle_self_coins="0" reward1="125000" reward2="75000" reward3="50000" pvp_seat="0,2,4,6,8"/>
+    <texaspoker_room_data room_type="TP_C3" small_blind="10" 	  large_blind="20"      auto_stand="0" possess_score="1000"      chall_min_num="6" chall_max_num="1000" double_poll="5" double_time="0" double_time_inc="0" multiple="2" basePour="0"  		handle_self_coins="0" reward1="2500000" reward2="1500000" reward3="1000000" pvp_seat="0,2,4,6,8"/>
+
+	<!-- enter_time : 可进入游戏时间 	-->
+	<!-- open		: 游戏开始时间 	-->
+	<!-- limit_enter: 限制进入游戏时间 -->
+	<!-- close		: 游戏完成时间 	-->
+
+	<challenge room_type="TP_C4" cost_money="100" >
+			<challenge_time open="0:00"  limit_enter="0:15" close="1:40" />
+			<challenge_time open="2:00"  limit_enter="2:15" close="3:40" />
+			<challenge_time open="4:00"  limit_enter="4:15" close="5:40" />
+			<challenge_time open="6:00"  limit_enter="6:15" close="7:40" />		
+			<challenge_time open="8:00"  limit_enter="8:15" close="9:40" />	
+			<challenge_time open="10:00"  limit_enter="10:15" close="11:40" />	
+			<challenge_time open="12:00"  limit_enter="12:15" close="13:40" />	
+			<challenge_time open="14:00"  limit_enter="14:15" close="15:40" />	
+			<challenge_time open="16:00"  limit_enter="16:15" close="17:40" />	
+			<challenge_time open="18:00"  limit_enter="18:15" close="19:40" />		
+			<challenge_time open="20:00"  limit_enter="20:15" close="21:40" />
+			<challenge_time open="22:00"  limit_enter="22:15" close="23:40" />					
+	</challenge >
+	
+	
+	<texas_language>
+          <English POKER_NULL="Null" 
+		           POKER_HIGT_CARD="High Card" 
+				   POKER_ONE_PAIR="Pair" 
+				   POKER_TWO_PAIRS="Two Pairs" 
+				   POKER_THREE_KIND="Three of Kind" 
+				   POKER_STRAIGHT="Straight" 
+				   POKER_FLUSH="Flush" 
+				   POKER_FULL_HOUSE="Full House" 
+				   POKER_FOUR_KIND="Four of Kind" 
+				   POKER_STRAIGHT_FLUSH="Straight Flush" 
+				   POKER_ROYAL_FLUSH="Royal Flush" 
+				   Fold="Fold" 
+				   Check="Check" 
+				   Call="Call" 
+				   Raise="Raise"
+				   Ante="Ante" 
+				   SmallBlind="Small Blind" 
+				   BigBlind="Big Blind" 
+				   Winner="Winner"
+				   SitOut="Sit Out"
+				   AllIn="All in"
+				   TableWaitforOtherPlayers="Waiting for other players" 
+				   TableWaitForNextTurn="Waiting for next turn"
+				   TableCheckOrRaise="Check or Raise {0} ?"
+				   TableRaiseOrCall="Raise or Call {0} ?"
+				   TableCall="Call {0} ?"
+				   TableSNGTitle="Congratulations"
+				   TableSNGReward="You just won the SIT'n'GO tourament!"
+				   TableSNGRankin="You have busted out of SIT'n'GO tournament"
+				   TableSNGPlace="Your Place:{0}"
+				   TableMTTLeaveWarn="Ary you sure to quit the tournament?"
+				   TableMTTLeaveleft="Back to sit"
+				   TableMTTLeaveRight="Yes, I quit"
+				   Table1="Congratulations!"
+				   Table2="You just win the MTT"
+				   Table3="Your Place:{0}"
+				   Table4="the reward will be send to mail box later"
+				   Table5="You have busted out of MTT"
+				   Table6="Maybe next time maybe..."
+		  />
+    </texas_language>
+</game_config>
+

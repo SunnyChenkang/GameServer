@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<message>
+  <msg id="0" str="未知错误" />
+  <msg id="1" str="加载配置表" />
+  <msg id="2" str="该功能正在努力开发中" />
+  <msg id="3"  str="在线" />
+  <msg id="4"  str="离线" />
+  <msg id="5"  str="好友上限{0}/{1}"/>
+  <msg id="6"  str="已经是好友"/>
+  <msg id="7"  str="添加好友成功"/>
+  <msg id="8"  str="屏蔽上限{0}/20"/>
+  <msg id="9"  str="好友已经达到上限"/>
+  <msg id="10" str="请输入正确的ID"/>
+  <msg id="11" str="好友列表已满"/>
+  <msg id="12" str="对方好友列表已满"/>
+  <msg id="13" str="对方已在屏蔽列表中"/>
+  <msg id="14" str="对方不在屏蔽列表中"/>
+  <msg id="15" str="两次输入的密码不一致"/>
+  <msg id="16" str="输入不能为空"/>
+  <msg id="17" str="保险柜密码错误"/>
+  <msg id="18" str="设置密码成功"/>
+  <msg id="19" str="成功打开保险柜"/>
+  <msg id="20" str="并没有这么多钱"/>
+  <msg id="21" str="身上现金过少时，无法存钱"/>
+  <msg id="22" str="获得金钱:{0}"/>
+  <msg id="23" str="第{0}天登陆，奖励:{1} 金币"/>
+  <msg id="24" str="复制成功"/>
+  <msg id="25" str="服务器出错或已经被使用"/>
+  <msg id="26" str="兑换成功"/>
+  <msg id="27" str="该CDK已被使用"/>
+  <msg id="28" str="已经成功发送申请"/>
+  <msg id="29" str="请输入喇叭内容！"/>
+  <msg id="30" str="喇叭字数限定在60字符以内，请重新输入！"/>
+  <msg id="31" str="信息中含有非法字符信息中含有非法字符！"/>
+  <msg id="32" str="输入的信息过长"/>
+  <msg id="33" str="您说话太快了，冷却时间为0时，则为不限制"/>
+  <msg id="34" str="已成功发送"/>
+  <msg id="35" str="已到达使用限制"/>
+  <msg id="36" str="存完钱后身上现金不能少于一定数额"/>
+  <msg id="37" str="请输入正确手机号码"/>
+  <msg id="38" str="请输入正确密码"/>
+  <msg id="39" str="您领取的次数达到上限"/>
+  <msg id="40" str="无效指令"/>
+  <msg id="41" str="秘籍使用成功！"/>
+  <msg id="42" str="绑定手机成功！"/>
+  <msg id="43" str="绑定手机失败！"/>
+  <msg id="44" str="验证码不正确！"/>
+  <msg id="45" str="超出最大字数！"/>
+  <msg id="46" str="秘籍使用失败！"/>
+  <msg id="47" str="消息不能为空！"/>
+  <msg id="48" str="道具数量不够！"/>
+  <msg id="49" str=" - {0}"/>
+  <msg id="50" str=" + {0}"/>
+  <msg id="51" str="({0}秒)"/>
+  <msg id="52" str="明日奖励金钱{0}"/>
+  <msg id="53" str="花:{0}" />
+  <msg id="54" str="{0}  向您发送了好友邀请" />
+  <msg id="55" str="{0}  为您点了个赞" />
+  <msg id="56" str="获得{0}:{1}"/>
+  <msg id="57" str="在线"/>
+  <msg id="58" str="财富榜"/>
+  <msg id="59" str="魅力榜"/>
+  <msg id="60" str="并没有这么多钻石"/>
+  <msg id="61" str="您不是会员，无法购买"/>
+  <msg id="62" str="已成功购买{0}{1}个,消耗金币{2}个"/>
+  <msg id="63" str="已成功购买{0}{1}个,消耗钻石{2}个"/>
+  <msg id="64" str="购买道具不能超过{0}个"/>
+  <msg id="65" str="购买道具不能少于1个"/>
+  <msg id="66" str="获得钻石:{0}"/>
+  <msg id="67" str="领取邮件失败"/>
+  <msg id="68" str="+{0}"/>
+  <msg id="69" str="-{0}"/>
+  <msg id="70" str="0.00%"/>
+  <msg id="71" str="花"/>
+  <msg id="72" str="%"/>
+  <msg id="73" str="场"/>
+  <msg id="74" str="底花"/>
+  <msg id="75" str="软花"/>
+  <msg id="76" str="硬花"/>
+  <msg id="77" str="金币"/>
+  <msg id="78" str="钻石"/>
+  <msg id="79" str="元"/>
+  <msg id="80" str="nj_hall_money"/>
+  <msg id="81" str="nj_hall_rmb"/>
+  <msg id="82" str="会员购买 +"/>
+  <msg id="83" str="%"/>
+  <msg id="84" str="0"/>
+  <msg id="85" str="{0}/{1}"/>
+  <msg id="86" str="{0:D8}"/>
+  <msg id="87" str="只能输入数字"/>
+  <msg id="88" str="绑定手机后才能使用该功能"/>
+  <msg id="89" str="级"/>
+  <msg id="90" str="积分清零卡不足"/>
+  <msg id="91" str="积分清零成功"/>
+  <msg id="92" str="道具使用成功"/>
+  <msg id="93" str="道具出售成功"/>
+  <msg id="94" str="Lv.{0}"/>
+  <msg id="95" str="0场"/>
+  <msg id="96" str="0花"/>
+  <msg id="97" str="确定"/>
+  <msg id="98" str="发送成功，感谢您的反馈"/>
+  <msg id="99" str="发送失败，请稍后再试"/>
+  <msg id="100" str="积分为正时无法清零"/>
+  <msg id="101" str="操作成功"/>
+</message>
+ 
+
