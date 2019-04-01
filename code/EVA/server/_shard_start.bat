@@ -16,20 +16,12 @@ rem  ras
 rem start %MODE%\admin_service --fulladminname=admin_service --shortadminname=AS --writepid
 rem ping -n 2 127.0.0.1 > NUL 2>&1
 
-rem start %MODE%\login_center.exe
+start %MODE%\naming_service.exe
 
 rem wait 2s (yes, i didn't find a better way to wait N seconds)
-rem ping -n 2 127.0.0.1 > NUL 2>&1
+ping -n 2 127.0.0.1 > NUL 2>&1
 
-start %RELEASE%\naming_service.exe
-start %RELEASE%\frontend_service.exe
-
-rem wait 2s (yes, i didn't find a better way to wait N seconds)
-rem ping -n 2 127.0.0.1 > NUL 2>&1
-
-rem start %MODE%\frontend_service.exe
-
-rem start %MODE%\persistant_data_service
+start %MODE%\persistent_service
 
 rem wait 2s (yes, i didn't find a better way to wait N seconds)
 rem ping -n 2 127.0.0.1 > NUL 2>&1
@@ -47,19 +39,24 @@ rem ping -n 2 127.0.0.1 > NUL 2>&1
 rem start %RELEASE%\ranking_service
 
 rem wait 2s (yes, i didn't find a better way to wait N seconds)
-rem ping -n 2 127.0.0.1 > NUL 2>&1
+ping -n 2 127.0.0.1 > NUL 2>&1
 
 
-rem start %MODE%\entities_game_service
-
-rem wait 2s (yes, i didn't find a better way to wait N seconds)
-rem ping -n 2 127.0.0.1 > NUL 2>&1
-
-rem start %MODE%\player_logic_service
+start %MODE%\schedule_service
 
 rem wait 2s (yes, i didn't find a better way to wait N seconds)
-rem ping -n 2 127.0.0.1 > NUL 2>&1
+ping -n 2 127.0.0.1 > NUL 2>&1
 
-rem start %MODE%\frontend_service
+start %MODE%\game_service
+
+rem wait 2s (yes, i didn't find a better way to wait N seconds)
+ping -n 2 127.0.0.1 > NUL 2>&1
+
+start %MODE%\frontend_service
+
+rem wait 2s (yes, i didn't find a better way to wait N seconds)
+ping -n 2 127.0.0.1 > NUL 2>&1
+
+start %MODE%\logger_service
 
 

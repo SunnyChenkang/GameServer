@@ -121,7 +121,7 @@ enum TServiceRunningState
 
 
 #if defined(NL_OS_WINDOWS) && defined(_WINDOWS)
-#define NLNET_SERVICE_MAIN(__ServiceClassName, __ServiceShortName, __ServiceLongName, __ServicePort, __ServiceCallbackArray, __ConfigDir, __LogDir) \
+#define NLNET_SERVICE_MAIN(__ServiceClassName, __ServiceShortName, __ServiceLongName, __ServicePort, __ConfigDir, __LogDir) \
  \
 int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) \
 { \
@@ -129,14 +129,13 @@ int APIENTRY WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	__ServiceClassName *scn = new __ServiceClassName; \
 	scn->setArgs (lpCmdLine); \
 	NLMISC::createDebug(NULL,!scn->haveLongArg("nolog"));\
-	scn->setCallbackArray (__ServiceCallbackArray, sizeof(__ServiceCallbackArray)/sizeof(__ServiceCallbackArray[0])); \
     sint retval = scn->main (__ServiceShortName, __ServiceLongName, __ServicePort, __ConfigDir, __LogDir, __DATE__" "__TIME__); \
 	delete scn; \
 	return retval; \
 }
 
 #else
-#define NLNET_SERVICE_MAIN(__ServiceClassName, __ServiceShortName, __ServiceLongName, __ServicePort, __ServiceCallbackArray, __ConfigDir, __LogDir) \
+#define NLNET_SERVICE_MAIN(__ServiceClassName, __ServiceShortName, __ServiceLongName, __ServicePort, __ConfigDir, __LogDir) \
  \
 int main(int argc, const char **argv) \
 { \
@@ -144,7 +143,6 @@ int main(int argc, const char **argv) \
 	__ServiceClassName *scn = new __ServiceClassName; \
 	scn->setArgs (argc, argv); \
 	NLMISC::createDebug(NULL,!scn->haveLongArg("nolog"));\
-	scn->setCallbackArray (__ServiceCallbackArray, sizeof(__ServiceCallbackArray)/sizeof(__ServiceCallbackArray[0])); \
 	sint retval = scn->main (__ServiceShortName, __ServiceLongName, __ServicePort, __ConfigDir, __LogDir, __DATE__ " " __TIME__); \
 	delete scn; \
 	return retval; \

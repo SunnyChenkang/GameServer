@@ -2,8 +2,8 @@
 
 SSE_NAMESPACE_BEGIN_DECL
 
-CPlayer::CPlayer( void ) : m_PlsServiceID( NLNET::TServiceId::InvalidId )
-                         , m_FesServiceID( NLNET::TServiceId::InvalidId )
+CPlayer::CPlayer( void ) : m_GameServiceId( NLNET::TServiceId::InvalidId )
+                         , m_FrontendServiceId( NLNET::TServiceId::InvalidId )
 {
     
 }

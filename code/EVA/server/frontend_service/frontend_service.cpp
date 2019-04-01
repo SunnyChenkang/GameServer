@@ -5,9 +5,13 @@
 #include "frontend_service.h"
 #include "frontend_network.h"
 #include "frontend_message.h"
+#include "frontend_service_command.h"
+
 #ifdef NL_OS_WINDOWS
 #include <Windows.h>
 #endif
+
+using namespace FES;
 
 // variable value;
 NLMISC::CVariable< uint32 >         VAR_FES_WAIT_CONNECTION_TIMEROUT   ( "FSE", "WaitConnectionTimeOut"    , "", 60*1000 , 0, true );   // 等待垃圾连接时间;
@@ -24,17 +28,20 @@ void foo()
 
 void CFrontEndService::init()
 {
+    // 注册消息;
+    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( LocalCallBackItems	 , SS_ARRAYSIZE( LocalCallBackItems ) );
+
+    // 检查断开连接服务器;
+    SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
+    SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
+    SS_NETWORK->setServiceDownCallback( "PSE" , CallBack_PSEDisconnection );
+
     // 启动网络库;
     FrontendNetWork.InitNetHandler( ConfigFile.getVar ("RUDPPort").asInt() , ConfigFile.getVar ("WEBPort").asInt() );
     // 初始化定时器管理器;
     TimerManager->init();
     // 加载配置表;
     JsonLoad.JsonLoadTable();
-
-    // 检查断开连接服务器;
-    //SS_NETWORK->setServiceDownCallback( "EGS" , FSE::CallBack_EGSDisconnection );
-    //SS_NETWORK->setServiceDownCallback( "PLS" , FSE::CallBack_PLSDisconnection );
-    //SS_NETWORK->setServiceDownCallback( "PDS" , FSE::CallBack_PDSDisconnection );
 }
 
 bool CFrontEndService::update()
@@ -55,7 +62,4 @@ void CFrontEndService::release()
     TimerManager->release();
 }
 
-// Reister Main;
-using namespace NLNET;
-using namespace FES;
-NLNET_SERVICE_MAIN ( CFrontEndService, "FES", "frontend_service", 0, LocalCallBackItems , "", "" )
+NLNET_SERVICE_MAIN ( CFrontEndService, "FES", "frontend_service", 0 , "", "" )

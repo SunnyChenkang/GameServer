@@ -13,7 +13,6 @@ static void RUDPInitNet( uint16_t port )
 
     REACTOR_CREATE();
     REACTOR_INSTANCE()->open_reactor( 20000 );
-
     // ´´½¨RUDPÌ×½Ó×Ö;
     init_rudp_socket();
 

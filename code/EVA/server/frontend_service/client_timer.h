@@ -4,9 +4,6 @@
 #include "frontend_def.h"
 #include "client_manager.h"
 
-#include <server_share/db_mysql/db_mysql.h>
-
-
 FES_NAMESPACE_BEGIN_DECL
 
 // 检查连接超时用户;

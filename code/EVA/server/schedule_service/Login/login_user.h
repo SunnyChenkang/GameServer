@@ -1,7 +1,7 @@
 #ifndef SSE_USER_LOGIN_H_
 #define SSE_USER_LOGIN_H_
 
-#include "../schedule_def.h"
+#include <schedule_service/schedule_service/schedule_service_def.h>
 
 SSE_NAMESPACE_BEGIN_DECL
 
@@ -12,7 +12,9 @@ public:
    ~CLoginUser( void ){ }
 
     //   用户登录;
-    void UserLoginCallBack( NLNET::CMessage& );
+    void CallBackUserLogin( NLNET::CMessage& );
+    //   用户登录成功;
+    void CallBackUserLoginSucceed( NLNET::CMessage& );
 
 private:
     //   用户内存登录;

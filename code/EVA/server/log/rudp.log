@@ -1,0 +1,2 @@
+[rudp_interface.cpp:434] rudp_session is NULL, rudp socket id = -1
+[rudp_interface.cpp:374] rudp_session is NULL, rudp socket id = 1

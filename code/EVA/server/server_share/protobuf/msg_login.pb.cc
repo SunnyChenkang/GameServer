@@ -37,8 +37,9 @@ void protobuf_AssignDesc_msg_5flogin_2eproto() {
       "msg_login.proto");
   GOOGLE_CHECK(file != NULL);
   PB_LoginAuthUser_descriptor_ = file->message_type(0);
-  static const int PB_LoginAuthUser_offsets_[3] = {
+  static const int PB_LoginAuthUser_offsets_[4] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_LoginAuthUser, role_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_LoginAuthUser, role_kind_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_LoginAuthUser, client_host_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_LoginAuthUser, client_token_),
   };
@@ -54,10 +55,11 @@ void protobuf_AssignDesc_msg_5flogin_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(PB_LoginAuthUser));
   PB_UserLogin_descriptor_ = file->message_type(1);
-  static const int PB_UserLogin_offsets_[4] = {
+  static const int PB_UserLogin_offsets_[5] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, role_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, fes_service_id_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, pls_service_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, role_kind_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, frontend_service_id_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, game_service_id_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(PB_UserLogin, client_host_),
   };
   PB_UserLogin_reflection_ =
@@ -105,12 +107,13 @@ void protobuf_AddDesc_msg_5flogin_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\017msg_login.proto\022\010PROTOBUF\"N\n\020PB_LoginA"
-    "uthUser\022\017\n\007role_id\030\001 \001(\r\022\023\n\013client_host\030"
-    "\002 \001(\t\022\024\n\014client_token\030\003 \001(\t\"d\n\014PB_UserLo"
-    "gin\022\017\n\007role_id\030\001 \001(\r\022\026\n\016fes_service_id\030\002"
-    " \001(\r\022\026\n\016pls_service_id\030\003 \001(\r\022\023\n\013client_h"
-    "ost\030\004 \001(\t", 209);
+    "\n\017msg_login.proto\022\010PROTOBUF\"a\n\020PB_LoginA"
+    "uthUser\022\017\n\007role_id\030\001 \001(\r\022\021\n\trole_kind\030\002 "
+    "\001(\r\022\023\n\013client_host\030\003 \001(\t\022\024\n\014client_token"
+    "\030\004 \001(\t\"}\n\014PB_UserLogin\022\017\n\007role_id\030\001 \001(\r\022"
+    "\021\n\trole_kind\030\002 \001(\r\022\033\n\023frontend_service_i"
+    "d\030\003 \001(\r\022\027\n\017game_service_id\030\004 \001(\r\022\023\n\013clie"
+    "nt_host\030\005 \001(\t", 253);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "msg_login.proto", &protobuf_RegisterTypes);
   PB_LoginAuthUser::default_instance_ = new PB_LoginAuthUser();
@@ -131,6 +134,7 @@ struct StaticDescriptorInitializer_msg_5flogin_2eproto {
 
 #ifndef _MSC_VER
 const int PB_LoginAuthUser::kRoleIdFieldNumber;
+const int PB_LoginAuthUser::kRoleKindFieldNumber;
 const int PB_LoginAuthUser::kClientHostFieldNumber;
 const int PB_LoginAuthUser::kClientTokenFieldNumber;
 #endif  // !_MSC_VER
@@ -155,6 +159,7 @@ void PB_LoginAuthUser::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   role_id_ = 0u;
+  role_kind_ = 0u;
   client_host_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   client_token_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -198,8 +203,18 @@ PB_LoginAuthUser* PB_LoginAuthUser::New() const {
 }
 
 void PB_LoginAuthUser::Clear() {
-  if (_has_bits_[0 / 32] & 7) {
-    role_id_ = 0u;
+#define OFFSET_OF_FIELD_(f) (reinterpret_cast<char*>(      \
+  &reinterpret_cast<PB_LoginAuthUser*>(16)->f) - \
+   reinterpret_cast<char*>(16))
+
+#define ZR_(first, last) do {                              \
+    size_t f = OFFSET_OF_FIELD_(first);                    \
+    size_t n = OFFSET_OF_FIELD_(last) - f + sizeof(last);  \
+    ::memset(&first, 0, n);                                \
+  } while (0)
+
+  if (_has_bits_[0 / 32] & 15) {
+    ZR_(role_id_, role_kind_);
     if (has_client_host()) {
       if (client_host_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         client_host_->clear();
@@ -211,6 +226,10 @@ void PB_LoginAuthUser::Clear() {
       }
     }
   }
+
+#undef OFFSET_OF_FIELD_
+#undef ZR_
+
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -235,13 +254,28 @@ bool PB_LoginAuthUser::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(18)) goto parse_client_host;
+        if (input->ExpectTag(16)) goto parse_role_kind;
         break;
       }
 
-      // optional string client_host = 2;
+      // optional uint32 role_kind = 2;
       case 2: {
-        if (tag == 18) {
+        if (tag == 16) {
+         parse_role_kind:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &role_kind_)));
+          set_has_role_kind();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_client_host;
+        break;
+      }
+
+      // optional string client_host = 3;
+      case 3: {
+        if (tag == 26) {
          parse_client_host:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_client_host()));
@@ -252,13 +286,13 @@ bool PB_LoginAuthUser::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(26)) goto parse_client_token;
+        if (input->ExpectTag(34)) goto parse_client_token;
         break;
       }
 
-      // optional string client_token = 3;
-      case 3: {
-        if (tag == 26) {
+      // optional string client_token = 4;
+      case 4: {
+        if (tag == 34) {
          parse_client_token:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_client_token()));
@@ -303,24 +337,29 @@ void PB_LoginAuthUser::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->role_id(), output);
   }
 
-  // optional string client_host = 2;
+  // optional uint32 role_kind = 2;
+  if (has_role_kind()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->role_kind(), output);
+  }
+
+  // optional string client_host = 3;
   if (has_client_host()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_host().data(), this->client_host().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "client_host");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->client_host(), output);
+      3, this->client_host(), output);
   }
 
-  // optional string client_token = 3;
+  // optional string client_token = 4;
   if (has_client_token()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_token().data(), this->client_token().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "client_token");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->client_token(), output);
+      4, this->client_token(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -338,7 +377,12 @@ void PB_LoginAuthUser::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->role_id(), target);
   }
 
-  // optional string client_host = 2;
+  // optional uint32 role_kind = 2;
+  if (has_role_kind()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->role_kind(), target);
+  }
+
+  // optional string client_host = 3;
   if (has_client_host()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_host().data(), this->client_host().length(),
@@ -346,10 +390,10 @@ void PB_LoginAuthUser::SerializeWithCachedSizes(
       "client_host");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->client_host(), target);
+        3, this->client_host(), target);
   }
 
-  // optional string client_token = 3;
+  // optional string client_token = 4;
   if (has_client_token()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_token().data(), this->client_token().length(),
@@ -357,7 +401,7 @@ void PB_LoginAuthUser::SerializeWithCachedSizes(
       "client_token");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->client_token(), target);
+        4, this->client_token(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -379,14 +423,21 @@ int PB_LoginAuthUser::ByteSize() const {
           this->role_id());
     }
 
-    // optional string client_host = 2;
+    // optional uint32 role_kind = 2;
+    if (has_role_kind()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->role_kind());
+    }
+
+    // optional string client_host = 3;
     if (has_client_host()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
           this->client_host());
     }
 
-    // optional string client_token = 3;
+    // optional string client_token = 4;
     if (has_client_token()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -423,6 +474,9 @@ void PB_LoginAuthUser::MergeFrom(const PB_LoginAuthUser& from) {
     if (from.has_role_id()) {
       set_role_id(from.role_id());
     }
+    if (from.has_role_kind()) {
+      set_role_kind(from.role_kind());
+    }
     if (from.has_client_host()) {
       set_client_host(from.client_host());
     }
@@ -453,6 +507,7 @@ bool PB_LoginAuthUser::IsInitialized() const {
 void PB_LoginAuthUser::Swap(PB_LoginAuthUser* other) {
   if (other != this) {
     std::swap(role_id_, other->role_id_);
+    std::swap(role_kind_, other->role_kind_);
     std::swap(client_host_, other->client_host_);
     std::swap(client_token_, other->client_token_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -474,8 +529,9 @@ void PB_LoginAuthUser::Swap(PB_LoginAuthUser* other) {
 
 #ifndef _MSC_VER
 const int PB_UserLogin::kRoleIdFieldNumber;
-const int PB_UserLogin::kFesServiceIdFieldNumber;
-const int PB_UserLogin::kPlsServiceIdFieldNumber;
+const int PB_UserLogin::kRoleKindFieldNumber;
+const int PB_UserLogin::kFrontendServiceIdFieldNumber;
+const int PB_UserLogin::kGameServiceIdFieldNumber;
 const int PB_UserLogin::kClientHostFieldNumber;
 #endif  // !_MSC_VER
 
@@ -499,8 +555,9 @@ void PB_UserLogin::SharedCtor() {
   ::google::protobuf::internal::GetEmptyString();
   _cached_size_ = 0;
   role_id_ = 0u;
-  fes_service_id_ = 0u;
-  pls_service_id_ = 0u;
+  role_kind_ = 0u;
+  frontend_service_id_ = 0u;
+  game_service_id_ = 0u;
   client_host_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
@@ -550,9 +607,8 @@ void PB_UserLogin::Clear() {
     ::memset(&first, 0, n);                                \
   } while (0)
 
-  if (_has_bits_[0 / 32] & 15) {
-    ZR_(role_id_, fes_service_id_);
-    pls_service_id_ = 0u;
+  if (_has_bits_[0 / 32] & 31) {
+    ZR_(role_id_, game_service_id_);
     if (has_client_host()) {
       if (client_host_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
         client_host_->clear();
@@ -587,43 +643,58 @@ bool PB_UserLogin::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(16)) goto parse_fes_service_id;
+        if (input->ExpectTag(16)) goto parse_role_kind;
         break;
       }
 
-      // optional uint32 fes_service_id = 2;
+      // optional uint32 role_kind = 2;
       case 2: {
         if (tag == 16) {
-         parse_fes_service_id:
+         parse_role_kind:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &fes_service_id_)));
-          set_has_fes_service_id();
+                 input, &role_kind_)));
+          set_has_role_kind();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_pls_service_id;
+        if (input->ExpectTag(24)) goto parse_frontend_service_id;
         break;
       }
 
-      // optional uint32 pls_service_id = 3;
+      // optional uint32 frontend_service_id = 3;
       case 3: {
         if (tag == 24) {
-         parse_pls_service_id:
+         parse_frontend_service_id:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &pls_service_id_)));
-          set_has_pls_service_id();
+                 input, &frontend_service_id_)));
+          set_has_frontend_service_id();
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(34)) goto parse_client_host;
+        if (input->ExpectTag(32)) goto parse_game_service_id;
         break;
       }
 
-      // optional string client_host = 4;
+      // optional uint32 game_service_id = 4;
       case 4: {
-        if (tag == 34) {
+        if (tag == 32) {
+         parse_game_service_id:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &game_service_id_)));
+          set_has_game_service_id();
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(42)) goto parse_client_host;
+        break;
+      }
+
+      // optional string client_host = 5;
+      case 5: {
+        if (tag == 42) {
          parse_client_host:
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_client_host()));
@@ -668,24 +739,29 @@ void PB_UserLogin::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(1, this->role_id(), output);
   }
 
-  // optional uint32 fes_service_id = 2;
-  if (has_fes_service_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->fes_service_id(), output);
+  // optional uint32 role_kind = 2;
+  if (has_role_kind()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(2, this->role_kind(), output);
   }
 
-  // optional uint32 pls_service_id = 3;
-  if (has_pls_service_id()) {
-    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->pls_service_id(), output);
+  // optional uint32 frontend_service_id = 3;
+  if (has_frontend_service_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(3, this->frontend_service_id(), output);
   }
 
-  // optional string client_host = 4;
+  // optional uint32 game_service_id = 4;
+  if (has_game_service_id()) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(4, this->game_service_id(), output);
+  }
+
+  // optional string client_host = 5;
   if (has_client_host()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_host().data(), this->client_host().length(),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
       "client_host");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->client_host(), output);
+      5, this->client_host(), output);
   }
 
   if (!unknown_fields().empty()) {
@@ -703,17 +779,22 @@ void PB_UserLogin::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(1, this->role_id(), target);
   }
 
-  // optional uint32 fes_service_id = 2;
-  if (has_fes_service_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->fes_service_id(), target);
+  // optional uint32 role_kind = 2;
+  if (has_role_kind()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(2, this->role_kind(), target);
   }
 
-  // optional uint32 pls_service_id = 3;
-  if (has_pls_service_id()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->pls_service_id(), target);
+  // optional uint32 frontend_service_id = 3;
+  if (has_frontend_service_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(3, this->frontend_service_id(), target);
   }
 
-  // optional string client_host = 4;
+  // optional uint32 game_service_id = 4;
+  if (has_game_service_id()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(4, this->game_service_id(), target);
+  }
+
+  // optional string client_host = 5;
   if (has_client_host()) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
       this->client_host().data(), this->client_host().length(),
@@ -721,7 +802,7 @@ void PB_UserLogin::SerializeWithCachedSizes(
       "client_host");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->client_host(), target);
+        5, this->client_host(), target);
   }
 
   if (!unknown_fields().empty()) {
@@ -743,21 +824,28 @@ int PB_UserLogin::ByteSize() const {
           this->role_id());
     }
 
-    // optional uint32 fes_service_id = 2;
-    if (has_fes_service_id()) {
+    // optional uint32 role_kind = 2;
+    if (has_role_kind()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->fes_service_id());
+          this->role_kind());
     }
 
-    // optional uint32 pls_service_id = 3;
-    if (has_pls_service_id()) {
+    // optional uint32 frontend_service_id = 3;
+    if (has_frontend_service_id()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::UInt32Size(
-          this->pls_service_id());
+          this->frontend_service_id());
     }
 
-    // optional string client_host = 4;
+    // optional uint32 game_service_id = 4;
+    if (has_game_service_id()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::UInt32Size(
+          this->game_service_id());
+    }
+
+    // optional string client_host = 5;
     if (has_client_host()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -794,11 +882,14 @@ void PB_UserLogin::MergeFrom(const PB_UserLogin& from) {
     if (from.has_role_id()) {
       set_role_id(from.role_id());
     }
-    if (from.has_fes_service_id()) {
-      set_fes_service_id(from.fes_service_id());
+    if (from.has_role_kind()) {
+      set_role_kind(from.role_kind());
     }
-    if (from.has_pls_service_id()) {
-      set_pls_service_id(from.pls_service_id());
+    if (from.has_frontend_service_id()) {
+      set_frontend_service_id(from.frontend_service_id());
+    }
+    if (from.has_game_service_id()) {
+      set_game_service_id(from.game_service_id());
     }
     if (from.has_client_host()) {
       set_client_host(from.client_host());
@@ -827,8 +918,9 @@ bool PB_UserLogin::IsInitialized() const {
 void PB_UserLogin::Swap(PB_UserLogin* other) {
   if (other != this) {
     std::swap(role_id_, other->role_id_);
-    std::swap(fes_service_id_, other->fes_service_id_);
-    std::swap(pls_service_id_, other->pls_service_id_);
+    std::swap(role_kind_, other->role_kind_);
+    std::swap(frontend_service_id_, other->frontend_service_id_);
+    std::swap(game_service_id_, other->game_service_id_);
     std::swap(client_host_, other->client_host_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);

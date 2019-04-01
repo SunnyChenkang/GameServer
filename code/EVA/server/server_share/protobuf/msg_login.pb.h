@@ -98,10 +98,17 @@ class PB_LoginAuthUser : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 role_id() const;
   inline void set_role_id(::google::protobuf::uint32 value);
 
-  // optional string client_host = 2;
+  // optional uint32 role_kind = 2;
+  inline bool has_role_kind() const;
+  inline void clear_role_kind();
+  static const int kRoleKindFieldNumber = 2;
+  inline ::google::protobuf::uint32 role_kind() const;
+  inline void set_role_kind(::google::protobuf::uint32 value);
+
+  // optional string client_host = 3;
   inline bool has_client_host() const;
   inline void clear_client_host();
-  static const int kClientHostFieldNumber = 2;
+  static const int kClientHostFieldNumber = 3;
   inline const ::std::string& client_host() const;
   inline void set_client_host(const ::std::string& value);
   inline void set_client_host(const char* value);
@@ -110,10 +117,10 @@ class PB_LoginAuthUser : public ::google::protobuf::Message {
   inline ::std::string* release_client_host();
   inline void set_allocated_client_host(::std::string* client_host);
 
-  // optional string client_token = 3;
+  // optional string client_token = 4;
   inline bool has_client_token() const;
   inline void clear_client_token();
-  static const int kClientTokenFieldNumber = 3;
+  static const int kClientTokenFieldNumber = 4;
   inline const ::std::string& client_token() const;
   inline void set_client_token(const ::std::string& value);
   inline void set_client_token(const char* value);
@@ -126,6 +133,8 @@ class PB_LoginAuthUser : public ::google::protobuf::Message {
  private:
   inline void set_has_role_id();
   inline void clear_has_role_id();
+  inline void set_has_role_kind();
+  inline void clear_has_role_kind();
   inline void set_has_client_host();
   inline void clear_has_client_host();
   inline void set_has_client_token();
@@ -135,9 +144,10 @@ class PB_LoginAuthUser : public ::google::protobuf::Message {
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
+  ::google::protobuf::uint32 role_id_;
+  ::google::protobuf::uint32 role_kind_;
   ::std::string* client_host_;
   ::std::string* client_token_;
-  ::google::protobuf::uint32 role_id_;
   friend void  protobuf_AddDesc_msg_5flogin_2eproto();
   friend void protobuf_AssignDesc_msg_5flogin_2eproto();
   friend void protobuf_ShutdownFile_msg_5flogin_2eproto();
@@ -207,24 +217,31 @@ class PB_UserLogin : public ::google::protobuf::Message {
   inline ::google::protobuf::uint32 role_id() const;
   inline void set_role_id(::google::protobuf::uint32 value);
 
-  // optional uint32 fes_service_id = 2;
-  inline bool has_fes_service_id() const;
-  inline void clear_fes_service_id();
-  static const int kFesServiceIdFieldNumber = 2;
-  inline ::google::protobuf::uint32 fes_service_id() const;
-  inline void set_fes_service_id(::google::protobuf::uint32 value);
+  // optional uint32 role_kind = 2;
+  inline bool has_role_kind() const;
+  inline void clear_role_kind();
+  static const int kRoleKindFieldNumber = 2;
+  inline ::google::protobuf::uint32 role_kind() const;
+  inline void set_role_kind(::google::protobuf::uint32 value);
 
-  // optional uint32 pls_service_id = 3;
-  inline bool has_pls_service_id() const;
-  inline void clear_pls_service_id();
-  static const int kPlsServiceIdFieldNumber = 3;
-  inline ::google::protobuf::uint32 pls_service_id() const;
-  inline void set_pls_service_id(::google::protobuf::uint32 value);
+  // optional uint32 frontend_service_id = 3;
+  inline bool has_frontend_service_id() const;
+  inline void clear_frontend_service_id();
+  static const int kFrontendServiceIdFieldNumber = 3;
+  inline ::google::protobuf::uint32 frontend_service_id() const;
+  inline void set_frontend_service_id(::google::protobuf::uint32 value);
 
-  // optional string client_host = 4;
+  // optional uint32 game_service_id = 4;
+  inline bool has_game_service_id() const;
+  inline void clear_game_service_id();
+  static const int kGameServiceIdFieldNumber = 4;
+  inline ::google::protobuf::uint32 game_service_id() const;
+  inline void set_game_service_id(::google::protobuf::uint32 value);
+
+  // optional string client_host = 5;
   inline bool has_client_host() const;
   inline void clear_client_host();
-  static const int kClientHostFieldNumber = 4;
+  static const int kClientHostFieldNumber = 5;
   inline const ::std::string& client_host() const;
   inline void set_client_host(const ::std::string& value);
   inline void set_client_host(const char* value);
@@ -237,10 +254,12 @@ class PB_UserLogin : public ::google::protobuf::Message {
  private:
   inline void set_has_role_id();
   inline void clear_has_role_id();
-  inline void set_has_fes_service_id();
-  inline void clear_has_fes_service_id();
-  inline void set_has_pls_service_id();
-  inline void clear_has_pls_service_id();
+  inline void set_has_role_kind();
+  inline void clear_has_role_kind();
+  inline void set_has_frontend_service_id();
+  inline void clear_has_frontend_service_id();
+  inline void set_has_game_service_id();
+  inline void clear_has_game_service_id();
   inline void set_has_client_host();
   inline void clear_has_client_host();
 
@@ -249,9 +268,10 @@ class PB_UserLogin : public ::google::protobuf::Message {
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
   ::google::protobuf::uint32 role_id_;
-  ::google::protobuf::uint32 fes_service_id_;
+  ::google::protobuf::uint32 role_kind_;
+  ::google::protobuf::uint32 frontend_service_id_;
+  ::google::protobuf::uint32 game_service_id_;
   ::std::string* client_host_;
-  ::google::protobuf::uint32 pls_service_id_;
   friend void  protobuf_AddDesc_msg_5flogin_2eproto();
   friend void protobuf_AssignDesc_msg_5flogin_2eproto();
   friend void protobuf_ShutdownFile_msg_5flogin_2eproto();
@@ -290,15 +310,39 @@ inline void PB_LoginAuthUser::set_role_id(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:PROTOBUF.PB_LoginAuthUser.role_id)
 }
 
-// optional string client_host = 2;
-inline bool PB_LoginAuthUser::has_client_host() const {
+// optional uint32 role_kind = 2;
+inline bool PB_LoginAuthUser::has_role_kind() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void PB_LoginAuthUser::set_has_client_host() {
+inline void PB_LoginAuthUser::set_has_role_kind() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void PB_LoginAuthUser::clear_has_client_host() {
+inline void PB_LoginAuthUser::clear_has_role_kind() {
   _has_bits_[0] &= ~0x00000002u;
+}
+inline void PB_LoginAuthUser::clear_role_kind() {
+  role_kind_ = 0u;
+  clear_has_role_kind();
+}
+inline ::google::protobuf::uint32 PB_LoginAuthUser::role_kind() const {
+  // @@protoc_insertion_point(field_get:PROTOBUF.PB_LoginAuthUser.role_kind)
+  return role_kind_;
+}
+inline void PB_LoginAuthUser::set_role_kind(::google::protobuf::uint32 value) {
+  set_has_role_kind();
+  role_kind_ = value;
+  // @@protoc_insertion_point(field_set:PROTOBUF.PB_LoginAuthUser.role_kind)
+}
+
+// optional string client_host = 3;
+inline bool PB_LoginAuthUser::has_client_host() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void PB_LoginAuthUser::set_has_client_host() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void PB_LoginAuthUser::clear_has_client_host() {
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline void PB_LoginAuthUser::clear_client_host() {
   if (client_host_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -366,15 +410,15 @@ inline void PB_LoginAuthUser::set_allocated_client_host(::std::string* client_ho
   // @@protoc_insertion_point(field_set_allocated:PROTOBUF.PB_LoginAuthUser.client_host)
 }
 
-// optional string client_token = 3;
+// optional string client_token = 4;
 inline bool PB_LoginAuthUser::has_client_token() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
+  return (_has_bits_[0] & 0x00000008u) != 0;
 }
 inline void PB_LoginAuthUser::set_has_client_token() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
 }
 inline void PB_LoginAuthUser::clear_has_client_token() {
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline void PB_LoginAuthUser::clear_client_token() {
   if (client_token_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
@@ -470,63 +514,87 @@ inline void PB_UserLogin::set_role_id(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.role_id)
 }
 
-// optional uint32 fes_service_id = 2;
-inline bool PB_UserLogin::has_fes_service_id() const {
+// optional uint32 role_kind = 2;
+inline bool PB_UserLogin::has_role_kind() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void PB_UserLogin::set_has_fes_service_id() {
+inline void PB_UserLogin::set_has_role_kind() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void PB_UserLogin::clear_has_fes_service_id() {
+inline void PB_UserLogin::clear_has_role_kind() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void PB_UserLogin::clear_fes_service_id() {
-  fes_service_id_ = 0u;
-  clear_has_fes_service_id();
+inline void PB_UserLogin::clear_role_kind() {
+  role_kind_ = 0u;
+  clear_has_role_kind();
 }
-inline ::google::protobuf::uint32 PB_UserLogin::fes_service_id() const {
-  // @@protoc_insertion_point(field_get:PROTOBUF.PB_UserLogin.fes_service_id)
-  return fes_service_id_;
+inline ::google::protobuf::uint32 PB_UserLogin::role_kind() const {
+  // @@protoc_insertion_point(field_get:PROTOBUF.PB_UserLogin.role_kind)
+  return role_kind_;
 }
-inline void PB_UserLogin::set_fes_service_id(::google::protobuf::uint32 value) {
-  set_has_fes_service_id();
-  fes_service_id_ = value;
-  // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.fes_service_id)
+inline void PB_UserLogin::set_role_kind(::google::protobuf::uint32 value) {
+  set_has_role_kind();
+  role_kind_ = value;
+  // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.role_kind)
 }
 
-// optional uint32 pls_service_id = 3;
-inline bool PB_UserLogin::has_pls_service_id() const {
+// optional uint32 frontend_service_id = 3;
+inline bool PB_UserLogin::has_frontend_service_id() const {
   return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void PB_UserLogin::set_has_pls_service_id() {
+inline void PB_UserLogin::set_has_frontend_service_id() {
   _has_bits_[0] |= 0x00000004u;
 }
-inline void PB_UserLogin::clear_has_pls_service_id() {
+inline void PB_UserLogin::clear_has_frontend_service_id() {
   _has_bits_[0] &= ~0x00000004u;
 }
-inline void PB_UserLogin::clear_pls_service_id() {
-  pls_service_id_ = 0u;
-  clear_has_pls_service_id();
+inline void PB_UserLogin::clear_frontend_service_id() {
+  frontend_service_id_ = 0u;
+  clear_has_frontend_service_id();
 }
-inline ::google::protobuf::uint32 PB_UserLogin::pls_service_id() const {
-  // @@protoc_insertion_point(field_get:PROTOBUF.PB_UserLogin.pls_service_id)
-  return pls_service_id_;
+inline ::google::protobuf::uint32 PB_UserLogin::frontend_service_id() const {
+  // @@protoc_insertion_point(field_get:PROTOBUF.PB_UserLogin.frontend_service_id)
+  return frontend_service_id_;
 }
-inline void PB_UserLogin::set_pls_service_id(::google::protobuf::uint32 value) {
-  set_has_pls_service_id();
-  pls_service_id_ = value;
-  // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.pls_service_id)
+inline void PB_UserLogin::set_frontend_service_id(::google::protobuf::uint32 value) {
+  set_has_frontend_service_id();
+  frontend_service_id_ = value;
+  // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.frontend_service_id)
 }
 
-// optional string client_host = 4;
-inline bool PB_UserLogin::has_client_host() const {
+// optional uint32 game_service_id = 4;
+inline bool PB_UserLogin::has_game_service_id() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
-inline void PB_UserLogin::set_has_client_host() {
+inline void PB_UserLogin::set_has_game_service_id() {
   _has_bits_[0] |= 0x00000008u;
 }
-inline void PB_UserLogin::clear_has_client_host() {
+inline void PB_UserLogin::clear_has_game_service_id() {
   _has_bits_[0] &= ~0x00000008u;
+}
+inline void PB_UserLogin::clear_game_service_id() {
+  game_service_id_ = 0u;
+  clear_has_game_service_id();
+}
+inline ::google::protobuf::uint32 PB_UserLogin::game_service_id() const {
+  // @@protoc_insertion_point(field_get:PROTOBUF.PB_UserLogin.game_service_id)
+  return game_service_id_;
+}
+inline void PB_UserLogin::set_game_service_id(::google::protobuf::uint32 value) {
+  set_has_game_service_id();
+  game_service_id_ = value;
+  // @@protoc_insertion_point(field_set:PROTOBUF.PB_UserLogin.game_service_id)
+}
+
+// optional string client_host = 5;
+inline bool PB_UserLogin::has_client_host() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void PB_UserLogin::set_has_client_host() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void PB_UserLogin::clear_has_client_host() {
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline void PB_UserLogin::clear_client_host() {
   if (client_host_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {

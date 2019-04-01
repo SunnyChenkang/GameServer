@@ -57,6 +57,9 @@ public:
     //   获取元素;
     T*   BackFront( void );
 
+    //   元素数量;
+    uint32 Size( void ) { return m_ReadsCount + m_WriterCount ;}
+
 private:
     //   交换队列;
     void ExchangeQueue( void );

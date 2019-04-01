@@ -1111,7 +1111,7 @@ static const char* getShortServiceName(const IService* theService)
 //
 /// Naming Service
 //
-NLNET_SERVICE_MAIN( CNamingService, getShortServiceName(scn), getCompleteServiceName(scn), 0, EmptyCallbackArray, "", "")
+NLNET_SERVICE_MAIN( CNamingService, getShortServiceName(scn), getCompleteServiceName(scn), 0, "", "")
 
 
 //

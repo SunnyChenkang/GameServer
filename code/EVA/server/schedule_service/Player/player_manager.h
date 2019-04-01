@@ -1,7 +1,7 @@
 #ifndef SSE_PLAYER_MANAGER_H_
 #define SSE_PLAYER_MANAGER_H_
 
-#include "../schedule_def.h"
+#include <schedule_service/schedule_service/schedule_service_def.h>
 
 SSE_NAMESPACE_BEGIN_DECL
 

@@ -14,7 +14,7 @@ public:
    ~CI18n( void ) { }
 
 public:
-   const char*       GetString( const char* );
+   const char*      GetString( const char* );
    NLMISC::CSString  Format( const char* , ... );
 
    SS_PROPERTY( NLMISC::CSString , Content  , private );

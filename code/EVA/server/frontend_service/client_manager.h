@@ -17,7 +17,7 @@ public:
    ~CClientManager( void ) { };
 
     // 分配一个客户端;
-    CClient* AllocClient( SOCKET_ID );
+    CClient* AllocClient( ROLE_ID , SOCKET_ID );
     CClient* AllocClient( NLNET::TSockId );
 
     // 查找一个客户端;

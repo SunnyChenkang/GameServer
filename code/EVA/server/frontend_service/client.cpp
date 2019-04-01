@@ -10,6 +10,7 @@ CClient::CClient( void ) : m_RSocketID( 0 )
                          , m_ChannelNet( RUDP_CHANNEL )
                          , m_ClientState( CLIENT_CONNECTION_ABNORMAL )
                          , m_Host("")
+                         , m_GameServiceId( NLNET::TServiceId::InvalidId )
 {
     
 }

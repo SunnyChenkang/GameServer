@@ -5,11 +5,13 @@
 
 FES_NAMESPACE_BEGIN_DECL
 
+class CClient;
+
 // RUDP;
 void CallBack_RUDPLogin( NLNET::CMessage& , SOCKET_ID );
 static TRUDPCallbackItem RUDPCallBackItems[] =
 {
-    { "MSG_LOGIN" ,  CallBack_RUDPLogin },
+    { "MSG_LOGIN"           ,  CallBack_RUDPLogin },
 };
 
 
@@ -17,25 +19,28 @@ static TRUDPCallbackItem RUDPCallBackItems[] =
 void CallBack_WebLogin( NLNET::CMessage& , NLNET::TSockId , NLNET::CCallbackNetBase& );
 static TWEBCallbackItem WEBCallBackItems[] =
 {
-    { "LOGIN" , CallBack_WebLogin },
+    { "MSG_LOGIN" , CallBack_WebLogin },
 };
 
 
 // LOCAL
 void CallBack_S2C( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
+void CallBack_LoginSucceed( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
+void CallBack_ClientDelete( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
+
 static NLNET::TUnifiedCallbackItem LocalCallBackItems[] =
 {
-    { "S2C" , CallBack_S2C } ,
+    { "S2C"                 , CallBack_S2C } ,
+    { "MSG_LOGIN_SUCCEED"   , CallBack_LoginSucceed },
+    { "MSG_CLIENT_DELETE"   , CallBack_ClientDelete },
 };
 
-class CClient;
-
-// EGS DISCONNECT CALLBACK;
-void CallBack_EGSDisconnection( const std::string& , NLNET::TServiceId , void* );
-// PLS DISCONNECT CALLBACK;
-void CallBack_PLSDisconnection( const std::string& , NLNET::TServiceId , void* );
-// PDS DISCONNECT CALLBACK;
-void CallBack_PDSDisconnection( const std::string& , NLNET::TServiceId , void* );
+// SSE DISCONNECT CALLBACK;
+void CallBack_SSEDisconnection( const std::string& , NLNET::TServiceId , void* );
+// GSE DISCONNECT CALLBACK;
+void CallBack_GSEDisconnection( const std::string& , NLNET::TServiceId , void* );
+// PSE DISCONNECT CALLBACK;
+void CallBack_PSEDisconnection( const std::string& , NLNET::TServiceId , void* );
 
 // AUTH ACCOUNT;
 bool CallBack_AuthAccount( NLNET::CMessage& , CClient* );

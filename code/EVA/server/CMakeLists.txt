@@ -11,17 +11,9 @@ ADD_SUBDIRECTORY(admin_modules)
 ADD_SUBDIRECTORY(frontend_service)
 ADD_SUBDIRECTORY(naming_service)
 ADD_SUBDIRECTORY(schedule_service)
-ADD_SUBDIRECTORY(persistant_service)
-
-
-#ADD_SUBDIRECTORY(player_logic_service)
-#ADD_SUBDIRECTORY(ranking_service)
-#ADD_SUBDIRECTORY(admin_service)
-#ADD_SUBDIRECTORY(mail_service)
-#ADD_SUBDIRECTORY(logger_service)
-#ADD_SUBDIRECTORY(data_center_service)
-
-#ADD_SUBDIRECTORY(login_center)
-#ADD_SUBDIRECTORY(login_fes)
+ADD_SUBDIRECTORY(persistent_service)
+ADD_SUBDIRECTORY(game_service)
+ADD_SUBDIRECTORY(logger_service)
+ADD_SUBDIRECTORY(web_service)
 
 #INSTALL(FILES common.cfg DESTINATION ~/service COMPONENT services)

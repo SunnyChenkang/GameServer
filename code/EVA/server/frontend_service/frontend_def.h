@@ -8,6 +8,9 @@
 
 FES_NAMESPACE_BEGIN_DECL
 
+using namespace NLNET;
+using namespace FES;
+
 // SOCKET描述符定义;
 typedef uint32 SOCKET_ID;
 
@@ -46,9 +49,8 @@ TWEBCallbackItem;
 // 转发内容;
 enum EFormatKind
 {
-    FORMAT_PID ,
-    FORMAT_UID ,
-    FORMAT_INVALID
+    ROLEID ,
+    INVALID
 };
 
 // to format kind;

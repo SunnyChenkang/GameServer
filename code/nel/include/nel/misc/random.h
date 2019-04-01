@@ -48,6 +48,8 @@ public:
 	inline float  frandPlusMinus(double mod=1.0);
 	// set a new seed for the random generator
 	inline void   srand(sint32 seed);
+
+    inline sint32 rand( sint32 min_value , sint32 max_value );
 private:
 	sint32 _Seed;
 };
@@ -99,7 +101,14 @@ inline void CRandom::srand(sint32 seed)
 	_Seed = seed;
 }
 
+inline sint32 CRandom::rand( sint32 min_value , sint32 max_value )
+{
+    if( min_value  > max_value )
+        return min_value;
 
+    sint32 value = max_value - min_value;
+    return rand( value ) + min_value;
+}
 
 }
 

@@ -42,10 +42,16 @@ void CFrontendNetWork::InitNetHandler( uint16 RUDPPort , uint16 WEBPort )
 
 void CFrontendNetWork::UpdateNetHandler( void )
 {
+    try {
     // 更新RUDP
     CallBackRUDPMessage();
     // 更新WEB;
     m_WebCallBackNetBase->update();
+    }
+    catch ( ... )
+    {
+        
+    }
 }
 
 void CFrontendNetWork::DestroyNetHandler( void )
@@ -91,16 +97,24 @@ void CFrontendNetWork::CallBackWebDisConnection( NLNET::TSockId from , void* arg
 
 void CFrontendNetWork::CallBackRUDPMessage( void )
 {
-    do // 处理异常客户端;
+    do
     {
+        // 处理异常客户端;
         SOCKET_ID SocketID = ERROR_RECV_OBJ()->pop();
         if ( SocketID <= 0 ) break;
+        CClient* pClient = ClientManager.FindClient( SocketID );
+        if ( NULL == pClient ) continue;
+        ROLE_ID RoleID = pClient->GetRoleID();
+        NLNET::CMessage SendMessage("MSG_OFFLINE");
+        SendMessage.serial( RoleID );
+        SS_NETWORK->send( "GSE" , SendMessage );
         ClientManager.DeleteClient( SocketID );
     }
     while ( true );
 
-    do // 处理客户端消息;
+    do
     {
+        // 处理客户端消息;
         IOBuffer* pIOBuffer = RECV_OBJ()->pop();
         if ( NULL == pIOBuffer ) break;
         NLNET::CMessage IOMessage;
@@ -121,11 +135,12 @@ void CFrontendNetWork::CallBackRUDPMessage( void )
     while( true );
 }
 
+PB_CreateRoom PB1;
+
 void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CClient* pClient )
 {
     if ( NULL == pClient ) return;
-
-    SS::CJsonFesMessageCell* pJsonCell = JsonFesMessage.GetJsonCell< SS::CJsonFesMessageCell >( RevcMessage.getName() );
+    SS::CJsonMessageCell* pJsonCell = JsonMessageConfig.GetJsonCell< SS::CJsonMessageCell >( RevcMessage.getName() );
     if ( NULL == pJsonCell )
     {
         ClientManager.DeleteClient( pClient );
@@ -133,35 +148,37 @@ void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CCl
     }
 
     ROLE_ID RoleID = pClient->GetRoleID();
-    NLNET::CMessage SendMessage;
+    NLNET::CMessage SendMessage( pJsonCell->GetName() );
+    std::vector< NLMISC::CSString >& FormatList = pJsonCell->m_Format.m_JsonArray;
 
-    // 填充数据结构;
-    std::vector< NLMISC::CSString >& JsonArray = pJsonCell->GetFormat().GetJsonArray();
-    for ( std::vector<NLMISC::CSString>::iterator It = JsonArray.begin(); It != JsonArray.end(); ++It )
+    // 填充新消息;
+    for ( std::vector< NLMISC::CSString >::iterator it = FormatList.begin() ; it != FormatList.end(); ++it )
     {
-        EFormatKind format = ToForMatEnum( *It );
+        EFormatKind format = ToForMatEnum( *it );
         switch ( format )
         {
-        case FORMAT_PID:
-            SendMessage.serial( RoleID );
-            break;
-        case FORMAT_INVALID:
-            const google::protobuf::Descriptor* pDescriptor = google::protobuf::DescriptorPool::generated_pool()->FindMessageTypeByName( *It );
-            if ( NULL == pDescriptor ) return;
-            const google::protobuf::Message* pProtoBuffer = google::protobuf::MessageFactory::generated_factory()->GetPrototype( pDescriptor );
-            if ( NULL == pProtoBuffer ) return;
-            google::protobuf::Message* pMessage = pProtoBuffer->New();
-            RevcMessage.serial( pMessage );
-            SendMessage.serial( pMessage );
-            break;
+        case ROLEID:
+        SendMessage.serial( RoleID );
+        break;
+        case INVALID:
+        google::protobuf::Message* pMessage = GetProtoBufMessage( *it );
+        if ( NULL == pMessage ) return;
+        RevcMessage.serial( pMessage );
+        SendMessage.serial( pMessage );
+        break;
         }
     }
-    // 转发消息;
-    JsonArray = pJsonCell->GetSendToService().GetJsonArray();
-    for ( std::vector< NLMISC::CSString >::iterator It = JsonArray.begin(); It != JsonArray.end(); ++It )
+
+    // 转发内容;
+    std::vector< NLMISC::CSString >& SendToServiceList = pJsonCell->m_SendToService.m_JsonArray;
+    for ( std::vector< NLMISC::CSString >::iterator  it = SendToServiceList.begin(); it != SendToServiceList.end(); ++it )
     {
-         SS_NETWORK->send( *It , SendMessage );
+        if ( *it == "GSE" ) {
+        SS_NETWORK->send( pClient->GetGameServiceId() , SendMessage );
+        }
+        else {
+        SS_NETWORK->send( *it , SendMessage );
+        }
     }
 }
-
 FES_NAMESPACE_END_DECL

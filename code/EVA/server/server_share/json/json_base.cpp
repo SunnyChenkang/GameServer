@@ -10,37 +10,50 @@ NLMISC::CSString CJsonBase::ToJson( void )
     return s.GetString();
 }
 
-void CJsonBase::FromJson( CJsonBase* json_base , const NLMISC::CSString& json )
+void CJsonBase::FromJson( CJsonBase* pJsonBase , const NLMISC::CSString& JsonData )
 {
-    Document doc;
-    doc.Parse( json.data() );
-    const Value& val = doc;
-    json_base->ParseJson( val );
+    try {
+    Document DocJson;
+    DocJson.Parse( JsonData.data() );
+    if ( DocJson.IsArray() )
+    {
+        GenericValue< UTF8< char > >::Array JsonArray( DocJson.GetArray() );
+        pJsonBase->ParseJsonArray( JsonArray );
+    }
+    else
+    {
+        const Value& val = DocJson;
+        pJsonBase->ParseJson( val );
+    } }
+    catch ( ... )
+    {
+        nlinfo( " parse json faile !!! " );
+    }
 }
 
-void CJsonBase::LoadJson( NLMISC::CSString file_name )
+void CJsonBase::LoadJson( NLMISC::CSString FileName )
 {
-    std::string file_path = NLMISC::CPath::lookup( file_name );
-    if ( file_path.empty() ) return;
+    NLMISC::CSString FilePath = NLMISC::CPath::lookup( FileName );
+    if ( FilePath.empty() ) return;
 
-    NLMISC::CIFile   json_file;
-    NLMISC::CSString json_desc;
-    NLMISC::CSString json_line;
+    NLMISC::CIFile   JsonFile;
+    NLMISC::CSString JsonDesc;
+    NLMISC::CSString JsonLine;
 
-    if ( !json_file.open(file_path) )
+    if ( !JsonFile.open( FilePath ) )
     {
-        nlinfo( " open file failes~ [%s]" , file_path.c_str() );
+        nlinfo( " open file failes~ [%s]" , FilePath.c_str() );
         return;
     }
-    while ( !json_file.eof() )
+    while ( !JsonFile.eof() )
     {
         char StrBuffer[1024] = { '\0' };
-        json_file.getline( StrBuffer , sizeof( StrBuffer ) );
-        json_line = StrBuffer;
-        json_desc.append( json_line + '\n');
+        JsonFile.getline( StrBuffer , sizeof( StrBuffer ) );
+        JsonLine = StrBuffer;
+        JsonDesc.append( JsonLine + '\n');
     }
-    json_file.close();
-    FromJson( this , json_desc );
+    JsonFile.close();
+    FromJson( this , JsonDesc );
 }
 
 void CJsonBase::ToWriterJson( Writer<StringBuffer>& writer , sint32& val )

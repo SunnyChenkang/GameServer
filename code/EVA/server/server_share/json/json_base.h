@@ -24,8 +24,11 @@ using namespace rapidjson;
 #define JsonWriterClass( xxx )      writer.key( #xxx );((CJsonBase*)(&xxx))->ToWriter( writer );
 
 // reads json;
-#define JsonParseBegin( val ) for ( Value::ConstMemberIterator it = val.MemberBegin(); it != val.MemberEnd(); ++it ) {
+#define JsonParseBegin( val ) for ( Value::ConstMemberIterator it = val.MemberBegin(); it != val.MemberEnd(); ++it ) { const Value& Values = it->value;
 #define JsonParseEnd() }
+#define JsonParseArrayBegin( val ) for ( sint32 idx = 0; idx < val.Size(); idx++ ) { const Value& Values =  val[idx];
+#define JsonParseArrayEnd() }
+
 #define JsonParseToString( xxx )    if ( strcmp( it->name.GetString() , #xxx) == 0 ) xxx = it->value.GetString();
 #define JsonParseToInt( xxx )       if ( strcmp( it->name.GetString() , #xxx) == 0 ) xxx = it->value.GetInt();
 #define JsonParseToInt64( xxx )     if ( strcmp( it->name.GetString() , #xxx) == 0 ) xxx = it->value.GetInt64();
@@ -103,9 +106,10 @@ public:
     // 子类继承需要;
     virtual void WriterJson( Writer<StringBuffer>& ){ };
     virtual void ParseJson ( const Value& ) { nlinfo( "parse json base class..." ); };
+    virtual void ParseJsonArray( const GenericValue< UTF8<> >& ) { };
 
-    SS_PROPERTY( JSON_STRING_KEYTABLE , JsonStringTable , protected );
-    SS_PROPERTY( JSON_UINT32_KEYTABLE , JsonUint32Table , protected );
+    SS_PROPERTY( JSON_STRING_KEYTABLE , JsonStringArray , protected );
+    SS_PROPERTY( JSON_UINT32_KEYTABLE , JsonUint32Array , protected );
 };
 
 template< typename T >
@@ -115,10 +119,7 @@ public:
     CJsonArray( void ){ };
    ~CJsonArray( void ){ };
 
-    std::vector< T >& GetJsonArray( void ) { return m_JsonArray; }
-
-private:
-    std::vector< T > m_JsonArray;
+    SS_PROPERTY( std::vector< T > , JsonArray , public );
 
 public:
     virtual void WriterJson( Writer<StringBuffer>& Writer );

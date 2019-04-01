@@ -21,6 +21,7 @@ public:
     SS_PROPERTY( uint32            , ConnectionTime , private );
     SS_PROPERTY( ROLE_ID           , RoleID         , private );
     SS_PROPERTY( NLMISC::CSString  , Host           , private );
+    SS_PROPERTY( NLNET::TServiceId , GameServiceId  , private );
 };
 
 FES_NAMESPACE_END_DECL
