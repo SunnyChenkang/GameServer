@@ -1,1 +1,0 @@
-LoadLuaFile("function_load.lua")

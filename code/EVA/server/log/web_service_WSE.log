@@ -1,0 +1,316 @@
+
+Log Starting [2019/03/27 19:18:56]
+2019/03/27 19:18:56 WRN 3e54 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:18:57 INF 25fc WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:18:57 INF 25fc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:18:57 INF 25fc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:18:57 INF 25fc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:18:57 INF 25fc WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:18:57 INF 25fc WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:18:57 INF 25fc 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:18:57 INF 25fc 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:18:57 DBG 3618 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:18:58 INF 25fc 192.168.74.1/WSE service.cpp 1098 NLNET::IService::main : SERVICE: Could not connect to the Naming Service (127.0.0.1:49901 (127.0.0.1)). Retrying in a few seconds...
+2019/03/27 19:19:04 INF 25fc 192.168.74.1/WSE service.cpp 1098 NLNET::IService::main : SERVICE: Could not connect to the Naming Service (127.0.0.1:49901 (127.0.0.1)). Retrying in a few seconds...
+
+Log Starting [2019/03/27 19:19:14]
+2019/03/27 19:19:14 WRN  eb8 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:19:14 INF 3ab0 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:19:14 INF 3ab0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:19:14 INF 3ab0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:19:14 INF 3ab0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:19:14 INF 3ab0 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:19:14 INF 3ab0 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:19:14 INF 3ab0 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:19:14 INF 3ab0 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:19:15 DBG 41b4 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:19:15 INF 3ab0 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:19:15 DBG 3ab0 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:19:15 INF 3ab0 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:19:15 3ab0 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule PayModule ls webPort=30002'
+2019/03/27 19:19:15 3ab0 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule PayModule ls webPort=30002
+2019/03/27 19:19:15 INF 3ab0 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'PayModule' with params 'webPort=30002'
+2019/03/27 19:19:15 WRN 3ab0 192.168.74.1/WSE-60 module_manager.cpp 375 NLNET::CModuleManager::createModule : createModule : unknown module class 'PayModule'
+2019/03/27 19:19:15 INF 3ab0 192.168.74.1/WSE-60 service.cpp 1278 NLNET::IService::main : SERVICE: Service ready
+2019/03/27 19:19:15 DBG 3ab0 192.168.74.1/WSE-60 win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to 'WSE web_service : Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+
+Log Starting [2019/03/27 19:19:27]
+2019/03/27 19:19:27 WRN 382c WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:19:28 INF 48dc WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:19:28 INF 48dc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:19:28 INF 48dc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:19:28 INF 48dc WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:19:28 INF 48dc WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:19:28 INF 48dc WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:19:28 DBG 415c 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:19:28 DBG 48dc 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:19:28 48dc 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule PayModule ls webPort=30002'
+2019/03/27 19:19:28 48dc 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule PayModule ls webPort=30002
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'PayModule' with params 'webPort=30002'
+2019/03/27 19:19:28 WRN 48dc 192.168.74.1/WSE-60 module_manager.cpp 375 NLNET::CModuleManager::createModule : createModule : unknown module class 'PayModule'
+2019/03/27 19:19:28 INF 48dc 192.168.74.1/WSE-60 service.cpp 1278 NLNET::IService::main : SERVICE: Service ready
+2019/03/27 19:19:28 DBG 48dc 192.168.74.1/WSE-60 win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to 'WSE web_service : Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+
+Log Starting [2019/03/27 19:19:56]
+2019/03/27 19:19:56 WRN 4fdc WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:19:57 INF 4ef0 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:19:57 INF 4ef0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:19:57 INF 4ef0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:19:57 INF 4ef0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:19:57 INF 4ef0 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:19:57 INF 4ef0 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:19:57 INF 4ef0 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:19:57 INF 4ef0 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:19:57 DBG 4458 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:19:57 INF 4ef0 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:19:57 DBG 4ef0 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:19:57 INF 4ef0 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:19:57 4ef0 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/27 19:19:57 4ef0 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/27 19:19:57 INF 4ef0 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:19:58 INF 4ef0 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+2019/03/27 19:20:13 AST 4ef0 192.168.74.1/WSE-60 web_modules.cpp 21 CWebModules::initModule : "pCommandLine != NULL" 
+-------------------------------
+
+Log with no filter:
+-------------------------------
+
+Log Starting [2019/03/27 19:19:56]
+2019/03/27 19:19:56 web_service.exe INF  4ef0 command.cpp 149 : CCommandRegistry : adding commands handler for class 'CModuleManager'
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'AdminExecutorService' factory
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'AdminExecutorServiceClient' factory
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'AdminService' factory
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'LocalGateway' factory
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'StandardGateway' factory
+2019/03/27 19:19:56 web_service.exe INF  4ef0 module_manager.cpp 228 : Adding module 'WebModules' factory
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 248 : SERVICE: 'ConfigDirectory' changed to 'E:/GitHub/Server/code/EVA/server/'
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 248 : SERVICE: 'LogDirectory' changed to 'E:/GitHub/Server/code/EVA/server/'
+2019/03/27 19:19:56 WSE DBG  4ef0 config_file.cpp 401 : CF: Adding config file 'E:/GitHub/Server/code/EVA/server/web_service.cfg' in the config file
+2019/03/27 19:19:56 WSE INF  4ef0 config_file.cpp 476 : CF: RootConfigFilename variable found in the 'E:/GitHub/Server/code/EVA/server/web_service.cfg' config file, parse the root config file 'E:/GitHub/Server/code/EVA/server/common.cfg'
+2019/03/27 19:19:56 WSE DBG  4ef0 config_file.cpp 401 : CF: Adding config file 'E:/GitHub/Server/code/EVA/server/common.cfg' in the config file
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 248 : SERVICE: 'LogDirectory' changed to 'E:/GitHub/Server/code/EVA/server/./log/'
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 248 : SERVICE: 'SaveFilesDirectory' changed to 'E:/GitHub/Server/code/EVA/server/'
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 248 : SERVICE: 'WriteFilesDirectory' changed to 'E:/GitHub/Server/code/EVA/server/data_shard/'
+2019/03/27 19:19:56 WSE INF  4ef0 service.cpp 690 : SERVICE: Setting alias name to: 'WSE'
+2019/03/27 19:19:56 WSE WRN  4fdc stdin_monitor_thread.cpp 84 : fgets failed
+2019/03/27 19:19:57 WSE INF  4ef0 system_info.cpp 915 : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:19:57 WSE INF  4ef0 service.cpp 524 : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:19:57 WSE INF  4ef0 service.cpp 524 : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:19:57 WSE INF  4ef0 service.cpp 524 : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:19:57 WSE INF  4ef0 service.cpp 862 : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:19:57 WSE INF  4ef0 service.cpp 863 : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:19:57 192.168.74.1/WSE INF  4ef0 service.cpp 941 : SERVICE: Host: 192.168.74.1
+2019/03/27 19:19:57 192.168.74.1/WSE INF  4ef0 command.cpp 149 : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 sock.cpp 354 : LNETL0: Socket 464 connecting to 127.0.0.1:49901 (127.0.0.1)...
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 sock.cpp 389 : LNETL0: Socket 464 connected to 127.0.0.1:49901 (127.0.0.1) (local :46970 (127.0.0.1))
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4458 win_displayer.cpp 355 : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 listen_sock.cpp 92 : LNETL0: Binding listen socket to any address, port 49972
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 listen_sock.cpp 81 : LNETL0: Socket 468 listen socket is at 192.168.74.1:49972 (192.168.74.1)
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  3818 buf_server.cpp 763 : LNETL1: Waiting incoming connection...
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  253c buf_sock.cpp 503 : LNETL1: CLT 00000000002AB770 (socket 464) received buffer (81 bytes): [?????????RG?<???????WSE<????????4????????????????4??K?????????????4??J???????????]
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 callback_net_base.cpp 209 : LNETL3NB_CB: Calling callback (RG)
+2019/03/27 19:19:57 192.168.74.1/WSE INF  4ef0 naming_client.cpp 137 : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 unified_network.cpp 74 : HNETL5: + naming WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:19:57 192.168.74.1/WSE DBG  4ef0 naming_client.cpp 372 : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:19:57 192.168.74.1/WSE INF  4ef0 unified_network.cpp 635 : HNETL5: Server 'WSE' added, registered and listen to port 49972
+2019/03/27 19:19:57 192.168.74.1/WSE-60 INF  4ef0 service.cpp 1232 : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:19:57 192.168.74.1/WSE-60 INF  4ef0 module_manager.cpp 759 : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:19:58 192.168.74.1/WSE-60 INF  4ef0 command.cpp 149 : CCommandRegistry : adding commands handler for class 'CModuleBase'
+2019/03/27 19:20:13 192.168.74.1/WSE-60 AST  4ef0 web_modules.cpp 21 : "pCommandLine != NULL" 
+-------------------------------
+
+Log Starting [2019/03/27 19:20:47]
+2019/03/27 19:20:47 WRN 14d4 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:20:48 INF 41b4 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:20:48 INF 41b4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:20:48 INF 41b4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:20:48 INF 41b4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:20:48 INF 41b4 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:20:48 INF 41b4 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:20:48 INF 41b4 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:20:48 INF 41b4 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:20:48 DBG 4e60 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:20:48 INF 41b4 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:20:48 DBG 41b4 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:20:48 INF 41b4 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:20:48 41b4 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/27 19:20:48 41b4 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/27 19:20:48 INF 41b4 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:20:49 INF 41b4 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/27 19:21:41]
+2019/03/27 19:21:41 WRN 46d8 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:21:41 INF 18f4 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:21:41 INF 18f4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:21:41 INF 18f4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:21:41 INF 18f4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:21:41 INF 18f4 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:21:41 INF 18f4 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:21:41 INF 18f4 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:21:41 INF 18f4 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:21:41 DBG 4424 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:21:41 INF 18f4 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:21:41 DBG 18f4 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:21:41 INF 18f4 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:21:41 18f4 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/27 19:21:41 18f4 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/27 19:21:41 INF 18f4 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:21:42 INF 18f4 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/27 19:21:50]
+2019/03/27 19:21:50 WRN 3968 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:21:51 INF 4cac WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:21:51 INF 4cac WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:21:51 INF 4cac WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:21:51 INF 4cac WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:21:51 INF 4cac WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:21:51 INF 4cac WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:21:51 INF 4cac 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:21:51 INF 4cac 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:21:51 DBG 4458 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:21:51 INF 4cac 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:21:51 DBG 4cac 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:21:51 INF 4cac 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:21:51 4cac 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/27 19:21:51 4cac 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/27 19:21:51 INF 4cac 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:21:52 INF 4cac 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/27 19:23:04]
+2019/03/27 19:23:04 WRN 4d00 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 19:23:05 INF 11a0 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 19:23:05 INF 11a0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 19:23:05 INF 11a0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 19:23:05 INF 11a0 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 19:23:05 INF 11a0 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/27 19:23:05 INF 11a0 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 19:23:05 INF 11a0 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 19:23:05 INF 11a0 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 19:23:05 DBG 483c 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/27 19:23:05 INF 11a0 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/27 19:23:05 DBG 11a0 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/27 19:23:05 INF 11a0 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 19:23:05 11a0 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/27 19:23:05 11a0 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/27 19:23:05 INF 11a0 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/27 19:23:06 INF 11a0 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:27:13]
+2019/03/28 09:27:13 WRN  618 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:27:14 INF 4ef4 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:27:14 INF 4ef4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:27:14 INF 4ef4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:27:14 INF 4ef4 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:27:14 INF 4ef4 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/28 09:27:14 INF 4ef4 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:27:14 INF 4ef4 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:27:14 INF 4ef4 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:27:14 DBG 15b4 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:27:14 INF 4ef4 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:27:14 DBG 4ef4 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:27:14 INF 4ef4 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:27:14 4ef4 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:27:14 4ef4 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:27:14 INF 4ef4 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:27:17 INF 4ef4 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:31:55]
+2019/03/28 09:31:55 WRN 4e24 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:31:56 INF 35d8 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:31:56 INF 35d8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:31:56 INF 35d8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:31:56 INF 35d8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:31:56 INF 35d8 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/28 09:31:56 INF 35d8 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:31:56 INF 35d8 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:31:56 INF 35d8 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:31:56 DBG  e7c 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:31:56 INF 35d8 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:31:56 DBG 35d8 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:31:56 INF 35d8 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:31:56 35d8 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:31:56 35d8 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:31:56 INF 35d8 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:31:58 INF 35d8 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:34:00]
+2019/03/28 09:34:00 WRN 4fc0 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:34:00 INF 1a20 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:34:00 INF 1a20 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:34:00 INF 1a20 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:34:00 INF 1a20 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:34:00 INF 1a20 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 27 2019 19:12:39
+2019/03/28 09:34:00 INF 1a20 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:34:00 INF 1a20 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:34:00 INF 1a20 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:34:00 DBG 4784 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:34:00 INF 1a20 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:34:00 DBG 1a20 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:34:00 INF 1a20 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:34:00 1a20 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:34:00 1a20 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:34:00 INF 1a20 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:35:31 INF 1a20 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:45:02]
+2019/03/28 09:45:02 WRN 4f1c WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:45:02 INF 4e98 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:45:02 INF 4e98 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:45:02 INF 4e98 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:45:02 INF 4e98 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:45:02 INF 4e98 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 28 2019 09:37:34
+2019/03/28 09:45:02 INF 4e98 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:45:02 INF 4e98 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:45:02 INF 4e98 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:45:02 DBG 41b4 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:45:02 INF 4e98 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:45:02 DBG 4e98 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:45:02 INF 4e98 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:45:02 4e98 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:45:02 4e98 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:45:02 INF 4e98 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:45:08 INF 4e98 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:53:10]
+2019/03/28 09:53:10 WRN  2d4 WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:53:10 INF 4650 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:53:10 INF 4650 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:53:10 INF 4650 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:53:10 INF 4650 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:53:10 INF 4650 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 28 2019 09:37:34
+2019/03/28 09:53:10 INF 4650 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:53:10 INF 4650 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:53:10 INF 4650 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:53:10 DBG 483c 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:53:10 INF 4650 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:53:10 DBG 4650 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:53:10 INF 4650 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:53:10 4650 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:53:10 4650 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:53:10 INF 4650 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:53:14 INF 4650 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+
+Log Starting [2019/03/28 09:53:57]
+2019/03/28 09:53:57 WRN 161c WSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/28 09:53:57 INF 4fd8 WSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/28 09:53:57 INF 4fd8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/28 09:53:57 INF 4fd8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/28 09:53:57 INF 4fd8 WSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/28 09:53:57 INF 4fd8 WSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'WSE' using NeL (Mar 27 2019 19:05:35) compiled Mar 28 2019 09:37:34
+2019/03/28 09:53:57 INF 4fd8 WSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/28 09:53:57 INF 4fd8 192.168.74.1/WSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/28 09:53:57 INF 4fd8 192.168.74.1/WSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/28 09:53:57 DBG 1cc0 192.168.74.1/WSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* WSE web_service: Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'
+2019/03/28 09:53:57 INF 4fd8 192.168.74.1/WSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service WSE-60 ':49972 (192.168.0.155) :49972 (192.168.75.1) :49972 (192.168.74.1)'
+2019/03/28 09:53:57 DBG 4fd8 192.168.74.1/WSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid WSE-60 at chenkang:49972 (192.168.0.155)
+2019/03/28 09:53:57 INF 4fd8 192.168.74.1/WSE-60 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/28 09:53:57 4fd8 192.168.74.1/WSE-60 : Executing command : 'moduleManager.createModule WebModules ls webPort=30002'
+2019/03/28 09:53:57 4fd8 192.168.74.1/WSE-60 : Execute command: moduleManager.createModule WebModules ls webPort=30002
+2019/03/28 09:53:57 INF 4fd8 192.168.74.1/WSE-60 module_manager.cpp 759 NLNET::CModuleManager::cmdHandler_createModule : Creating module 'ls' of class 'WebModules' with params 'webPort=30002'
+2019/03/28 09:54:00 INF 4fd8 192.168.74.1/WSE-60 command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CModuleBase'
+2019/03/28 09:54:06 INF 4fd8 192.168.74.1/WSE-60 service.cpp 1278 NLNET::IService::main : SERVICE: Service ready
+2019/03/28 09:54:06 DBG 4fd8 192.168.74.1/WSE-60 win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to 'WSE web_service : Nel Service Console (compiled Mar 27 2019 19:05:19 in NL_DEBUG mode)'

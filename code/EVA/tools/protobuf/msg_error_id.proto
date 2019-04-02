@@ -1,8 +1,0 @@
-syntax = "proto2";
-package PROTOBUF;
-
-// 错误枚举
-enum PB_TErrorEnum
-{
-	ERROR_SERVER_FULL = 0;		// 服务器人数已满
-}

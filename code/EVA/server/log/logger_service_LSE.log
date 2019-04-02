@@ -1,0 +1,34 @@
+
+Log Starting [2019/03/27 18:48:25]
+2019/03/27 18:48:25 WRN 320c LSE stdin_monitor_thread.cpp 84 NLNET::CStdinMonitorThread::run : fgets failed
+2019/03/27 18:48:26 INF 4e10 LSE system_info.cpp 915 NLMISC::CSystemInfo::getProcessorFrequency : SI: CSystemInfo: Processor frequency is 3408 MHz
+2019/03/27 18:48:26 INF 4e10 LSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersDebug from config file
+2019/03/27 18:48:26 INF 4e10 LSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersInfo from config file
+2019/03/27 18:48:26 INF 4e10 LSE service.cpp 524 NLNET::cbLogFilter : SERVICE: Updating NegFiltersWarning from config file
+2019/03/27 18:48:26 INF 4e10 LSE service.cpp 862 NLNET::IService::main : SERVICE: Starting Service 'LSE' using NeL (Mar 27 2019 15:19:42) compiled Mar 27 2019 15:57:38
+2019/03/27 18:48:26 INF 4e10 LSE service.cpp 863 NLNET::IService::main : SERVICE: On OS: Microsoft Windows 7 Ultimate Edition 64-bit Service Pack 1 (Build 7601) (6.1 7601)
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE service.cpp 941 NLNET::IService::main : SERVICE: Host: 192.168.74.1
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE command.cpp 149 NLMISC::CCommandRegistry::registerNamedCommandHandler : CCommandRegistry : adding commands handler for class 'CUnifiedNetwork'
+2019/03/27 18:48:26 DBG 1a10 192.168.74.1/LSE win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to '*INIT* LSE logger_service: Nel Service Console (compiled Mar 27 2019 15:19:26 in NL_DEBUG mode)'
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service PSE-70 ':50004 (192.168.0.155) :50004 (192.168.75.1) :50004 (192.168.74.1)'
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service SSE-65 ':49971 (192.168.0.155) :49971 (192.168.75.1) :49971 (192.168.74.1)'
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service GSE-1 ':51000 (192.168.0.155) :51000 (192.168.75.1) :51000 (192.168.74.1)'
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service FES-80 ':51001 (192.168.0.155) :51001 (192.168.75.1) :51001 (192.168.74.1)'
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE naming_client.cpp 137 NLNET::cbRegisterBroadcast : NC: Registration Broadcast of the service LSE-67 ':49974 (192.168.0.155) :49974 (192.168.75.1) :49974 (192.168.74.1)'
+2019/03/27 18:48:26 DBG 4e10 192.168.74.1/LSE naming_client.cpp 372 NLNET::CNamingClient::registerServiceWithSId : NC: Registered service with sid LSE-67 at chenkang:49974 (192.168.0.155)
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 logger_service.cpp 41 LSE::CLoggerService::init : DataBaseName = d_logs 
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 logger_service.cpp 42 LSE::CLoggerService::init : DataBaseHost = 127.0.0.1 
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 logger_service.cpp 43 LSE::CLoggerService::init : DataBaseUser = root 
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 logger_service.cpp 44 LSE::CLoggerService::init : DataBasePassword = 123456 
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 logger_service.cpp 45 LSE::CLoggerService::init : DataBasePort = 3306 
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 db_connect.cpp 59 SS::CDBConnect::Connect :  connect mysql succeed !
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 db_connect.cpp 60 SS::CDBConnect::Connect :  mysql client library : 6.0.0
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 db_connect.cpp 61 SS::CDBConnect::Connect :  mysql server library : 5.5.5-10.1.19-MariaDB
+2019/03/27 18:48:26 INF 20e0 192.168.74.1/LSE-67 db_connect.cpp 59 SS::CDBConnect::Connect :  connect mysql succeed !
+2019/03/27 18:48:26 INF 20e0 192.168.74.1/LSE-67 db_connect.cpp 60 SS::CDBConnect::Connect :  mysql client library : 6.0.0
+2019/03/27 18:48:26 INF 20e0 192.168.74.1/LSE-67 db_connect.cpp 61 SS::CDBConnect::Connect :  mysql server library : 5.5.5-10.1.19-MariaDB
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 service.cpp 1232 NLNET::IService::main : SERVICE: Service initialized, executing StartCommands
+2019/03/27 18:48:26 INF 4e10 192.168.74.1/LSE-67 service.cpp 1278 NLNET::IService::main : SERVICE: Service ready
+2019/03/27 18:48:26 DBG 4e10 192.168.74.1/LSE-67 win_displayer.cpp 355 NLMISC::CWinDisplayer::setTitleBar : SERVICE: Set title bar to 'LSE logger_service : Nel Service Console (compiled Mar 27 2019 15:19:26 in NL_DEBUG mode)'
+2019/03/27 18:49:49 INF 4e10 192.168.74.1/LSE-67 naming_client.cpp 198 NLNET::cbUnregisterBroadcast : NC: Unregistration Broadcast of the service FES-80
+2019/03/27 18:49:49 INF 4e10 192.168.74.1/LSE-67 naming_client.cpp 198 NLNET::cbUnregisterBroadcast : NC: Unregistration Broadcast of the service GSE-1
