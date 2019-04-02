@@ -1,4 +1,4 @@
-# GameServer
+# GameServer 支持 TCP,RUDP,WEBSOCKET 
 
 1`AES(启动管理服务)一台物理服务器只能有一个ASE 通过启动,停止,查询这台服务器上的各种服务来管理服务区（类似守护进程）     
 
