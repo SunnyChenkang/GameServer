@@ -1,0 +1,13 @@
+{
+  "MSG_CREATE_ROOM": {
+    "m_Name": "MSG_CREATE_ROOM",
+    "m_Desc": "创建房间",
+    "m_Format": [
+      "ROLEID",
+      "PROTOBUF.PB_CreateRoom"
+    ],
+    "m_SendToService": [
+      "SSE"
+    ]
+  }
+}

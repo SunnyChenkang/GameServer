@@ -1,0 +1,14 @@
+[
+  {
+    "m_StatisticsID": 1,
+    "m_StatisticsContent": "胜利次数"
+  },
+  {
+    "m_StatisticsID": 2,
+    "m_StatisticsContent": "失败次数"
+  },
+  {
+    "m_StatisticsID": 3,
+    "m_StatisticsContent": "胡牌次数"
+  }
+]

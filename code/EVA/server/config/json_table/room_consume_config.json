@@ -1,0 +1,26 @@
+[
+  {
+    "m_ConsumeID": 1,
+    "m_RoomName": "MJ_500",
+    "m_ConsumeItem": 10000,
+    "m_ConsumeCount": 5,
+    "m_GameCount": 1,
+    "m_ConsumeDesc": "把数"
+  },
+  {
+    "m_ConsumeID": 2,
+    "m_RoomName": "MJ_501",
+    "m_ConsumeItem": 10000,
+    "m_ConsumeCount": 5,
+    "m_GameCount": 1,
+    "m_ConsumeDesc": "把数"
+  },
+  {
+    "m_ConsumeID": 3,
+    "m_RoomName": "MJ_502",
+    "m_ConsumeItem": 10001,
+    "m_ConsumeCount": 5,
+    "m_GameCount": 1,
+    "m_ConsumeDesc": "把数"
+  }
+]

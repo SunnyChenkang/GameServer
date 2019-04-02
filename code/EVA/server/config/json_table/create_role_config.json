@@ -1,0 +1,19 @@
+{
+  "1": {
+    "m_AutoID": "1",
+    "m_AddItem": [
+      {
+        "m_ItemID": 100000,
+        "m_ItemCount": 100
+      },
+      {
+        "m_ItemID": 100001,
+        "m_ItemCount": 100
+      }
+    ],
+    "m_NickName": "guset",
+    "m_HeadID": 0
+  }
+}
+
+

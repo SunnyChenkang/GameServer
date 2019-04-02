@@ -1,0 +1,26 @@
+{
+  "MJ_500": {
+    "m_RoomName": "MJ_500",
+    "m_RoomMax": 4,
+    "m_RoomMin": 4,
+    "m_RoomDeleteTime": 1,
+    "m_RoomIcon": "www.baidu.com",
+    "m_RoomDesc": "扣点麻将"
+  },
+  "MJ_501": {
+    "m_RoomName": "MJ_501",
+    "m_RoomMax": 4,
+    "m_RoomMin": 4,
+    "m_RoomDeleteTime": 1,
+    "m_RoomIcon": "www.baidu.com",
+    "m_RoomDesc": "贴金麻将"
+  },
+  "MJ_502": {
+    "m_RoomName": "MJ_502",
+    "m_RoomMax": 4,
+    "m_RoomMin": 4,
+    "m_RoomDeleteTime": 1,
+    "m_RoomIcon": "www.baidu.com",
+    "m_RoomDesc": "山西麻将"
+  }
+}
