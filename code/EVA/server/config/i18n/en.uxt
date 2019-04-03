@@ -1,44 +1,4 @@
 // This is the name of this language.
 LanguageName    [English]
-Hi				[Hello]
-PresentI18N		[%s is proud to present you NeL Internationalisation system]
-ExitStr			[Press <return> to exit]
-
-RequestAddFriend	[%s applies to add you as a friend]
-
-CBJ21MailName       [System]
-CBJ21MailTitle      [BlackJack Reward]
-CBJ21Novice         [BlackJack Novice Tournament Reward]
-CBJ21Intermediate   [BlackJack Intermediate Tournament Reward]
-CBJ21Advanced       [BlackJack Advanced Tournament Reward]
-CBJ21Expert         [BlackJack Expert Tournament Reward]
-CBJ21MailText       [Great win in BlackJack. Reward: {ff8712}%lld{-}]
-
-TexasMttMailTitle   [TexasPoker MTT]
-TexasMttMailText    [TexasPoker MTT Reward: {ff8712}%lld{-} , Rankin: {ffde00}%d{-}]
-
-GiftName		    [%s Gift]
-GrftMailText		[{ebb4ff}%s{-} gave you {ff8712}%d{-} chips.]
-
-ShopMailSendName    [System]
-ShopMailTitle       [Store]
-ShopMailContent     [You've purchased {ff8712}%d{-} chips which will be returned.] 
-
-ShopScoreSendName   [System]
-ShopScoreTitle      [Offerwall]
-ShopScoreContent    [Gained {ff8712}%d{-} on offerwall] 
-
-SendItem            [%s send your %s.]
-
-SlotChalMailTitle   [Slots Tournament Reward]
-SlotChalMailText    [Great win in Slots. Reward: {ff8712}%lld{-}]
-
-PushFriendMailTitle [Give You]
-PushFriendMailMSG0	[Give you {00d2ff}%d{-} chips.]
-PushFriendMailMSG1	[Give you {00d2ff}%d{-} chips.]
-PushFriendMailMSG2	[Give you {00d2ff}%d{-} chips.]
-PushFriendMailMSG3	[Give you {00d2ff}%d{-} chips.]
-PushFriendMailMSG4	[Give you {00d2ff}%d{-} chips.]
-
 
 

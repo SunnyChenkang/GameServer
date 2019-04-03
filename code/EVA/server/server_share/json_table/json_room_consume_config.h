@@ -30,13 +30,13 @@ class CJsonRoomConsumeCell : public CJsonBase
 
 class CJsonRoomConsumeConfig : public CJsonBase
 {
-    void ParseJson( const Value& JsonValue )
+    void ParseJsonArray( const Value& JsonValue )
     {
-        JsonParseBegin( JsonValue );
+        JsonParseArrayBegin( JsonValue );
         CJsonRoomConsumeCell* pCell = new CJsonRoomConsumeCell();
         pCell->ParseJson( Values );
         m_JsonUint32Array.insert(std::make_pair( pCell->GetConsumeID() , pCell ) );
-        JsonParseEnd();
+        JsonParseArrayEnd();
     }
 };
 

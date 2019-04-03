@@ -10,7 +10,6 @@ class CDBRedis
 {
 public:
     CDBRedis( void );
-   ~CDBRedis( void ){ };
 
     enum ERedis
     {

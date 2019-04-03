@@ -23,13 +23,13 @@ public:
     }
 
     // 获取玩家基础数据;
-    CRecordPlayerInfo& GetRecordPlayerInfo( void )  { return m_RecordPlayer.RecordPlayerInfo; }
+    CRecordPlayerInfo& GetRecordPlayerInfo( void )  { return m_RecordPlayer.RecordPlayerInfo;   }
     // 获取玩家道具数据;
-    TRecordItem&       GetRecordItemInfo( void )   { return m_RecordPlayer.RecordItem; }
+    TRecordItem&       GetRecordItemInfo( void )    { return m_RecordPlayer.RecordItem;         }
     // 获取玩家统计数据;
-    TRecordStatisics&  GetRecordStatisics( void )   { return m_RecordPlayer.RecordStatisics; }
+    TRecordStatisics&  GetRecordStatisics( void )   { return m_RecordPlayer.RecordStatisics;    }
     // 获取玩家任务数据;
-    TRecordMission&    GetRecordMission( void )    { return m_RecordPlayer.RecordMission; }
+    TRecordMission&    GetRecordMission( void )     { return m_RecordPlayer.RecordMission;      }
 
     SS_PROPERTY( NLNET::TServiceId  , FrontendServiceId , private ); // 消息频道;
     SS_PROPERTY( ROOM_ID            , RoomID            , private ); // 房间ID;
