@@ -65,12 +65,12 @@ bool CDBRedis::Connect( const char* host , sint32 port , uint32 timeout , const 
 
     if ( NULL == m_RedisContext )
     {
-        nlinfo( " redis connection host fail: %s , port: %d" , m_Host.c_str() , m_Port );
+        nlerror( " redis connection host fail: %s , port: %d" , m_Host.c_str() , m_Port );
         return false;
     }
     if ( NULL != m_RedisContext && m_RedisContext->err )
     {
-        nlinfo( " redis connection host fail: %s , port: %d error: %s" , m_Host.c_str() , m_Port , m_RedisContext->errstr );
+        nlerror( " redis connection host fail: %s , port: %d error: %s" , m_Host.c_str() , m_Port , m_RedisContext->errstr );
         return false;
     }
 
@@ -86,6 +86,7 @@ bool CDBRedis::Connect( const char* host , sint32 port , uint32 timeout , const 
         }
     }
 
+    nlinfo( " Connect Redis Succeed !!!!" );
     return true;
 }
 

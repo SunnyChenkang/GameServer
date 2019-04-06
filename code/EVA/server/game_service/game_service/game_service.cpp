@@ -2,6 +2,7 @@
 #include "config.h"
 #endif
 
+#include "server_share/uuid/uuid.h"
 #include "game_service.h"
 #include "game_service_command.h"
 #include <game_service/event/event_register.h>

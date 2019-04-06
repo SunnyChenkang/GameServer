@@ -2,6 +2,7 @@
 #define WSE_WEBMODULES_ITF_H_
 
 #include <web_service/web_service/web_service_def.h>
+#include <memory>
 
 WSE_NAMESPACE_BEGIN_DECL
 

@@ -9,13 +9,14 @@
 #include <nel/net/service.h>
 #include <nel/net/module_common.h>
 #include <nel/misc/debug.h>
-#include <nel/misc/types_nl.h>
 #include <nel/misc/singleton.h>
 #include <nel/misc/stop_watch.h>
 #include <nel/misc/sstring.h>
 #include <nel/misc/enum_bitset.h>
+#include <nel/misc/hierarchical_timer.h>
 #include <nel/net/service.h>
 #include <nel/net/callback_server_websocket.h>
+#include <nel/net/module.h>
 #include <nel/misc/string_conversion.h>
 #include <nel/misc/utils.h>
 #include <nel/misc/md5.h>
