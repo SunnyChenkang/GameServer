@@ -8,6 +8,8 @@
 #include <game_service/event/event_register.h>
 #include <game_service/redis/redis.h>
 
+#include <server_share/uuid/uuid.h>
+
 using namespace NLMISC;
 using namespace NLNET;
 using namespace GSE;
@@ -21,6 +23,7 @@ void foo()
 
 void CGameService::init( void )
 {
+    NLMISC::CSString ss = AllocGUID();
     // Á¬½ÓREDIS;
     NLMISC::CSString RedisHost      = ConfigFile.getVar("RedisHost").asString();
     NLMISC::CSString RedisPort      = ConfigFile.getVar("RedisPort").asString();
