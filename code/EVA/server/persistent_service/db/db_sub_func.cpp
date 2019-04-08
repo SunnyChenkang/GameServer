@@ -72,6 +72,8 @@ bool SubLoadItem( CRecordPlayer& RecordPlayer )
     if ( NULL == pStmt )   return false;
 
     CRecordItem ItemData;
+    ItemData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
+
     CDBResult* pResult = NULL;
     pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
     pWorker->Query( pStmt , &pResult );
@@ -99,6 +101,8 @@ bool SubLoadStatistics( CRecordPlayer& RecordPlayer )
     if ( NULL == pStmt )   return false;
 
     CRecordStatistics StatisticsData;
+    StatisticsData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
+
     CDBResult* pResult = NULL;
     pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
     pWorker->Query( pStmt , &pResult );
@@ -125,6 +129,8 @@ bool SubLoadMission( CRecordPlayer& RecordPlayer )
     if ( NULL == pStmt )   return false;
 
     CRecordMission MissionData;
+    MissionData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
+
     CDBResult* pResult = NULL;
     pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
     pWorker->Query( pStmt , &pResult );
