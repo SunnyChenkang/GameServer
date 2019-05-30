@@ -66,7 +66,12 @@ void CallBack_LoginSucceed( NLNET::CMessage& Message , const std::string& Servic
 void CallBack_ClientDelete( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     ROLE_ID RoleID = 0;
+    NLNET::TServiceId FesServiceId = NLNET::TServiceId::InvalidId;
     Message.serial( RoleID );
+    Message.serial( FesServiceId );
+
+    //忽律自己服务器;
+    if ( FesServiceId == NLNET::IService::getInstance()->getServiceId() ) return;
     CClient* pClient = ClientManager.FindClientRoleID( RoleID );
     if ( NULL == pClient ) return;
     ClientManager.DeleteClient( pClient );
@@ -88,16 +93,18 @@ void CallBack_RUDPLogin(NLNET::CMessage& Message , SOCKET_ID SocketID )
     pClient->SetHost( PBLoginAuthUser.client_host() );
 
     PB_UserLogin PBUserLogin;
-    ROLE_ID RoleID              = pClient->GetRoleID();
-    NLMISC::CSString ClientHost = pClient->GetHost();
+    ROLE_ID RoleID                  = pClient->GetRoleID();
+    NLMISC::CSString ClientHost     = pClient->GetHost();
+    NLNET::TServiceId FesServiceId  = NLNET::IService::getInstance()->getServiceId();
     PBUserLogin.set_role_id( RoleID );
     PBUserLogin.set_role_kind( PBLoginAuthUser.role_kind() );
     PBUserLogin.set_client_host( ClientHost );
-    PBUserLogin.set_frontend_service_id( NLNET::IService::getInstance()->getServiceId().get() );
+    PBUserLogin.set_frontend_service_id( FesServiceId.get() );
 
     // 其它服务关闭客户端;
     NLNET::CMessage SendMessage1("MSG_CLIENT_DELETE");
     SendMessage1.serial( RoleID );
+    SendMessage1.serial( FesServiceId );
     SS_NETWORK->send( "FES" , SendMessage1 );
 
     // 登录游戏;
