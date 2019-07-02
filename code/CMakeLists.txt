@@ -47,6 +47,7 @@ SET(NL_VERSION_MAJOR 0)
 SET(NL_VERSION_MINOR 8)
 SET(NL_VERSION_PATCH 0)
 SET(NL_VERSION "${NL_VERSION_MAJOR}.${NL_VERSION_MINOR}.${NL_VERSION_PATCH}")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 #-----------------------------------------------------------------------------
 # Redirect output files
