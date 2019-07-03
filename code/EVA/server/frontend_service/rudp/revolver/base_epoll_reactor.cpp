@@ -9,7 +9,7 @@ BASE_NAMESPACE_BEGIN_DECL
 #define MAX_NEVENT 8192
 
 CEpollReactor::CEpollReactor() : max_handler_num_(EPOLL_MAX_HANDLER)
-, timer_queue_(&functor_), epoll_delay_(10)
+, timer_queue_(&functor_), epoll_delay_(SELECT_DELAY)
 {
     epfd_   = -1;
     events_ = 0;
@@ -166,7 +166,7 @@ int32_t CEpollReactor::event_loop()
     }
 
     uint64_t cur_ts = CBaseTimeValue::get_time_value().msec();
-    if(cur_ts > prev_ts_ + 5)
+    if(cur_ts >= prev_ts_ + SELECT_DELAY)
     {
         epoll_delay_ = timer_queue_.expire();
 
@@ -178,7 +178,7 @@ int32_t CEpollReactor::event_loop()
         prev_ts_ = cur_ts;
     }
     else
-        epoll_delay_ = 5;
+        epoll_delay_ = SELECT_DELAY;
 
     return 0;
 }

@@ -12,7 +12,7 @@ BASE_NAMESPACE_BEGIN_DECL
 CSelectReator::CSelectReator() : timer_queue_(&functor_)
 {
     max_handler_num_ = 64;
-    select_delay_ = 20;
+    select_delay_ = SELECT_DELAY;
 }
 
 CSelectReator::~CSelectReator()
