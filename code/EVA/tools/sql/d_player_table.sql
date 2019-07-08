@@ -37,7 +37,7 @@ create table t_player
    f_create_time 		timestamp 	DEFAULT CURRENT_TIMESTAMP  comment 	'角色创建时间',	
    f_delete_state		tinyint(3)  unsigned NOT NULL DEFAULT 0 comment '删除状态',
   primary key (f_role_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 alter table t_player comment '角色基础信息';
 
 /*==============================================================*/
@@ -53,7 +53,7 @@ create table t_item
    f_delete_state	tinyint(3)  unsigned NOT NULL DEFAULT 0 comment '删除状态',
    
   primary key (f_role_id , f_item_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 alter table t_item comment '道具信息';
 
 /*==============================================================*/
@@ -68,7 +68,7 @@ create table t_statistics
    f_delete_state	tinyint(3)  unsigned NOT NULL DEFAULT 0 comment '删除状态',
    
   primary key (f_role_id , f_statistics_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 alter table t_statistics comment '统计信息';
 
 /*==============================================================*/
@@ -85,5 +85,5 @@ create table t_mission
    f_delete_state	tinyint(3)  unsigned NOT NULL DEFAULT 0 comment '删除状态',
    
   primary key (f_role_id , f_mission_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 alter table t_mission comment '任务信息';

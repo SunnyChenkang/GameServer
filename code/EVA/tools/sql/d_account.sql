@@ -33,5 +33,5 @@ CREATE TABLE `t_account_guest` (
 	f_inserttime 		timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 		'记录生成时间',
   PRIMARY KEY(f_account_id),
   KEY `f_device_id` (`f_device_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
