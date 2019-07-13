@@ -73,6 +73,7 @@ typedef uint32      MISSION_ID;
 typedef uint32      STATISTICS_ID;
 typedef sint32      MONEY;
 typedef uint32      ROOM_ID;
+typedef uint64      CALLBACK_ID;
 
 // ÍøÂç½Ó¿Ú;
 #define SS_NETWORK NLNET::CUnifiedNetwork::getInstance()
