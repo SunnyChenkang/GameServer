@@ -1,0 +1,18 @@
+syntax = "proto2";
+package PROTOBUF;
+
+// 错误枚举
+enum PB_TErrorEnum
+{
+	ERROR_SERVER_FULL = 0;		// 服务器人数已满
+}
+
+// 添加道具来源
+enum PB_DotItem
+{
+	DOT_ADD_CREATE_ROLE   	= 1;		// 创建角色赠送
+	DOT_ADD_PROXY_RECHARGE	= 2;		// 代理充值
+	DOT_ADD_SHOP_BUY	    = 3;		// 商城购买
+	DOT_SUB_CREATE_ROOM 	= 50;		// 创建房间消耗
+}
+

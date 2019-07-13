@@ -1,0 +1,250 @@
+syntax = "proto2";
+package PROTOBUF;
+
+import "msg_player.proto";
+import "msg_room.proto";
+
+// 角色动作;
+enum PB_MJ_ASK
+{
+	ASK_NULL			= 0x00;			// NULL类型;
+	ASK_LEFT			= 0x01;			// 左吃类型;
+	ASK_CENTER 			= 0x02;			// 中吃类型;
+	ASK_RIGHT			= 0x04;			// 右吃类型;
+	ASK_PENG			= 0x08;			// 碰牌类型;
+	ASK_GANG			= 0x10;			// 杠牌类型;
+	ASK_LISTEN			= 0x20;			// 听牌类型;
+	ASK_CHIHU			= 0x40;			// 吃胡类型;
+	ASK_SUCCEED			= 0x80;			// 验证权限;
+}
+
+// 角色状态;
+enum PB_MJ_RoleState
+{
+	STATE_READY				= 0x01;		// 准备状态;
+	STATE_LISTEN			= 0x02;		// 听牌状态;
+	STATE_NEWROLE			= 0x04;		// 新玩家状态;
+	STATE_OWNER_ROOM		= 0x08;		// 房主状态;
+	STATE_LIMIT				= 0x10;		// 限制游戏开始;
+	STATE_OFFLINE			= 0x20;		// 离线状态;
+	STATE_CONTIUE_GAME      = 0x40;     // 继续下一句状态;
+}
+
+// 杠牌种类;
+enum PB_MJ_BarState
+{
+	STATE_GANG_NULL		= 0;			// NULL类型;
+	STATE_MING_GANG		= 1;			// 明杠;
+	STATE_AN_GANG		= 2;			// 暗杠;
+	STATE_ERCI_GANG		= 3;			// 二次杠;
+}
+
+// 玩家方向;
+enum PB_MJ_Direction
+{
+	DT_NULL = 0;						// 异常;
+	DT_DONG	= 1;						// 东;
+	DT_NAN	= 2;						// 南;
+	DT_XI   = 3;						// 西;
+	DT_BEI  = 4;						// 北;
+}
+
+// 罚钱种类;
+enum PB_MJ_AmerceState
+{
+	AMERCE_NULL			= 0x00;
+	AMERCE_OUT_CARD 	= 0x01;	 		// 玩家出的牌一样;( 根据玩家数量来确定 )
+}
+
+// 罚钱;
+message PB_MJ_Amerce
+{
+	optional uint64				role_id 	  		= 1;  // 角色ID;
+	optional PB_MJ_AmerceState	state 				= 2;  // 罚钱状态;
+	optional uint64				sub_money_id		= 3;  // 减钱角色ID;
+}
+
+// 麻将状态;
+enum PB_MJ_State
+{
+	TMJ_WAIT					= 0;		// 等待状态;
+	TMJ_CHECKSTART				= 1;		// 等待开始状态;
+	TMJ_STARTGAME				= 2;		// 开始游戏;
+	TMJ_MAKEBANKER				= 3;		// 摇骰子选择庄家;
+	TMJ_SENDCARD				= 4;		// 发送手牌;
+	TMH_SENDCARDFINISH			= 5;		// 发送手牌完成;
+	TMJ_TIANDIHUCHOICE			= 6;		// 天地胡权限;
+	TMJ_ACTION					= 7;		// 玩家自由状态;
+	TMJ_OUTCARD					= 8;		// 出牌状态;
+	TMJ_USERCHOICE				= 9;		// 其他用户选择状态;
+	TMJ_SELFCHOICE				= 10;		// 玩家自身选择状态;
+	TMJ_TOUCHCARD				= 11;		// 碰牌状态;
+	TMJ_TOUCHCARDFINISH			= 12;		// 碰牌完成状态;
+	TMH_BARCARD					= 13;		// 杠牌状态;
+	TMH_BARCARDFINISH			= 14;		// 杠牌完成状态;
+	TMH_EATCARD					= 15;		// 吃牌状态;
+	TMH_EATCARDFINISH			= 16;		// 吃牌完成状态;
+	TMH_LISTEN					= 17;		// 听牌状态;
+	TMH_LISTENFINSH				= 18;		// 听牌完成状态;
+	TMJ_AMERCE					= 19;		// 罚钱状态;
+	TMH_AMERCEFINISH			= 20;		// 罚钱完成状态;
+	TMJ_RELIEVE					= 21;		// 投票解散状态;
+	TMJ_RELIEVEFINISH			= 22;		// 投票解散完成状态;
+	TMJ_ZIMOHU					= 23;		// 自摸胡状态;
+	TMJ_DIANPAOHU				= 24;		// 点炮胡状态;
+	TMJ_QIANGGANGHU				= 25;		// 抢杠胡状态;
+	TMJ_LIUJUHU					= 26;		// 流局胡状态;
+	TMJ_GANGKAIHUAHU			= 27;		// 杠开花;
+	TMJ_SHOWDOWN				= 28;		// 结算状态;
+	TMJ_GAMEOVER				= 29;		// 游戏结束状态;
+}
+
+// 用户权限;
+message PB_MJ_UserPower
+{
+	optional uint64 		role_id			    = 1;	// 角色ID;
+	optional uint32 		wik			    	= 2;	// 用户权限;
+	optional uint32 		handle_card	    	= 3;	// 操作牌;
+}
+
+// 用户听牌;
+message PB_MJ_Listen
+{
+	optional uint64 		role_id 			= 1;	// 用户听牌;
+	optional uint32 		role_state			= 2;	// 用户状态;
+}
+
+// 玩家自由活动;
+message PB_MJ_UserAction
+{
+	optional uint64			role_id				= 1;	// 当前活动ID;
+	optional PB_MJ_State	room_state			= 2;	// 房间当前状态;
+	optional uint32			send_card			= 3;	// 手牌;
+	optional uint32			wik					= 4;	// 角色权限;
+	repeated uint32			bar_card			= 5;    // 杠牌列表;
+	optional uint32			surplus_card_count	= 6;	// 麻将牌剩余数量;
+	repeated uint32			eat_cartd			= 7;    // 吃牌列表;
+}
+
+// 玩家出牌;
+message PB_MJ_OutCard	
+{
+	optional uint64			role_id				= 1;	// 出牌角色ID;
+	optional uint32			card				= 2;	// 出牌值;
+	optional int32 			index     			= 3;    // 出牌索引;
+	optional uint32			hand_num			= 4;	// 出完牌剩余数量;
+	optional uint32 		river_num 			= 5;    // 添加完牌河数量;	
+	optional uint32 		role_state			= 6;    // 角色状态;
+	repeated uint32			listen_card			= 7; 	// 听牌列表;
+	repeated uint32 		hand_list			= 8;  	// 手牌列表;
+}
+
+// 用户操作;
+message PB_MJ_UserOperate	
+{
+	optional uint32			wik			    	= 1;	// 用户操作权限;
+	optional uint32 		card		    	= 2;	// 用户选择牌型;
+	repeated uint32 		gang_card       	= 3;	// 杠牌列表;
+}
+
+// 牌数据;
+message PB_MJ_CardData
+{
+	optional uint32			card_value			= 1;	// 牌值;
+	optional uint32			wik		   			= 2; 	// 组合类型;
+	optional uint64			tar_id	   			= 3; 	// 目标ID;
+	optional uint64			src_id	   			= 4; 	// 源ID;
+	optional uint32 		barkind	   			= 5; 	// 杠牌类型;
+}
+
+// 玩家数据;
+message PB_MJ_Role	
+{
+	optional PB_Player		 role_info			= 1;	// 角色基础信息;
+	optional uint32 		 role_state			= 2;	// 角色状态;
+	optional uint32 		 hand_count		 	= 3;	// 手牌数量;
+	repeated uint32 		 river_list			= 4;	// 牌河列表;
+	repeated PB_MJ_CardData	 weave_list		  	= 5;	// 组合牌列表;
+	optional uint32 		 wik				= 6;	// 当前权限;
+	optional PB_MJ_Direction td				 	= 7;    // 角色方向;
+	repeated uint32			 listen_list		= 8; 	// 听牌列表;
+	repeated uint32 		 gang_list   	 	= 9;	// 杠牌列表;
+	repeated uint32          eat_list 		 	= 10;	// 吃牌列表;
+	optional uint32          hu_card            = 11;   // 胡牌数值;
+	repeated uint32          hu_card_list	    = 12;	// 胡牌列表;
+}
+
+// 房间内所有数据;
+message PB_MJ_RoomInfo
+{
+	optional PB_MJ_State		room_state		 	= 1;	// 房间当前状态;
+	repeated PB_MJ_Role			role_list 	 		= 2;	// 玩家列表;
+	optional uint64				banker_id		 	= 3;	// 当前庄家;
+	optional uint64 			action_id		 	= 4;	// 当前活动玩家;
+	repeated uint32 			hand_list			= 5;	// 手牌列表;
+	optional uint32 	  		surplus_hand_count 	= 6;	// 剩余手牌数量;
+	optional uint32 			send_card   	 	= 7;	// 当前发的牌;
+	optional string				room_name		 	= 8;	// 游戏类型;
+	optional uint32 			game_count		 	= 9;    // 游戏局数;
+	optional uint32 			game_circle		    = 10;   // 游戏圈数;
+	optional PB_CreateRoom		room_info			= 11;	// 房间信息;
+	optional uint32				hui_card		 	= 12;	// 当前会牌;
+	optional uint32				out_card	     	= 13;	// 当前出牌;
+	repeated uint32 			bar_list    	 	= 14;	// 杠牌列表;
+	optional PB_RoleStateCount	role_state		 	= 15;	// 投票解散状态;
+	optional PB_RoleHostCount	role_host		 	= 16;	// 同IP限制;
+}
+
+// 组合牌;
+message PB_MJ_WeaveCard
+{
+	repeated PB_MJ_CardData		card_data     		= 1;	// 组合牌数据;	
+	optional uint32 			hand_count	 		= 2;	// 手牌剩余数量;
+	repeated uint32 			hand_card    		= 3;	// 手牌列表;
+	repeated PB_MJ_Role			role_list  			= 4;	// 角色列表;
+	repeated uint32            	eat_card	 		= 5;	// 吃牌列表;
+}
+
+// 结算事件;
+message PB_MJ_ShowDownEvent
+{
+	optional uint32 			event_id			= 1;	// ID ;
+	optional uint32 			count				= 2;	// 数量;
+}
+
+// 结算;
+message PB_MJ_ShowDown
+{
+	optional uint64				 role_id        	= 1;		// 角色ID;
+	optional int64 				 score		  		= 2;		// 输赢积分;
+	repeated uint32 			 hand_card     		= 3;		// 手牌列表;
+	optional uint32 			 hu_card		  	= 4;		// 胡牌;
+	optional int64 				 total_score   		= 5;		// 总积分;
+	repeated PB_MJ_ShowDownEvent event_count	  	= 6;		// 结算事件;
+	optional bool				 hu_role			= 7;		// 是否为胡牌玩家;
+	optional uint32 			 hand_count  	    = 8;		// 手牌数量;
+}
+
+// 结算;
+message PB_MJ_ShowDownCount
+{
+	repeated PB_MJ_ShowDown			showdown_list 	= 1; 		// 结算列表;
+	optional PB_MJ_State			room_state    	= 2;		// 房间状态;
+	optional uint32 				game_count    	= 3;		// 当前局数;
+	optional bool 					game_over	  	= 4;		// 是否结束;
+}
+
+enum PB_MJ_CHR 
+{
+	CHR_NULL = 0;
+	CHR_XIAO_HU = 1;
+	CHR_XIAO_GANG_KAI_HUA = 2;
+	CHR_Da_GANG_KAI_HUA = 4;
+	CHR_QING_YI_SE = 8;
+	CHR_YI_TIAO_LONG = 16;
+	CHR_QI_DUI = 32;
+	CHR_HAO_HUA_QI_DUI = 64;
+	CHR_CHAO_HAO_HUA_QI_DUI = 128;
+	CHR_CHAO_CHAO_HAO_HUA_QI_DUI = 256;
+	CHR_QIANG_GANG_HU = 512;
+}

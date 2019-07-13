@@ -1,0 +1,13 @@
+syntax = "proto2";
+package PROTOBUF;
+
+// 统计信息
+message PB_Statistics
+{
+	optional uint32 statistics_id 	 = 1;
+	optional uint32 statistics_count = 2;
+}
+message PB_StatisticsList
+{
+	repeated PB_Statistics statistics_list = 1;
+}

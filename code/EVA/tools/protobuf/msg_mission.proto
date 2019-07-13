@@ -1,0 +1,27 @@
+syntax = "proto2";
+package PROTOBUF;
+
+// 任务状态枚举
+enum PB_TMissionState
+{
+	MISSION_STATE_INVALID = 0;
+	MISSION_STATE_ACCEPT  = 1;
+	MISSION_STATE_DONE	  = 2;
+	MISSION_STATE_REWARD  = 3;
+	MISSION_STATE_CLOSE   = 4;
+}
+
+// 任务信息
+message PB_Mission
+{
+	optional uint32 mission_id 				= 1;
+	optional uint32 mission_state 			= 2;
+	optional uint32 mission_target			= 3;
+	optional uint32 mission_receive_time	= 4;
+}
+message PB_MissionList
+{
+	repeated PB_Mission mission_list = 1;
+}
+
+

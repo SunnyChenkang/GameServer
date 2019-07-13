@@ -1,0 +1,17 @@
+syntax = "proto2";
+package PROTOBUF;
+
+// 角色状态枚举
+enum PB_TRoleState
+{
+	ROLE_STATE_NULL = 0;
+}
+
+// 角色基础信息
+message PB_Player
+{
+	optional uint32 role_id		= 1;
+	optional uint32 head_id 	= 2;
+	optional string nick_name   = 3;
+	optional string last_host   = 4;
+}
