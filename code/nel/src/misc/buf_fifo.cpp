@@ -243,7 +243,7 @@ uint8 CBufFIFO::frontLast ()
 void CBufFIFO::front (vector<uint8> &buffer)
 {
 	uint8 *tmpbuffer;
-	uint32 s=0;
+	uint32 s;
 
 	buffer.clear ();
 

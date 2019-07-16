@@ -773,7 +773,7 @@ void CListenTask::run()
 			//case  0 : continue; // time-out expired, no results
 			case -1 :
 				// we'll ignore message (Interrupted system call) caused by a CTRL-C
-				if (CSock::getLastError() == 4 || exitRequired() )
+				if (CSock::getLastError() == 4)
 				{
 					LNETL1_DEBUG ("LNETL1: Select failed (in listen thread): %s (code %u) but IGNORED", CSock::errorString( CSock::getLastError() ).c_str(), CSock::getLastError());
 					continue;
@@ -951,7 +951,7 @@ void CBufServer::addNewThread( CThreadPool& threadpool, CServerBufSock *bufsock 
 	task->addNewSocket( bufsock );
 
 	// Add a new thread to the pool, with this task
-	IThread *thr = IThread::create( task, 1024*32 );
+	IThread *thr = IThread::create( task, 1024*4*4 );
 	{
 		threadpool.push_back( thr );
 		thr->start();

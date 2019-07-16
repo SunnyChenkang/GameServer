@@ -60,7 +60,7 @@ NLMISC_COMMAND(test, "none", "none")
 
 struct CServiceEntry
 {
-	CServiceEntry (TSockId sock, const vector<CInetAddress> &a, const string &n, TServiceId s) : SockId(sock), Addr(a), Name(n), SId (s), WaitingUnregistration(false), RunningState(ServiceClose) { }
+	CServiceEntry (TSockId sock, const vector<CInetAddress> &a, const string &n, TServiceId s) : SockId(sock), Addr(a), Name(n), SId (s), WaitingUnregistration(false) { }
 
 	TSockId						SockId;			// the connection between the service and the naming service
 	vector<CInetAddress>		Addr;			// address to send to the service who wants to lookup this service
@@ -72,8 +72,6 @@ struct CServiceEntry
 	bool				WaitingUnregistration;			// true if this service is in unregistration process (wait other service ACK)
 	TTime				WaitingUnregistrationTime;		// time of the beginning of the inregistration process
 	list<TServiceId>	WaitingUnregistrationServices;	// list of service that we wait the answer
-
-    TServiceRunningState        RunningState;
 };
 
 
@@ -754,33 +752,6 @@ static void cbUnregisterSId (CMessage& msgin, TSockId from, CCallbackNetBase &ne
 	//displayRegisteredServices ();
 }
 
-/**
- * Callback for service set state.
- *
- * Message expected : SSS
- */
-static void cbSetSerivceState (CMessage& msgin, TSockId from, CCallbackNetBase &netbase)
-{
-    TServiceId  sid;
-    uint32      state;
-    msgin.serial( sid );
-    msgin.serial( state );
-
-    CMessage msgout ("USS");
-    msgout.serial (sid);
-    msgout.serial (state);
-
-    for (list<CServiceEntry>::iterator it = RegisteredServices.begin(); it != RegisteredServices.end (); it++)
-    {
-        if ( it->SId == sid )
-        {
-            it->RunningState = (TServiceRunningState)state;
-        }
-
-        CallbackServer->send (msgout, (*it).SockId);
-    }
-}
-
 /*
  * Helper function for cbQueryPort
  *
@@ -966,9 +937,6 @@ TCallbackItem CallbackArray[] =
 	{ "QP", cbQueryPort },
 	{ "UNI", cbUnregisterSId },
 	{ "ACK_UNI", cbACKUnregistration },
-//	{ "RS", cbRegisteredServices },
-
-    { "SSS", cbSetSerivceState },
 };
 
 

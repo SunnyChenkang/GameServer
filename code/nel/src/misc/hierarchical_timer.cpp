@@ -366,7 +366,7 @@ void	CHTimer::display(CLog *log, TSortCriterion criterion, bool displayInline /*
 		else
 		{
 			(*statIt)->getStats(statsInline, displayEx, rootStats.TotalTime, _WantStandardDeviation);
-			char out[2048];
+			char out[4096];
 			NLMISC::smprintf(out, 2048, format.c_str(), (*statIt)->Timer->_Name, statsInline.c_str());
 			log->displayRawNL(out);
 		}
@@ -521,7 +521,7 @@ void		CHTimer::displayByExecutionPath(CLog *log, TSortCriterion criterion, bool 
 				std::copy(currTimer->_Name, currTimer->_Name + (endIndex - startIndex), resultName.begin() + startIndex);
 			}
 			TNodeVect &execNodes = nodeMap[currTimer];
-			if (execNodes.size() > 0)
+			if (!execNodes.empty())
 			{
 				currNodeStats.buildFromNodes(&execNodes[0], (uint)execNodes.size(), _MsPerTick);
 				currNodeStats.getStats(resultStats, displayEx, rootStats.TotalTime, _WantStandardDeviation);
@@ -1082,7 +1082,7 @@ NLMISC_CATEGORISED_COMMAND(nel,displayMeasures, "display hierarchical timer", "[
 	}
 
 	sint	depth = 0;
-	bool	hasDepth = (sscanf(args[0].c_str(), "%d", &depth) == 1 || (args.size() > 1 && sscanf(args[1].c_str(), "%d", &depth) == 1));
+	bool	hasDepth = (fromString(args[0], depth) || (args.size() > 1 && fromString(args[1], depth)));
 
 	CASE_DISPLAYMEASURES(NoSort, -3)
 	CASE_DISPLAYMEASURES(TotalTime, -2)

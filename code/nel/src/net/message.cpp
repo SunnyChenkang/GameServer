@@ -45,13 +45,6 @@ CMessage::CMessage (const std::string &name, bool inputStream, TStreamFormat str
 	init( name, streamformat );
 }
 
-CMessage::CMessage (const uint32 rpc_session, const std::string &name, bool inputStream, TStreamFormat streamformat, uint32 defaultCapacity) :
-	NLMISC::CMemStream (inputStream, false, defaultCapacity),
-	_Type(OneWay), _SubMessagePosR(0), _LengthR(0), _HeaderSize(0xFFFFFFFF), _TypeSet (false)
-{
-	init( name, streamformat );
-	session(rpc_session);
-}
 
 /*
  * Utility method
@@ -172,10 +165,7 @@ void CMessage::assignFromSubMessage( const CMessage& msgin )
 	}
 }
 
-struct EMsgNameIsNull : public NLMISC::EStream
-{
-    EMsgNameIsNull() : EStream( "Msg name is null." ) {}
-};
+
 /*
  * Sets the message type as a string and put it in the buffer if we are in writing mode
  */
@@ -184,12 +174,7 @@ void CMessage::setType (const std::string &name, TMessageType type)
 	// check if we already do a setType ()
 	nlassert (!_TypeSet);
 	// don't accept empty string
-	//nlassert (!name.empty ());
-
-    if ( name.empty() )
-    {
-        throw EMsgNameIsNull();
-    }
+	nlassert (!name.empty ());
 
 	_Name = name;
 	_Type = type;
@@ -209,7 +194,7 @@ void CMessage::setType (const std::string &name, TMessageType type)
 		// debug features, we number all packet to be sure that they are all sent and received
 		// \todo remove this debug feature when ok
 		// this value will be fill after in the callback function
-		uint32 zeroValue = 0;
+		uint32 zeroValue = 123;
 		serial (zeroValue);
 
 
@@ -244,20 +229,6 @@ void CMessage::changeType (const std::string &name)
 	seek( prevPos, begin );
 }
 
-void CMessage::session( uint32 rpc_session )
-{
-	poke(rpc_session,0);
-}
-
-uint32 CMessage::session()
-{
-	uint32 rpc_session = 0;
-	sint32 prevPos = getPos();
-	seek( 0, begin );
-	serial (rpc_session);
-	seek( prevPos, begin );
-	return rpc_session;
-}
 
 /*
  * Returns the size, in byte of the header that contains the type name of the message or the type number
@@ -379,16 +350,10 @@ std::string CMessage::getName () const
 	}
 	else
 	{
-        //throw EMsgNameIsNull();
-		//nlassert (_TypeSet);
+		nlassert (_TypeSet);
 		return _Name;
 	}
 }
-
-struct EMsgTypeIsNull : public NLMISC::EStream
-{
-    EMsgTypeIsNull() : EStream( "Msg type is null." ) {}
-};
 
 CMessage::TMessageType CMessage::getType() const
 {
@@ -410,8 +375,7 @@ CMessage::TMessageType CMessage::getType() const
 	}
 	else
 	{
-        //throw EMsgTypeIsNull();
-		//nlassert (_TypeSet);
+		nlassert (_TypeSet);
 		return _Type;
 	}
 }
@@ -441,12 +405,7 @@ NLMISC::CMemStream	CMessage::extractStreamFromPos( sint32 pos )
 {
 	NLMISC::CMemStream msg( true );
 	sint32 len = length() - pos;
-
-    if ( len>0 )
-    {
-        memcpy( msg.bufferToFill( len ), buffer() + pos, len );
-    }
-
+	memcpy( msg.bufferToFill( len ), buffer() + pos, len );
 	return msg;
 }
 

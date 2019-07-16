@@ -546,7 +546,7 @@ inline CSString::CSString(const char *s)
 
 inline CSString::CSString(const std::string &s)
 {
-    assign( s.c_str(), s.size() );
+	*(std::string *)this=s;
 }
 
 inline CSString::CSString(char c)
@@ -767,7 +767,7 @@ inline CSString& CSString::operator=(const char *s)
 
 inline CSString& CSString::operator=(const std::string &s)
 {
-    assign( s.c_str(), s.size() );
+	*(std::string *)this=s;
 	return *this;
 }
 
@@ -944,14 +944,6 @@ inline CSString operator+(const char* s0,const CSString& s1)
 {
 	return CSString(s0) + s1.c_str();
 }
-
-#if !defined(NL_COMP_VC) || (NL_COMP_VC_VERSION <= 100)
-// TODO: check if it can be disabled for other compilers too
-inline CSString operator+(const std::string& s0,const CSString& s1)
-{
-	return s0+static_cast<const std::string&>(s1);
-}
-#endif
 
 } // NLMISC
 

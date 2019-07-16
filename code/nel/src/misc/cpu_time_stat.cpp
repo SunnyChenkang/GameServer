@@ -34,34 +34,23 @@ using namespace std;
 
 namespace NLMISC
 {
-#ifdef NL_OS_FREEBSD
-#define PROC_BASE_PATH "/usr/compat/linux/proc"
-#elif defined(NL_OS_UNIX)
-#define PROC_BASE_PATH "/proc"
-#endif
+
 
 // Get absolute ticks value for the whole cpu set
 bool	CCPUTimeStat::getCPUTicks(uint64& user, uint64& nice, uint64& system, uint64& idle, uint64& iowait)
 {
 #ifdef NL_OS_UNIX
 
-	const char*	statfile = PROC_BASE_PATH"/stat";
-	FILE*		f = fopen(statfile, "r");
+	const char*	statfile = "/proc/stat";
+	FILE*		f = nlfopen(statfile, "r");
 
 	if (f == NULL)
 		return false;
 
 	// /proc/stat
 			// cpu  [user]     [nice]    [system]    [idle]     [iowait]   [irq] [softirq]
-#ifdef NL_OS_FREEBSD
-    iowait=0;
-    if (fscanf(f, "cpu %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u", &user, &nice, &system, &idle) != 4)
-#else
-    if (fscanf(f, "cpu  %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u", &user, &nice, &system, &idle, &iowait) != 5)
-#endif
-    {
-       nlwarning("Failed to parse " PROC_BASE_PATH "/stat");
-    }
+	if (fscanf(f, "cpu  %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u", &user, &nice, &system, &idle, &iowait) != 5)
+		nlwarning("Failed to parse /proc/stat");
 
 	fclose(f);
 
@@ -76,8 +65,8 @@ bool	CCPUTimeStat::getPIDTicks(uint64& utime, uint64& stime, uint64& cutime, uin
 {
 #ifdef NL_OS_UNIX
 
-	std::string	statfile = NLMISC::toString(PROC_BASE_PATH"/%u/stat", pid);
-	FILE*	f = fopen(statfile.c_str(), "r");
+	std::string	statfile = NLMISC::toString("/proc/%u/stat", pid);
+	FILE*	f = nlfopen(statfile, "r");
 
 	if (f == NULL)
 		return false;
@@ -85,7 +74,7 @@ bool	CCPUTimeStat::getPIDTicks(uint64& utime, uint64& stime, uint64& cutime, uin
 	// /proc/<pid>/stat
 			// pid com sta ppi pgi ses tty tpg fla mif maf cmi cma [utime]    [stime]    [cutime]   [cstime] ...
 	if (fscanf(f, "%*d %*s %*c %*d %*d %*d %*d %*d %*u %*u %*u %*u %*u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u %" NL_I64 "u", &utime, &stime, &cutime, &cstime) != 4)
-		nlwarning("Failed to parse " PROC_BASE_PATH "/<pid>/stat");
+		nlwarning("Failed to parse /proc/<pid>/stat");
 
 	fclose(f);
 

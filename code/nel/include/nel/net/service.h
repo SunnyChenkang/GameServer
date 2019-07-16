@@ -54,7 +54,17 @@ struct HINSTANCE__;
 typedef struct HINSTANCE__ *HINSTANCE;
 
 typedef char CHAR;
+typedef wchar_t WCHAR;
+
 typedef CHAR *LPSTR;
+typedef WCHAR *LPWSTR;
+
+#if defined(UNICODE) || defined(_UNICODE)
+typedef LPWSTR LPTSTR;
+#else
+typedef LPSTR LPTSTR;
+#endif
+
 #endif
 
 namespace NLNET
@@ -63,12 +73,6 @@ namespace NLNET
 class CCallbackServer;
 class IServiceUpdatable;
 
-enum TServiceRunningState
-{
-    ServiceClose,
-    ServiceOnline,
-    ServiceCanAccess,
-};
 
 //
 // Macros
@@ -343,6 +347,9 @@ public:
 
 	/// Sets the command line and init _Args variable. You must call this before calling main()
 	void setArgs (int argc, const char **argv);
+
+	/// Sets the command line and init _Args variable. You must call this before calling main()
+	void setArgs (int argc, const wchar_t **argv);
 
 	/// Sets the command line and init _Args variable. You must call this before calling main()
 	void setArgs (const char *args);

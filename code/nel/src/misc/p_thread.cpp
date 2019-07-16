@@ -17,10 +17,12 @@
 
 #include "stdmisc.h"
 
+#include "nel/misc/types_nl.h"
+#include "nel/misc/debug.h"
+
 #ifdef NL_OS_UNIX
 
 #include "nel/misc/p_thread.h"
-#include "nel/misc/debug.h"
 
 #include <sched.h>
 #include <pwd.h>
@@ -48,8 +50,11 @@ struct CPMainThread : public CPThread
 
 	~CPMainThread()
 	{
-		if(pthread_key_delete(threadSpecificKey) != 0)
-			throw EThread("cannot delete thread specific storage key.");
+		if (pthread_key_delete(threadSpecificKey) != 0)
+		{
+			nlwarning("cannot delete thread specific storage key.");
+			// throw EThread("cannot delete thread specific storage key.");
+		}
 	}
 };
 
@@ -146,7 +151,7 @@ void CPThread::start()
 	}
 
 	bool detach_old_thread = false;
-	pthread_t old_thread_handle;
+	pthread_t old_thread_handle = _ThreadHandle;
 	if (_State != ThreadStateNone)
 	{
 		if (_State == ThreadStateRunning)
@@ -157,28 +162,13 @@ void CPThread::start()
 			throw EThread("Starting a thread that is already started, existing thread will continue running, this should not happen");
 		}
 		detach_old_thread = true;
-		old_thread_handle = _ThreadHandle;
 	}
-
-    sigset_t new_mask, old_mask; 
-    sigemptyset(&new_mask); 
-    sigaddset(&new_mask, SIGINT); 
-    sigaddset(&new_mask, SIGQUIT); 
-    sigaddset(&new_mask, SIGTERM); 
-    pthread_sigmask(SIG_BLOCK, &new_mask, &old_mask); 
 
 	if (pthread_create(&_ThreadHandle, _StackSize != 0 ? &tattr : NULL, ProxyFunc, this) != 0)
 	{
-        pthread_sigmask(SIG_SETMASK, &old_mask, NULL);
 		throw EThread("Cannot start new thread");
 	}
-    pthread_sigmask(SIG_SETMASK, &old_mask, NULL);
 	_State = ThreadStateRunning;
-
-    if (_StackSize != 0)
-    {
-        pthread_attr_destroy(&tattr);
-    }
 
 	if (detach_old_thread)
 	{

@@ -261,8 +261,6 @@ public:
 #	if (GCC_VERSION > 40100)
 		// return __sync_bool_compare_and_swap(lockPtr, 0, 1);
 		result = __sync_val_compare_and_swap(lockPtr, 0, 1);
-#   elif defined(NL_COMP_CLANG)
-        result = __sync_val_compare_and_swap(lockPtr, 0, 1);
 #	else
 		ASM_ASWAP_FOR_GCC_XCHG
 #	endif
@@ -295,12 +293,7 @@ public:
 				if (!atomic_swap (&_Lock))
 					break;
 
-#ifdef NL_OS_WINDOWS
 				nlSleep (wait_time);
-#else
-				//std::cout <<  "Sleeping i=" << i << std::endl;
-				usleep( wait_time*1000 );
-#endif
 			}
 		}
 	}
@@ -403,12 +396,7 @@ public:
 				if (!CFastMutex::atomic_swap (&_Lock))
 					break;
 
-#ifdef NL_OS_WINDOWS
 				nlSleep (wait_time);
-#else
-				//std::cout <<  "Sleeping i=" << i << std::endl;
-				usleep( wait_time*1000 );
-#endif
 			}
 		}
 	}

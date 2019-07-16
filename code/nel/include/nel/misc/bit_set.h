@@ -29,6 +29,7 @@ namespace	NLMISC
 #define	NL_BITLEN			(4*8)
 #define	NL_BITLEN_SHIFT		5
 
+
 // ***************************************************************************
 /**
  * A BitSet, to test / set flags quickly.

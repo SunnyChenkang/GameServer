@@ -83,8 +83,6 @@ public:
 
 	CMessage (NLMISC::CMemStream &memstr);
 
-	CMessage ( const uint32 rpc_session, const std::string &name = "", bool inputStream = false, TStreamFormat streamformat = UseDefault, uint32 defaultCapacity = 1000);
-
 	/// Copy constructor
 	CMessage (const CMessage &other);
 
@@ -112,9 +110,6 @@ public:
 
 	// Returns true if the message type was already set
 	bool typeIsSet () const;
-
-	uint32 session();
-	void   session( uint32 rpc_session );
 
 	/**
 	 * Returns the length (size) of the message, in bytes.
@@ -151,7 +146,7 @@ public:
 		return _LengthR;
 	}
 
-	virtual sint32	getPos () const throw(NLMISC::EStream)
+	virtual sint32	getPos() const
 	{
 //		return (_BufPos - _Buffer.getPtr()) - _SubMessagePosR;
 		return _Buffer.Pos - _SubMessagePosR;

@@ -468,23 +468,18 @@ void	CAliveCheck::run()
 			continue;
 		}
 
-		for ( uint32 i=0; i<sizeof(CheckList)/sizeof(CheckList[0]); ++i)
+		uint	i;
+		for (i=0; i<sizeof(CheckList)/sizeof(CheckList[0]); ++i)
 		{
 			if (CheckList[i].NeedCheck && !CheckList[i].AddressValid)
 			{
 				try
 				{
-                    CTcpSock	_ts;
-                    _ts.connect(CheckList[i].Address);
-                    // success (no exception)
-                    CheckList[i].AddressValid = true;
-                    _ts.disconnect();
-
-					//CCallbackClient	cbc;
-					//cbc.connect(CheckList[i].Address);
-					//// success (no exception)
-					//CheckList[i].AddressValid = true;
-					//cbc.disconnect();
+					CCallbackClient	cbc;
+					cbc.connect(CheckList[i].Address);
+					// success (no exception)
+					CheckList[i].AddressValid = true;
+					cbc.disconnect();
 				}
 				catch (const ESocketConnectionFailed &e)
 				{
@@ -505,7 +500,8 @@ void	CAliveCheck::run()
 
 void	CAliveCheck::checkService(CInetAddress address, uint connectionId, uint connectionIndex, const std::string &service, TServiceId id)
 {
-	for (uint i=0; i<sizeof(CheckList)/sizeof(CheckList[0]); ++i)
+	uint	i;
+	for (i=0; i<sizeof(CheckList)/sizeof(CheckList[0]); ++i)
 	{
 		if (CheckList[i].NeedCheck)
 			continue;
@@ -635,7 +631,7 @@ bool	CUnifiedNetwork::init(const CInetAddress *addr, CCallbackNetBase::TRecordin
 		nlinfo ("HNETL5: Server '%s' added, registered and listen to port %hu", _Name.c_str (), _ServerPort);
 	}
 
-	AliveThread = IThread::create(new CAliveCheck(), 1024*32);
+	AliveThread = IThread::create(new CAliveCheck(), 1024*4);
 	AliveThread->start();
 
 	_Initialised = true;
@@ -832,10 +828,10 @@ void	CUnifiedNetwork::addService(const string &name, const vector<CInetAddress> 
 	for (uint i = 0; i < addr.size(); i++)
 	{
 		// first we have to look if we have a network that can established the connection
-
 		uint j = 0;
-		// it s 127.0.0.1, it s ok
-		if (!addr[i].is127001 ())
+
+		// it's loopback ip address, it's ok
+		if (!addr[i].isLoopbackIPAddress())
 		{
 			for (j = 0; j < laddr.size (); j++)
 			{
@@ -898,7 +894,6 @@ void	CUnifiedNetwork::addService(const string &name, const vector<CInetAddress> 
 				// have other connection with the same sid (for example, LS can have 2 WS with same sid => sid = 0 and leave
 				// the other side to find a good number
 				ssid.set(0);
-                j = 0;
 			}
 			msg.serial(ssid);	// serializes a 16 bits service id
 			uint8 pos = uint8(j);
@@ -1278,7 +1273,7 @@ uint8 CUnifiedNetwork::findConnectionId (TServiceId sid, uint8 nid)
 
 	if (nid == 0xFF)
 	{
-		// it s often happen because they didn't set a good network configuration, so it s in debug to disable it easily
+		// default network
 		//nldebug ("HNETL5: nid %hu, will use the default connection %hu", (uint16)nid, (uint16)connectionId);
 	}
 	else if (nid >= _IdCnx[sid.get()].NetworkConnectionAssociations.size())
@@ -1299,8 +1294,11 @@ uint8 CUnifiedNetwork::findConnectionId (TServiceId sid, uint8 nid)
 
 	if (connectionId >= _IdCnx[sid.get()].Connections.size() || !_IdCnx[sid.get()].Connections[connectionId].valid() || !_IdCnx[sid.get()].Connections[connectionId].CbNetBase->connected())
 	{
-		// there's a problem with the selected connectionID, so try to find a valid one
-		nlwarning ("HNETL5: Can't find selected connection id %hu to send message to %s because connection is not valid or connected, find a valid connection id", (uint16)connectionId, _IdCnx[sid.get()].ServiceName.c_str ());
+		if (nid != 0xFF)
+		{
+			// not a default network. There's a problem with the selected connectionID, so try to find a valid one
+			nlwarning ("HNETL5: Can't find selected connection id %hu to send message to %s because connection is not valid or connected, find a valid connection id", (uint16)connectionId, _IdCnx[sid.get()].ServiceName.c_str ());
+		}
 
 		for (connectionId = 0; connectionId < _IdCnx[sid.get()].Connections.size(); connectionId++)
 		{
@@ -1308,6 +1306,19 @@ uint8 CUnifiedNetwork::findConnectionId (TServiceId sid, uint8 nid)
 			{
 				// we found one at last, use this one
 				//nldebug ("HNETL5: Ok, we found a valid connectionid, use %hu",  (uint16)connectionId);
+				if (nid < _IdCnx[sid.get()].NetworkConnectionAssociations.size())
+				{
+					_IdCnx[sid.get()].NetworkConnectionAssociations[nid] = connectionId; // we set the preferred networkConnectionAssociation
+				}
+				else
+				{
+					if (nid == 0xFF)
+					{
+						_IdCnx[sid.get()].DefaultNetwork = connectionId;
+					}
+				}
+
+				nlwarning ("HNETL5: selected connection id %hu from network %hu to send message to %s", (uint16)connectionId, (uint16)nid, _IdCnx[sid.get()].ServiceName.c_str ());
 				break;
 			}
 		}
@@ -1464,13 +1475,7 @@ void	CUnifiedNetwork::addCallbackArray (const TUnifiedCallbackItem *callbackarra
 	uint	i;
 
 	for (i=0; i<(uint)arraysize; ++i)
-	{
-		if ( NULL != callbackarray[i].Key )
-		{
-			_Callbacks.insert(make_pair(string(callbackarray[i].Key),callbackarray[i].Callback));
-			//nlinfo("addCallbackArray =================== %s",callbackarray[i].Key);
-		}
-	}
+		_Callbacks.insert(make_pair(string(callbackarray[i].Key),callbackarray[i].Callback));
 }
 
 
@@ -1793,7 +1798,7 @@ bool CUnifiedNetwork::isServiceLocal (TServiceId sid)
 	{
 		for (uint j = 0; j < _IdCnx[sid.get()].ExtAddress.size(); j++)
 		{
-			if (_IdCnx[sid.get()].ExtAddress[j].is127001 ())
+			if (_IdCnx[sid.get()].ExtAddress[j].isLoopbackIPAddress ())
 				return true;
 
 			if (_IdCnx[sid.get()].ExtAddress[j].internalIPAddress () == laddr[i].internalIPAddress ())

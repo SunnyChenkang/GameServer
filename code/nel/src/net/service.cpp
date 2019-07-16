@@ -492,6 +492,13 @@ void IService::setArgs (int argc, const char **argv)
 	}
 }
 
+void IService::setArgs(int argc, const wchar_t **argv)
+{
+	for (sint i = 0; i < argc; i++)
+	{
+		_Args.push_back(nlWideToUtf8(argv[i]));
+	}
+}
 
 void cbLogFilter (CConfigFile::CVar &var)
 {
@@ -575,7 +582,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		if (haveLongArg("writepid"))
 		{
 			// use legacy C primitives
-			FILE *fp = fopen("pid.state", "wt");
+			FILE *fp = nlfopen("pid.state", "wt");
 			if (fp)
 			{
 				fprintf(fp, "%u", getpid());
@@ -600,7 +607,6 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 
 		ListeningPort = servicePort;
 
-		setReportEmailFunction ((void*)sendEmail);
 		// setDefaultEmailParams ("gw.nevrax.com", "", "cado@nevrax.com");
 
 
@@ -623,7 +629,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			else
 			{
 				// create the basic .cfg that link the default one
-				FILE *fp = fopen (cfn.c_str(), "w");
+				FILE *fp = nlfopen (cfn, "w");
 				if (fp == NULL)
 				{
 					nlerror ("SERVICE: Can't create config file '%s'", cfn.c_str());
@@ -682,22 +688,6 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			RunningDirectory = CPath::standardizePath(getArg('A'));
 
 
-        // set the aes aliasname if present in cfg file
-        CConfigFile::CVar *varAliasName= ConfigFile.getVarPtr("AESAliasName");
-        if (varAliasName != NULL)
-        {
-            _AliasName = varAliasName->asString();
-            nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
-        }
-
-        // set the aes aliasname if is present in the command line
-        if (haveArg('N'))
-        {
-            _AliasName = getArg('N');
-            nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
-        }
-
-
 		//
 		// Init debug/log stuffs (must be first things otherwise we can't log if errors)
 		//
@@ -709,18 +699,13 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		changeLogDirectory (LogDirectory);
 
 		bool noLog= (ConfigFile.exists ("DontLog")) && (ConfigFile.getVar("DontLog").asInt() == 1);
-		//noLog|=haveLongArg("nolog");
+		noLog|=haveLongArg("nolog");
 		if (!noLog)
 		{
 			// we create the log with service name filename ("test_service_ALIAS.log" for example)
 			string logname = LogDirectory.toString() + _LongName;
-            if (!_AliasName.empty())
-            {
-                logname += "_" + _AliasName;
-            }
-			//if (haveArg('N'))
-			//	logname += "_" + toLower(getArg('N'));
-
+			if (haveArg('N'))
+				logname += "_" + toLower(getArg('N'));
 			logname += ".log";
 			fd.setParam (logname, false);
 
@@ -950,6 +935,21 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 			NLMISC::fromString(getArg('P'), ListeningPort);
 		}
 
+		// set the aes aliasname if present in cfg file
+		CConfigFile::CVar *varAliasName= ConfigFile.getVarPtr("AESAliasName");
+		if (varAliasName != NULL)
+		{
+			_AliasName = varAliasName->asString();
+			nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
+		}
+
+		// set the aes aliasname if is present in the command line
+		if (haveArg('N'))
+		{
+			_AliasName = getArg('N');
+			nlinfo("SERVICE: Setting alias name to: '%s'",_AliasName.c_str());
+		}
+
 		// Load the recording state from the config file
 		if ((var = ConfigFile.getVarPtr ("Rec")) != NULL)
 		{
@@ -1175,7 +1175,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		{
 			for (uint i = 0; i < var->size(); i++)
 			{
-				CPath::addSearchPath (var->asString(i), true, false);
+				CPath::addSearchPath (NLMISC::expandEnvironmentVariables(var->asString(i)), true, false);
 			}
 		}
 
@@ -1183,7 +1183,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		{
 			for (uint i = 0; i < var->size(); i++)
 			{
-				CPath::addSearchPath (var->asString(i), false, false);
+				CPath::addSearchPath (NLMISC::expandEnvironmentVariables(var->asString(i)), false, false);
 			}
 		}
 
@@ -1268,7 +1268,7 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 		// Activate the timeout assertion thread
 		//
 
-		timeoutThread = IThread::create(&MyTAT, 1024*4*4);
+		timeoutThread = IThread::create(&MyTAT, 1024*4);
 		timeoutThread->start();
 
 		//
@@ -1460,14 +1460,14 @@ sint IService::main (const char *serviceShortName, const char *serviceLongName, 
 						}
 
 						if (dispName.empty())
-							str = "";
+							str.clear();
 						else
 							str = dispName + ": ";
 
 						mdDisplayVars.clear ();
 						ICommand::execute(varName, logDisplayVars, true);
 						const std::deque<std::string>	&strs = mdDisplayVars.lockStrings();
-						if (strs.size()>0)
+						if (!strs.empty())
 						{
 							str += strs[0].substr(0,strs[0].size()-1);
 						}

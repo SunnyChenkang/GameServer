@@ -450,8 +450,8 @@ public:
 	}
 
 
-	void serial (NLMISC::IStream &f) throw (NLMISC::EStream)
-//	virtual void serial (NLMISC::IStream &f) throw (NLMISC::EStream)
+	void serial (NLMISC::IStream &f)
+//	virtual void serial (NLMISC::IStream &f)
 	{
 		if (f.isReading ())
 		{
@@ -575,12 +575,16 @@ public:
 // Traits for hash_map using CEntityId
 struct CEntityIdHashMapTraits
 {
-	enum { bucket_size = 4, min_buckets = 8, };
+	enum { bucket_size = 4, min_buckets = 8 };
 	CEntityIdHashMapTraits() { }
 	size_t operator() (const NLMISC::CEntityId &id ) const
 	{
 		uint64 hash64 = id.getUniqueId();
-		return size_t(hash64) ^ size_t( hash64 >> 32 );
+#ifdef HAVE_X86_64
+		return (size_t)hash64;
+#else
+		return (size_t)hash64 ^ (size_t)(hash64 >> 32);
+#endif
 		//return size_t(id.getShortId());
 	}
 	bool operator() (const NLMISC::CEntityId &id1, const NLMISC::CEntityId &id2) const

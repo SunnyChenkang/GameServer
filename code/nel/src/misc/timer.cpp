@@ -21,8 +21,8 @@
 #include "nel/misc/hierarchical_timer.h"
 #include "nel/misc/variable.h"
 #include "nel/misc/config_file.h"
+#include "nel/misc/timer.h"
 #include <nel/net/service.h>	// for config
-#include "timer.h"
 
 using namespace NLMISC;
 

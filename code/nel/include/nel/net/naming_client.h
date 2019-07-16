@@ -27,7 +27,9 @@
 #include "callback_client.h"
 #include "service.h"
 
+
 namespace NLNET {
+
 
 //typedef uint16 TServiceId;
 
@@ -50,7 +52,7 @@ class CNamingClient
 public:
 	struct CServiceEntry
 	{
-		CServiceEntry (std::string n, TServiceId s, std::vector<CInetAddress> a) : Name(n), SId (s), Addr(a), RunningState(ServiceOnline) { }
+		CServiceEntry (std::string n, TServiceId s, std::vector<CInetAddress> a) : Name(n), SId (s), Addr(a) { }
 
 		// name of the service
 		std::string					Name;
@@ -58,8 +60,6 @@ public:
 		TServiceId					SId;
 		// address to send to the service who wants to lookup this service (could have more than one)
 		std::vector<CInetAddress>	Addr;
-
-        TServiceRunningState        RunningState;
 	};
 
 public:
@@ -175,9 +175,6 @@ public:
 		RegisteredServicesMutex.leave ();
 	}
 
-    static void			SelfCanAccess ();
-    static bool         IsCanAccess( std::vector<std::string>& service_names );
-    
 private:
 
 	static CCallbackClient *_Connection;
@@ -223,7 +220,6 @@ private:
 
 	friend void cbRegisterBroadcast (CMessage &msgin, TSockId from, CCallbackNetBase &netbase);
 	friend void cbUnregisterBroadcast (CMessage &msgin, TSockId from, CCallbackNetBase &netbase);
-    friend void cbUpdateServiceState (CMessage &msgin, TSockId from, CCallbackNetBase &netbase);
 };
 
 

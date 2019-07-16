@@ -128,7 +128,7 @@ void cbRegisterBroadcast (CMessage &msgin, TSockId /* from */, CCallbackNetBase 
 		std::vector<CInetAddress> addrs;
 		CNamingClient::find (sid, addrs);
 
-		if (addrs.size() == 0)
+		if (addrs.empty())
 		{
 			CNamingClient::RegisteredServicesMutex.enter ();
 			CNamingClient::RegisteredServices.push_back (CNamingClient::CServiceEntry (name, sid, addr));
@@ -217,26 +217,7 @@ void cbUnregisterBroadcast (CMessage &msgin, TSockId /* from */, CCallbackNetBas
 	//CNamingClient::displayRegisteredServices ();
 }
 
-void cbUpdateServiceState (CMessage &msgin, TSockId from, CCallbackNetBase &netbase)
-{
-    TServiceId  sid;
-    uint32      state;
-    msgin.serial( sid );
-    msgin.serial( state );
 
-    CNamingClient::RegisteredServicesMutex.enter ();
-    for (std::list<CNamingClient::CServiceEntry>::iterator it = CNamingClient::RegisteredServices.begin(); it != CNamingClient::RegisteredServices.end (); it++)
-    {
-        if (it->SId == sid)
-        {
-            it->RunningState = (TServiceRunningState)state;
-            break;
-        }
-    }
-    CNamingClient::RegisteredServicesMutex.leave ();
-
-    nlinfo ("NC: cbUpdateServiceState  sid:%hu", sid.get());
-}
 //
 
 static TCallbackItem NamingClientCallbackArray[] =
@@ -245,9 +226,7 @@ static TCallbackItem NamingClientCallbackArray[] =
 	{ "QP", cbQueryPort },
 
 	{ "RGB", cbRegisterBroadcast },
-	{ "UNB", cbUnregisterBroadcast },
-
-    { "USS", cbUpdateServiceState }
+	{ "UNB", cbUnregisterBroadcast }
 };
 
 void CNamingClient::connect( const CInetAddress &addr, CCallbackNetBase::TRecordingState rec, const vector<CInetAddress> &/* addresses */ )
@@ -441,7 +420,7 @@ bool CNamingClient::lookup (const std::string &name, CInetAddress &addr)
 	vector<CInetAddress> addrs;
 	find (name, addrs);
 
-	if (addrs.size()==0)
+	if (addrs.empty())
 		return false;
 
 	nlassert (addrs.size()==1);
@@ -457,7 +436,7 @@ bool CNamingClient::lookup (TServiceId sid, CInetAddress &addr)
 	vector<CInetAddress> addrs;
 	find (sid, addrs);
 
-	if (addrs.size()==0)
+	if (addrs.empty())
 		return false;
 
 	nlassert (addrs.size()==1);
@@ -486,7 +465,7 @@ bool CNamingClient::lookupAlternate (const std::string &name, CInetAddress &addr
 	vector<CInetAddress> addrs;
 	find (name, addrs);
 
-	if (addrs.size()==0)
+	if (addrs.empty())
 		return false;
 
 	nlassert (addrs.size()==1);
@@ -542,56 +521,6 @@ void CNamingClient::update ()
 	if (_Connection != NULL && _Connection->connected ())
 		_Connection->update ();
 }
-
-void CNamingClient::SelfCanAccess()
-{
-    if ( _Connection!=NULL && _Connection->connected () )
-    {
-        TServiceId sid  = IService::getInstance()->getServiceId();
-        uint32 state    = ServiceCanAccess;
-        CMessage msgout ("SSS");
-        msgout.serial(sid);
-        msgout.serial(state);
-        _Connection->send (msgout);
-    }
-}
-
-bool CNamingClient::IsCanAccess( std::vector<std::string>& service_names )
-{
-    RegisteredServicesMutex.enter ();
-
-    for ( uint i=0; i<service_names.size(); ++i )
-    {
-        std::list<CServiceEntry>::iterator it = RegisteredServices.begin();
-
-        while( it!=RegisteredServices.end () )
-        {
-            if ( it->Name == service_names[i] )
-            {
-                if ( it->RunningState != ServiceCanAccess )
-                {
-                    RegisteredServicesMutex.leave ();
-                    return false;
-                }
-                break;
-            }
-
-            ++it;
-        }
-
-        if ( it==RegisteredServices.end () )
-        {
-            RegisteredServicesMutex.leave ();
-            return false;
-        }
-    }
-
-    RegisteredServicesMutex.leave ();
-    return true;
-}
-
-
-
 
 //
 // Commands

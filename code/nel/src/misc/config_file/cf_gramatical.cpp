@@ -50,6 +50,10 @@
 using namespace std;
 using namespace NLMISC;
 
+#ifdef DEBUG_NEW
+#define new DEBUG_NEW
+#endif
+
 /* Constantes */
 
 #define YYPARSE_PARAM pvararray
@@ -825,9 +829,7 @@ case 5:
 				if (cf_CurrentFile != NULL)
 					free(cf_CurrentFile);
 				// store the filename
-				cf_CurrentFile = (char*)malloc(1024);
-				strcpy(cf_CurrentFile, yyvsp[-1].Val.String);
-				//cf_CurrentFile = strdup(yyvsp[-1].Val.String);
+				cf_CurrentFile = strdup(yyvsp[-1].Val.String);
 				// store the current line minus 1 because the #fileline count for a line
 				cf_CurrentLine = yyvsp[0].Val.Int-1;
 			;
