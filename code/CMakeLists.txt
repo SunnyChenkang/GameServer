@@ -47,7 +47,12 @@ SET(NL_VERSION_MAJOR 0)
 SET(NL_VERSION_MINOR 8)
 SET(NL_VERSION_PATCH 0)
 SET(NL_VERSION "${NL_VERSION_MAJOR}.${NL_VERSION_MINOR}.${NL_VERSION_PATCH}")
+
+IF(WIN32)
+
+ELSE(WIN32)
 add_definitions(-std=c++11)
+ENDIF(WIN32)
 
 #-----------------------------------------------------------------------------
 # Redirect output files
