@@ -29,6 +29,7 @@
 #include <nel/misc/factory.h>
 #include <nel/misc/random.h>
 #include <nel/misc/callback_adaptor.h>
+#include <nel/misc/timer.h>
 
 #include <stdio.h>
 #include <stdlib.h>

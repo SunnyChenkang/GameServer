@@ -2,11 +2,11 @@
 #define GSE_DEF_H_
 
 #include <server_share/record/db_record_dot_data.h>
-#include <server_share/timer/timer.h>
+#include <server_share/record/db_record_player.h>
+
 #include <server_share/common/common.h>
 #include <server_share/common/sigslot.h>
 #include <server_share/json_table/json_load.h>
-#include <server_share/record/db_record_player.h>
 
 #include <game_service/message/message_login.h>
 #include <game_service/message/message_room.h>

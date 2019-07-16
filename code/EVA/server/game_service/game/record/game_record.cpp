@@ -1,5 +1,4 @@
 #include "game_record.h"
-#include <server_share/redis/db_redis_def.h>
 #include <game_service/redis/redis.h>
 
 GSE_NAMESPACE_BEGIN_DECL

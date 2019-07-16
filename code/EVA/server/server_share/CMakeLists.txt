@@ -1,7 +1,6 @@
 FILE(GLOB SRC *.cpp *.h)
 FILE(GLOB SRC_JSON      			json/*.h json/*.cpp json/*.inl)
 FILE(GLOB SRC_JSONTABLE 		json_table/*.h json_table/*.cpp)
-FILE(GLOB SRC_TIMER     			timer/*.h timer/*.cpp)
 FILE(GLOB SRC_COMMON    	common/*.h common/*.cpp)
 FILE(GLOB SRC_DB 					db/*.h db/*.cpp)
 FILE(GLOB SRC_MYSQL   			db/mysql/*.h db/mysql/*.cpp db/mysql/*.inl)
@@ -19,7 +18,6 @@ FILE(GLOB SRC_IDALLOCATE	id_allocate/*.h id_allocate/*.cpp)
 
 SOURCE_GROUP("json" 			FILES ${SRC_JSON})
 SOURCE_GROUP("json_table" 	FILES ${SRC_JSONTABLE})
-SOURCE_GROUP("timer" 			FILES ${SRC_TIMER})
 SOURCE_GROUP("common"		FILES ${SRC_COMMON})
 SOURCE_GROUP("db"				FILES ${SRC_DB})
 SOURCE_GROUP("db\\mysql"	FILES ${SRC_MYSQL})
@@ -40,7 +38,6 @@ ADD_DEFINITIONS(-DCURL_STATICLIB)
 NL_TARGET_LIB(servershare ${SRC} 
 						  ${SRC_JSON}
 						  ${SRC_COMMON} 
-						  ${SRC_TIMER} 
 						  ${SRC_JSONTABLE} 
 						  ${SRC_DB}
 						  ${SRC_MYSQL} 

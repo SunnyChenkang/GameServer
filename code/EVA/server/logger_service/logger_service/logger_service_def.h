@@ -2,8 +2,7 @@
 #define LSE_DEF_H_
 
 #include <server_share/common/common.h>
-#include <server_share/timer/timer.h>
-#include <server_share/mysql/db_mysql.h>
+#include <server_share/db/mysql/db_mysql.h>
 #include <server_share/record/db_record_dot_data.h>
 
 

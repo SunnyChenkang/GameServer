@@ -2,7 +2,6 @@
 #define FRONTEND_SERVICE_DEF_H_
 
 #include "rudp/rudp_wrapper.h"
-#include <server_share/timer/timer.h>
 #include <server_share/common/common.h>
 #include <server_share/json_table/json_load.h>
 
