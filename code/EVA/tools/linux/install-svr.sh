@@ -19,11 +19,11 @@ local_service_dir=/$HOME/service
 # 声明远端拷贝文件目录
 remote_dir=/home/service
 # 声明远端服务器HOST
-remote_host=123.456.36.2
+remote_host=123.126.123.123
 # 声明远端服务器PORT
 remote_port=2009
 # 声明远端服务器密码
-remote_passwd=chenkang_sunny
+remote_passwd=chenkang
 
 # 检查是否运行目录!
 echo "【创建服务器运行目录】"
@@ -52,7 +52,7 @@ fi
 
 echo -e "【开始检查依赖插件】" 
 
-for i in expect screen cmake gcc gcc-c++ libxml2-devel.x86_64 openssl-devel.x86_64 lua-devel.x86_64 libcurl-devel.x86_64 mysql-devel e2fsprogs-devel uuid-devel libuuid-devel
+for i in expect screen cmake gcc gcc-c++ libxml2-devel.x86_64 openssl-devel.x86_64 lua-devel.x86_64 libcurl-devel.x86_64 mysql-devel e2fsprogs-devel uuid-devel libuuid-devel libpng-devel.x86_64
 do
 rpm -qa | grep ${i%%.*} &>/dev/null
 [ $? -eq 0 ] || yum install -y  $i&>/dev/null
@@ -66,8 +66,8 @@ done
 
 echo ""
 echo -e "【开始下载服务器依赖库】"
-remote_file_libs=ser.tar.gz
-remote_file_inc=tools.tar.gz
+remote_file_libs=lib.tar.gz
+remote_file_inc=include.tar.gz
 
 expect -c "
 spawn scp -P $remote_port service@$remote_host:/$remote_dir/\{$remote_file_libs,$remote_file_inc\} /home/ 
