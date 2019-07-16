@@ -52,7 +52,7 @@ fi
 
 echo -e "【开始检查依赖插件】" 
 
-for i in expect ftp screen mysql++-devel.x86_64
+for i in expect screen cmake gcc gcc-c++ libxml2-devel.x86_64 openssl-devel.x86_64 lua-devel.x86_64 libcurl-devel.x86_64 mysql-devel e2fsprogs-devel uuid-devel libuuid-devel
 do
 rpm -qa | grep ${i%%.*} &>/dev/null
 [ $? -eq 0 ] || yum install -y  $i&>/dev/null
@@ -116,6 +116,10 @@ sleep 2
 
 echo ""
 echo -e "【部署环境完成】" 
+
+#重启机器
+echo "是否需要重启机器"
+
 
 exit 0
 
