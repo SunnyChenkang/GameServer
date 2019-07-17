@@ -83,7 +83,7 @@ string typeToString (CTransportClass::TProp type)
 		"PropBool", "PropFloat", "PropDouble", "PropString", "PropDataSetRow", "PropSheetId", "PropUCString", "PropUKN" };
 //		"PropBool", "PropFloat", "PropDouble", "PropString", "PropDataSetRow", "PropEntityId", "PropSheetId", "PropUKN" };
 
-	if (type > CTransportClass::PropUKN)
+	if (type > CTransportClass::PROP_UKN)
 		return "<InvalidType>";
 	return conv[type];
 }
@@ -150,7 +150,7 @@ void CTransportClass::registerOtherSideClass (TServiceId sid, TOtherSideRegister
 			else
 			{
 				// same, store the index
-				(*res).second.Instance->States[sid.get()].push_back (make_pair (k, PropUKN));
+				(*res).second.Instance->States[sid.get()].push_back (make_pair (k, PROP_UKN));
 			}
 		}
 
@@ -338,24 +338,24 @@ void CTransportClass::init ()
 
 	// create an instance of all d'ifferent prop types
 
-	DummyProp.resize (PropUKN);
+	DummyProp.resize (PROP_UKN);
 
-	nlassert (PropUInt8 < PropUKN); DummyProp[PropUInt8] = new CTransportClass::CRegisteredProp<uint8>;
-	nlassert (PropUInt16 < PropUKN); DummyProp[PropUInt16] = new CTransportClass::CRegisteredProp<uint16>;
-	nlassert (PropUInt32 < PropUKN); DummyProp[PropUInt32] = new CTransportClass::CRegisteredProp<uint32>;
-	nlassert (PropUInt64 < PropUKN); DummyProp[PropUInt64] = new CTransportClass::CRegisteredProp<uint64>;
-	nlassert (PropSInt8 < PropUKN); DummyProp[PropSInt8] = new CTransportClass::CRegisteredProp<sint8>;
-	nlassert (PropSInt16 < PropUKN); DummyProp[PropSInt16] = new CTransportClass::CRegisteredProp<sint16>;
-	nlassert (PropSInt32 < PropUKN); DummyProp[PropSInt32] = new CTransportClass::CRegisteredProp<sint32>;
-	nlassert (PropSInt64 < PropUKN); DummyProp[PropSInt64] = new CTransportClass::CRegisteredProp<sint64>;
-	nlassert (PropBool < PropUKN); DummyProp[PropBool] = new CTransportClass::CRegisteredProp<bool>;
-	nlassert (PropFloat < PropUKN); DummyProp[PropFloat] = new CTransportClass::CRegisteredProp<float>;
-	nlassert (PropDouble < PropUKN); DummyProp[PropDouble] = new CTransportClass::CRegisteredProp<double>;
-	nlassert (PropString < PropUKN); DummyProp[PropString] = new CTransportClass::CRegisteredProp<string>;
-//	nlassert (PropDataSetRow < PropUKN); DummyProp[PropDataSetRow] = new CTransportClass::CRegisteredProp<TDataSetRow>;
-//	nlassert (PropEntityId < PropUKN); DummyProp[PropEntityId] = new CTransportClass::CRegisteredProp<CEntityId>;
-	nlassert (PropSheetId < PropUKN); DummyProp[PropSheetId] = new CTransportClass::CRegisteredProp<CSheetId>;
-	nlassert (PropUCString < PropUKN); DummyProp[PropUCString] = new CTransportClass::CRegisteredProp<ucstring>;
+	nlassert (PROP_UINT8    < PROP_UKN); DummyProp[PROP_UINT8 ] = new CTransportClass::CRegisteredProp<uint8>;
+	nlassert (PROP_UINT16   < PROP_UKN); DummyProp[PROP_UINT16] = new CTransportClass::CRegisteredProp<uint16>;
+	nlassert (PROP_UINT32   < PROP_UKN); DummyProp[PROP_UINT32] = new CTransportClass::CRegisteredProp<uint32>;
+	nlassert (PROP_UINT64   < PROP_UKN); DummyProp[PROP_UINT64] = new CTransportClass::CRegisteredProp<uint64>;
+	nlassert (PROP_SINT8    < PROP_UKN); DummyProp[PROP_SINT8 ] = new CTransportClass::CRegisteredProp<sint8>;
+	nlassert (PROP_SINT16   < PROP_UKN); DummyProp[PROP_SINT16] = new CTransportClass::CRegisteredProp<sint16>;
+	nlassert (PROP_SINT32   < PROP_UKN); DummyProp[PROP_SINT32] = new CTransportClass::CRegisteredProp<sint32>;
+	nlassert (PROP_SINT64   < PROP_UKN); DummyProp[PROP_SINT64] = new CTransportClass::CRegisteredProp<sint64>;
+	nlassert (PROP_BOOL     < PROP_UKN); DummyProp[PROP_BOOL  ] = new CTransportClass::CRegisteredProp<bool>;
+	nlassert (PROP_FLOAT    < PROP_UKN); DummyProp[PROP_FLOAT ] = new CTransportClass::CRegisteredProp<float>;
+	nlassert (PROP_DOUBLE   < PROP_UKN); DummyProp[PROP_DOUBLE] = new CTransportClass::CRegisteredProp<double>;
+	nlassert (PROP_STRING   < PROP_UKN); DummyProp[PROP_STRING] = new CTransportClass::CRegisteredProp<string>;
+//	nlassert (PropDataSetRow< PropUKN);  DummyProp[PropDataSetRow] = new CTransportClass::CRegisteredProp<TDataSetRow>;
+//	nlassert (PropEntityId  < PropUKN);  DummyProp[PropEntityId] = new CTransportClass::CRegisteredProp<CEntityId>;
+	nlassert (PROP_SHEET_ID < PROP_UKN); DummyProp[PROP_SHEET_ID] = new CTransportClass::CRegisteredProp<CSheetId>;
+	nlassert (PROP_UCSTRING < PROP_UKN); DummyProp[PROP_UCSTRING] = new CTransportClass::CRegisteredProp<ucstring>;
 
 	// we have to know when a service comes, so add callback (put the callback before all other one because we have to send this message first)
 	CUnifiedNetwork::getInstance()->setServiceUpCallback("*", cbTCUpService, NULL, false);
