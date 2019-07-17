@@ -107,19 +107,25 @@ source /$HOME/$name/.bash_profile
 
 # 修改hostname
 echo ""
-echo -e "【开始配置网络环境】"  
+echo -e "【开始配置网络环境】" 
+
 local_host=$(/sbin/ifconfig -a|grep inet|grep -v 127.0.0.1|grep -v inet6|awk '{print $2}'|tr -d "addr:")
 local_name=$(hostname)
 cd /etc
-sed -i '$a\'$local_host' '$local_name'' hosts
-sleep 2
 
+#检查是否更新数据
+check_host=$(sed -n '/^'"$local_host $local_name"'/p' hosts)
+if [[ $check_host == "" ]]
+then
+sed -i '$a\'$local_host' '$local_name'' hosts
+fi
+
+sleep 2
 echo ""
 echo -e "【部署环境完成】" 
 
 #重启机器
 echo "是否需要重启机器"
-
 
 exit 0
 
