@@ -23,7 +23,6 @@ void foo()
 
 void CGameService::init( void )
 {
-    NLMISC::CSString ss = AllocGUID();
     // Á¬½ÓREDIS;
     NLMISC::CSString RedisHost      = ConfigFile.getVar("RedisHost").asString();
     NLMISC::CSString RedisPort      = ConfigFile.getVar("RedisPort").asString();
