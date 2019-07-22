@@ -54,6 +54,7 @@
 #include <functional>
 #include <cctype>
 #include <iterator>
+#include <memory>
 
 #include "base_namespace.h"
 
@@ -86,6 +87,15 @@ __type m_##__name;\
 public:\
 inline void Set##__name(__type v){ m_##__name = v;}\
 inline __type Get##__name(){return m_##__name;}
+
+// 定义变量属性;
+#define SS_PROPERTY_QUOTE( __type, __name , __protected ) \
+__protected:\
+__type m_##__name;\
+public:\
+inline void Set##__name(__type v){ m_##__name = v;}\
+inline __type& Get##__name(){return m_##__name;}
+
 
 // 获取数组长度;
 #define SS_ARRAYSIZE( a ) (sizeof(a) / sizeof((a)[0]))
