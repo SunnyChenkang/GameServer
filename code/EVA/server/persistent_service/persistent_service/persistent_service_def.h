@@ -18,9 +18,7 @@ PSE_NAMESPACE_BEGIN_DECL
 
 using namespace SS;
 
-typedef std::map< ROLE_ID , CRecordPlayer > PLAYER_TABLE;
-
-// MYSQL STMT;
+/// MYSQL STMT;
 enum TSQLStmt
 {
 
@@ -30,44 +28,43 @@ enum TSQLStmt
     SQL_STMT_LOAD_STATISTICS            = 4,
     SQL_STMT_IS_EXIST_PLAYER            = 5,
 
-    // d_player.t_playerinfo;
+    /// d_player.t_playerinfo;
     SQL_STMT_INSERT_PLAYERINFO          = 50,
     SQL_STMT_DELETE_PLAYERINFO          = 51,
     SQL_STMT_UPDATE_PLAYERINFO          = 52,
 
-    // d_player.t_item;
+    /// d_player.t_item;
     SQL_STMT_INSERT_ITEM                = 100,
     SQL_STMT_DELETE_ITEM                = 101,
     SQL_STMT_UPDATE_ITEM                = 102,
 
-    // d_player.t_statistics;
+    /// d_player.t_statistics;
     SQL_STMT_INSERT_STATISTICS          = 150,
     SQL_STMT_DELETE_STATISTICS          = 151,
     SQL_STMT_UPDATE_STATISTICS          = 152,
 
-    // d_player.t_mission;
+    /// d_player.t_mission;
     SQL_STMT_INSERT_MISSION             = 200,
     SQL_STMT_DELETE_MISSION             = 201,
     SQL_STMT_UPDATE_MISSION             = 202,
 };
 
-// 加载用户数据;
-class LoadUserData : public CRecordBase
+/// 异步加载用户数据;
+class SyncLoadPlayerData : public CRecordBase
 {
 public:
-    virtual ~LoadUserData( void ) { }
+    SyncLoadPlayerData( void ) { };
+    virtual ~SyncLoadPlayerData( void ) { };
 
-    LoadUserData( PB_UserLogin& rhs )
+    SyncLoadPlayerData( PB_UserLogin& rhs ) : m_RoleID( rhs.role_id() )
+                                            , m_RoleKind( rhs.role_kind() )
+                                            , m_ClientHost( rhs.client_host() )
+                                            , m_GameServiceID( NLNET::TServiceId( rhs.game_service_id() ))
+                                            , m_FrontendServiceID( NLNET::TServiceId( rhs.frontend_service_id() ))
     {
-        SetLoadPlayerState( false );
-        SetRoleID( rhs.role_id() );
-        SetRoleKind( rhs.role_kind() );
-        SetFrontendServiceID( NLNET::TServiceId( rhs.frontend_service_id() ) );
-        SetGameServiceID( NLNET::TServiceId( rhs.game_service_id() ) );
-        SetClientHost( rhs.client_host() );
+
     }
 
-    SS_PROPERTY( bool              , LoadPlayerState    , public );
     SS_PROPERTY( ROLE_ID           , RoleID             , public );
     SS_PROPERTY( uint32            , RoleKind           , public );
     SS_PROPERTY( NLNET::TServiceId , FrontendServiceID  , public );

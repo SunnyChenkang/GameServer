@@ -15,7 +15,6 @@ static NLNET::TUnifiedCallbackItem SSE_ROOM_CallBackItems[] =
 {
     { "MSG_REGISTER_ROOM" ,                 CallBack_RegisterRoomInfo   },
     { "MSG_CREATE_ROOM"   ,                 CallBack_CreateRoom         },
-
 };
 SSE_NAMESPACE_END_DECL
 

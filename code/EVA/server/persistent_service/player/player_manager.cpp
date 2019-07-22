@@ -1,7 +1,6 @@
 #include "player_manager.h"
-#include "player.h"
 
-SSE_NAMESPACE_BEGIN_DECL
+PSE_NAMESPACE_BEGIN_DECL
 
 CPlayerManager::CPlayerManager( void )
 {
@@ -19,7 +18,6 @@ CPlayerPtr CPlayerManager::AllocPlayer( ROLE_ID RoleID )
     if ( nullptr == PlayerPtr ) {
         return nullptr;
     }
-
     auto res = m_PlayerTable.insert( std::make_pair( RoleID , PlayerPtr ) );
     return res.first->second;
 }
@@ -31,5 +29,4 @@ CPlayerPtr CPlayerManager::GetPlayer( ROLE_ID RoleID )
     return it->second;
 }
 
-SSE_NAMESPACE_END_DECL
-
+PSE_NAMESPACE_END_DECL

@@ -52,6 +52,8 @@ public:
 	/// Only explicit construction from an integer are allowed
 	explicit TServiceId(uint16 sid) : _ServiceId(sid) { }
 
+    explicit TServiceId( NLMISC::CSString sid ) : _ServiceId( sid.atoui() ) { }
+
 	bool operator == (const TServiceId &other) const
 	{
 		return _ServiceId == other._ServiceId;

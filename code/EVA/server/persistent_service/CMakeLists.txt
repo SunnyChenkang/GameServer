@@ -3,10 +3,11 @@ FILE(GLOB SRC_MYSQL		  db/*.cpp db/*.h)
 FILE(GLOB SRC_MESSAGE 	  message/*.cpp message/*.h)
 FILE(GLOB SRC_LOGIN 	  login/*.cpp login/*.h)
 
-SOURCE_GROUP("PersistentService" 	FILES ${SRC_PERSISTENT} )
-SOURCE_GROUP("Message" 				FILES ${SRC_MESSAGE} )
-SOURCE_GROUP("DB"					FILES ${SRC_MYSQL} )
-SOURCE_GROUP("Login" 				FILES ${SRC_LOGIN} )
+SOURCE_GROUP("persistent_service" 	FILES ${SRC_PERSISTENT} )
+SOURCE_GROUP("message" 				FILES ${SRC_MESSAGE} )
+SOURCE_GROUP("db"							FILES ${SRC_MYSQL} )
+SOURCE_GROUP("login" 						FILES ${SRC_LOGIN} )
+SOURCE_GROUP("player"						FILES ${SRC_PLAYER} )
 
 ADD_EXECUTABLE(persistent_service WIN32 ${SRC_PERSISTENT} ${SRC_MYSQL} ${SRC_MESSAGE} ${SRC_LOGIN} )
 

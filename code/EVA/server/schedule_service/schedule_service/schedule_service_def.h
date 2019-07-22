@@ -11,10 +11,9 @@
 SSE_NAMESPACE_BEGIN_DECL
 
 using namespace SS;
+using namespace NLNET;
+using namespace NLMISC;
 
-// Íæ¼ÒÁÐ±í;
-class CPlayer;
-typedef std::map< ROLE_ID , CPlayer* > PLAYER_TABLE;
 
 SSE_NAMESPACE_END_DECL
 

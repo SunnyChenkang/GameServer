@@ -2,28 +2,26 @@
 #define SSE_PLAYER_MANAGER_H_
 
 #include <schedule_service/schedule_service/schedule_service_def.h>
+#include "player.h"
 
 SSE_NAMESPACE_BEGIN_DECL
 
-class CPlayer;
-
-class CPlayerManager : public NLMISC::CSingleton< CPlayerManager >
+class CPlayerManager : public CSingleton< CPlayerManager >
 {
 public:
-    CPlayerManager( void ){ };
-   ~CPlayerManager( void ){ };
+    CPlayerManager( void );
+   ~CPlayerManager( void );
 
-    // 分配玩家实例;
-    CPlayer* AllocPlayer( ROLE_ID );
-    // 获取玩家数据;
-    CPlayer* GetPlayer  ( ROLE_ID );
+    /// 分配玩家实例;
+    CPlayerPtr AllocPlayer( ROLE_ID );
+    /// 获取玩家数据;
+    CPlayerPtr GetPlayer  ( ROLE_ID );
 
-    // 玩家列表;
     SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );
 };
 
-SSE_NAMESPACE_END_DECL
+#define PlayerManager CPlayerManager::getInstance()
 
-#define PlayerManager SSE::CPlayerManager::instance()
+SSE_NAMESPACE_END_DECL
 
 #endif // SSE_PLAYER_MANAGER_H_;

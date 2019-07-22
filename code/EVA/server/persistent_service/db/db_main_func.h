@@ -1,5 +1,5 @@
-#ifndef PSE_DBMAINFUNC_H_
-#define PSE_DBMAINFUNC_H_
+#ifndef PSE_DB_MAINFUNC_H_
+#define PSE_DB_MAINFUNC_H_
 
 #include <persistent_service/persistent_service/persistent_service_def.h>
 

@@ -11,28 +11,30 @@ public:
     CRecordBase( void );
     virtual ~CRecordBase( void );
 
-    //   serial;
+    ///   serial;
     virtual void serial(NLMISC::IStream &s)
     {
         s.serial( m_DBState );
     }
 
-    //   重置标记;
+    ///  重置标记;
     void ResetState( void )     { m_DBState.resetEnumValue( DB_EVENT_NULL ); }
 
-    //   插入标记;
+    ///  插入标记;
     void SetInsert ( void )     { m_DBState.resetEnumValue( DB_EVENT_INSERT ); }
-    //   更新标记;
+    ///  更新标记;
     void SetUpdate ( void )     { m_DBState.resetEnumValue( DB_EVENT_DELETE ); }
-    //   删除标记;
+    ///  删除标记;
     void SetDelete ( void )     { m_DBState.resetEnumValue( DB_EVENT_DELETE ); }
 
-    //   是否存在插入;
+    ///  是否存在插入;
     bool IsInsertState( void )  { return ( m_DBState.checkEnumValue( DB_EVENT_INSERT ) ); }
-    //   是否存在更新;
+    ///  是否存在更新;
     bool IsUpdateState( void )  { return ( m_DBState.checkEnumValue( DB_EVENT_UPDATE ) );  }
-    //   是否存在删除;
+    ///  是否存在删除;
     bool IsDeleteState( void )  { return ( m_DBState.checkEnumValue( DB_EVENT_DELETE ) );  }
+    ///  是否是空的;
+    bool IsNullState( void )    { return ( m_DBState.Bitset == DB_EVENT_NULL ); }
 
 public:
     NLMISC::CEnumBitset< DBEventEnum , uint32 >  m_DBState;

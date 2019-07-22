@@ -15,20 +15,26 @@ public:
     CRecordPlayer( void ) { };
     virtual ~CRecordPlayer( void ) { };
 
-    CRecordPlayerInfo   RecordPlayerInfo;   // 玩家基础信息;
-    TRecordItem         RecordItem;         // 玩家道具信息;
-    TRecordMission      RecordMission;      // 玩家任务信息;
-    TRecordStatisics    RecordStatisics;    // 玩家统计信息;
+    /// 玩家基础信息;
+    SS_PROPERTY_QUOTE( CRecordPlayerInfo , RecordBasePlayer , private );
+    /// 玩家道具信息;
+    SS_PROPERTY_QUOTE( TRecordItem       , RecordItem       , private );
+    /// 玩家任务信息;
+    SS_PROPERTY_QUOTE( TRecordMission    , RecordMission    , private );
+    /// 玩家统计信息;
+    SS_PROPERTY_QUOTE( TRecordStatisics  , RecordStatisics  , private );
 
+    /// serial;
     void serial( NLMISC::IStream& s )
     {
         s.serial    ( m_DBState );
-        s.serial    ( RecordPlayerInfo );
-        s.serialCont( RecordItem );
-        s.serialCont( RecordMission );
-        s.serialCont( RecordStatisics );
+        s.serial    ( m_RecordBasePlayer );
+        s.serialCont( m_RecordItem );
+        s.serialCont( m_RecordMission );
+        s.serialCont( m_RecordStatisics );
     }
 };
+
 
 SS_NAMESPACE_END_DECL
 

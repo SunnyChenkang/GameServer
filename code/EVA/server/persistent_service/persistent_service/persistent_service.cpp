@@ -26,7 +26,7 @@ void CPersistentService::init()
 {
     // 注册消息;
     NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( PSE_LOGIN_CallBackItems , SS_ARRAYSIZE( PSE_LOGIN_CallBackItems ) );
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( PSE_DB_CallBackItems	 , SS_ARRAYSIZE( PSE_DB_CallBackItems ) );
+    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( PSE_DB_CallBackItems    , SS_ARRAYSIZE( PSE_DB_CallBackItems ) );
 
     // 注册服务器断开;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
@@ -39,12 +39,6 @@ void CPersistentService::init()
     NLMISC::CSString DBUser     = ConfigFile.getVar("DataBaseUser").asString();
     NLMISC::CSString DBPassword = ConfigFile.getVar("DataBasePassword").asString();
     NLMISC::CSString DBPort     = ConfigFile.getVar("DataBasePort").asString();
-    nlinfo( "DataBaseName %s"       , DBName.c_str() );
-    nlinfo( "DataBaseHost %s"       , DBHost.c_str() );
-    nlinfo( "DataBaseUser %s"       , DBUser.c_str() );
-    nlinfo( "DataBasePassword %s"   , DBPassword.c_str() );
-    nlinfo( "DataBasePort"          , DBPort.c_str() );
-
     DBConnect.InitDBConnect( DBHost , DBUser , DBPassword , DBName , DBPort.atosi() );
     DBConnect.StartDBThreads();
 
@@ -76,4 +70,3 @@ void CPersistentService::release( void )
 }
 
 NLNET_SERVICE_MAIN( CPersistentService, "PSE", "persistent_service", 50004 , "", "")
-

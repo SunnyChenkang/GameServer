@@ -6,34 +6,36 @@ PSE_NAMESPACE_BEGIN_DECL
 
 void SubLoadPlayerEntity( void* data )
 {
-    LoadUserData* pRecord = ( LoadUserData* )data;
-    if ( NULL == pRecord ) return;
-    pRecord->m_RecordPlayer.RecordPlayerInfo.SetRoleID( pRecord->GetRoleID() );
+    SyncLoadPlayerData* pSyncLoadData = ( SyncLoadPlayerData* )data;
+    if ( NULL == pSyncLoadData ) return;
+    pSyncLoadData->m_RecordPlayer.GetRecordBasePlayer().SetRoleID( pSyncLoadData->GetRoleID() );
 
-    // 查询角色是否存在;
+    /// 查询角色是否存在;
     CDBExecute* pWorker = ThreadsLoadPlayer.GetDBExecute();
     if ( NULL == pWorker ) return;
     CDBStatement* pStmt = pWorker->GetStmt( SQL_STMT_IS_EXIST_PLAYER );
     if ( NULL == pStmt   ) return;
     CDBResult* pResult = NULL;
-    pStmt->SetUint32( 0 , pRecord->m_RecordPlayer.RecordPlayerInfo.GetRoleID() );
+    pStmt->SetUint32( 0 , pSyncLoadData->GetRoleID() );
     pWorker->Query( pStmt , &pResult );
     size_t ResultCount = pResult->GetCount();
     pResult->Release();
 
-    // 用户创建角色;
+    /// 用户创建角色;
     if ( ResultCount <= 0 )
     {
-        ThreadsLoadPlayer.PostToMain( new LoadUserData( *pRecord ) , (PROC_MSG)MainCreateRole );
+        ThreadsLoadPlayer.PostToMain( new SyncLoadPlayerData( *pSyncLoadData ) , (PROC_MSG)MainCreateRole );
         return;
     }
 
-    // 加载角色实体;
-    SubLoadPlayer    ( pRecord->m_RecordPlayer );   // 玩家基础信息;
-    SubLoadItem      ( pRecord->m_RecordPlayer );   // 加载道具信息;
-    SubLoadStatistics( pRecord->m_RecordPlayer );   // 加载统计信息;
-    SubLoadMission   ( pRecord->m_RecordPlayer );   // 加载任务信息;
-    ThreadsLoadPlayer.PostToMain( new LoadUserData( *pRecord ) , (PROC_MSG)MainLoadPlayerEntity );
+    /// 加载角色实体;
+    SubLoadPlayer    ( pSyncLoadData->m_RecordPlayer );   // 加载玩家信息;
+    SubLoadItem      ( pSyncLoadData->m_RecordPlayer );   // 加载道具信息;
+    SubLoadStatistics( pSyncLoadData->m_RecordPlayer );   // 加载统计信息;
+    SubLoadMission   ( pSyncLoadData->m_RecordPlayer );   // 加载任务信息;
+
+    /// 投递主线程;
+    ThreadsLoadPlayer.PostToMain( new SyncLoadPlayerData( *pSyncLoadData ) , (PROC_MSG)MainLoadPlayerEntity );
 }
 
 bool SubLoadPlayer( CRecordPlayer& RecordPlayer )
@@ -43,21 +45,22 @@ bool SubLoadPlayer( CRecordPlayer& RecordPlayer )
     CDBStatement* pStmt = pWorker->GetStmt( SQL_STMT_LOAD_PLAYERINFO );
     if ( NULL == pStmt )   return false;
 
+    CRecordPlayerInfo& RecordPlayerInfo = RecordPlayer.GetRecordBasePlayer();
+
     CDBResult* pResult = NULL;
-    pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
+    pStmt->SetUint32( 0 , RecordPlayerInfo.GetRoleID() );
     pWorker->Query( pStmt , &pResult );
     if ( NULL == pResult ) return false;
 
-    sint32 idx = 0;
-    RecordPlayer.RecordPlayerInfo.SetRoleID         ( pResult->GetUint32( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetRoleKind       ( pResult->GetUint8 ( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetLastHost       ( pResult->GetString( idx++ ).second );
-    RecordPlayer.RecordPlayerInfo.SetGameTime       ( pResult->GetUint32( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetLastLoginTime  ( pResult->GetUint32( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetLastOfflineTime( pResult->GetUint32( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetCreateTime     ( pResult->GetUint32( idx++ ) );
-    RecordPlayer.RecordPlayerInfo.SetNickName       ( pResult->GetString( idx++ ).second );
-    RecordPlayer.RecordPlayerInfo.SetHeadID         ( pResult->GetUint16( idx++ ) );
+    RecordPlayerInfo.SetRoleID         ( pResult->GetUint32( 0 ) );
+    RecordPlayerInfo.SetRoleKind       ( pResult->GetUint8 ( 1 ) );
+    RecordPlayerInfo.SetLastHost       ( pResult->GetString( 2 ).second );
+    RecordPlayerInfo.SetGameTime       ( pResult->GetUint32( 3 ) );
+    RecordPlayerInfo.SetLastLoginTime  ( pResult->GetUint32( 4 ) );
+    RecordPlayerInfo.SetLastOfflineTime( pResult->GetUint32( 5 ) );
+    RecordPlayerInfo.SetCreateTime     ( pResult->GetUint32( 6 ) );
+    RecordPlayerInfo.SetNickName       ( pResult->GetString( 7 ).second );
+    RecordPlayerInfo.SetHeadID         ( pResult->GetUint16( 8 ) );
 
     pResult->Release();
     pResult = NULL;
@@ -71,21 +74,19 @@ bool SubLoadItem( CRecordPlayer& RecordPlayer )
     CDBStatement* pStmt = pWorker->GetStmt( SQL_STMT_LOAD_ITEM );
     if ( NULL == pStmt )   return false;
 
-    CRecordItem ItemData;
-    ItemData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
-
     CDBResult* pResult = NULL;
-    pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
+    pStmt->SetUint32( 0 , RecordPlayer.GetRecordBasePlayer().GetRoleID() );
     pWorker->Query( pStmt , &pResult );
     if ( NULL == pResult ) return false;
 
     while ( pResult->NextRow() )
     {
-        sint32 idx = 0;
-        ItemData.SetItemID      ( pResult->GetUint32( idx++ ) );
-        ItemData.SetItemCount   ( pResult->GetUint32( idx++ ) );
-        ItemData.SetLastTime    ( pResult->GetUint32( idx++ ) );
-        RecordPlayer.RecordItem.insert( std::make_pair(  ItemData.GetItemID() , ItemData ) );
+        CRecordItem ItemData;
+        ItemData.SetRoleID( RecordPlayer.GetRecordBasePlayer().GetRoleID() );
+        ItemData.SetItemID      ( pResult->GetUint32( 0 ) );
+        ItemData.SetItemCount   ( pResult->GetUint32( 1 ) );
+        ItemData.SetLastTime    ( pResult->GetUint32( 2 ) );
+        RecordPlayer.GetRecordItem().insert( std::make_pair(  ItemData.GetItemID() , ItemData ) );
     }
 
     pResult->Release();
@@ -100,20 +101,18 @@ bool SubLoadStatistics( CRecordPlayer& RecordPlayer )
     CDBStatement* pStmt = pWorker->GetStmt( SQL_STMT_LOAD_STATISTICS );
     if ( NULL == pStmt )   return false;
 
-    CRecordStatistics StatisticsData;
-    StatisticsData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
-
     CDBResult* pResult = NULL;
-    pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
+    pStmt->SetUint32( 0 , RecordPlayer.GetRecordBasePlayer().GetRoleID() );
     pWorker->Query( pStmt , &pResult );
     if ( NULL == pResult ) return false;
 
     while ( pResult->NextRow() )
     {
-        sint32 idx = 0;
-        StatisticsData.SetStatisticsID( pResult->GetUint32( idx++ ) );
-        StatisticsData.SetCount       ( pResult->GetUint32( idx++ ) );
-        RecordPlayer.RecordStatisics.insert( std::make_pair( StatisticsData.GetStatisticsID() , StatisticsData ) );
+        CRecordStatistics StatisticsData;
+        StatisticsData.SetRoleID( RecordPlayer.GetRecordBasePlayer().GetRoleID() );
+        StatisticsData.SetStatisticsID( pResult->GetUint32( 0 ) );
+        StatisticsData.SetCount       ( pResult->GetUint32( 1 ) );
+        RecordPlayer.GetRecordStatisics().insert( std::make_pair( StatisticsData.GetStatisticsID() , StatisticsData ) );
     }
 
     pResult->Release();
@@ -128,21 +127,20 @@ bool SubLoadMission( CRecordPlayer& RecordPlayer )
     CDBStatement* pStmt = pWorker->GetStmt( SQL_STMT_LOAD_MISSION );
     if ( NULL == pStmt )   return false;
 
-    CRecordMission MissionData;
-    MissionData.SetRoleID( RecordPlayer.RecordPlayerInfo.GetRoleID() );
-
     CDBResult* pResult = NULL;
-    pStmt->SetUint32( 0 , RecordPlayer.RecordPlayerInfo.GetRoleID() );
+    pStmt->SetUint32( 0 , RecordPlayer.GetRecordBasePlayer().GetRoleID() );
     pWorker->Query( pStmt , &pResult );
     if ( NULL == pResult ) return false;
 
     while ( pResult->NextRow() )
     {
-        sint32 idx = 0;
-        MissionData.SetMissionID         ( pResult->GetUint32( idx++ ) );
-        MissionData.SetMissionState      ( pResult->GetUint8( idx++ ) );
-        MissionData.SetMissionTarGet     ( pResult->GetSInt32( idx++ ) );
-        MissionData.SetMissionReceiveTime( pResult->GetUint32( idx++ ) );
+        CRecordMission MissionData;
+        MissionData.SetRoleID( RecordPlayer.GetRecordBasePlayer().GetRoleID() );
+        MissionData.SetMissionID         ( pResult->GetUint32( 0 ) );
+        MissionData.SetMissionState      ( pResult->GetUint8 ( 1 ) );
+        MissionData.SetMissionTarGet     ( pResult->GetSInt32( 2 ) );
+        MissionData.SetMissionReceiveTime( pResult->GetUint32( 3 ) );
+        RecordPlayer.GetRecordMission().insert( std::make_pair( MissionData.GetMissionID() , MissionData ));
     }
 
     pResult->Release();

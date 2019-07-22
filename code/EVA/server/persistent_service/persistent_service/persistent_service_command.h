@@ -8,7 +8,7 @@ PSE_NAMESPACE_BEGIN_DECL
 
 NLMISC_COMMAND( close_service , " close service " , "" )
 {
-    DBManager.CloseServiceSaveDBData();
+    DBManager.RefreshAllDBData();
     log.displayNL( " all execute db succeed !" );
     return true;
 }

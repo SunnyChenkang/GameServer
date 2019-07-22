@@ -1,11 +1,11 @@
-#ifndef PSE_DBSUBFUNC_H_
-#define PSE_DBSUBFUNC_H_
+#ifndef PSE_DB_SUBFUNC_H_
+#define PSE_DB_SUBFUNC_H_
 
 #include <persistent_service/persistent_service/persistent_service_def.h>
 
 PSE_NAMESPACE_BEGIN_DECL
 
-//   load player;
+///  load player;
 void SubLoadPlayerEntity ( void* );
 
 bool SubLoadPlayer    ( CRecordPlayer& );
@@ -13,22 +13,22 @@ bool SubLoadItem      ( CRecordPlayer& );
 bool SubLoadStatistics( CRecordPlayer& );
 bool SubLoadMission   ( CRecordPlayer& );
 
-//   d_player.t_playerinfo;
+///  d_player.t_playerinfo;
 void SubInsertPlayer( void* );
 void SubUpdatePlayer( void* );
 void SubDeletePlayer( void* );
 
-//   d_player.t_item;
+///  d_player.t_item;
 void SubInsertItem( void* );
 void SubUpdateItem( void* );
 void SubDeleteItem( void* );
 
-//   d_player.t_statistics;
+///  d_player.t_statistics;
 void SubInsertStatistics( void* );
 void SubUpdateStatistics( void* );
 void SubDeleteStatistics( void* );
 
-//   d_player.t_mission;
+///  d_player.t_mission;
 void SubInsertMission( void* );
 void SubUpdateMission( void* );
 void SubDeleteMission( void* );

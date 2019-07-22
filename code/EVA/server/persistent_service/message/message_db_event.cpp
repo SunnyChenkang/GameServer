@@ -3,32 +3,32 @@
 
 PSE_NAMESPACE_BEGIN_DECL
 
-void CallBack_Event_Player( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_Player( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     CRecordPlayerInfo RecordPlayer;
     Message.serial( RecordPlayer );
-    DBManager.UpdateDBPlayer( RecordPlayer );
+    DBManager.RefreshDBPlayer( RecordPlayer );
 }
 
-void CallBack_Event_Item( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_Item( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     CRecordItem RecordItem;
     Message.serial( RecordItem );
-    DBManager.UpdateDBItem( RecordItem );
+    DBManager.RefreshDBItem( RecordItem );
 }
 
-void CallBack_Event_Statistics( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_Statistics( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     CRecordStatistics RecordStatistics;
     Message.serial( RecordStatistics );
-    DBManager.UpdateDBStatistics( RecordStatistics );
+    DBManager.RefreshDBStatistics( RecordStatistics );
 }
 
-void CallBack_Event_Mission( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_Mission( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     CRecordMission RecordMission;
     Message.serial( RecordMission );
-    DBManager.UpdateDBMission( RecordMission );
+    DBManager.RefreshDBMission( RecordMission );
 }
 
 PSE_NAMESPACE_END_DECL

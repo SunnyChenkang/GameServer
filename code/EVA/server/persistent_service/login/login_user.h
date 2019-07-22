@@ -8,10 +8,7 @@ PSE_NAMESPACE_BEGIN_DECL
 class CLoginUser : public NLMISC::CSingleton< CLoginUser >
 {
 public:
-    CLoginUser( void ){ };
-   ~CLoginUser( void ){ };
-
-    //   用户登录;
+    ///  用户登录;
     void UserLoginCallBack( PB_UserLogin& );
 };
 
