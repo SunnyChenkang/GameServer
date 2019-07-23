@@ -110,7 +110,6 @@ void CFrontendNetWork::CallBackRUDPMessage( void )
         NLNET::CMessage Message;
         Message.fill( pIOBuffer->buf(), pIOBuffer->len() );
         Message.invert();
-        SS_SAFE_DELETE( pIOBuffer );
         HandlerForwardMessage( Message , ClientManager.FindClientUDP( pIOBuffer->socket_id() ) );
         SS_SAFE_DELETE( pIOBuffer );
     }
