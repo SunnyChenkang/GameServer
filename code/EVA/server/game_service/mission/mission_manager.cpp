@@ -12,68 +12,54 @@ void CMissionManager::UpdateMission( ROLE_ID RoleID , MISSION_ID MissionID )
 
 void CMissionManager::UpdateMission( ROLE_ID RoleID , MISSION_ID MissionID , uint32 MissionCount )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer )      return;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return; }
     CJsonMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CJsonMissionCell >( MissionID );
-    if ( NULL == pMissionCell ) return;
+    if ( NULL == pMissionCell ) { return; }
 
-    // 检查是否有效任务;
-    if ( IsInValidMission( MissionID ) )    return;
-    // 任务是否完成;
-    if ( IsDoneMission( MissionID) )        return;
+    /// 检查是否有效任务;
+    if ( IsInValidMission( MissionID ) ) { return; }
+    /// 任务是否完成;
+    if ( IsDoneMission( RoleID , MissionID) )     { return; }
+    /// 重置任务信息;
+    this->ResetMissionInfo( RoleID , MissionID );
 
-    // 构造新任务;
-    CRecordMission RecordMission;
-    RecordMission.SetInsert();
-    RecordMission.SetRoleID( RoleID );
-    RecordMission.SetMissionID( MissionID );
-    RecordMission.SetMissionState( MISSION_STATE_ACCEPT );
-    RecordMission.SetMissionTarGet( MissionCount );
+    /// 刷新任务信息;
+    CRecordMission* pRecordMission = GetMissionInfo( RoleID , MissionID , true );
+    if ( nullptr == pRecordMission ) { return; }
+    pRecordMission->SetMissionTarGet( pRecordMission->GetMissionTarGet() + MissionCount );
 
-    // 重置任务;
-    this->ResetMission( RoleID , MissionID );
+    /// 检查任务是否完成;
 
-    // 插入新任务;
-    std::pair< TRecordMission::iterator , bool > res = pPlayer->GetRecordMission().insert( std::make_pair( MissionID , RecordMission ) );
-    if ( !res.second )
-    {
-        res.first->second += RecordMission;
-        res.first->second.SetUpdate();
-    }
-    // 检查任务是否完成;
-    if ( res.first->second.GetMissionTarGet() >= pMissionCell->GetMissionCount() )
-    {
-        RecordMission.SetMissionState( MISSION_STATE_DONE );
-        RecordMission.SetMissionTarGet( pMissionCell->GetMissionCount() );
-    }
-    // 保存数据库;
-    res.first->second.SaveToDataBase();
+    pRecordMission->SaveToDataBase();
 }
 
-void CMissionManager::ResetMission( ROLE_ID RoleID , MISSION_ID MissionID )
+void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
 {
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )    { return; }
     CJsonMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CJsonMissionCell >( MissionID );
-    if ( NULL == pMissionCell ) return;
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer )      return;
+    if ( nullptr == pMissionCell ) { return; }
 
-    // 是否每日重置任务;
-    if ( !pMissionCell->GetMissionIsDayRefresh() ) return;
-    TRecordMission::iterator it = pPlayer->GetRecordMission().find( MissionID );
-    if ( it == pPlayer->GetRecordMission().end() )
-        return;
+    /// 是否每日重置任务;
+    if ( !pMissionCell->GetMissionIsDayRefresh() ) { return; }
 
-    // 检查是否跨天;
-    CTimeValue LastTime( it->second.GetMissionReceiveTime() );
-    CTimeValue CurrTime( NLMISC::CTime::getSecondsSince1970() );
+    /// 重置任务信息;
+    CRecordMission* pRecordMission = GetMissionInfo( RoleID , MissionID );
+    if ( nullptr == pRecordMission ) { return; }
+
+    /// 检查是否跨天;
+    uint32 Time = NLMISC::CTime::getSecondsSince1970();
+    CTimeValue LastTime( pRecordMission->GetMissionReceiveTime() );
+    CTimeValue CurrTime( Time );
     if ( !IsSameDay( LastTime , CurrTime ) )
         return;
 
-    // 重置任务状态;
-    it->second.SetMissionTarGet( 0 );
-    it->second.SetMissionReceiveTime( NLMISC::CTime::getSecondsSince1970() );
-    it->second.SetMissionState( MISSION_STATE_ACCEPT );
-    it->second.SaveToDataBase();
+    pRecordMission->SetUpdate();
+    pRecordMission->SetMissionTarGet( 0 );
+    pRecordMission->SetMissionReceiveTime( Time );
+    pRecordMission->SetMissionState( MISSION_STATE_ACCEPT );
+    pRecordMission->SaveToDataBase();
 }
 
 bool CMissionManager::IsInValidMission( MISSION_ID MissionID )
@@ -89,17 +75,39 @@ bool CMissionManager::IsInValidMission( MISSION_ID MissionID )
     return false;
 }
 
-bool CMissionManager::IsDoneMission( MISSION_ID MissionID )
+bool CMissionManager::IsDoneMission( ROLE_ID RoleID , MISSION_ID MissionID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( MissionID );
-    if ( NULL == pPlayer )
-        return false;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )      { return false; }
+    CRecordMission* pRecordMission = GetMissionInfo( RoleID , MissionID );
+    if ( nullptr == pRecordMission ) { return false; }
 
-    // 检查任务是否完成;
-    TRecordMission::iterator it = pPlayer->GetRecordMission().find( MissionID );
-    if ( it == pPlayer->GetRecordMission().end() )            return false;
-    if ( it->second.GetMissionState() != MISSION_STATE_DONE ) return false;
-    return true;
+    /// 检查任务状态是否完成;
+    if ( pRecordMission->GetMissionState() == MISSION_STATE_DONE ) { return true; }
+    return false;
+}
+
+CRecordMission* CMissionManager::GetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID , bool IsAdd )
+{
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return; }
+
+    TRecordMission& TRecordData = PlayerPtr->GetRecordPlayer().GetRecordMission();
+    auto It = TRecordData.find( MissionID );
+    if ( It != TRecordData.end() )
+    {
+        It->second.SetUpdate();
+        return &It->second;
+    }
+
+    if ( !IsAdd ) return nullptr;
+
+    CRecordMission MissionData;
+    MissionData.SetInsert();
+    MissionData.SetRoleID( RoleID );
+    MissionData.SetMissionID( MissionID );
+    auto Res = TRecordData.insert( std::make_pair(MissionID , MissionData) );
+    return &Res.first->second;
 }
 
 GSE_NAMESPACE_END_DECL
