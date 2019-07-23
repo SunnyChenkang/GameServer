@@ -51,8 +51,9 @@ protected:
     //   run;
     void run( void );
 
+    std::atomic< bool>  m_Exit;
+
     SS_PROPERTY( NLMISC::IThread*   , Threads                       , private );
-    SS_PROPERTY( volatile bool      , Exit                          , private );
     SS_PROPERTY( NLMISC::CSString   , Host                          , private );
     SS_PROPERTY( NLMISC::CSString   , User                          , private );
     SS_PROPERTY( NLMISC::CSString   , Password                      , private );
