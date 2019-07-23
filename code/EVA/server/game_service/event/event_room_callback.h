@@ -12,9 +12,9 @@ public:
 
 private:
     //   用户登录;
-    void CallBackUserLogin( PB_UserLogin& );
+    void CallBackPlyaerLoginFinish( PB_UserLogin& );
     //   用户离线;
-    void CallBackUserOffline( ROLE_ID );
+    void CallBackPlayerOffline( ROLE_ID );
     //   加入房间;
     void CallBackJoinRoom ( ROLE_ID , ROOM_ID );
     //   离开房间;

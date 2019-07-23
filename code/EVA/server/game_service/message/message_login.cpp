@@ -4,32 +4,32 @@
 
 GSE_NAMESPACE_BEGIN_DECL
 
-void CallBack_UserLoad( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_PlayerLoadFinish( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     CRecordPlayer RecordPlayer;
     Message.serial( RecordPlayer );
-    EventDefine.EventUserLoad( RecordPlayer );
+    EventDefine.EventPlayerLoadFinish( RecordPlayer );
 }
 
-void CallBack_UserLogin( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_PlayerLoginFinish( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     PB_UserLogin UserLogin;
     Message.serial( &UserLogin );
-    EventDefine.EventUserLogin( UserLogin );
+    EventDefine.EventPlayerLoginFinish( UserLogin );
 }
 
-void CallBack_UserOffline( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_PlayerOffline( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     ROLE_ID RoleID;
     Message.serial( RoleID );
-    EventDefine.EventUserOffline( RoleID );
+    EventDefine.EventPlayerOffline( RoleID );
 }
 
 void CallBack_ChangeScenes( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
-    CPlayer pPlayer;
-    Message.serial( pPlayer );
-    EventDefine.EventChangeScenes( pPlayer );
+    CPlayerPtr PlayerPtr;
+    Message.serial( *PlayerPtr );
+    EventDefine.EventChangeScenes( PlayerPtr );
 }
 
 GSE_NAMESPACE_END_DECL

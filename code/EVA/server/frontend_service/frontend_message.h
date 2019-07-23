@@ -26,13 +26,15 @@ static TWEBCallbackItem WEBCallBackItems[] =
 // LOCAL
 void CallBack_S2C( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
 void CallBack_LoginSucceed( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
+void CallBack_ChangeScenes( NLNET::CMessage& , const std::string& , NLNET::TServiceId );
 void CallBack_ClientDelete( NLNET::CMessage& , const std::string&, NLNET::TServiceId );
 
 static NLNET::TUnifiedCallbackItem LocalCallBackItems[] =
 {
-    { "S2C"                 , CallBack_S2C } ,
-    { "MSG_LOGIN_SUCCEED"   , CallBack_LoginSucceed },
-    { "MSG_CLIENT_DELETE"   , CallBack_ClientDelete },
+    { "S2C"                 , CallBack_S2C           },
+    { "MSG_LOGIN_FINISH"    , CallBack_LoginSucceed  },
+    { "MSG_CHANGE_SCENES"   , CallBack_ChangeScenes  },
+    { "MSG_CLIENT_DELETE"   , CallBack_ClientDelete  },
 };
 
 // SSE DISCONNECT CALLBACK;

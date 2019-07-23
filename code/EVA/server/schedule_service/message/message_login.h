@@ -5,16 +5,18 @@
 
 SSE_NAMESPACE_BEGIN_DECL
 
-//   用户登录;
-void CallBack_UserLogin( NLNET::CMessage&, const std::string&, NLNET::TServiceId );
-//   用户登录成功;
-void CallBack_UserLoginSucceed( NLNET::CMessage& , const std::string& , NLNET::TServiceId );
+///  玩家登录;
+void CallBack_PlayerLogin( NLNET::CMessage&, const std::string&, NLNET::TServiceId );
+///  玩家登录完成;
+void CallBack_PlayerLoginFinish( NLNET::CMessage& , const std::string& , NLNET::TServiceId );
+///  玩家切换场景;
+void CallBack_ChangeScenes( NLNET::CMessage& , const std::string& , NLNET::TServiceId );
 
-// 注册消息;
 static NLNET::TUnifiedCallbackItem SSE_LOGIN_CallBackItems[] =
 {
-    { "MSG_LOGIN" ,                     CallBack_UserLogin          },
-    { "MSG_LOGIN_SUCCEED",              CallBack_UserLoginSucceed   },
+    { "MSG_LOGIN" ,                     CallBack_PlayerLogin          },
+    { "MSG_LOGIN_FINISH",               CallBack_PlayerLoginFinish    },
+    { "MSG_CHANGE_SCENES",              CallBack_ChangeScenes         },
 };
 
 SSE_NAMESPACE_END_DECL

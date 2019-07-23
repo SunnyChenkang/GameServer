@@ -3,14 +3,19 @@
 
 SSE_NAMESPACE_BEGIN_DECL
 
-void CallBack_UserLogin( NLNET::CMessage& Message , const std::string& ServiceName, NLNET::TServiceId ServiceId )
+void CallBack_PlayerLogin( NLNET::CMessage& Message , const std::string& ServiceName, NLNET::TServiceId ServiceId )
 {
-    LoginUser.CallBackUserLogin( Message );
+    LoginUser.CallBackPlayerLogin( Message );
 }
 
-void CallBack_UserLoginSucceed( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
+void CallBack_PlayerLoginFinish( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
-    LoginUser.CallBackUserLoginSucceed( Message );
+    LoginUser.CallBackPlayerLoginFinish( Message );
+}
+
+void CallBack_ChangeScenes( NLNET::CMessage& Message , const std::string& , NLNET::TServiceId )
+{
+    LoginUser.CallBackChangeScenes( Message );
 }
 
 SSE_NAMESPACE_END_DECL

@@ -52,9 +52,9 @@ void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
     uint32 Time = NLMISC::CTime::getSecondsSince1970();
     CTimeValue LastTime( pRecordMission->GetMissionReceiveTime() );
     CTimeValue CurrTime( Time );
-    if ( !IsSameDay( LastTime , CurrTime ) )
-        return;
+    if ( !IsSameDay( LastTime , CurrTime ) ) { return; }
 
+    /// 更新数据库;
     pRecordMission->SetUpdate();
     pRecordMission->SetMissionTarGet( 0 );
     pRecordMission->SetMissionReceiveTime( Time );
@@ -90,7 +90,7 @@ bool CMissionManager::IsDoneMission( ROLE_ID RoleID , MISSION_ID MissionID )
 CRecordMission* CMissionManager::GetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID , bool IsAdd )
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
-    if ( nullptr == PlayerPtr ) { return; }
+    if ( nullptr == PlayerPtr ) { return nullptr; }
 
     TRecordMission& TRecordData = PlayerPtr->GetRecordPlayer().GetRecordMission();
     auto It = TRecordData.find( MissionID );
@@ -101,7 +101,6 @@ CRecordMission* CMissionManager::GetMissionInfo( ROLE_ID RoleID , MISSION_ID Mis
     }
 
     if ( !IsAdd ) return nullptr;
-
     CRecordMission MissionData;
     MissionData.SetInsert();
     MissionData.SetRoleID( RoleID );

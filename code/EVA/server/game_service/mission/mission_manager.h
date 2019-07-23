@@ -1,7 +1,7 @@
 #ifndef GSE_MISSION_MANAGER_H_
 #define GSE_MISSION_MANAGER_H_
 
-#include <server_share/common/common.h>
+#include <game_service/game_service/game_service_def.h>
 
 GSE_NAMESPACE_BEGIN_DECL
 

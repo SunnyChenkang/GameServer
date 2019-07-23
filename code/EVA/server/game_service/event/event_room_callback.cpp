@@ -10,55 +10,48 @@ GSE_NAMESPACE_BEGIN_DECL
 
 void CEventRoomCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventUserLogin.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackUserLogin   );
-    EventDefine.EventUserOffline.connect( &EventRoomCallBack , &CEventRoomCallBack::CallBackUserOffline );
-    EventDefine.EventJoinRoom.connect   ( &EventRoomCallBack , &CEventRoomCallBack::CallBackJoinRoom    );
-    EventDefine.EventLeaveRoom.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackLeaveRoom   );
-    EventDefine.EventDeleteRoom.connect ( &EventRoomCallBack , &CEventRoomCallBack::CallBackDeleteRoom  );
-    EventDefine.EventGameStart.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameStart   );
-    EventDefine.EventGameOwer.connect   ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameOwer    );
+    EventDefine.EventPlayerLoginFinish.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlyaerLoginFinish     );
+    EventDefine.EventPlayerOffline.connect      ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlayerOffline   );
+    EventDefine.EventJoinRoom.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackJoinRoom        );
+    EventDefine.EventLeaveRoom.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackLeaveRoom       );
+    EventDefine.EventDeleteRoom.connect         ( &EventRoomCallBack , &CEventRoomCallBack::CallBackDeleteRoom      );
+    EventDefine.EventGameStart.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameStart       );
+    EventDefine.EventGameOwer.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameOwer        );
 }
 
-void CEventRoomCallBack::CallBackUserLogin( PB_UserLogin& UserLogin )
+void CEventRoomCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( UserLogin.role_id() );
-    if ( NULL == pPlayer ) return;
-    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( pPlayer->GetRoomID() );
-    if ( NULL != pRoomBase )
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
+    if ( nullptr == PlayerPtr ) { return; }
+
+    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( 0 );
+    if ( nullptr != pRoomBase )
     pRoomBase->UserOnline( UserLogin.role_id() );
 }
 
-void CEventRoomCallBack::CallBackUserOffline( ROLE_ID RoleID )
+void CEventRoomCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return;
-    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( pPlayer->GetRoomID() );
-    if ( NULL != pRoomBase )
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return; }
+
+    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( 0 );
+    if ( nullptr != pRoomBase )
     pRoomBase->UserOffline( RoleID );
 }
 
 void CEventRoomCallBack::CallBackJoinRoom( ROLE_ID RoleID , ROOM_ID RoomID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return;
-    pPlayer->SetRoomID( RoomID );
+
 }
 
 void CEventRoomCallBack::CallBackLeaveRoom( ROLE_ID RoleID , ROOM_ID RoomID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return;
-    pPlayer->SetRoomID( 0 );
+
 }
 
 void CEventRoomCallBack::CallBackDeleteRoom( ROOM_ID RoomID , std::vector<ROLE_ID>& Rolelist )
 {
-    for ( std::vector< ROOM_ID >::iterator it = Rolelist.begin() ; it != Rolelist.end() ; ++it )
-    {
-        CPlayer* pPlayer = PlayerManager.GetPlayer( *it );
-        if ( NULL == pPlayer ) continue;
-        pPlayer->SetRoomID( 0 );
-    }
+
 }
 
 void CEventRoomCallBack::CallBackGameStart( ROOM_ID RoomID )

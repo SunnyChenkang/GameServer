@@ -11,16 +11,12 @@ public:
     CLoginUser( void ){ }
    ~CLoginUser( void ){ }
 
-    //   用户登录;
-    void CallBackUserLogin( NLNET::CMessage& );
-    //   用户登录成功;
-    void CallBackUserLoginSucceed( NLNET::CMessage& );
-
-private:
-    //   用户内存登录;
-    bool UserLoginMemory( PB_UserLogin& );
-    //   用户数据库登录;
-    bool UserLoginDBCache( PB_UserLogin& );
+    ///  用户登录;
+    void CallBackPlayerLogin( NLNET::CMessage& );
+    ///  用户登录成功;
+    void CallBackPlayerLoginFinish( NLNET::CMessage& );
+    ///  玩家切换场景;
+    void CallBackChangeScenes( NLNET::CMessage& );
 };
 
 #define LoginUser CLoginUser::instance()

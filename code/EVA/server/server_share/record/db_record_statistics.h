@@ -32,13 +32,6 @@ public:
         SendMessage.serial( RecordStatistics );
         SS_NETWORK->send( "PSE" , SendMessage );
     }
-
-    CRecordStatistics& operator += ( const CRecordStatistics& rhs )
-    {
-        this->m_Count += rhs.m_Count;
-        return *this;
-    }
-
 };
 
 SS_NAMESPACE_END_DECL

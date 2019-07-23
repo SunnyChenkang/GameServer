@@ -11,39 +11,49 @@ void CStatisticsManager::UpdateStatistics( ROLE_ID RoleID , STATISTICS_ID Statis
 
 void CStatisticsManager::UpdateStatistics( ROLE_ID RoleID , STATISTICS_ID StatisticsID , uint32 Count )
 {
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )     { return; }
     CJsonStatisticsCell* pStatisticsCell = JsonStatisticsConfig.GetJsonCell< CJsonStatisticsCell >( StatisticsID );
-    if ( NULL == pStatisticsCell )  return;
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer )          return;
+    if ( NULL == pStatisticsCell )  { return; }
 
-    // 构造新统计信息;
-    CRecordStatistics RecordStatistics;
-    RecordStatistics.SetInsert();
-    RecordStatistics.SetRoleID( RoleID );
-    RecordStatistics.SetStatisticsID( StatisticsID );
-    RecordStatistics.SetCount( Count );
-    std::pair< TRecordStatisics::iterator , bool > res = pPlayer->GetRecordStatisics().insert( std::make_pair( StatisticsID , RecordStatistics ) );
-    if ( !res.second )
-    {
-        res.first->second += RecordStatistics;
-        res.first->second.SetUpdate();
-    }
+    CRecordStatistics* pRecordStatistics = GetStatistics( RoleID , StatisticsID , true );
+    if ( nullptr == pRecordStatistics ) { return; }
+    pRecordStatistics->SetCount( pRecordStatistics->GetCount() + Count );
 
-    // 保存数据库;
-    res.first->second.SaveToDataBase();
+    /// 保存数据库;
+    pRecordStatistics->SaveToDataBase();
 }
 
 bool CStatisticsManager::IsStatisticsReach( ROLE_ID RoleID , STATISTICS_ID StatisticsID , uint32 Count )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer )
-        return false;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )         { return false; }
+    CRecordStatistics* pRecordStatistics = GetStatistics( RoleID , StatisticsID , false );
+    if ( nullptr == pRecordStatistics ) { return false; }
 
-    TRecordStatisics::iterator it = pPlayer->GetRecordStatisics().find( StatisticsID );
-    if ( it == pPlayer->GetRecordStatisics().end() )
-        return false;
+    return ( pRecordStatistics->GetCount() >= Count );
+}
 
-    return ( it->second.GetStatisticsID() >= Count );
+CRecordStatistics* CStatisticsManager::GetStatistics( ROLE_ID RoleID , STATISTICS_ID StatisticsID , bool IsAdd /*= false */ )
+{
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return nullptr; }
+
+    TRecordStatisics& TRecordData = PlayerPtr->GetRecordPlayer().GetRecordStatisics();
+    auto It = TRecordData.find( StatisticsID );
+    if ( It != TRecordData.end() )
+    {
+        It->second.SetUpdate();
+        return &It->second;
+    }
+
+    if ( !IsAdd ) return nullptr;
+    CRecordStatistics StatisticsData;
+    StatisticsData.SetInsert();
+    StatisticsData.SetRoleID( RoleID );
+    StatisticsData.SetStatisticsID( StatisticsID );
+    auto Res = TRecordData.insert( std::make_pair(StatisticsID , StatisticsData) );
+    return &Res.first->second;
 }
 
 GSE_NAMESPACE_END_DECL

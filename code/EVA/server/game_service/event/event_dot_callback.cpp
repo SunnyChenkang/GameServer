@@ -9,37 +9,38 @@ GSE_NAMESPACE_BEGIN_DECL
 
 void CEventDotCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventUserLogin.connect  ( &EventDotCallBack , &CEventDotCallBack::CallBackUserLogin   );
-    EventDefine.EventUserOffline.connect( &EventDotCallBack , &CEventDotCallBack::CallBackUserOffline );
-    EventDefine.EventAddItem.connect    ( &EventDotCallBack , &CEventDotCallBack::CallBackAddItem     );
-    EventDefine.EventSubItem.connect    ( &EventDotCallBack , &CEventDotCallBack::CallBackSubItem     );
+    EventDefine.EventPlayerLoginFinish.connect( &EventDotCallBack , &CEventDotCallBack::CallBackPlyaerLoginFinish   );
+    EventDefine.EventPlayerOffline.connect    ( &EventDotCallBack , &CEventDotCallBack::CallBackPlayerOffline       );
+    EventDefine.EventAddItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackAddItem             );
+    EventDefine.EventSubItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackSubItem             );
 }
 
-void CEventDotCallBack::CallBackUserLogin( PB_UserLogin& UserLogin )
+void CEventDotCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( UserLogin.role_id() );
-    if ( NULL == pPlayer ) return;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
+    if ( nullptr == PlayerPtr ) { return; }
 
     CRecordStmtData Record;
     Record.m_Stmt.SetUint32( 0 , UserLogin.role_id() );
     Record.m_Stmt.SetUint32( 1 , UserLogin.role_kind() );
     Record.m_Stmt.SetString( 2 , UserLogin.client_host().c_str() );
-    Record.m_Stmt.SetUint32( 3 , pPlayer->GetRecordPlayerInfo().GetLastOfflineTime() );
+    Record.m_Stmt.SetUint32( 3 , PlayerPtr->GetRecordPlayer().GetRecordBasePlayer().GetLastOfflineTime() );
     Record.m_Stmt.SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
     Record.m_Stmt.SetSQL("CALL t_login_dot_insert(?,?,?,?,?)" );
     Record.SaveToDataBase();
 }
 
-void CEventDotCallBack::CallBackUserOffline( ROLE_ID RoleID )
+void CEventDotCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return; }
 
     CRecordStmtData Record;
-    Record.m_Stmt.SetUint32( 0 , pPlayer->GetRecordPlayerInfo().GetRoleID()   );
-    Record.m_Stmt.SetUint32( 1 , pPlayer->GetRecordPlayerInfo().GetRoleKind() );
-    Record.m_Stmt.SetString( 2 , pPlayer->GetRecordPlayerInfo().GetLastHost().c_str() );
-    Record.m_Stmt.SetUint32( 3 , pPlayer->GetRecordPlayerInfo().GetLastLoginTime() );
+    CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
+    Record.m_Stmt.SetUint32( 0 , RecordPlayerInfo.GetRoleID()   );
+    Record.m_Stmt.SetUint32( 1 , RecordPlayerInfo.GetRoleKind() );
+    Record.m_Stmt.SetString( 2 , RecordPlayerInfo.GetLastHost().c_str() );
+    Record.m_Stmt.SetUint32( 3 , RecordPlayerInfo.GetLastLoginTime() );
     Record.m_Stmt.SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
     Record.m_Stmt.SetSQL( "CALL t_offline_dot_insert(?,?,?,?,?)" );
     Record.SaveToDataBase();

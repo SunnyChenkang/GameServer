@@ -5,7 +5,7 @@
 
 SSE_NAMESPACE_BEGIN_DECL
 
-void CLoginUser::CallBackUserLogin( NLNET::CMessage& Message )
+void CLoginUser::CallBackPlayerLogin( NLNET::CMessage& Message )
 {
     PB_UserLogin UserLogin;
     Message.serial( &UserLogin );
@@ -37,7 +37,7 @@ load:
     SS_NETWORK->send( "PSE" , SendMessage );
 }
 
-void CLoginUser::CallBackUserLoginSucceed( NLNET::CMessage& Message )
+void CLoginUser::CallBackPlayerLoginFinish( NLNET::CMessage& Message )
 {
     ROLE_ID RoleID                      = 0;
     NLNET::TServiceId GameServiceId     = NLNET::TServiceId::InvalidId;
@@ -51,6 +51,11 @@ void CLoginUser::CallBackUserLoginSucceed( NLNET::CMessage& Message )
     if ( nullptr == PlayerPtr ) return;
     PlayerPtr->SetFrontendServiceId( FrontendServiceId );
     PlayerPtr->SetGameServiceId( GameServiceId );
+}
+
+void CLoginUser::CallBackChangeScenes( NLNET::CMessage& Message )
+{
+    this->CallBackPlayerLoginFinish( Message );
 }
 
 SSE_NAMESPACE_END_DECL

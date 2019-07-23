@@ -2,33 +2,29 @@
 #define GES_PLAYER_MANAGER_H_
 
 #include <game_service/game_service/game_service_def.h>
+#include "player.h"
 
 GSE_NAMESPACE_BEGIN_DECL
-
-class CPlayer;
 
 class CPlayerManager : public NLMISC::CSingleton< CPlayerManager >
 {
 public:
-    CPlayerManager( void ) { };
-   ~CPlayerManager( void ) { };
+    CPlayerManager( void );
+   ~CPlayerManager( void );
 
-public:
-    //       分配角色实体;
-    CPlayer* AllocPlayer( CRecordPlayer& RecordPlayer );
-    CPlayer* AllocPlayer( ROLE_ID );
+    /// 分配玩家实例;
+    CPlayerPtr AllocPlayer( ROLE_ID );
+    CPlayerPtr AllocPlayer( CRecordPlayer& );
+    /// 获取玩家数据;
+    CPlayerPtr GetPlayer  ( ROLE_ID );
 
-    //       获取角色实体;
-    CPlayer* GetPlayer( ROLE_ID );
-    //       删除玩家实体;
-    void     DeletePlayer( ROLE_ID );
-    //       获取实体数量;
-    uint32   GetPlayerCount( void );
-    //       切换场景;
-    bool     ChangeScenes( ROLE_ID , NLNET::TServiceId );
+    /// 删除玩家;
+    void DeletePlayer( ROLE_ID );
+    /// 场景切换;
+    void ChangeScenes( ROLE_ID , TServiceId& );
 
 private:
-    PLAYER_TABLE m_RoleTable;
+    SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );
 };
 
 #define PlayerManager CPlayerManager::instance()

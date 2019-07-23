@@ -36,13 +36,6 @@ public:
         SendMessage.serial( RecordMission );
         SS_NETWORK->send( "PSE" , SendMessage );
     }
-
-    CRecordMission& operator += ( const CRecordMission& rhs )
-    {
-        this->m_MissionTarGet += rhs.m_MissionTarGet;
-        return *this;
-    }
-
 };
 
 SS_NAMESPACE_END_DECL

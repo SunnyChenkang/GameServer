@@ -11,10 +11,10 @@ public:
     void InitEventCallBack( void );
 
 private:
-    void CallBackUserLogin  ( PB_UserLogin& );                                      // 用户登录事件;
-    void CallBackUserOffline( ROLE_ID );                                            // 用户离线事件;
-    void CallBackAddItem    ( ROLE_ID , ITEM_ID , uint32 , uint32 , PB_DotItem );   // 用户添加道具;
-    void CallBackSubItem    ( ROLE_ID , ITEM_ID , uint32 , uint32 , PB_DotItem );   // 用户扣减道具;
+    void CallBackPlyaerLoginFinish  ( PB_UserLogin& );                                      // 用户登录事件;
+    void CallBackPlayerOffline      ( ROLE_ID );                                            // 用户离线事件;
+    void CallBackAddItem            ( ROLE_ID , ITEM_ID , uint32 , uint32 , PB_DotItem );   // 用户添加道具;
+    void CallBackSubItem            ( ROLE_ID , ITEM_ID , uint32 , uint32 , PB_DotItem );   // 用户扣减道具;
 };
 
 #define EventDotCallBack CEventDotCallBack::getInstance()

@@ -36,6 +36,19 @@ void CallBack_LoginSucceed( NLNET::CMessage& Message , const std::string& Servic
     ClientPtr->SetGameServiceId( GameServiceId );
 }
 
+void CallBack_ChangeScenes( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceID )
+{
+    ROLE_ID RoleID = 0;
+    NLNET::TServiceId GameServiceId = NLNET::TServiceId::InvalidId;
+    Message.serial( RoleID );
+    Message.serial( GameServiceId );
+    CClientPtr ClientPtr = ClientManager.FindClientRole( RoleID );
+    if ( nullptr == ClientPtr ) { return; }
+
+    ClientPtr->SetRoleID( RoleID );
+    ClientPtr->SetGameServiceId( GameServiceId );
+}
+
 void CallBack_ClientDelete( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
 {
     ROLE_ID RoleID = 0;

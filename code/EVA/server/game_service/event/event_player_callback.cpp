@@ -1,79 +1,82 @@
 #include "event_player_callback.h"
 #include "event_define.h"
 
-#include <game_service/player/player.h>
-#include <game_service/player/player_manager.h>
 
 
 GSE_NAMESPACE_BEGIN_DECL
 
 void CEventPlayerCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventUserLoad.connect    ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackUserLoad );
-    EventDefine.EventUserLogin.connect   ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackUserLogin );
-    EventDefine.EventUserOffline.connect ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackUserOffline );
-    EventDefine.EventChangeScenes.connect( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackChangeScenes );
+    EventDefine.EventPlayerLoadFinish.connect   ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerLoadFinish     );
+    EventDefine.EventPlayerLoginFinish.connect  ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlyaerLoginFinish    );
+    EventDefine.EventPlayerOffline.connect      ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerOffline        );
+    EventDefine.EventChangeScenes.connect       ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackChangeScenes         );
 }
 
-void CEventPlayerCallBack::CallBackUserLoad( CRecordPlayer& RecordPlayer )
+void CEventPlayerCallBack::CallBackPlayerLoadFinish( CRecordPlayer& RecordPlayer )
 {
-    PlayerManager.AllocPlayer( RecordPlayer );
+    CPlayerPtr PlayerPtr = PlayerManager.AllocPlayer( RecordPlayer.GetRecordBasePlayer().GetRoleID() );
+    if ( nullptr == PlayerPtr ) { return; }
+    PlayerPtr->SetRecordPlayer( RecordPlayer );
 }
 
-void CEventPlayerCallBack::CallBackUserLogin( PB_UserLogin& UserLogin )
+void CEventPlayerCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( UserLogin.role_id() );
-    if ( NULL == pPlayer ) return;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
+    if ( nullptr == PlayerPtr ) { return; }
 
-    // 更新玩家信息;
-    pPlayer->SetFrontendServiceId( NLNET::TServiceId( UserLogin.frontend_service_id() ) );
-    pPlayer->GetRecordPlayerInfo().SetLastHost( UserLogin.client_host() );
-    pPlayer->GetRecordPlayerInfo().SetLastLoginTime( NLMISC::CTime::getSecondsSince1970() );
-    pPlayer->GetRecordPlayerInfo().SetUpdate();
-    pPlayer->GetRecordPlayerInfo().SaveToDataBase();
+    /// 更新玩家信息;
+    CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
+    PlayerPtr->SetFrontendServiceID( NLNET::TServiceId( UserLogin.frontend_service_id() ) );
+    RecordPlayerInfo.SetLastHost( UserLogin.client_host() );
+    RecordPlayerInfo.SetLastLoginTime( NLMISC::CTime::getSecondsSince1970() );
+    RecordPlayerInfo.SetUpdate();
+    RecordPlayerInfo.SaveToDataBase();
 
-    // 同步玩家数据;
     ROLE_ID RoleID                      = UserLogin.role_id();
-    NLNET::TServiceId GameServiceId     = NLNET::IService::getInstance()->getServiceId();
-    NLNET::TServiceId FrontendServiceId = pPlayer->GetFrontendServiceId();
+    NLNET::TServiceId GameServiceId     = IService::getInstance()->getServiceId();
+    NLNET::TServiceId FrontendServiceId = PlayerPtr->GetFrontendServiceID();
 
-    // 登录成功;
-    NLNET::CMessage SendMessage1("MSG_LOGIN_SUCCEED");
+    /// 同步登录成功;
+    NLNET::CMessage SendMessage1("MSG_LOGIN_FINISH");
     SendMessage1.serial( RoleID );
     SendMessage1.serial( GameServiceId );
     SendMessage1.serial( FrontendServiceId );
     SS_NETWORK->send( "SSE"             , SendMessage1 );
     SS_NETWORK->send( FrontendServiceId , SendMessage1 );
 
-    // 同步客户端数据;
+    /// 同步客户端数据;
     PB_Player PBPlayer;
-    pPlayer->GetRecordPlayerInfo().serial( PBPlayer );
-    NLNET::CMessage SendMessage2("MSG_LOGIN_SUCCEED");
+    RecordPlayerInfo.serial( PBPlayer );
+    NLNET::CMessage SendMessage2("MSG_LOGIN_FINISH");
     SendMessage2.serial( &PBPlayer );
-    SendToClient( RoleID, pPlayer->GetFrontendServiceId() , SendMessage2 );
+    SendToClient( RoleID, FrontendServiceId , SendMessage2 );
 }
 
-void CEventPlayerCallBack::CallBackUserOffline( ROLE_ID RoleID )
+void CEventPlayerCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return; }
 
-    // 更新玩家信息;
-    pPlayer->GetRecordPlayerInfo().SetLastOfflineTime( NLMISC::CTime::getSecondsSince1970() );
-    pPlayer->GetRecordPlayerInfo().SetUpdate();
-    pPlayer->GetRecordPlayerInfo().SaveToDataBase();
+    /// 更新玩家信息;
+    CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
+    RecordPlayerInfo.SetLastOfflineTime( NLMISC::CTime::getSecondsSince1970() );
+    RecordPlayerInfo.SetUpdate();
+    RecordPlayerInfo.SaveToDataBase();
 }
 
-void CEventPlayerCallBack::CallBackChangeScenes( CPlayer& Player )
+void CEventPlayerCallBack::CallBackChangeScenes( CPlayerPtr Player )
 {
-    CPlayer* pNewPlayer = PlayerManager.AllocPlayer( Player.GetRecordPlayerInfo().GetRoleID() );
-    *pNewPlayer = Player;
+    CPlayerPtr PlayerPtr = PlayerManager.AllocPlayer( Player->GetRecordPlayer().GetRecordBasePlayer().GetRoleID() );
+    if ( nullptr == PlayerPtr ) { return; }
+    PlayerPtr = Player;
 
-    ROLE_ID RoleID = Player.GetRecordPlayerInfo().GetRoleID();
-    NLNET::TServiceId GameServiceId     = NLNET::IService::getInstance()->getServiceId();
-    NLNET::TServiceId FrontendServiceId = Player.GetFrontendServiceId();
+    ROLE_ID RoleID                      = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer().GetRoleID();
+    NLNET::TServiceId GameServiceId     = IService::getInstance()->getServiceId();
+    NLNET::TServiceId FrontendServiceId = PlayerPtr->GetFrontendServiceID();
 
-    NLNET::CMessage SendMessage("MSG_LOGIN_SUCCEED");
+    /// 同步切换场景;
+    NLNET::CMessage SendMessage( "MSG_CHANGE_SCENES" );
     SendMessage.serial( RoleID );
     SendMessage.serial( GameServiceId );
     SendMessage.serial( FrontendServiceId );

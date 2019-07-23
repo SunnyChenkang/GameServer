@@ -15,22 +15,9 @@
 GSE_NAMESPACE_BEGIN_DECL
 
 using namespace SS;
+using namespace NLNET;
+using namespace NLMISC;
 
-// ÏûÏ¢×¢²á; 
-static uint32 NetCallBackFuncSize = 0;
-static NLNET::TUnifiedCallbackItem CallBackFunItems[512] = { };
-#define REGISTER_MAIN_FUNCITEM( SCR_CALLBACK ) \
-{ \
-    uint32 ArraySize = SS_ARRAYSIZE( SCR_CALLBACK ); \
-    for ( sint32 idx = 0; idx < ArraySize; idx++ )  \
-{ \
-    CallBackFunItems[ NetCallBackFuncSize + idx ] = SCR_CALLBACK[idx]; \
-} \
-    NetCallBackFuncSize += ArraySize; \
-} \
-
-class CPlayer;
-typedef std::map< ROLE_ID , CPlayer* > PLAYER_TABLE;
 
 GSE_NAMESPACE_END_DECL
 

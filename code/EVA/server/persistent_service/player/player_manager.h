@@ -12,14 +12,15 @@ public:
     CPlayerManager( void );
    ~CPlayerManager( void );
 
+    SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );
+
     /// 分配玩家实例;
     CPlayerPtr AllocPlayer( ROLE_ID );
-    /// 获取玩家数据;
+   /// 获取玩家数据;
     CPlayerPtr GetPlayer  ( ROLE_ID );
+
     /// 获取全部玩家;
     PLAYER_TABLE& GetPlayerList( void ) { return m_PlayerTable; }
-
-    SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );
 };
 
 #define PlayerManager CPlayerManager::getInstance()

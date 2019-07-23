@@ -3,7 +3,7 @@
 
 PSE_NAMESPACE_BEGIN_DECL
 
-void CallBack_UserLogin( NLNET::CMessage& Message, const std::string& ServiceName, NLNET::TServiceId ServiceID )
+void CallBack_PlayerLogin( NLNET::CMessage& Message, const std::string& ServiceName, NLNET::TServiceId ServiceID )
 {
     PB_UserLogin UserLogin;
     Message.serial( &UserLogin );

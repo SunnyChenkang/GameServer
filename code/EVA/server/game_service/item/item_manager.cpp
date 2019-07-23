@@ -7,62 +7,70 @@ GSE_NAMESPACE_BEGIN_DECL
 
 bool CItemManager::AddItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount , PB_DotItem DotItem )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer )   return false;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )  { return false; }
     CJsonItemCell* pItemCell = JsonRoomConfig.GetJsonCell< CJsonItemCell >( ItemID );
-    if ( NULL == pItemCell ) return false;
+    if ( NULL == pItemCell )     { return false; }
 
-    // 构造新道具;
-    CRecordItem RecordItem;
-    RecordItem.SetInsert();
-    RecordItem.SetRoleID( RoleID );
-    RecordItem.SetItemID( ItemID );
-    RecordItem.SetItemCount( ItemCount );
+    CRecordItem* pRecordItem = GetItemInfo( RoleID , ItemID , true );
+    if ( nullptr == pRecordItem ){ return false; }
+    pRecordItem->SetItemCount( pRecordItem->GetItemCount() + ItemCount );
+    pRecordItem->SaveToDataBase();
 
-    // 插入新道具;
-    std::pair< TRecordItem::iterator , bool > res = pPlayer->GetRecordItemInfo().insert( std::make_pair( ItemID , RecordItem ) );
-    if ( !res.second )
-    {
-        res.first->second += RecordItem;
-        res.first->second.SetUpdate();
-    }
-
-    // 保存数据库;
-    res.first->second.SaveToDataBase();
-
-    // 道具日志;
-    EventDefine.EventAddItem( RoleID , ItemID , ItemCount , res.first->second.GetItemCount() , DotItem );
+    /// 道具日志;
+    EventDefine.EventAddItem( RoleID , ItemID , ItemCount , pRecordItem->GetItemCount() , DotItem );
     return true;
 }
 
 bool CItemManager::SubItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount , PB_DotItem DotItem )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return false;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )  { return false; }
 
-    // 查找道具实体;
-    TRecordItem::iterator it = pPlayer->GetRecordItemInfo().find( ItemID );
-    if ( it == pPlayer->GetRecordItemInfo().end() ) return false;
-    if ( it->second.GetItemCount() < ItemCount ) return false;
+    CRecordItem* pRecordItem = GetItemInfo( RoleID , ItemID , false );
+    if ( nullptr == pRecordItem ){ return false; }
+    if ( pRecordItem->GetItemCount() < ItemCount ) { return false; }
 
-    // 更新道具数量;
-    it->second.SetItemCount( it->second.GetItemCount() - ItemCount );
-    it->second.SetUpdate();
-    it->second.SaveToDataBase();
+    /// 更新道具数量;
+    pRecordItem->SetItemCount( pRecordItem->GetItemCount() - ItemCount );
+    pRecordItem->SetUpdate();
+    pRecordItem->SaveToDataBase();
 
-    // 道具日志;
-    EventDefine.EventAddItem( RoleID , ItemID , ItemCount , it->second.GetItemCount() , DotItem );
+    /// 道具日志;
+    EventDefine.EventAddItem( RoleID , ItemID , ItemCount , pRecordItem->GetItemCount() , DotItem );
     return true;
 }
 
 uint32 CItemManager::GetItemCount( ROLE_ID RoleID , ITEM_ID ItemID )
 {
-    CPlayer* pPlayer = PlayerManager.GetPlayer( RoleID );
-    if ( NULL == pPlayer ) return 0;
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr )  { return 0; }
+    CRecordItem* pRecordItem = GetItemInfo( RoleID , ItemID , false );
+    if ( nullptr == pRecordItem ){ return 0; }
 
-    TRecordItem::iterator it = pPlayer->GetRecordItemInfo().find( ItemID );
-    if ( it == pPlayer->GetRecordItemInfo().end() ) return 0;
-    return it->second.GetItemCount();
+    return pRecordItem->GetItemCount();
+}
+
+CRecordItem* CItemManager::GetItemInfo( ROLE_ID RoleID , ITEM_ID ItemID , bool IsAdd )
+{
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
+    if ( nullptr == PlayerPtr ) { return nullptr; }
+
+    TRecordItem& TRecordData = PlayerPtr->GetRecordPlayer().GetRecordItem();
+    auto It = TRecordData.find( ItemID );
+    if ( It != TRecordData.end() )
+    {
+        It->second.SetUpdate();
+        return &It->second;
+    }
+
+    if ( !IsAdd ) return nullptr;
+    CRecordItem ItemData;
+    ItemData.SetInsert();
+    ItemData.SetRoleID( RoleID );
+    ItemData.SetItemID( ItemID );
+    auto Res = TRecordData.insert( std::make_pair(ItemID , ItemData) );
+    return &Res.first->second;
 }
 
 GSE_NAMESPACE_END_DECL
