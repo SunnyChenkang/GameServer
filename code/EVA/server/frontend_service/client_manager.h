@@ -26,10 +26,10 @@ public:
     CClientPtr FindClientUDP ( SOCKET_ID );
 
     /// 删除客户端信息;
-    void DeleteClientRole( ROLE_ID );
-    void DeleteClientWEB ( TSockId );
-    void DeleteClientUDP ( SOCKET_ID );
     void DeleteClient    ( CClientPtr );
+    void DeleteClientRole( ROLE_ID   );
+    void DeleteClientWEB ( TSockId   );
+    void DeleteClientUDP ( SOCKET_ID );
 
     /// 客户端会话列表;
     SS_PROPERTY( ROLECLIENT , RoleClientTable , private );

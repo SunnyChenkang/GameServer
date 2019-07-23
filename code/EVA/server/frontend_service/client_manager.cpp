@@ -22,11 +22,14 @@ CClientPtr CClientManager::AllocUDPClient( ROLE_ID RoleID , SOCKET_ID SocketID )
     /// 创建新客户端实例;
     CClientPtr ClientPtr = std::make_shared< CClient >();
     if ( nullptr == ClientPtr ) { return nullptr; }
+    m_RoleClientTable[ RoleID ] = ClientPtr;
+    m_UDPClientTable [SocketID] = RoleID;
+
+    /// 设置客户端属性;
     ClientPtr->SetUDPSocketID( SocketID );
     ClientPtr->SetChannelNet( RUDP_CHANNEL );
     ClientPtr->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
-    m_RoleClientTable[ RoleID ] = ClientPtr;
-    m_UDPClientTable [SocketID] = RoleID;
+    return ClientPtr;
 }
 
 CClientPtr CClientManager::AllocWebClient( ROLE_ID RoleID , TSockId SocketID )
@@ -37,11 +40,14 @@ CClientPtr CClientManager::AllocWebClient( ROLE_ID RoleID , TSockId SocketID )
     /// 创建新客户端实例;
     CClientPtr ClientPtr = std::make_shared< CClient >();
     if ( nullptr == ClientPtr ) { return nullptr; }
+    m_RoleClientTable[ RoleID ] = ClientPtr;
+    m_WEBClientTable [SocketID] = RoleID;
+
+    /// 设置客户端属性;
     ClientPtr->SetWebSocketID( SocketID );
     ClientPtr->SetChannelNet( WEB_CHANNEL );
     ClientPtr->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
-    m_RoleClientTable[ RoleID ] = ClientPtr;
-    m_WEBClientTable [SocketID] = RoleID;
+    return ClientPtr;
 }
 
 CClientPtr CClientManager::FindClientRole( ROLE_ID RoleID )
