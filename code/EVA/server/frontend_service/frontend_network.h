@@ -2,6 +2,8 @@
 #define FRONTEND_SERVICE_NETHANDLER_H_
 
 #include "frontend_def.h"
+#include "client.h"
+#include "client_manager.h"
 
 FES_NAMESPACE_BEGIN_DECL
 
@@ -48,7 +50,7 @@ private:
 
 private:
     // 转发消息;
-    static void HandlerForwardMessage( NLNET::CMessage& , CClient* );
+    static void HandlerForwardMessage( NLNET::CMessage& , CClientPtr );
 
 private:
     NLNET::CCallbackNetBase*    m_WebCallBackNetBase;       // WEB接口;

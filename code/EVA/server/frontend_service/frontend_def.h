@@ -7,6 +7,7 @@
 
 FES_NAMESPACE_BEGIN_DECL
 
+using namespace NLMISC;
 using namespace NLNET;
 using namespace FES;
 
@@ -37,7 +38,7 @@ typedef struct
 TRUDPCallbackItem;
 
 // WEB CALLBACK FUNC;
-typedef void ( *TWEBCallback ) ( NLNET::CMessage& , NLNET::TSockId , NLNET::CCallbackNetBase& );
+typedef void ( *TWEBCallback ) ( NLNET::CMessage& , NLNET::TSockId );
 typedef struct
 {
     const char*     KeyName;

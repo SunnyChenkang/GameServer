@@ -1,6 +1,4 @@
 #include "frontend_network.h"
-#include "client.h"
-#include "client_manager.h"
 #include "frontend_message.h"
 
 FES_NAMESPACE_BEGIN_DECL
@@ -64,94 +62,102 @@ void CFrontendNetWork::DestroyNetHandler( void )
 
 void CFrontendNetWork::CallBackWebConnection( NLNET::TSockId from , void* args )
 {
-    CClient* pClient = ClientManager.AllocClient( from );
-    if ( NULL != pClient ) return;
-
-    // 数据异常断开连接;
-    FrontendNetWork.CloseClientNet( from );
+//     CClient* pClient = ClientManager.AllocClient( from );
+//     if ( NULL != pClient ) return;
+// 
+//     // 数据异常断开连接;
+//     FrontendNetWork.CloseClientNet( from );
 }
 
 void CFrontendNetWork::CallBackWebMessage( NLNET::CMessage& message , NLNET::TSockId from , NLNET::CCallbackNetBase& args )
 {
-    CClient* pClient = ClientManager.FindClient( from );
-    if ( NULL == pClient )
+    CClientPtr ClientPtr = ClientManager.FindClientWEB( from );
+    if ( nullptr == ClientPtr )
     {
         FrontendNetWork.CloseClientNet( from );
         return;
     }
-    // 本地消息;
-    WEBCALLBACKTABLE::iterator it = m_WebCallBackFuncTable.find( message.getName() );
-    if ( it != m_WebCallBackFuncTable.end() )
-    {
-        it->second( message , from , args );
-        return;
-    }
-    // 转发消息;
-    HandlerForwardMessage( message , pClient );
+    /// 远程消息;
+    HandlerForwardMessage( message , ClientPtr );
 }
 
 void CFrontendNetWork::CallBackWebDisConnection( NLNET::TSockId from , void* args )
 {
-    ClientManager.DeleteClient( from );
+    ClientManager.DeleteClientWEB( from );
 }
 
 void CFrontendNetWork::CallBackRUDPMessage( void )
 {
-    do
+    /// 处理异常客户端;
+    while ( true )
     {
-        // 处理异常客户端;
         SOCKET_ID SocketID = ERROR_RECV_OBJ()->pop();
         if ( SocketID <= 0 ) break;
-        CClient* pClient = ClientManager.FindClient( SocketID );
-        if ( NULL == pClient ) continue;
-        ROLE_ID RoleID = pClient->GetRoleID();
+        CClientPtr ClientPtr = ClientManager.FindClientUDP( SocketID );
+        if ( nullptr == ClientPtr ) { break; }
         NLNET::CMessage SendMessage("MSG_OFFLINE");
+        ROLE_ID RoleID = ClientPtr->GetRoleID();
         SendMessage.serial( RoleID );
         SS_NETWORK->send( "GSE" , SendMessage );
-        ClientManager.DeleteClient( SocketID );
+        ClientManager.DeleteClientUDP( SocketID );
     }
-    while ( true );
 
-    do
+    /// 处理网络底层消息;
+    while ( true )
     {
-        // 处理客户端消息;
         IOBuffer* pIOBuffer = RECV_OBJ()->pop();
-        if ( NULL == pIOBuffer ) break;
-        NLNET::CMessage IOMessage;
-        IOMessage.fill( pIOBuffer->buf() , pIOBuffer->len() );
-        IOMessage.invert();
-        SOCKET_ID SocketID = pIOBuffer->socket_id();
+        if ( nullptr == pIOBuffer ) { break; }
+        NLNET::CMessage Message;
+        Message.fill( pIOBuffer->buf(), pIOBuffer->len() );
+        Message.invert();
         SS_SAFE_DELETE( pIOBuffer );
-        RUDPCALLBACKTABLE::iterator it = m_RUDPCallBackFuncTable.find( IOMessage.getName() );
-        if ( it != m_RUDPCallBackFuncTable.end() )
-        {
-            it->second( IOMessage , SocketID );
-        }
-        else
-        {
-            HandlerForwardMessage( IOMessage , ClientManager.FindClient( SocketID ) );
-        }
+        HandlerForwardMessage( Message , ClientManager.FindClientUDP( pIOBuffer->socket_id() ) );
+        SS_SAFE_DELETE( pIOBuffer );
     }
-    while( true );
 }
 
 PB_CreateRoom PB1;
 
-void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CClient* pClient )
+void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CClientPtr ClientPtr )
 {
-    if ( NULL == pClient ) return;
+    if ( nullptr == ClientPtr )
+        return;
+
+    /// 处理WEB本地消息;
+    if ( ClientPtr->GetChannelNet() == WEB_CHANNEL )
+    {
+        auto It = m_WebCallBackFuncTable.find( RevcMessage.getName() );
+        if ( It != m_WebCallBackFuncTable.end() ) {
+             It->second( RevcMessage , ClientPtr->GetWebSocketID() );
+             return;
+        }
+    }
+
+    /// 处理UDP本地消息;
+    if ( ClientPtr->GetChannelNet() == RUDP_CHANNEL )
+    {
+        auto It = m_RUDPCallBackFuncTable.find( RevcMessage.getName() );
+        if ( It != m_RUDPCallBackFuncTable.end() ) {
+             It->second( RevcMessage , ClientPtr->GetUDPSocketID() );
+             return;
+        }
+    }
+
+    /// 处理远程消息;
     SS::CJsonMessageCell* pJsonCell = JsonMessageConfig.GetJsonCell< SS::CJsonMessageCell >( RevcMessage.getName() );
+    if ( nullptr == pJsonCell ) {
+    }
     if ( NULL == pJsonCell )
     {
-        ClientManager.DeleteClient( pClient );
+        ClientManager.DeleteClient( ClientPtr );
         return;
     }
 
-    ROLE_ID RoleID = pClient->GetRoleID();
+    ROLE_ID RoleID = ClientPtr->GetRoleID();
     NLNET::CMessage SendMessage( pJsonCell->GetName() );
     std::vector< NLMISC::CSString >& FormatList = pJsonCell->m_Format.m_JsonArray;
 
-    // 填充新消息;
+    /// 填充新消息;
     for ( std::vector< NLMISC::CSString >::iterator it = FormatList.begin() ; it != FormatList.end(); ++it )
     {
         EFormatKind format = ToForMatEnum( *it );
@@ -169,12 +175,12 @@ void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CCl
         }
     }
 
-    // 转发内容;
+    /// 转发内容;
     std::vector< NLMISC::CSString >& SendToServiceList = pJsonCell->m_SendToService.m_JsonArray;
     for ( std::vector< NLMISC::CSString >::iterator  it = SendToServiceList.begin(); it != SendToServiceList.end(); ++it )
     {
         if ( *it == "GSE" ) {
-        SS_NETWORK->send( pClient->GetGameServiceId() , SendMessage );
+        SS_NETWORK->send( ClientPtr->GetGameServiceId() , SendMessage );
         }
         else {
         SS_NETWORK->send( *it , SendMessage );

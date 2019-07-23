@@ -7,39 +7,12 @@ extern NLMISC::CVariable< std::string > VAR_FES_AUTH_SECRET;
 
 FES_NAMESPACE_BEGIN_DECL
 
-bool CallBack_AuthAccount( NLNET::CMessage& Message , CClient* pClient )
-{
-    // 验证账号;
-    NLMISC::CSString AuthSecret = VAR_FES_AUTH_SECRET.get();
-    PB_LoginAuthUser LoginAuthUser;
-    Message.serial( &LoginAuthUser );
-    NLMISC::CSString    AuthMd5 = NLMISC::toString( LoginAuthUser.role_id() ) + LoginAuthUser.client_host() + AuthSecret;
-    NLMISC::CHashKeyMD5 Md5     = NLMISC::getMD5( (const uint8*)AuthMd5.c_str() , AuthMd5.length() );
-    if ( Md5.toString() != LoginAuthUser.client_token() ) return false;
-
-    pClient->SetRoleID( LoginAuthUser.role_id() );
-    pClient->SetHost  ( LoginAuthUser.client_host() );
-
-    // 登录游戏;
-    PB_UserLogin UserLogin;
-    ROLE_ID RoleID              = pClient->GetRoleID();
-    NLMISC::CSString ClientHost = pClient->GetHost();
-
-    UserLogin.set_role_id( RoleID );
-    UserLogin.set_client_host( ClientHost );
-    UserLogin.set_frontend_service_id( NLNET::IService::getInstance()->getServiceId().get() );
-    NLNET::CMessage SendMessage("MSG_LOGIN");
-    SendMessage.serial( &UserLogin );
-    SS_NETWORK->send( "SSE" , SendMessage );
-    return true;
-}
-
 void CallBack_S2C( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceID )
 {
     ROLE_ID RoleID = 0;
     Message.serial( RoleID );
-    CClient* pClient = ClientManager.FindClientRoleID( RoleID );
-    if ( NULL == pClient ) return;
+    CClientPtr ClientPtr = ClientManager.FindClientRole( RoleID );
+    if ( nullptr == ClientPtr ) { return; }
 
     uint32 BufferLen = 0;
     Message.serial( BufferLen );
@@ -47,7 +20,7 @@ void CallBack_S2C( NLNET::CMessage& Message , const std::string& ServiceName , N
     NLNET::CMessage SendMessage;
     SendMessage.assignFromSubMessage( Message );
     Message.unlockSubMessage();
-    pClient->SendToClient( SendMessage );
+    ClientPtr->SendToClient( SendMessage );
 }
 
 void CallBack_LoginSucceed( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceID )
@@ -56,11 +29,11 @@ void CallBack_LoginSucceed( NLNET::CMessage& Message , const std::string& Servic
     NLNET::TServiceId GameServiceId = NLNET::TServiceId::InvalidId;
     Message.serial( RoleID );
     Message.serial( GameServiceId );
-    CClient* pClient = ClientManager.FindClientRoleID( RoleID );
-    if ( NULL == pClient ) return;
+    CClientPtr ClientPtr = ClientManager.FindClientRole( RoleID );
+    if ( nullptr == ClientPtr ) { return; }
 
-    pClient->SetRoleID( RoleID );
-    pClient->SetGameServiceId( GameServiceId );
+    ClientPtr->SetRoleID( RoleID );
+    ClientPtr->SetGameServiceId( GameServiceId );
 }
 
 void CallBack_ClientDelete( NLNET::CMessage& Message , const std::string& ServiceName , NLNET::TServiceId ServiceId )
@@ -69,60 +42,57 @@ void CallBack_ClientDelete( NLNET::CMessage& Message , const std::string& Servic
     NLNET::TServiceId FesServiceId = NLNET::TServiceId::InvalidId;
     Message.serial( RoleID );
     Message.serial( FesServiceId );
+    if ( FesServiceId == NLNET::IService::getInstance()->getServiceId() ) { return; }
 
-    //忽律自己服务器;
-    if ( FesServiceId == NLNET::IService::getInstance()->getServiceId() ) return;
-    CClient* pClient = ClientManager.FindClientRoleID( RoleID );
-    if ( NULL == pClient ) return;
-    ClientManager.DeleteClient( pClient );
+    CClientPtr ClientPtr = ClientManager.FindClientRole( RoleID );
+    if ( nullptr == ClientPtr ) { return; }
+    ClientManager.DeleteClient( ClientPtr );
 }
 
 void CallBack_RUDPLogin(NLNET::CMessage& Message , SOCKET_ID SocketID )
 {
+    /// 验证客户端登录;
     PB_LoginAuthUser PBLoginAuthUser;
     Message.serial( &PBLoginAuthUser );
-    NLMISC::CSString    strAuthMD5 = NLMISC::toString( PBLoginAuthUser.role_id() ) + PBLoginAuthUser.client_host() + NLMISC::toString( PBLoginAuthUser.role_kind() ) + VAR_FES_AUTH_SECRET.get();
-    NLMISC::CHashKeyMD5 strMD5     = NLMISC::getMD5( (const uint8*)strAuthMD5.c_str() , strAuthMD5.length() );
-    strAuthMD5 = NLMISC::toUpper( strMD5.toString() );
-    if ( strAuthMD5 != PBLoginAuthUser.client_token() )
+    NLMISC::CSString    AuthMD5 = NLMISC::toString( PBLoginAuthUser.role_id() ) + PBLoginAuthUser.client_host() + NLMISC::toString( PBLoginAuthUser.role_kind() ) + VAR_FES_AUTH_SECRET.get();
+    AuthMD5 = NLMISC::toUpper( NLMISC::getMD5( (const uint8*)AuthMD5.c_str() , AuthMD5.length() ).toString() );
+    if ( !AuthMD5.icompare( PBLoginAuthUser.client_token() ))
+    {
+        nlinfo( " client login auth fails ... " );
         return;
+    }
 
-    CClient* pClient = ClientManager.AllocClient( PBLoginAuthUser.role_id() , SocketID );
-    if ( NULL == pClient )  return;
-    pClient->SetRoleID( PBLoginAuthUser.role_id() );
-    pClient->SetHost( PBLoginAuthUser.client_host() );
-
-    PB_UserLogin PBUserLogin;
-    ROLE_ID RoleID                  = pClient->GetRoleID();
-    NLMISC::CSString ClientHost     = pClient->GetHost();
-    NLNET::TServiceId FesServiceId  = NLNET::IService::getInstance()->getServiceId();
-    PBUserLogin.set_role_id( RoleID );
-    PBUserLogin.set_role_kind( PBLoginAuthUser.role_kind() );
-    PBUserLogin.set_client_host( ClientHost );
-    PBUserLogin.set_frontend_service_id( FesServiceId.get() );
+    ROLE_ID    RoleID       = PBLoginAuthUser.role_id();
+    uint32     RoleKind     = PBLoginAuthUser.role_kind();
+    CSString   ClientHost   = PBLoginAuthUser.client_host();
+    TServiceId FesServiceID = IService::getInstance()->getServiceId();
 
     // 其它服务关闭客户端;
     NLNET::CMessage SendMessage1("MSG_CLIENT_DELETE");
     SendMessage1.serial( RoleID );
-    SendMessage1.serial( FesServiceId );
+    SendMessage1.serial( FesServiceID );
     SS_NETWORK->send( "FES" , SendMessage1 );
 
+    /// 产生客户端实体;
+    CClientPtr ClientPtr = ClientManager.AllocUDPClient( PBLoginAuthUser.role_id() , SocketID );
+    if ( nullptr == ClientPtr ) { return; }
+    ClientPtr->SetRoleID( RoleID );
+    ClientPtr->SetHost( ClientHost );
+
     // 登录游戏;
+    PB_UserLogin PBUserLogin;
+    PBUserLogin.set_role_id( RoleID );
+    PBUserLogin.set_role_kind( RoleKind );
+    PBUserLogin.set_client_host( ClientHost );
+    PBUserLogin.set_frontend_service_id( FesServiceID.get() );
     NLNET::CMessage SendMessage2("MSG_LOGIN");
     SendMessage2.serial( &PBUserLogin );
     SS_NETWORK->send( "SSE" , SendMessage2 );
 }
 
-void CallBack_WebLogin(NLNET::CMessage& Message , NLNET::TSockId SocketID , NLNET::CCallbackNetBase&)
+void CallBack_WebLogin(NLNET::CMessage& Message , NLNET::TSockId SocketID )
 {
-    CClient* pClient = ClientManager.FindClient( SocketID );
-    if ( NULL == pClient ){ return; }
 
-    if ( !CallBack_AuthAccount( Message , pClient ) )
-    {
-        FrontendNetWork.CloseClientNet( SocketID );
-        return;
-    }
 }
 
 void CallBack_SSEDisconnection( const std::string& , NLNET::TServiceId , void* )

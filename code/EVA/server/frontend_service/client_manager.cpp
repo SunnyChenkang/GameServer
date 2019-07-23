@@ -1,5 +1,4 @@
 #include "client_manager.h"
-#include "client.h"
 #include "frontend_network.h"
 #include "client_timer.h"
 
@@ -10,103 +9,126 @@ FES_NAMESPACE_BEGIN_DECL
 
 CClientManager::CClientManager( void )
 {
-    m_RUDPSocketTable.clear();
-    m_WEBSocketTable.clear();
-    //m_ConnectionTimer.setRemaining( VAR_FES_CHECK_WAIT_CONNECTION_TIME.get() , new CClientConnectionTimer() );
+    m_RoleClientTable.clear();
+    m_UDPClientTable.clear();
+    m_WEBClientTable.clear();
 }
 
-CClient* CClientManager::AllocClient( ROLE_ID RoleID , SOCKET_ID SocketID )
+CClientPtr CClientManager::AllocUDPClient( ROLE_ID RoleID , SOCKET_ID SocketID )
 {
-    // 检查客户端数量;
-    CClient* pClient = new ( std::nothrow ) CClient();
-    if ( NULL == pClient ) return NULL;
-    std::pair< RUDPSOCKETTABLE::iterator , bool > res = m_RUDPSocketTable.insert( std::make_pair( SocketID , pClient ) );
-    if ( !res.second )
-    {
-        SS_SAFE_DELETE( pClient );
-        pClient = res.first->second;
+    /// 查找旧数据删掉;
+    this->DeleteClientUDP( RoleID );
+
+    /// 创建新客户端实例;
+    CClientPtr ClientPtr = std::make_shared< CClient >();
+    if ( nullptr == ClientPtr ) { return nullptr; }
+    ClientPtr->SetUDPSocketID( SocketID );
+    ClientPtr->SetChannelNet( RUDP_CHANNEL );
+    ClientPtr->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
+    m_RoleClientTable[ RoleID ] = ClientPtr;
+    m_UDPClientTable [SocketID] = RoleID;
+}
+
+CClientPtr CClientManager::AllocWebClient( ROLE_ID RoleID , TSockId SocketID )
+{
+    /// 查找旧数据删掉;
+    this->DeleteClientWEB( SocketID );
+
+    /// 创建新客户端实例;
+    CClientPtr ClientPtr = std::make_shared< CClient >();
+    if ( nullptr == ClientPtr ) { return nullptr; }
+    ClientPtr->SetWebSocketID( SocketID );
+    ClientPtr->SetChannelNet( WEB_CHANNEL );
+    ClientPtr->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
+    m_RoleClientTable[ RoleID ] = ClientPtr;
+    m_WEBClientTable [SocketID] = RoleID;
+}
+
+CClientPtr CClientManager::FindClientRole( ROLE_ID RoleID )
+{
+    auto It = m_RoleClientTable.find( RoleID );
+    if ( It == m_RoleClientTable.end() ) {
+        return nullptr;
     }
-    m_ClientTable[RoleID] = pClient;
-    pClient->SetRSocketID( SocketID );
-    pClient->SetChannelNet( RUDP_CHANNEL );
-    pClient->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
-    return pClient;
+    return It->second;
 }
 
-CClient* CClientManager::AllocClient( NLNET::TSockId SocketID )
+CClientPtr CClientManager::FindClientUDP( SOCKET_ID SocketID )
 {
-    CClient* pClient = new ( std::nothrow ) CClient();
-    if ( NULL == pClient ) return NULL;
-    std::pair< WEBSOCKETTABLE::iterator , bool > res = m_WEBSocketTable.insert( std::make_pair( SocketID , pClient ));
-    if ( !res.second )
-    {
-        SS_SAFE_DELETE( pClient );
-        pClient = res.first->second;
+    auto It = m_UDPClientTable.find( SocketID );
+    if ( It == m_UDPClientTable.end() ) {
+        return nullptr;
     }
-    pClient->SetWScoketID( SocketID );
-    pClient->SetChannelNet( WEB_CHANNEL );
-    pClient->SetConnectionTime( NLMISC::CTime::getSecondsSince1970() );
-    return pClient;
+    return FindClientRole( It->second );
 }
 
-CClient* CClientManager::FindClient( SOCKET_ID SocketID )
+CClientPtr CClientManager::FindClientWEB( TSockId SocketID )
 {
-    RUDPSOCKETTABLE::iterator it = m_RUDPSocketTable.find( SocketID );
-    if ( it == m_RUDPSocketTable.end() ) return NULL;
-    return it->second;
+    auto It = m_WEBClientTable.find( SocketID );
+    if ( It == m_WEBClientTable.end() ) {
+        return nullptr;
+    }
+    return FindClientRole( It->second );
 }
 
-CClient* CClientManager::FindClient( NLNET::TSockId& ScoketID )
+void CClientManager::DeleteClientRole( ROLE_ID RoleID )
 {
-    WEBSOCKETTABLE::iterator it = m_WEBSocketTable.find( ScoketID );
-    if ( it == m_WEBSocketTable.end() ) return NULL;
-    return it->second;
-}
+    auto It = m_RoleClientTable.find( RoleID );
+    if ( It == m_RoleClientTable.end() ) {
+        return;
+    }
 
-CClient* CClientManager::FindClientRoleID( ROLE_ID RoleID )
-{
-    CLIENTTABLE::iterator it = m_ClientTable.find( RoleID );
-    if ( it == m_ClientTable.end() ) return NULL;
-    return it->second;
-}
-
-void CClientManager::DeleteClient( SOCKET_ID SocketID )
-{
-    RUDPSOCKETTABLE::iterator it = m_RUDPSocketTable.find ( SocketID );
-    if ( it == m_RUDPSocketTable.end() ) return;
-    this->DeleteClient( it->second );
-}
-
-void CClientManager::DeleteClient( NLNET::TSockId& SocketID )
-{
-    WEBSOCKETTABLE::iterator it = m_WEBSocketTable.find ( SocketID );
-    if ( it == m_WEBSocketTable.end() ) return;
-    this->DeleteClient( it->second );
-}
-
-void CClientManager::DeleteClient( CClient* pClient )
-{
-    if ( NULL == pClient ) return;
-
-    // 删除关联表;
-    m_ClientTable.erase( pClient->GetRoleID() );
-
-    // 删除客户端;
-    switch ( pClient->GetChannelNet() )
+    switch (It->second->GetChannelNet() )
     {
-    case RUDP_CHANNEL: 
-        m_RUDPSocketTable.erase( pClient->GetRSocketID() );
-        FrontendNetWork.CloseClientNet( pClient->GetRSocketID() );
+    case RUDP_CHANNEL:
+        FrontendNetWork.CloseClientNet( It->second->GetUDPSocketID() );
         break;
     case WEB_CHANNEL:
-        m_WEBSocketTable.erase( pClient->GetWScoketID() );
-        FrontendNetWork.CloseClientNet( pClient->GetWScoketID() );
+        FrontendNetWork.CloseClientNet( It->second->GetWebSocketID() );
         break;
     default:
         break;
     }
+    m_RoleClientTable.erase( It );
+}
 
-    SS_SAFE_DELETE( pClient );
+void CClientManager::DeleteClientUDP( SOCKET_ID SocketID )
+{
+    auto It = m_UDPClientTable.find( SocketID );
+    if ( It == m_UDPClientTable.end() ) {
+        return;
+    }
+    DeleteClientRole( It->second );
+    m_UDPClientTable.erase( It );
+}
+
+void CClientManager::DeleteClientWEB( TSockId SocketID )
+{
+    auto It = m_WEBClientTable.find( SocketID );
+    if ( It == m_WEBClientTable.end() ) {
+        return;
+    }
+    DeleteClientRole( It->second );
+    m_WEBClientTable.erase( It );
+}
+
+void CClientManager::DeleteClient( CClientPtr ClientPtr )
+{
+    if ( nullptr == ClientPtr ) {
+        return;
+    }
+
+    switch ( ClientPtr->GetChannelNet() )
+    {
+    case WEB_CHANNEL:
+        DeleteClientWEB( ClientPtr->GetWebSocketID() );
+        break;
+    case RUDP_CHANNEL:
+        DeleteClientUDP( ClientPtr->GetUDPSocketID() );
+        break;
+    default:
+        break;
+    }
 }
 
 FES_NAMESPACE_END_DECL

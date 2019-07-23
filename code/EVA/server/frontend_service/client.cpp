@@ -3,8 +3,8 @@
 
 FES_NAMESPACE_BEGIN_DECL
 
-CClient::CClient( void ) : m_RSocketID( 0 )
-                         , m_WScoketID( NLNET::InvalidSockId )
+CClient::CClient( void ) : m_UDPSocketID( 0 )
+                         , m_WebSocketID( NLNET::InvalidSockId )
                          , m_RoleID( 0 )
                          , m_ConnectionTime( 0 )
                          , m_ChannelNet( RUDP_CHANNEL )
@@ -20,10 +20,10 @@ void CClient::SendToClient( NLNET::CMessage& message )
     switch ( m_ChannelNet )
     {
     case WEB_CHANNEL:
-        FrontendNetWork.GetWebNetBase()->send( message , GetWScoketID() );
+        FrontendNetWork.GetWebNetBase()->send( message , GetWebSocketID() );
         break;
     case RUDP_CHANNEL:
-        SEND_OBJ()->push( message.buffer() , message.length() , GetRSocketID() );
+        SEND_OBJ()->push( message.buffer() , message.length() , GetUDPSocketID() );
         break;
     default:
         nlinfo( " not find channel net type" );

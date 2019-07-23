@@ -16,7 +16,7 @@ static TRUDPCallbackItem RUDPCallBackItems[] =
 
 
 // WEB;
-void CallBack_WebLogin( NLNET::CMessage& , NLNET::TSockId , NLNET::CCallbackNetBase& );
+void CallBack_WebLogin( NLNET::CMessage& , NLNET::TSockId );
 static TWEBCallbackItem WEBCallBackItems[] =
 {
     { "MSG_LOGIN" , CallBack_WebLogin },
@@ -41,9 +41,6 @@ void CallBack_SSEDisconnection( const std::string& , NLNET::TServiceId , void* )
 void CallBack_GSEDisconnection( const std::string& , NLNET::TServiceId , void* );
 // PSE DISCONNECT CALLBACK;
 void CallBack_PSEDisconnection( const std::string& , NLNET::TServiceId , void* );
-
-// AUTH ACCOUNT;
-bool CallBack_AuthAccount( NLNET::CMessage& , CClient* );
 
 FES_NAMESPACE_END_DECL
 
