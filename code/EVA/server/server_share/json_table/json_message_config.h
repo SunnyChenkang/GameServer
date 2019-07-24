@@ -24,14 +24,16 @@ class CJsonMessageCell : public CJsonBase
     }
 };
 
+typedef std::shared_ptr< CJsonMessageCell > CJsonMessageCellPtr;
+
 class CJsonMessageConfig : public CJsonBase
 {
     void ParseJson( const Value& JsonValue )
     {
         JsonParseBegin( JsonValue );
-        CJsonMessageCell* pCell = new CJsonMessageCell();
-        pCell->ParseJson( Values );
-        m_JsonStringArray.insert(std::make_pair( pCell->GetName() , pCell ) );
+        CJsonMessageCellPtr MessageCellPtr = std::make_shared< CJsonMessageCell >();
+        MessageCellPtr->ParseJson( Values );
+        m_JsonStringArray.insert(std::make_pair( MessageCellPtr->GetName() , MessageCellPtr ) );
         JsonParseEnd();
     }
 };

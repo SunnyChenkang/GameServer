@@ -6,10 +6,11 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+/// 创建用户赠送道具;
 class CAddItemCell : public CJsonBase
 {
-    SS_PROPERTY( ITEM_ID            , ItemID    , private );
-    SS_PROPERTY( uint32             , ItemCount , private );
+    SS_PROPERTY( ITEM_ID    , ItemID    , private );
+    SS_PROPERTY( uint32     , ItemCount , private );
 
     void ParseJson( const Value& JsonValue )
     {
@@ -20,6 +21,7 @@ class CAddItemCell : public CJsonBase
     }
 };
 
+/// 创建角色附加属性;
 class CCreateRoleConfig : public CJsonBase
 {
     SS_PROPERTY( CJsonArray< CAddItemCell > , AddItem , public  );

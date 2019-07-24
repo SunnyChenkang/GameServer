@@ -6,6 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+/// 任务属性参数;
 class CJsonMissionCell : public CJsonBase
 {
     SS_PROPERTY( MISSION_ID         , MissionID             , private );    // 任务ID;
@@ -33,15 +34,16 @@ class CJsonMissionCell : public CJsonBase
         JsonParseEnd();
     }
 };
+typedef std::shared_ptr< CJsonMissionCell > CJsonMissionCellPtr;
 
 class CJsonMissionConfig : public CJsonBase
 {
     void ParseJsonArray( const GenericValue< UTF8<> >& JsonValue )
     {
         JsonParseArrayBegin( JsonValue );
-        CJsonMissionCell* pCell = new CJsonMissionCell();
-        pCell->ParseJson( Values );
-        m_JsonStringArray.insert(std::make_pair( pCell->GetMissionID() , pCell ) );
+        CJsonMissionCellPtr MissionCellPtr = std::make_shared< CJsonMissionCell >();
+        MissionCellPtr->ParseJson( Values );
+        m_JsonStringArray.insert(std::make_pair( MissionCellPtr->GetMissionID() , MissionCellPtr ) );
         JsonParseArrayEnd();
     }
 };

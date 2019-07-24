@@ -6,10 +6,11 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+/// 统计属性参数;
 class CJsonStatisticsCell : public CJsonBase
 {
-    SS_PROPERTY( STATISTICS_ID    , StatisticsID       , private );  // 统计ID;
-    SS_PROPERTY( NLMISC::CSString , StatisticsContent  , private );  // 统计描述;
+    SS_PROPERTY( STATISTICS_ID    , StatisticsID       , private );  /// 统计ID;
+    SS_PROPERTY( NLMISC::CSString , StatisticsContent  , private );  /// 统计描述;
 
     void ParseJson( const Value& JsonValue )
     {
@@ -20,14 +21,16 @@ class CJsonStatisticsCell : public CJsonBase
     }
 };
 
+typedef std::shared_ptr< CJsonStatisticsCell > CJsonStatisticsCellPtr;
+
 class CJsonStatisticsConfig : public CJsonBase
 {
     void ParseJsonArray( const GenericValue< UTF8<> >& JsonValue )
     {
         JsonParseArrayBegin( JsonValue );
-        CJsonStatisticsCell* pCell = new CJsonStatisticsCell();
-        pCell->ParseJson( Values );
-        m_JsonUint32Array.insert(std::make_pair( pCell->GetStatisticsID() , pCell ) );
+        CJsonStatisticsCellPtr StatisticsCellPtr = std::make_shared< CJsonStatisticsCell >();
+        StatisticsCellPtr->ParseJson( Values );
+        m_JsonUint32Array.insert(std::make_pair( StatisticsCellPtr->GetStatisticsID() , StatisticsCellPtr ) );
         JsonParseArrayEnd();
     }
 };

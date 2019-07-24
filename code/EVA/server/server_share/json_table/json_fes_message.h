@@ -28,6 +28,8 @@ public:
     }
 };
 
+typedef std::shared_ptr< CJsonFesMessageCell > CJsonFesMessageCellPtr;
+
 class CJsonFesMessage : public CJsonBase
 {
 public:
@@ -37,9 +39,9 @@ public:
     void ParseJson( const Value& JsonValue )
     {
         JsonParseBegin( JsonValue );
-        CJsonFesMessageCell* pCell = new CJsonFesMessageCell();
-        pCell->ParseJson( it->value );
-        m_JsonStringTable.insert(std::make_pair( pCell->GetName() , pCell ) );
+        CJsonFesMessageCellPtr FesCellPtr = std::make_shared<CJsonFesMessageCell>();
+        FesCellPtr->ParseJson( it->value );
+        m_JsonStringArray.insert(std::make_pair( FesCellPtr->GetName() , FesCellPtr ) );
         JsonParseEnd( );
     }
 };

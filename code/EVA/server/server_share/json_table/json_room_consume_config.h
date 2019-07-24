@@ -6,10 +6,11 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+/// 游戏消耗属性;
 class CJsonRoomConsumeCell : public CJsonBase
 {
     SS_PROPERTY( uint32           , ConsumeID   , private );    // 消耗ID;
-    SS_PROPERTY( NLMISC::CSString , RoomName    , private );    // 房间名字;
+    SS_PROPERTY( NLMISC::CSString , GameName    , private );    // 游戏名字;
     SS_PROPERTY( ITEM_ID          , ConsumeItem , private );    // 消耗道具ID;
     SS_PROPERTY( uint32           , ConsumeCount, private );    // 消耗数量;
     SS_PROPERTY( uint32           , GameCount   , private );    // 游戏数量;
@@ -19,7 +20,7 @@ class CJsonRoomConsumeCell : public CJsonBase
     {
         JsonParseBegin   ( JsonValue );
         JsonParseToUInt  ( m_ConsumeID );
-        JsonParseToString( m_RoomName );
+        JsonParseToString( m_GameName );
         JsonParseToUInt  ( m_ConsumeItem );
         JsonParseToUInt  ( m_ConsumeCount );
         JsonParseToUInt  ( m_GameCount );
@@ -28,14 +29,16 @@ class CJsonRoomConsumeCell : public CJsonBase
     }
 };
 
+typedef std::shared_ptr< CJsonRoomConsumeCell > CJsonRoomConsumeCellPtr;
+
 class CJsonRoomConsumeConfig : public CJsonBase
 {
     void ParseJsonArray( const Value& JsonValue )
     {
         JsonParseArrayBegin( JsonValue );
-        CJsonRoomConsumeCell* pCell = new CJsonRoomConsumeCell();
-        pCell->ParseJson( Values );
-        m_JsonUint32Array.insert(std::make_pair( pCell->GetConsumeID() , pCell ) );
+        CJsonRoomConsumeCellPtr ConsumeCellPtr = std::make_shared< CJsonRoomConsumeCell >();
+        ConsumeCellPtr->ParseJson( Values );
+        m_JsonUint32Array.insert(std::make_pair( ConsumeCellPtr->GetConsumeID() , ConsumeCellPtr ) );
         JsonParseArrayEnd();
     }
 };

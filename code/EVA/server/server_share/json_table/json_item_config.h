@@ -6,6 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+/// 道具属性;
 class CJsonItemCell : public CJsonBase
 {
     SS_PROPERTY( ITEM_ID            , ItemID    , private );    // 道具ID;
@@ -24,14 +25,16 @@ class CJsonItemCell : public CJsonBase
     }
 };
 
+typedef std::shared_ptr< CJsonItemCell > CJsonItemCellPtr;
+
 class CJsonItemConfig : public CJsonBase
 {
     void ParseJsonArray( const GenericValue< UTF8<> >& JsonValue )
     {
         JsonParseArrayBegin( JsonValue );
-        CJsonItemCell* pCell = new CJsonItemCell();
-        pCell->ParseJson( Values );
-        m_JsonUint32Array.insert(std::make_pair( pCell->GetItemID() , pCell ) );
+        CJsonItemCellPtr ItemCellPtr = std::make_shared< CJsonItemCell >();
+        ItemCellPtr->ParseJson( Values );
+        m_JsonUint32Array.insert(std::make_pair( ItemCellPtr->GetItemID() , ItemCellPtr ) );
         JsonParseArrayEnd();
     }
 };

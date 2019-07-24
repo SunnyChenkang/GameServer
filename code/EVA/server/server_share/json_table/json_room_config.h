@@ -6,36 +6,39 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonRoomCell : public CJsonBase
+/// 游戏属性参数;
+class CJsonGameCell : public CJsonBase
 {
-    SS_PROPERTY( NLMISC::CSString , RoomName        , private );    // 房间名字;
-    SS_PROPERTY( uint32           , RoomMax         , private );    // 房间人数;
-    SS_PROPERTY( uint32           , RoomMin         , private );    // 房间人数;
-    SS_PROPERTY( uint32           , RoomDeleteTime  , private );    // 房间删除时间;
-    SS_PROPERTY( NLMISC::CSString , RoomIcon        , private );    // 房间图标;
-    SS_PROPERTY( NLMISC::CSString , RoomDesc        , private );    // 房间描述;
+    SS_PROPERTY( NLMISC::CSString , GameName        , private );    // 游戏名字;
+    SS_PROPERTY( uint32           , GameMax         , private );    // 游戏人数;
+    SS_PROPERTY( uint32           , GameMin         , private );    // 游戏人数;
+    SS_PROPERTY( uint32           , GameDeleteTime  , private );    // 游戏删除时间;
+    SS_PROPERTY( NLMISC::CSString , GameIcon        , private );    // 游戏图标;
+    SS_PROPERTY( NLMISC::CSString , GameDesc        , private );    // 游戏描述;
 
     void ParseJson( const Value& JsonValue )
     {
         JsonParseBegin   ( JsonValue );
-        JsonParseToString( m_RoomName );
-        JsonParseToUInt  ( m_RoomMax  );
-        JsonParseToUInt  ( m_RoomMin  );
-        JsonParseToUInt  ( m_RoomDeleteTime );
-        JsonParseToString( m_RoomIcon );
-        JsonParseToString( m_RoomDesc );
+        JsonParseToString( m_GameName );
+        JsonParseToUInt  ( m_GameMax  );
+        JsonParseToUInt  ( m_GameMin  );
+        JsonParseToUInt  ( m_GameDeleteTime );
+        JsonParseToString( m_GameIcon );
+        JsonParseToString( m_GameDesc );
         JsonParseEnd();
     }
 };
+
+typedef std::shared_ptr< CJsonGameCell > CJsonGameCellPtr;
 
 class CJsonRoomConfig : public CJsonBase
 {
     void ParseJson( const Value& JsonValue )
     {
         JsonParseBegin( JsonValue );
-        CJsonRoomCell* pCell = new CJsonRoomCell();
-        pCell->ParseJson( Values );
-        m_JsonStringArray.insert(std::make_pair( pCell->GetRoomName() , pCell ) );
+        CJsonGameCellPtr GameCellPtr = std::make_shared< CJsonGameCell >();
+        GameCellPtr->ParseJson( Values );
+        m_JsonStringArray.insert(std::make_pair( GameCellPtr->GetGameName() , GameCellPtr ) );
         JsonParseEnd();
     }
 };
