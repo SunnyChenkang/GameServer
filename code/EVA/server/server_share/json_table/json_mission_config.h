@@ -6,6 +6,9 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonMissionCell;
+typedef std::shared_ptr< CJsonMissionCell > CJsonMissionCellPtr;
+
 /// 任务属性参数;
 class CJsonMissionCell : public CJsonBase
 {
@@ -34,7 +37,6 @@ class CJsonMissionCell : public CJsonBase
         JsonParseEnd();
     }
 };
-typedef std::shared_ptr< CJsonMissionCell > CJsonMissionCellPtr;
 
 class CJsonMissionConfig : public CJsonBase
 {

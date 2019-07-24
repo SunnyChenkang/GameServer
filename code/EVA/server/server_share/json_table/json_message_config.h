@@ -6,6 +6,10 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonMessageCell;
+typedef std::shared_ptr< CJsonMessageCell > CJsonMessageCellPtr;
+
+/// 网关消息转发;
 class CJsonMessageCell : public CJsonBase
 {
     SS_PROPERTY( NLMISC::CSString               , Name          , private );
@@ -23,8 +27,6 @@ class CJsonMessageCell : public CJsonBase
         JsonParseEnd();
     }
 };
-
-typedef std::shared_ptr< CJsonMessageCell > CJsonMessageCellPtr;
 
 class CJsonMessageConfig : public CJsonBase
 {

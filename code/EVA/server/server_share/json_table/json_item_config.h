@@ -6,6 +6,9 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonItemCell;
+typedef std::shared_ptr< CJsonItemCell > CJsonItemCellPtr;
+
 /// µ¿æﬂ Ù–‘;
 class CJsonItemCell : public CJsonBase
 {
@@ -24,8 +27,6 @@ class CJsonItemCell : public CJsonBase
         JsonParseEnd();
     }
 };
-
-typedef std::shared_ptr< CJsonItemCell > CJsonItemCellPtr;
 
 class CJsonItemConfig : public CJsonBase
 {

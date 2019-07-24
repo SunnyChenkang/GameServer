@@ -6,6 +6,9 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonRoomConsumeCell;
+typedef std::shared_ptr< CJsonRoomConsumeCell > CJsonRoomConsumeCellPtr;
+
 /// ”Œœ∑œ˚∫ƒ Ù–‘;
 class CJsonRoomConsumeCell : public CJsonBase
 {
@@ -29,9 +32,7 @@ class CJsonRoomConsumeCell : public CJsonBase
     }
 };
 
-typedef std::shared_ptr< CJsonRoomConsumeCell > CJsonRoomConsumeCellPtr;
-
-class CJsonRoomConsumeConfig : public CJsonBase
+class CJsonGameConsumeConfig : public CJsonBase
 {
     void ParseJsonArray( const Value& JsonValue )
     {

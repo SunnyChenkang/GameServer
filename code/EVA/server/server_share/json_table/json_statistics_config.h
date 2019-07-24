@@ -6,6 +6,9 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonStatisticsCell;
+typedef std::shared_ptr< CJsonStatisticsCell > CJsonStatisticsCellPtr;
+
 /// 统计属性参数;
 class CJsonStatisticsCell : public CJsonBase
 {
@@ -21,7 +24,6 @@ class CJsonStatisticsCell : public CJsonBase
     }
 };
 
-typedef std::shared_ptr< CJsonStatisticsCell > CJsonStatisticsCellPtr;
 
 class CJsonStatisticsConfig : public CJsonBase
 {

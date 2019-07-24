@@ -6,6 +6,9 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
+class CJsonGameCell;
+typedef std::shared_ptr< CJsonGameCell > CJsonGameCellPtr;
+
 /// 游戏属性参数;
 class CJsonGameCell : public CJsonBase
 {
@@ -29,9 +32,8 @@ class CJsonGameCell : public CJsonBase
     }
 };
 
-typedef std::shared_ptr< CJsonGameCell > CJsonGameCellPtr;
 
-class CJsonRoomConfig : public CJsonBase
+class CJsonGameConfig : public CJsonBase
 {
     void ParseJson( const Value& JsonValue )
     {
