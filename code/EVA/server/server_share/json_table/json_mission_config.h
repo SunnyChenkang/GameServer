@@ -9,7 +9,6 @@ SS_NAMESPACE_BEGIN_DECL
 class CJsonMissionCell;
 typedef std::shared_ptr< CJsonMissionCell > CJsonMissionCellPtr;
 
-/// 任务属性参数;
 class CJsonMissionCell : public CJsonBase
 {
     SS_PROPERTY( MISSION_ID         , MissionID             , private );    // 任务ID;
@@ -22,32 +21,34 @@ class CJsonMissionCell : public CJsonBase
     SS_PROPERTY( uint32             , MissionStartTime      , private );    // 任务开始时间;
     SS_PROPERTY( uint32             , MissionEndTime        , private );    // 任务结束时间;
 
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin   ( JsonValue );
-        JsonParseToUInt  ( m_MissionID );
-        JsonParseToString( m_MissionIcon );
-        JsonParseToString( m_MissionContent );
-        JsonParseToString( m_MissionRewardContent );
-        JsonParseToUInt  ( m_MissionCount );
-        JsonParseToUInt  ( m_MissionRewardID );
-        JsonParseToUInt  ( m_MissionIsDayRefresh );
-        JsonParseToUInt  ( m_MissionStartTime );
-        JsonParseToUInt  ( m_MissionEndTime );
-        JsonParseEnd();
-    }
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin   ( JsonValue );
+    JsonParseToUInt  ( m_MissionID );
+    JsonParseToString( m_MissionIcon );
+    JsonParseToString( m_MissionContent );
+    JsonParseToString( m_MissionRewardContent );
+    JsonParseToUInt  ( m_MissionCount );
+    JsonParseToUInt  ( m_MissionRewardID );
+    JsonParseToUInt  ( m_MissionIsDayRefresh );
+    JsonParseToUInt  ( m_MissionStartTime );
+    JsonParseToUInt  ( m_MissionEndTime );
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
 class CJsonMissionConfig : public CJsonBase
 {
-    void ParseJsonArray( const GenericValue< UTF8<> >& JsonValue )
-    {
-        JsonParseArrayBegin( JsonValue );
-        CJsonMissionCellPtr MissionCellPtr = std::make_shared< CJsonMissionCell >();
-        MissionCellPtr->ParseJson( Values );
-        m_JsonStringArray.insert(std::make_pair( MissionCellPtr->GetMissionID() , MissionCellPtr ) );
-        JsonParseArrayEnd();
-    }
+    PARSE_VALUE_ARRAY_BEGIN
+
+    JsonParseArrayBegin( JsonValue );
+    CJsonMissionCellPtr MissionCellPtr = std::make_shared< CJsonMissionCell >();
+    MissionCellPtr->ParseJson( Values );
+    m_JsonStringArray.insert(std::make_pair( MissionCellPtr->GetMissionID() , MissionCellPtr ) );
+    JsonParseArrayEnd();
+
+    PARSE_VALUE_ARRAY_END
 };
 
 SS_NAMESPACE_END_DECL

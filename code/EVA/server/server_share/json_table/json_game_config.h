@@ -19,30 +19,33 @@ class CJsonGameCell : public CJsonBase
     SS_PROPERTY( NLMISC::CSString , GameIcon        , private );    // ”Œœ∑Õº±Í;
     SS_PROPERTY( NLMISC::CSString , GameDesc        , private );    // ”Œœ∑√Ë ˆ;
 
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin   ( JsonValue );
-        JsonParseToString( m_GameName );
-        JsonParseToUInt  ( m_GameMax  );
-        JsonParseToUInt  ( m_GameMin  );
-        JsonParseToUInt  ( m_GameDeleteTime );
-        JsonParseToString( m_GameIcon );
-        JsonParseToString( m_GameDesc );
-        JsonParseEnd();
-    }
+
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin   ( JsonValue );
+    JsonParseToString( m_GameName );
+    JsonParseToUInt  ( m_GameMax  );
+    JsonParseToUInt  ( m_GameMin  );
+    JsonParseToUInt  ( m_GameDeleteTime );
+    JsonParseToString( m_GameIcon );
+    JsonParseToString( m_GameDesc );
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
 
 class CJsonGameConfig : public CJsonBase
 {
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin( JsonValue );
-        CJsonGameCellPtr GameCellPtr = std::make_shared< CJsonGameCell >();
-        GameCellPtr->ParseJson( Values );
-        m_JsonStringArray.insert(std::make_pair( GameCellPtr->GetGameName() , GameCellPtr ) );
-        JsonParseEnd();
-    }
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin( JsonValue );
+    CJsonGameCellPtr GameCellPtr = std::make_shared< CJsonGameCell >();
+    GameCellPtr->ParseJson( Values );
+    m_JsonStringArray.insert(std::make_pair( GameCellPtr->GetGameName() , GameCellPtr ) );
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
 SS_NAMESPACE_END_DECL

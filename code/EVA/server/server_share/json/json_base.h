@@ -24,6 +24,13 @@ using namespace rapidjson;
 #define JsonWriterClass( xxx )      writer.key( #xxx );((CJsonBase*)(&xxx))->ToWriter( writer );
 
 // reads json;
+
+#define PARSE_VALUE_BEGIN void ParseJson( const Value& JsonValue ) {
+#define PARSE_VALUE_END   }
+
+#define PARSE_VALUE_ARRAY_BEGIN void ParseJsonArray( const Value& JsonValue ) {
+#define PARSE_VALUE_ARRAY_END }
+
 #define JsonParseBegin( val ) for ( Value::ConstMemberIterator it = val.MemberBegin(); it != val.MemberEnd(); ++it ) { const Value& Values = it->value;
 #define JsonParseEnd() }
 #define JsonParseArrayBegin( val ) for ( sint32 idx = 0; idx < val.Size(); idx++ ) { const Value& Values =  val[idx];

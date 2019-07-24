@@ -6,38 +6,38 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-/// 创建用户赠送道具;
 class CAddItemCell : public CJsonBase
 {
-    SS_PROPERTY( ITEM_ID    , ItemID    , private );
-    SS_PROPERTY( uint32     , ItemCount , private );
+    SS_PROPERTY( ITEM_ID    , ItemID    , private );    /// 道具ID;
+    SS_PROPERTY( uint32     , ItemCount , private );    /// 道具数量;
 
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin ( JsonValue );
-        JsonParseToUInt( m_ItemID  );
-        JsonParseToUInt( m_ItemCount );
-        JsonParseEnd();
-    }
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin ( JsonValue );
+    JsonParseToUInt( m_ItemID  );
+    JsonParseToUInt( m_ItemCount );
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
-/// 创建角色附加属性;
 class CCreateRoleConfig : public CJsonBase
 {
     SS_PROPERTY( CJsonArray< CAddItemCell > , AddItem , public  );
     SS_PROPERTY( NLMISC::CSString           , NickName, private );
     SS_PROPERTY( uint32                     , HeadID  , private );
 
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin   ( JsonValue );
-        JsonParseBegin   ( Values );
-        JsonParseToClass ( m_AddItem );
-        JsonParseToString( m_NickName);
-        JsonParseToUInt  ( m_HeadID  );
-        JsonParseEnd();
-        JsonParseEnd();
-    }
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin   ( JsonValue );
+    JsonParseBegin   ( Values );
+    JsonParseToClass ( m_AddItem );
+    JsonParseToString( m_NickName);
+    JsonParseToUInt  ( m_HeadID  );
+    JsonParseEnd();
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
 SS_NAMESPACE_END_DECL

@@ -9,7 +9,6 @@ SS_NAMESPACE_BEGIN_DECL
 class CJsonRoomConsumeCell;
 typedef std::shared_ptr< CJsonRoomConsumeCell > CJsonRoomConsumeCellPtr;
 
-/// 游戏消耗属性;
 class CJsonRoomConsumeCell : public CJsonBase
 {
     SS_PROPERTY( uint32           , ConsumeID   , private );    // 消耗ID;
@@ -19,29 +18,29 @@ class CJsonRoomConsumeCell : public CJsonBase
     SS_PROPERTY( uint32           , GameCount   , private );    // 游戏数量;
     SS_PROPERTY( NLMISC::CSString , ConsumeDesc , private );    // 消耗描述;
 
-    void ParseJson( const Value& JsonValue )
-    {
-        JsonParseBegin   ( JsonValue );
-        JsonParseToUInt  ( m_ConsumeID );
-        JsonParseToString( m_GameName );
-        JsonParseToUInt  ( m_ConsumeItem );
-        JsonParseToUInt  ( m_ConsumeCount );
-        JsonParseToUInt  ( m_GameCount );
-        JsonParseToString( m_ConsumeDesc );
-        JsonParseEnd( );
-    }
+    PARSE_VALUE_BEGIN
+
+    JsonParseBegin   ( JsonValue );
+    JsonParseToUInt  ( m_ConsumeID );
+    JsonParseToString( m_GameName );
+    JsonParseToUInt  ( m_ConsumeItem );
+    JsonParseToUInt  ( m_ConsumeCount );
+    JsonParseToUInt  ( m_GameCount );
+    JsonParseToString( m_ConsumeDesc );
+    JsonParseEnd();
+
+    PARSE_VALUE_END
 };
 
 class CJsonGameConsumeConfig : public CJsonBase
 {
-    void ParseJsonArray( const Value& JsonValue )
-    {
-        JsonParseArrayBegin( JsonValue );
-        CJsonRoomConsumeCellPtr ConsumeCellPtr = std::make_shared< CJsonRoomConsumeCell >();
-        ConsumeCellPtr->ParseJson( Values );
-        m_JsonUint32Array.insert(std::make_pair( ConsumeCellPtr->GetConsumeID() , ConsumeCellPtr ) );
-        JsonParseArrayEnd();
-    }
+    PARSE_VALUE_ARRAY_BEGIN
+    JsonParseArrayBegin( JsonValue );
+    CJsonRoomConsumeCellPtr ConsumeCellPtr = std::make_shared< CJsonRoomConsumeCell >();
+    ConsumeCellPtr->ParseJson( Values );
+    m_JsonUint32Array.insert(std::make_pair( ConsumeCellPtr->GetConsumeID() , ConsumeCellPtr ) );
+    JsonParseArrayEnd();
+    PARSE_VALUE_ARRAY_END
 };
 
 SS_NAMESPACE_END_DECL
