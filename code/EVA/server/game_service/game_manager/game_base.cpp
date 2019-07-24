@@ -31,8 +31,6 @@ bool CGameBase::JoinGame( ROLE_ID RoleID )
         Element = RoleID;
         break;
     }
-
-    /// 触发加入游戏事件;
     EventDefine.JoinGame( RoleID , GetRoomID() );
 }
 
@@ -48,34 +46,7 @@ bool CGameBase::LeaveGame( ROLE_ID RoleID )
         Element = 0;
         break;
     }
-
-    /// 触发离开游戏事件;
     EventDefine.LeaveRoom( RoleID , GetRoomID() );
-}
-
-void CGameBase::StartGame( void )
-{
-    /// 触发游戏开始;
-    for ( auto Element : m_RoleList )
-    {
-        EventDefine.GameStart( Element , GetRoomID() );
-    }
-}
-
-void CGameBase::OwerGame( void )
-{
-    /// 触发游戏结束;
-    for ( auto Element : m_RoleList )
-    {
-        EventDefine.GameOwer( Element , GetRoomID() );
-    }
-}
-
-bool CGameBase::IsGameFull( void )
-{
-    CJsonRoomCell* pGameCell = JsonRoomConfig.GetJsonCell< CJsonRoomCell >( m_CreateGameData.room_name() );
-    if ( nullptr == pGameCell ) { return false; }
-    return ( GetRoleCount() >= pGameCell->GetRoomMax() );
 }
 
 bool CGameBase::IsGameRole( ROLE_ID RoleID )
@@ -91,7 +62,7 @@ void CGameBase::BroadCasts( CSString Name , google::protobuf::Message* pMessage 
 {
     for ( auto Element : m_RoleList )
     {
-        if ( Element == RemoveID ) { continue; }
+        if ( Element == RemoveID )  { continue; }
         CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( Element );
         if ( nullptr == PlayerPtr ) { continue; }
         SendToClient( Element , PlayerPtr->GetFrontendServiceID() , Name , pMessage );
@@ -108,5 +79,33 @@ uint32 CGameBase::GetRoleCount( void )
     }
     return Count;
 }
+
+void CGameBase::UserOffline( ROLE_ID RoleID )
+{
+    PB_UserOffline PB_Offline;
+    PB_Offline.set_role_id( RoleID );
+    BroadCasts( "MSG_USER_OFFLINE" , &PB_Offline );
+}
+
+void CGameBase::UserOnline( ROLE_ID RoleID )
+{
+    PB_UserOnline PB_Online;
+    PB_Online.set_role_id( RoleID );
+    BroadCasts( "MSG_USER_ONLINE" , &PB_Online );
+}
+
+bool CGameBase::IsGameFull( void )
+{
+    CJsonRoomCell* pGameCell = JsonRoomConfig.GetJsonCell<CJsonRoomCell>( m_CreateGameData.room_name() );
+    if ( nullptr == pGameCell ) { return false; }
+    uint32 RoleCount = this->GetRoleCount();
+    if ( RoleCount >= pGameCell->GetRoomMax() ) {
+        return true;
+    }
+    return false;
+}
+
+
+
 
 GSE_NAMESPACE_END_DECL

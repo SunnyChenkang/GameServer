@@ -24,10 +24,10 @@ void CEventPlayerCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
     if ( nullptr == PlayerPtr ) { return; }
+    PlayerPtr->SetFrontendServiceID( NLNET::TServiceId( UserLogin.frontend_service_id() ) );
 
     /// 更新玩家信息;
     CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
-    PlayerPtr->SetFrontendServiceID( NLNET::TServiceId( UserLogin.frontend_service_id() ) );
     RecordPlayerInfo.SetLastHost( UserLogin.client_host() );
     RecordPlayerInfo.SetLastLoginTime( NLMISC::CTime::getSecondsSince1970() );
     RecordPlayerInfo.SetUpdate();

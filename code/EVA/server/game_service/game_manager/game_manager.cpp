@@ -95,13 +95,20 @@ bool CGameManager::LeaveGame( ROLE_ID RoleID )
     GameBasePtr->LeaveGame( RoleID );
 }
 
+bool CGameManager::DeleteGame( ROOM_ID RoomID )
+{
+    auto It = m_GameList.find( RoomID );
+    if ( It == m_GameList.end() ) { return false; }
+
+    /// É¾³ýÓÎÏ·ÊµÌå;
+    m_GameList.erase( It );
+    return true;
+}
 
 CGameBasePtr CGameManager::GetGameBasePtr( ROOM_ID RoomID )
 {
     auto It = m_GameList.find( RoomID );
-    if ( It == m_GameList.end() ) {
-        return nullptr;
-    }
+    if ( It == m_GameList.end() ) { return nullptr; }
     return It->second;
 }
 

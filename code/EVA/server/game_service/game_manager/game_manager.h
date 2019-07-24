@@ -16,6 +16,8 @@ public:
     bool JoinGame( ROLE_ID , ROOM_ID );
     ///  离开游戏;
     bool LeaveGame( ROLE_ID );
+    ///  删除游戏;
+    bool DeleteGame( ROOM_ID );
 
     ///  创建游戏;
     bool CreateGame( ROLE_ID , PB_CreateRoom& );
