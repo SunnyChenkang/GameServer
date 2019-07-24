@@ -2,7 +2,6 @@
 #define GSE_MAHJONG_BASE_H_
 #include <game_service/game_service/game_service_def.h>
 #include <game_service/room/room_base.h>
-#include "mahjong_struct.h"
 #include "mahjong_def.h"
 #include "mahjong_state.h"
 

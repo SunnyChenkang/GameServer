@@ -50,16 +50,16 @@ void CPlayerManager::DeletePlayer( ROLE_ID RoleID )
     m_PlayerTable.erase( It );
 }
 
-void CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId& ServiceID )
+bool CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId& ServiceID )
 {
     CPlayerPtr PlayerPtr = this->GetPlayer( RoleID );
     if ( nullptr == PlayerPtr ) {
-        return;
+        return false;
     }
 
     /// 检查目标服务是否运行;
     if ( !SS_NETWORK->isConnectionConnected( ServiceID ) ) {
-        return;
+        return false;
     }
 
     /// 数据投递到目标服务器;
@@ -69,6 +69,7 @@ void CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId& ServiceID )
 
     /// 删除玩家数据;
     this->DeletePlayer( RoleID );
+    return true;
 }
 
 GSE_NAMESPACE_END_DECL

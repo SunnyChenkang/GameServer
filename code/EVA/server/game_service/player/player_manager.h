@@ -21,7 +21,7 @@ public:
     /// É¾³ýÍæ¼Ò;
     void DeletePlayer( ROLE_ID );
     /// ³¡¾°ÇÐ»»;
-    void ChangeScenes( ROLE_ID , TServiceId& );
+    bool ChangeScenes( ROLE_ID , TServiceId& );
 
 private:
     SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );

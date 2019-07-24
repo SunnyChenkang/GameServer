@@ -7,10 +7,10 @@ GSE_NAMESPACE_BEGIN_DECL
 
 void CEventPlayerCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventPlayerLoadFinish.connect   ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerLoadFinish     );
-    EventDefine.EventPlayerLoginFinish.connect  ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlyaerLoginFinish    );
-    EventDefine.EventPlayerOffline.connect      ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerOffline        );
-    EventDefine.EventChangeScenes.connect       ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackChangeScenes         );
+    EventDefine.PlayerLoadFinish.connect   ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerLoadFinish     );
+    EventDefine.PlayerLoginFinish.connect  ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlyaerLoginFinish    );
+    EventDefine.PlayerOffline.connect      ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackPlayerOffline        );
+    EventDefine.ChangeScenes.connect       ( &EventPlayerCallBack ,&CEventPlayerCallBack::CallBackChangeScenes         );
 }
 
 void CEventPlayerCallBack::CallBackPlayerLoadFinish( CRecordPlayer& RecordPlayer )

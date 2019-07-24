@@ -10,13 +10,13 @@ GSE_NAMESPACE_BEGIN_DECL
 
 void CEventRoomCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventPlayerLoginFinish.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlyaerLoginFinish     );
-    EventDefine.EventPlayerOffline.connect      ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlayerOffline   );
-    EventDefine.EventJoinRoom.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackJoinRoom        );
-    EventDefine.EventLeaveRoom.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackLeaveRoom       );
-    EventDefine.EventDeleteRoom.connect         ( &EventRoomCallBack , &CEventRoomCallBack::CallBackDeleteRoom      );
-    EventDefine.EventGameStart.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameStart       );
-    EventDefine.EventGameOwer.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameOwer        );
+    EventDefine.PlayerLoginFinish.connect  ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlyaerLoginFinish     );
+    EventDefine.PlayerOffline.connect      ( &EventRoomCallBack , &CEventRoomCallBack::CallBackPlayerOffline   );
+    EventDefine.JoinGame.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackJoinRoom        );
+    EventDefine.LeaveRoom.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackLeaveRoom       );
+    EventDefine.DeleteRoom.connect         ( &EventRoomCallBack , &CEventRoomCallBack::CallBackDeleteRoom      );
+    EventDefine.GameStart.connect          ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameStart       );
+    EventDefine.GameOwer.connect           ( &EventRoomCallBack , &CEventRoomCallBack::CallBackGameOwer        );
 }
 
 void CEventRoomCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
@@ -54,18 +54,14 @@ void CEventRoomCallBack::CallBackDeleteRoom( ROOM_ID RoomID , std::vector<ROLE_I
 
 }
 
-void CEventRoomCallBack::CallBackGameStart( ROOM_ID RoomID )
+void CEventRoomCallBack::CallBackGameStart( ROLE_ID RoleID , ROOM_ID RoomID )
 {
-    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( RoomID );
-    if ( NULL == pRoomBase ) return;
-
+    
 }
 
-void CEventRoomCallBack::CallBackGameOwer( ROOM_ID RoomID )
+void CEventRoomCallBack::CallBackGameOwer( ROLE_ID , ROOM_ID RoomID )
 {
-    CRoomBase* pRoomBase = RoomManager.GetRoomInfo( RoomID );
-    if ( NULL == pRoomBase ) return;
-
+    
 }
 
 

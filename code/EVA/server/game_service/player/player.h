@@ -19,6 +19,7 @@ public:
         s.serial( m_FrontendServiceID );
     }
 
+    SS_PROPERTY_QUOTE( ROOM_ID       , RoomID            , private );
     SS_PROPERTY_QUOTE( TServiceId    , FrontendServiceID , private );
     SS_PROPERTY_QUOTE( CRecordPlayer , RecordPlayer      , private );
 };

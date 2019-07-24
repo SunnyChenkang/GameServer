@@ -12,6 +12,7 @@ public:
     bool AddItem( ROLE_ID , ITEM_ID , uint32 , PB_DotItem );
     ///  扣除道具;
     bool SubItem( ROLE_ID , ITEM_ID , uint32 , PB_DotItem );
+
     ///  获取道具数量;
     uint32  GetItemCount( ROLE_ID , ITEM_ID );
 

@@ -9,10 +9,10 @@ GSE_NAMESPACE_BEGIN_DECL
 
 void CEventDotCallBack::InitEventCallBack( void )
 {
-    EventDefine.EventPlayerLoginFinish.connect( &EventDotCallBack , &CEventDotCallBack::CallBackPlyaerLoginFinish   );
-    EventDefine.EventPlayerOffline.connect    ( &EventDotCallBack , &CEventDotCallBack::CallBackPlayerOffline       );
-    EventDefine.EventAddItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackAddItem             );
-    EventDefine.EventSubItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackSubItem             );
+    EventDefine.PlayerLoginFinish.connect( &EventDotCallBack , &CEventDotCallBack::CallBackPlyaerLoginFinish   );
+    EventDefine.PlayerOffline.connect    ( &EventDotCallBack , &CEventDotCallBack::CallBackPlayerOffline       );
+    EventDefine.AddItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackAddItem             );
+    EventDefine.SubItem.connect          ( &EventDotCallBack , &CEventDotCallBack::CallBackSubItem             );
 }
 
 void CEventDotCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )

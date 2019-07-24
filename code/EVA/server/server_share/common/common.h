@@ -55,6 +55,7 @@
 #include <cctype>
 #include <iterator>
 #include <memory>
+#include <atomic>
 
 #include "base_namespace.h"
 

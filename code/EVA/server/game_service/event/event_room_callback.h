@@ -22,9 +22,9 @@ private:
     //   删除房间;
     void CallBackDeleteRoom( ROOM_ID , std::vector<ROLE_ID>& );
     //   游戏开始;
-    void CallBackGameStart( ROOM_ID );
+    void CallBackGameStart ( ROLE_ID , ROOM_ID );
     //   游戏结束;
-    void CallBackGameOwer ( ROOM_ID );
+    void CallBackGameOwer  ( ROLE_ID , ROOM_ID );
 };
 
 #define EventRoomCallBack CEventRoomCallBack::getInstance()
