@@ -51,14 +51,11 @@ using namespace rapidjson;
     strncpy( xxx , s , (std::min(size , len)) );\
 }\
 
-class CJsonBase;
-typedef std::shared_ptr< CJsonBase > CJsonBasePtr;
-
 class CJsonBase
 {
 public:
-    typedef std::map< NLMISC::CSString , CJsonBasePtr > JSON_STRING_KEYTABLE;
-    typedef std::map< uint32           , CJsonBasePtr > JSON_UINT32_KEYTABLE;
+    typedef std::map< NLMISC::CSString , CJsonBase* > JSON_STRING_KEYTABLE;
+    typedef std::map< uint32           , CJsonBase* > JSON_UINT32_KEYTABLE;
 
     CJsonBase( void ){ };
     virtual ~CJsonBase( void ){ };

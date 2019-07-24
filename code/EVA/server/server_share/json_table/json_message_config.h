@@ -6,9 +6,6 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonMessageCell;
-typedef std::shared_ptr< CJsonMessageCell > CJsonMessageCellPtr;
-
 class CJsonMessageCell : public CJsonBase
 {
     SS_PROPERTY( NLMISC::CSString               , Name          , private );    /// ÏûÏ¢Ãû×Ö;
@@ -33,9 +30,9 @@ class CJsonMessageConfig : public CJsonBase
     PARSE_VALUE_BEGIN
 
     JsonParseBegin( JsonValue );
-    CJsonMessageCellPtr MessageCellPtr = std::make_shared< CJsonMessageCell >();
-    MessageCellPtr->ParseJson( Values );
-    m_JsonStringArray.insert(std::make_pair( MessageCellPtr->GetName() , MessageCellPtr ) );
+    CJsonMessageCell* pMessageCell = new CJsonMessageCell();
+    pMessageCell->ParseJson( Values );
+    m_JsonStringArray.insert(std::make_pair( pMessageCell->GetName() , pMessageCell ) );
     JsonParseEnd();
 
     PARSE_VALUE_END

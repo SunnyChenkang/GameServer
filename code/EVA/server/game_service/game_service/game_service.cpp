@@ -6,8 +6,6 @@
 #include "game_service.h"
 #include "game_service_command.h"
 #include <game_service/event/event_register.h>
-#include <game_service/redis/redis.h>
-
 #include <server_share/uuid/uuid.h>
 
 using namespace NLMISC;
@@ -32,11 +30,10 @@ void CGameService::init( void )
     nlinfo( "RedisPort     %d" , RedisPort.atosi()     );
     nlinfo( "RedisTimeOut  %d" , RedisTimeOut.atosi()  );
     nlinfo( "RedisPassword %s" , RedisPassword.c_str() );
-    GameRedis.Connect( RedisHost.c_str() , RedisPort.atoui() , RedisTimeOut.atoui() , RedisPassword.c_str() );
 
     // 注册消息;
     NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( GSE_LOGIN_CallBackItems , SS_ARRAYSIZE( GSE_LOGIN_CallBackItems ) );
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
+    //NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
 
     // 注册断开函数;
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
@@ -67,8 +64,6 @@ void CGameService::release( void )
 {
     // 释放定时器;
     TimerManager->release();
-    // 关闭REDIS;
-    GameRedis.Close();
 }
 
 NLNET_SERVICE_MAIN( CGameService, "GSE", "game_service", 0  , "", "")

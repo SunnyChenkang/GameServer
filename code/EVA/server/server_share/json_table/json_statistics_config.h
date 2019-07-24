@@ -29,9 +29,9 @@ class CJsonStatisticsConfig : public CJsonBase
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonStatisticsCellPtr StatisticsCellPtr = std::make_shared< CJsonStatisticsCell >();
-    StatisticsCellPtr->ParseJson( Values );
-    m_JsonUint32Array.insert(std::make_pair( StatisticsCellPtr->GetStatisticsID() , StatisticsCellPtr ) );
+    CJsonStatisticsCell* pStatisticsCell = new CJsonStatisticsCell();
+    pStatisticsCell->ParseJson( Values );
+    m_JsonUint32Array.insert(std::make_pair( pStatisticsCell->GetStatisticsID() , pStatisticsCell ) );
     JsonParseArrayEnd();
 
     PARSE_VALUE_ARRAY_END

@@ -6,9 +6,6 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonItemCell;
-typedef std::shared_ptr< CJsonItemCell > CJsonItemCellPtr;
-
 class CJsonItemCell : public CJsonBase
 {
     SS_PROPERTY( ITEM_ID            , ItemID    , private );    // µÀ¾ßID;
@@ -33,9 +30,9 @@ class CJsonItemConfig : public CJsonBase
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonItemCellPtr ItemCellPtr = std::make_shared< CJsonItemCell >();
-    ItemCellPtr->ParseJson( Values );
-    m_JsonUint32Array.insert(std::make_pair( ItemCellPtr->GetItemID() , ItemCellPtr ) );
+    CJsonItemCell* pItemCell = new CJsonItemCell();
+    pItemCell->ParseJson( Values );
+    m_JsonUint32Array.insert(std::make_pair( pItemCell->GetItemID() , pItemCell ) );
     JsonParseArrayEnd();
 
     PARSE_VALUE_ARRAY_END

@@ -6,9 +6,6 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonRoomConsumeCell;
-typedef std::shared_ptr< CJsonRoomConsumeCell > CJsonRoomConsumeCellPtr;
-
 class CJsonRoomConsumeCell : public CJsonBase
 {
     SS_PROPERTY( uint32           , ConsumeID   , private );    // ÏûºÄID;
@@ -36,9 +33,9 @@ class CJsonGameConsumeConfig : public CJsonBase
 {
     PARSE_VALUE_ARRAY_BEGIN
     JsonParseArrayBegin( JsonValue );
-    CJsonRoomConsumeCellPtr ConsumeCellPtr = std::make_shared< CJsonRoomConsumeCell >();
-    ConsumeCellPtr->ParseJson( Values );
-    m_JsonUint32Array.insert(std::make_pair( ConsumeCellPtr->GetConsumeID() , ConsumeCellPtr ) );
+    CJsonRoomConsumeCell* pConsumeCell = new CJsonRoomConsumeCell();
+    pConsumeCell->ParseJson( Values );
+    m_JsonUint32Array.insert(std::make_pair( pConsumeCell->GetConsumeID() , pConsumeCell ) );
     JsonParseArrayEnd();
     PARSE_VALUE_ARRAY_END
 };

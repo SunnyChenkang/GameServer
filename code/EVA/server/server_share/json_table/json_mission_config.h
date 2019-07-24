@@ -43,9 +43,9 @@ class CJsonMissionConfig : public CJsonBase
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonMissionCellPtr MissionCellPtr = std::make_shared< CJsonMissionCell >();
-    MissionCellPtr->ParseJson( Values );
-    m_JsonStringArray.insert(std::make_pair( MissionCellPtr->GetMissionID() , MissionCellPtr ) );
+    CJsonMissionCell* pMissionCell = new CJsonMissionCell();
+    pMissionCell->ParseJson( Values );
+    m_JsonStringArray.insert(std::make_pair( pMissionCell->GetMissionID() , pMissionCell ) );
     JsonParseArrayEnd();
 
     PARSE_VALUE_ARRAY_END

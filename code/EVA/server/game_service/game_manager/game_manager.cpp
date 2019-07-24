@@ -22,18 +22,18 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     }
 
     /// 检查游戏静态数据;
-    CJsonRoomCell* pGameCell = JsonRoomConfig.GetJsonCell< CJsonRoomCell >( GameData.room_name() );
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( GameData.room_name() );
     if ( nullptr == pGameCell ) {
         return false;
     }
 
     /// 检查跳转服务器;
     if( CreateGameChangeScenes( RoleID , GameData ) ) {
-        return;
+        return true;
     }
 
     /// 创建游戏实体;
-    CGameBasePtr GameBasePtr( NLMISC_GET_FACTORY( CGameBase , NLMISC::CSString ).createObject( pGameCell->GetRoomName() , GameData ) );
+    CGameBasePtr GameBasePtr( NLMISC_GET_FACTORY( CGameBase , NLMISC::CSString ).createObject( pGameCell->GetGameName() , GameData ) );
     if ( nullptr == GameBasePtr ) {
         return false;
     }
@@ -81,7 +81,7 @@ bool CGameManager::JoinGame( ROLE_ID RoleID , ROOM_ID RoomID )
     if ( nullptr == GameBasePtr ) { return false; }
 
     /// 加入游戏;
-    GameBasePtr->JoinGame( RoleID );
+    return GameBasePtr->JoinGame( RoleID );
 }
 
 bool CGameManager::LeaveGame( ROLE_ID RoleID )
@@ -92,7 +92,7 @@ bool CGameManager::LeaveGame( ROLE_ID RoleID )
     if ( nullptr == GameBasePtr ) { return false; }
 
     /// 离开游戏;
-    GameBasePtr->LeaveGame( RoleID );
+    return GameBasePtr->LeaveGame( RoleID );
 }
 
 bool CGameManager::DeleteGame( ROOM_ID RoomID )

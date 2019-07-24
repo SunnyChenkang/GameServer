@@ -15,7 +15,7 @@ void CGameFrameMoveTimer::timerCallback( CTimer* pOwner )
 {
     CGameBasePtr GameBasePtr = GameManager.GetGameBasePtr( m_RoomID );
     if ( nullptr == GameBasePtr ) { return; }
-    GameBasePtr->FrameMove();
+    GameBasePtr->FraveMove();
     /// 下次定时器触发;
     pOwner->setRemaining( GameBasePtr->GetFrameMoveTime() , this );
 }

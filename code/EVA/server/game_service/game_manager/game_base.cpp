@@ -7,9 +7,9 @@ GSE_NAMESPACE_BEGIN_DECL
 
 CGameBase::CGameBase( TCtorParam& GameData , uint32 )
 {
-    CJsonRoomCell* pGameCell = JsonRoomConfig.GetJsonCell< CJsonRoomCell >( m_CreateGameData.room_name() );
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( m_CreateGameData.room_name() );
     if ( nullptr == pGameCell ) { return; }
-    m_RoleList.resize( pGameCell->GetRoomMax() );
+    m_RoleList.resize( pGameCell->GetGameMax() );
     m_RoomID = GameData.room_id();
 }
 
@@ -96,10 +96,10 @@ void CGameBase::UserOnline( ROLE_ID RoleID )
 
 bool CGameBase::IsGameFull( void )
 {
-    CJsonRoomCell* pGameCell = JsonRoomConfig.GetJsonCell<CJsonRoomCell>( m_CreateGameData.room_name() );
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell<CJsonGameCell>( m_CreateGameData.room_name() );
     if ( nullptr == pGameCell ) { return false; }
     uint32 RoleCount = this->GetRoleCount();
-    if ( RoleCount >= pGameCell->GetRoomMax() ) {
+    if ( RoleCount >= pGameCell->GetGameMax() ) {
         return true;
     }
     return false;

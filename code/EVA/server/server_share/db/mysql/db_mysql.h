@@ -51,14 +51,13 @@ protected:
     //   run;
     void run( void );
 
-    std::atomic< bool>  m_Exit;
-
     SS_PROPERTY( NLMISC::IThread*   , Threads                       , private );
     SS_PROPERTY( NLMISC::CSString   , Host                          , private );
     SS_PROPERTY( NLMISC::CSString   , User                          , private );
     SS_PROPERTY( NLMISC::CSString   , Password                      , private );
     SS_PROPERTY( NLMISC::CSString   , DBName                        , private );
     SS_PROPERTY( uint16             , Port                          , private );
+    SS_PROPERTY( bool               , Exit                          , private );
     SS_PROPERTY( INIT_SQL_WORKER    , Worker                        , private );
     SS_PROPERTY( CDoubleBufferFifo<DBExecuteData> , MainThreads     , private );
     SS_PROPERTY( CDoubleBufferFifo<DBExecuteData> , SubThreads      , private );

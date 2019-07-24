@@ -2,7 +2,6 @@
 #define GSE_MAHJONG_DEF_H_
 
 #include <game_service/game_service/game_service_def.h>
-#include "mahjong_struct.h"
 
 GSE_NAMESPACE_BEGIN_DECL
 
