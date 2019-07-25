@@ -32,6 +32,7 @@ bool CGameBase::JoinGame( ROLE_ID RoleID )
         break;
     }
     EventDefine.JoinGame( RoleID , GetRoomID() );
+    return true;
 }
 
 bool CGameBase::LeaveGame( ROLE_ID RoleID )
@@ -47,6 +48,7 @@ bool CGameBase::LeaveGame( ROLE_ID RoleID )
         break;
     }
     EventDefine.LeaveRoom( RoleID , GetRoomID() );
+    return true;
 }
 
 bool CGameBase::IsGameRole( ROLE_ID RoleID )
