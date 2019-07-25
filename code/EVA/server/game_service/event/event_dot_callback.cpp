@@ -21,13 +21,14 @@ void CEventDotCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
     if ( nullptr == PlayerPtr ) { return; }
 
     CRecordStmtData Record;
-    Record.m_Stmt.SetUint32( 0 , UserLogin.role_id() );
-    Record.m_Stmt.SetUint32( 1 , UserLogin.role_kind() );
-    Record.m_Stmt.SetString( 2 , UserLogin.client_host().c_str() );
-    Record.m_Stmt.SetUint32( 3 , PlayerPtr->GetRecordPlayer().GetRecordBasePlayer().GetLastOfflineTime() );
-    Record.m_Stmt.SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
-    Record.m_Stmt.SetSQL("CALL t_login_dot_insert(?,?,?,?,?)" );
-    Record.SaveToDataBase();
+    CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
+    Record.GetDBStmt().SetUint32( 0 , UserLogin.role_id() );
+    Record.GetDBStmt().SetUint32( 1 , UserLogin.role_kind() );
+    Record.GetDBStmt().SetString( 2 , UserLogin.client_host().c_str() );
+    Record.GetDBStmt().SetUint32( 3 , RecordPlayerInfo.GetLastOfflineTime() );
+    Record.GetDBStmt().SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
+    Record.GetDBStmt().SetSQL("CALL t_login_dot_insert(?,?,?,?,?)" );
+    Record.SaveDB();
 }
 
 void CEventDotCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
@@ -37,39 +38,39 @@ void CEventDotCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
 
     CRecordStmtData Record;
     CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
-    Record.m_Stmt.SetUint32( 0 , RecordPlayerInfo.GetRoleID()   );
-    Record.m_Stmt.SetUint32( 1 , RecordPlayerInfo.GetRoleKind() );
-    Record.m_Stmt.SetString( 2 , RecordPlayerInfo.GetLastHost().c_str() );
-    Record.m_Stmt.SetUint32( 3 , RecordPlayerInfo.GetLastLoginTime() );
-    Record.m_Stmt.SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
-    Record.m_Stmt.SetSQL( "CALL t_offline_dot_insert(?,?,?,?,?)" );
-    Record.SaveToDataBase();
+    Record.GetDBStmt().SetUint32( 0 , RecordPlayerInfo.GetRoleID()   );
+    Record.GetDBStmt().SetUint32( 1 , RecordPlayerInfo.GetRoleKind() );
+    Record.GetDBStmt().SetString( 2 , RecordPlayerInfo.GetLastHost().c_str() );
+    Record.GetDBStmt().SetUint32( 3 , RecordPlayerInfo.GetLastLoginTime() );
+    Record.GetDBStmt().SetUint32( 4 , NLMISC::CTime::getSecondsSince1970() );
+    Record.GetDBStmt().SetSQL( "CALL t_offline_dot_insert(?,?,?,?,?)" );
+    Record.SaveDB();
 }
 
 void CEventDotCallBack::CallBackAddItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount , uint32 ItemTotalCount , PB_DotItem DotItem )
 {
     CRecordStmtData Record;
-    Record.m_Stmt.SetUint32( 0 , ItemID );
-    Record.m_Stmt.SetUint32( 1 , RoleID );
-    Record.m_Stmt.SetUint32( 2 , DotItem );
-    Record.m_Stmt.SetUint32( 3 , ItemCount );
-    Record.m_Stmt.SetUint32( 4 , ItemTotalCount );
-    Record.m_Stmt.SetUint32( 5 , NLMISC::CTime::getSecondsSince1970() );
-    Record.m_Stmt.SetSQL( "CALL t_item_dot_insert(?,?,?,?,?,?)" );
-    Record.SaveToDataBase();
+    Record.GetDBStmt().SetUint32( 0 , ItemID );
+    Record.GetDBStmt().SetUint32( 1 , RoleID );
+    Record.GetDBStmt().SetUint32( 2 , DotItem );
+    Record.GetDBStmt().SetUint32( 3 , ItemCount );
+    Record.GetDBStmt().SetUint32( 4 , ItemTotalCount );
+    Record.GetDBStmt().SetUint32( 5 , NLMISC::CTime::getSecondsSince1970() );
+    Record.GetDBStmt().SetSQL( "CALL t_item_dot_insert(?,?,?,?,?,?)" );
+    Record.SaveDB();
 }
 
 void CEventDotCallBack::CallBackSubItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount , uint32 ItemTotalCount , PB_DotItem DotItem )
 {
     CRecordStmtData Record;
-    Record.m_Stmt.SetUint32( 0 , ItemID );
-    Record.m_Stmt.SetUint32( 1 , RoleID );
-    Record.m_Stmt.SetUint32( 2 , DotItem );
-    Record.m_Stmt.SetUint32( 3 , ItemCount );
-    Record.m_Stmt.SetUint32( 4 , ItemTotalCount );
-    Record.m_Stmt.SetUint32( 5 , NLMISC::CTime::getSecondsSince1970() );
-    Record.m_Stmt.SetSQL( "CALL t_item_dot_insert(?,?,?,?,?,?)" );
-    Record.SaveToDataBase();
+    Record.GetDBStmt().SetUint32( 0 , ItemID );
+    Record.GetDBStmt().SetUint32( 1 , RoleID );
+    Record.GetDBStmt().SetUint32( 2 , DotItem );
+    Record.GetDBStmt().SetUint32( 3 , ItemCount );
+    Record.GetDBStmt().SetUint32( 4 , ItemTotalCount );
+    Record.GetDBStmt().SetUint32( 5 , NLMISC::CTime::getSecondsSince1970() );
+    Record.GetDBStmt().SetSQL( "CALL t_item_dot_insert(?,?,?,?,?,?)" );
+    Record.SaveDB();
 }
 
 GSE_NAMESPACE_END_DECL

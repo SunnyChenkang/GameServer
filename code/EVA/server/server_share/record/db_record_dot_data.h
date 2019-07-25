@@ -8,16 +8,20 @@ SS_NAMESPACE_BEGIN_DECL
 
 class CRecordStmtData : public CRecordBase
 {
-    SS_PROPERTY( CDBStatement , Stmt , public );
+    SS_PROPERTY_QUOTE( CDBStatement , DBStmt      , private );
+    SS_PROPERTY_QUOTE( sint8        , ThreadsIdx  , private );
+
 public:
-    // serial;
+
+    /// serial;
     void serial( NLMISC::IStream &s )
     {
-        s.serial( m_Stmt );
+        s.serial( m_DBStmt );
+        s.serial( m_ThreadsIdx );
     }
 
-    // send to database;
-    void SaveToDataBase( void )
+    /// ave;
+    void SaveDB( void )
     {
         CRecordStmtData& RecordStmtData( *this );
         NLNET::CMessage SendMessage("MSG_DOT");
