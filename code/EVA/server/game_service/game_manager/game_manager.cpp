@@ -28,7 +28,7 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     }
 
     /// 检查跳转服务器;
-    if( CreateGameChangeScenes( RoleID , GameData ) ) {
+    if( CreateGame2Scenes( RoleID , GameData ) ) {
         return true;
     }
 
@@ -50,7 +50,7 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     return true;
 }
 
-bool CGameManager::CreateGameChangeScenes( ROLE_ID RoleID , PB_CreateRoom& GameData )
+bool CGameManager::CreateGame2Scenes( ROLE_ID RoleID , PB_CreateRoom& GameData )
 {
     /// 检查是否需要切服务器;
     uint16 LocalServiceID = NLNET::IService::getInstance()->getServiceId().get();

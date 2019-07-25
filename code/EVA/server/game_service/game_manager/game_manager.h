@@ -21,7 +21,7 @@ public:
 
     ///  创建游戏;
     bool CreateGame( ROLE_ID , PB_CreateRoom& );
-    bool CreateGameChangeScenes( ROLE_ID , PB_CreateRoom& );
+    bool CreateGame2Scenes( ROLE_ID , PB_CreateRoom& );
 
     /// 获取游戏实体;
     CGameBasePtr GetGameBasePtr( ROOM_ID );

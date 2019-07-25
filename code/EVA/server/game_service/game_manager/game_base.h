@@ -43,6 +43,7 @@ private:
     /// 是否游戏玩家;
     bool IsGameRole( ROLE_ID RoleID );
 
+private:
     SS_PROPERTY( ROOM_ID            , RoomID         , protected ); /// 房间ID;
     SS_PROPERTY( ROLE_ID            , OwnerID        , protected ); /// 房主ID;
     SS_PROPERTY( GameRoleList       , RoleList       , protected ); /// 角色列表;
