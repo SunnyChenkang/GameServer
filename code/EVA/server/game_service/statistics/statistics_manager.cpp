@@ -21,7 +21,7 @@ void CStatisticsManager::UpdateStatistics( ROLE_ID RoleID , STATISTICS_ID Statis
     pRecordStatistics->SetCount( pRecordStatistics->GetCount() + Count );
 
     /// ±£´æÊý¾Ý¿â;
-    pRecordStatistics->SaveToDataBase();
+    pRecordStatistics->SaveDB();
 }
 
 bool CStatisticsManager::IsStatisticsReach( ROLE_ID RoleID , STATISTICS_ID StatisticsID , uint32 Count )

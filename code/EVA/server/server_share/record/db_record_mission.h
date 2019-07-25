@@ -28,8 +28,8 @@ public:
         s.serial( m_MissionReceiveTime );
     }
 
-    // save to database;
-    void SaveToDataBase( void )
+    // save
+    void SaveDB( void )
     {
         CRecordMission& RecordMission( *this );
         NLNET::CMessage SendMessage("MSG_DB_MISSION");

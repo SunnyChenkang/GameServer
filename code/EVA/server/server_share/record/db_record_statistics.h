@@ -25,7 +25,7 @@ public:
     }
 
     // save to database;
-    void SaveToDataBase( void )
+    void SaveDB( void )
     {
         CRecordStatistics& RecordStatistics( *this );
         NLNET::CMessage SendMessage("MSG_DB_STATISTICS");

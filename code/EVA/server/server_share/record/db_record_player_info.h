@@ -46,7 +46,7 @@ public:
     }
 
     // save to database;
-    void SaveToDataBase( void )
+    void SaveDB( void )
     {
         CRecordPlayerInfo& RecordPlayer( *this );
         NLNET::CMessage SendMessage("MSG_DB_PLAYER");

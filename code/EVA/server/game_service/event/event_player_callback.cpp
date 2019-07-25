@@ -31,7 +31,7 @@ void CEventPlayerCallBack::CallBackPlyaerLoginFinish( PB_UserLogin& UserLogin )
     RecordPlayerInfo.SetLastHost( UserLogin.client_host() );
     RecordPlayerInfo.SetLastLoginTime( NLMISC::CTime::getSecondsSince1970() );
     RecordPlayerInfo.SetUpdate();
-    RecordPlayerInfo.SaveToDataBase();
+    RecordPlayerInfo.SaveDB();
 
     ROLE_ID RoleID                      = UserLogin.role_id();
     NLNET::TServiceId GameServiceId     = IService::getInstance()->getServiceId();
@@ -62,7 +62,7 @@ void CEventPlayerCallBack::CallBackPlayerOffline( ROLE_ID RoleID )
     CRecordPlayerInfo& RecordPlayerInfo = PlayerPtr->GetRecordPlayer().GetRecordBasePlayer();
     RecordPlayerInfo.SetLastOfflineTime( NLMISC::CTime::getSecondsSince1970() );
     RecordPlayerInfo.SetUpdate();
-    RecordPlayerInfo.SaveToDataBase();
+    RecordPlayerInfo.SaveDB();
 }
 
 void CEventPlayerCallBack::CallBackChangeScenes( CPlayerPtr Player )

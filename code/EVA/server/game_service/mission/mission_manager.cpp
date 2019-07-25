@@ -31,7 +31,7 @@ void CMissionManager::UpdateMission( ROLE_ID RoleID , MISSION_ID MissionID , uin
 
     /// 检查任务是否完成;
 
-    pRecordMission->SaveToDataBase();
+    pRecordMission->SaveDB();
 }
 
 void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
@@ -59,7 +59,7 @@ void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
     pRecordMission->SetMissionTarGet( 0 );
     pRecordMission->SetMissionReceiveTime( Time );
     pRecordMission->SetMissionState( MISSION_STATE_ACCEPT );
-    pRecordMission->SaveToDataBase();
+    pRecordMission->SaveDB();
 }
 
 bool CMissionManager::IsInValidMission( MISSION_ID MissionID )

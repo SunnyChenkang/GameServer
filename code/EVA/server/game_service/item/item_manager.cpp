@@ -15,7 +15,7 @@ bool CItemManager::AddItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount ,
     CRecordItem* pRecordItem = GetItemInfo( RoleID , ItemID , true );
     if ( nullptr == pRecordItem ){ return false; }
     pRecordItem->SetItemCount( pRecordItem->GetItemCount() + ItemCount );
-    pRecordItem->SaveToDataBase();
+    pRecordItem->SaveDB();
 
     /// 道具日志;
     EventDefine.AddItem( RoleID , ItemID , ItemCount , pRecordItem->GetItemCount() , DotItem );
@@ -34,7 +34,7 @@ bool CItemManager::SubItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount ,
     /// 更新道具数量;
     pRecordItem->SetItemCount( pRecordItem->GetItemCount() - ItemCount );
     pRecordItem->SetUpdate();
-    pRecordItem->SaveToDataBase();
+    pRecordItem->SaveDB();
 
     /// 道具日志;
     EventDefine.AddItem( RoleID , ItemID , ItemCount , pRecordItem->GetItemCount() , DotItem );

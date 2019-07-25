@@ -21,8 +21,8 @@ public:
         s.serial( m_LastTime );
     }
 
-    // serial database;
-    void SaveToDataBase( void )
+    // save
+    void SaveDB( void )
     {
         CRecordItem& RecordItem( *this );
         NLNET::CMessage SendMessage("MSG_DB_ITEM");
