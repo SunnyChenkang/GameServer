@@ -33,6 +33,8 @@ void CJsonBase::FromJson( CJsonBase* pJsonBase , const NLMISC::CSString& JsonDat
 
 void CJsonBase::LoadJson( NLMISC::CSString FileName )
 {
+    ClearJson();
+
     NLMISC::CSString FilePath = NLMISC::CPath::lookup( FileName );
     if ( FilePath.empty() ) return;
 

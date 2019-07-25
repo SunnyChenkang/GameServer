@@ -62,7 +62,8 @@ public:
 
     // load json file;
     void LoadJson( NLMISC::CSString );
-
+    // clear json data;
+    void ClearJson( void ) { m_JsonStringArray.clear(); m_JsonUint32Array.clear(); }
     // get json cell;
     template< typename T >
     T* GetJsonCell( NLMISC::CSString name );
