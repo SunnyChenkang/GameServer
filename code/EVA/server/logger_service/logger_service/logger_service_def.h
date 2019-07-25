@@ -5,12 +5,15 @@
 #include <server_share/db/mysql/db_mysql.h>
 #include <server_share/record/db_record_dot_data.h>
 
-
 #include <logger_service/message/message_db_event.h>
 #include <logger_service/message/message_service.h>
-LSE_NAMESPACE_BEGIN_DECL
 
 using namespace SS;
+using namespace LSE;
+using namespace NLMISC;
+using namespace NLNET;
+
+LSE_NAMESPACE_BEGIN_DECL
 
 enum TSQLStmt
 {

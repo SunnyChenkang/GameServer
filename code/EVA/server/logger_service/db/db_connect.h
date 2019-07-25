@@ -8,21 +8,30 @@ LSE_NAMESPACE_BEGIN_DECL
 class CDBConnect : public NLMISC::CSingleton< CDBConnect >
 {
 public:
-    //   连接数据库;
-    void InitDBConnect( NLMISC::CSString , NLMISC::CSString , NLMISC::CSString , NLMISC::CSString , uint16 );
-    //   启动数据库线程;
+    typedef std::vector< CDBMysql > DB_MYSQL_TABLE;
+
+    CDBConnect( void );
+   ~CDBConnect( void );
+
+    ///  连接数据库;
+    void InitDBConnect( NLMISC::CSString , NLMISC::CSString , NLMISC::CSString , NLMISC::CSString , uint16 , uint16 );
+    ///  启动数据库线程;
     void StartDBThreads( void );
-    //   关闭数据库线程;
+    ///  关闭数据库线程;
     void CloseDBThreads( void );
-    //   更新子线程;
+    ///  更新子线程;
     void FrameMove( void );
 
-    //  线程池;
-    SS_PROPERTY( CDBMysql , DBThreads , public );
+    ///  获取DB;
+    CDBMysql& GetDBMysql( sint8 idx ) { return m_DBThreads[idx]; }
+    ///  获取线程ID;
+    sint8 GetThreadsIdx( void );
+
+    SS_PROPERTY( DB_MYSQL_TABLE , DBThreads     , public  );    /// 线程池;
+    SS_PROPERTY( CRandom        , Random        , private );
 };
 
 #define DBConnect    CDBConnect::getInstance()
-#define DBThreads    DBConnect.m_DBThreads
 
 LSE_NAMESPACE_END_DECL
 

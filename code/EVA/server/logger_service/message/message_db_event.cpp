@@ -8,7 +8,9 @@ void CallBack_DotMssage( NLNET::CMessage& Message , const std::string& ServiceNa
 {
     CRecordStmtData RecordStmtData;
     Message.serial( RecordStmtData );
-    DBThreads.PostToMain( new CRecordStmtData( RecordStmtData ) , ( PROC_MSG )SubInsertDots );
+    RecordStmtData.SetThreadsIdx( DBConnect.GetThreadsIdx() );
+    CDBMysql& DBMysql = DBConnect.GetDBMysql( RecordStmtData.GetThreadsIdx() );
+    DBMysql.PostToMain( new CRecordStmtData( RecordStmtData ) , ( PROC_MSG )SubInsertDots );
 }
 
 LSE_NAMESPACE_END_DECL

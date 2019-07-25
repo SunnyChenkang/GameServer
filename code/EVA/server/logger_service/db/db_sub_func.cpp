@@ -8,10 +8,11 @@ bool SubInsertDots( void* data )
     CRecordStmtData* pStmt = (CRecordStmtData*)data;
     if ( NULL == pStmt ) return false;
 
-    CDBExecute* pWorker = DBThreads.GetDBExecute();
+    CDBMysql& DBMysql = DBConnect.GetDBMysql( pStmt->GetThreadsIdx() );
+    CDBExecute* pWorker = DBMysql.GetDBExecute();
     if ( NULL == pWorker ) return false;
 
-    pWorker->Execute( &pStmt->m_Stmt );
+    pWorker->Execute( &pStmt->GetDBStmt() );
     return true;
 }
 

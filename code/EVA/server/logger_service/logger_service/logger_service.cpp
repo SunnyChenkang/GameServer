@@ -16,37 +16,28 @@ void foo()
     admin_modules_forceLink();
 }
 
-// reister main;
-using namespace NLMISC;
-using namespace NLNET;
-using namespace LSE;
-
 void CLoggerService::init( void )
 {
-    // 注册消息;
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( LSE_DOT_CallBackItems , SS_ARRAYSIZE( LSE_DOT_CallBackItems ) );
+    /// 注册消息;
+    CUnifiedNetwork::getInstance()->addCallbackArray( LSE_DOT_CallBackItems , SS_ARRAYSIZE( LSE_DOT_CallBackItems ) );
 
-    // 注册服务器断开;
+    /// 注册服务器断开;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "PSE" , CallBack_PSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "FES" , CallBack_FESDisconnection );
 
-    // 数据库启动;
-    NLMISC::CSString DBName     = ConfigFile.getVar("DataBaseName").asString();
-    NLMISC::CSString DBHost     = ConfigFile.getVar("DataBaseHost").asString();
-    NLMISC::CSString DBUser     = ConfigFile.getVar("DataBaseUser").asString();
-    NLMISC::CSString DBPassword = ConfigFile.getVar("DataBasePassword").asString();
-    NLMISC::CSString DBPost     = ConfigFile.getVar("DataBasePort").asString();
-    nlinfo( "DataBaseName = %s "     , DBName.c_str() );
-    nlinfo( "DataBaseHost = %s "     , DBHost.c_str() );
-    nlinfo( "DataBaseUser = %s "     , DBUser.c_str() );
-    nlinfo( "DataBasePassword = %s " , DBPassword.c_str() );
-    nlinfo( "DataBasePort = %s "     , DBPost.c_str() );
-    DBConnect.InitDBConnect( DBHost , DBUser , DBPassword , DBName , DBPost.atoui() );
+    /// 数据库启动;
+    CSString DBName         = ConfigFile.getVar("DataBaseName").asString();
+    CSString DBHost         = ConfigFile.getVar("DataBaseHost").asString();
+    CSString DBUser         = ConfigFile.getVar("DataBaseUser").asString();
+    CSString DBPassword     = ConfigFile.getVar("DataBasePassword").asString();
+    uint32   DBPost         = ConfigFile.getVar("DataBasePort").asInt();
+    uint32   DBThreadCount  = ConfigFile.getVar("DataBaseThreadsCount").asInt();
+    DBConnect.InitDBConnect( DBHost , DBUser , DBPassword , DBName , DBPost , DBThreadCount );
     DBConnect.StartDBThreads();
 
-    // 初始化定时器;
+    /// 初始化定时器;
     TimerManager->init();
 }
 
