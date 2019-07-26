@@ -41,6 +41,12 @@ CPlayerPtr CPlayerManager::GetPlayer( ROLE_ID RoleID )
     return It->second;
 }
 
+CPlayerPtr CPlayerManager::GetPlayer( CRecordPlayer& RecordPlayer )
+{
+    ROLE_ID RoleID = RecordPlayer.GetRecordBasePlayer().GetRoleID();
+    return GetPlayer( RoleID );
+}
+
 void CPlayerManager::DeletePlayer( ROLE_ID RoleID )
 {
     auto It = m_PlayerTable.find( RoleID );
@@ -50,7 +56,13 @@ void CPlayerManager::DeletePlayer( ROLE_ID RoleID )
     m_PlayerTable.erase( It );
 }
 
-bool CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId& ServiceID )
+void CPlayerManager::DeletePlayer( CRecordPlayer& RecordPlayer )
+{
+    ROLE_ID RoleID = RecordPlayer.GetRecordBasePlayer().GetRoleID();
+    DeletePlayer( RoleID );
+}
+
+bool CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId ServiceID )
 {
     CPlayerPtr PlayerPtr = this->GetPlayer( RoleID );
     if ( nullptr == PlayerPtr ) {
@@ -61,8 +73,6 @@ bool CPlayerManager::ChangeScenes( ROLE_ID RoleID , TServiceId& ServiceID )
     if ( !SS_NETWORK->isConnectionConnected( ServiceID ) ) {
         return false;
     }
-
-    /// 数据投递到目标服务器;
     NLNET::CMessage SendMessage( "MSG_CHANGE_SCENES" );
     SendMessage.serial( *PlayerPtr );
     SS_NETWORK->send  ( ServiceID , SendMessage );

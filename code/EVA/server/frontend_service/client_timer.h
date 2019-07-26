@@ -6,12 +6,21 @@
 
 FES_NAMESPACE_BEGIN_DECL
 
-// 检查连接超时用户;
+/// 检查连接超时用户;
 class CClientConnectionTimer : public CTimerEvent
 {
     NL_INSTANCE_COUNTER_DECL( CClientConnectionTimer );
 public:
     CClientConnectionTimer( void ) { };
+    void timerCallback( CTimer* owner );
+};
+
+/// 同步数据;
+class CClientDataRedisTimer : public CTimerEvent
+{
+    NL_INSTANCE_COUNTER_DECL( CClientDataRedisTimer );
+public:
+    CClientDataRedisTimer( void ) { };
     void timerCallback( CTimer* owner );
 };
 

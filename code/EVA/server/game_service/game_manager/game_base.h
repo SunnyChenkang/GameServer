@@ -15,35 +15,33 @@ public:
     virtual ~CGameBase( void );
 
     /// 加入游戏;
-    virtual bool JoinGame( ROLE_ID );
+    virtual bool GameJoin( ROLE_ID );
     /// 离开游戏;
-    virtual bool LeaveGame( ROLE_ID );
+    virtual bool GameLeave( ROLE_ID );
 
     /// 游戏开始;
-    virtual void StartGame( void ){ };
+    virtual void GameStart( void );
     /// 游戏结束;
-    virtual void OwerGame( void ) { };
+    virtual void GameOwer( void );
 
     /// 离线处理;
-    virtual void UserOffline( ROLE_ID );
+    virtual void GameOffline( ROLE_ID );
     /// 上线处理;
-    virtual void UserOnline( ROLE_ID );
+    virtual void GameOnline( ROLE_ID );
 
     /// 游戏帧数;
-    virtual void FraveMove( void ) = 0;
+    virtual void GameFraveMove( void ) = 0;
     /// 游戏广播消息;
-    virtual void BroadCasts( CSString , google::protobuf::Message* , ROLE_ID RemoveID = 0 );
+    virtual void GameBroadCasts( CSString , google::protobuf::Message* , ROLE_ID RemoveID = 0 );
+
+    /// 是否游戏已满;
+    virtual bool GameIsFull( void );
+    /// 是否游戏玩家;
+    virtual bool GameIsRole( ROLE_ID RoleID );
 
     /// 获取玩家数量;
-    uint32 GetRoleCount( void );
+    virtual uint32 GetRoleCount( void );
 
-private:
-    /// 是否游戏已满;
-    bool IsGameFull( void );
-    /// 是否游戏玩家;
-    bool IsGameRole( ROLE_ID RoleID );
-
-private:
     SS_PROPERTY( ROOM_ID            , RoomID         , protected ); /// 房间ID;
     SS_PROPERTY( ROLE_ID            , OwnerID        , protected ); /// 房主ID;
     SS_PROPERTY( GameRoleList       , RoleList       , protected ); /// 角色列表;

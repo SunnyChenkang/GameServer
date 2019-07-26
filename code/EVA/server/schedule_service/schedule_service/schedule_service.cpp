@@ -12,7 +12,7 @@ using namespace NLMISC;
 using namespace NLNET;
 using namespace SSE;
 
-// admin modules;
+/// admin modules;
 extern void admin_modules_forceLink();
 void foo()
 {
@@ -23,11 +23,11 @@ void CScheduleService::init()
 {
     /// 注册消息;
     NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_LOGIN_CallBackItems , SS_ARRAYSIZE( SSE_LOGIN_CallBackItems ) );
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
+    /// NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
 
     /// 注册服务器断开;
     SS_NETWORK->setServiceUpCallback  ( "GSE" , CallBack_GSEConnection    );
-    SS_NETWORK->setServiceUpCallback  ( "PSE" , CallBack_GSEConnection    );
+    SS_NETWORK->setServiceUpCallback  ( "PSE" , CallBack_PSEConnection    );
     SS_NETWORK->setServiceUpCallback  ( "FES" , CallBack_FESConnection    );
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "PSE" , CallBack_PSEDisconnection );

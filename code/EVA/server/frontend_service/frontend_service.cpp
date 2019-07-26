@@ -28,19 +28,25 @@ void foo()
 
 void CFrontEndService::init()
 {
-    // 注册消息;
+    /// 注册消息;
     NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( LocalCallBackItems	 , SS_ARRAYSIZE( LocalCallBackItems ) );
 
-    // 检查断开连接服务器;
+    /// 连接Redis数据库;
+    CSString RedisHost = ConfigFile.getVar("RedisHost").asString();
+    CSString RedisPort = ConfigFile.getVar("RedisPort").asString();
+    CSString RedisPass = ConfigFile.getVar("RedisPass").asString();
+    RedisLogin.Connect( RedisHost , RedisPort.atoui() , 3000 , RedisPass );
+
+    /// 检查断开连接服务器;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "PSE" , CallBack_PSEDisconnection );
 
-    // 启动网络库;
+    /// 启动网络库;
     FrontendNetWork.InitNetHandler( ConfigFile.getVar ("RUDPPort").asInt() , ConfigFile.getVar ("WEBPort").asInt() );
-    // 初始化定时器管理器;
+    /// 初始化定时器管理器;
     TimerManager->init();
-    // 加载配置表;
+    /// 加载配置表;
     JsonLoad.JsonLoadTable();
 }
 

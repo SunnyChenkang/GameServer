@@ -3,9 +3,9 @@ FILE(GLOB SRC_MYSQL		  	 db/*.cpp db/*.h)
 FILE(GLOB SRC_MESSAGE 	  	 message/*.cpp message/*.h)
 
 
-SOURCE_GROUP("LoggerService"		FILES ${SRC_LOGGER_SERVICE} )
-SOURCE_GROUP("Message"				FILES ${SRC_MESSAGE} )
-SOURCE_GROUP("DB"					FILES ${SRC_MYSQL} )
+SOURCE_GROUP("logger_service"	FILES ${SRC_LOGGER_SERVICE} )
+SOURCE_GROUP("message"				FILES ${SRC_MESSAGE} )
+SOURCE_GROUP("db"						FILES ${SRC_MYSQL} )
 
 
 ADD_EXECUTABLE(logger_service WIN32 ${SRC_LOGGER_SERVICE} ${SRC_MYSQL} ${SRC_MESSAGE} )

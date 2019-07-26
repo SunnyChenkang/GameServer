@@ -12,16 +12,20 @@ public:
     CPlayerManager( void );
    ~CPlayerManager( void );
 
-    /// 分配玩家实例;
+    ///  分配玩家实例;
     CPlayerPtr AllocPlayer( ROLE_ID );
     CPlayerPtr AllocPlayer( CRecordPlayer& );
-    /// 获取玩家数据;
-    CPlayerPtr GetPlayer  ( ROLE_ID );
 
-    /// 删除玩家;
+    ///  获取玩家数据;
+    CPlayerPtr GetPlayer( ROLE_ID );
+    CPlayerPtr GetPlayer( CRecordPlayer& );
+
+    ///  删除玩家;
     void DeletePlayer( ROLE_ID );
-    /// 场景切换;
-    bool ChangeScenes( ROLE_ID , TServiceId& );
+    void DeletePlayer( CRecordPlayer& );
+
+    ///  切换场景;
+    bool ChangeScenes( ROLE_ID , TServiceId );
 
 private:
     SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );

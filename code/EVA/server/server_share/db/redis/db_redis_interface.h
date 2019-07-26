@@ -14,11 +14,11 @@ class CDBRedisInterface : public NLMISC::CSingleton< CDBRedisInterface >
     SS_PROPERTY_QUOTE( CDBRedis , DBRedisGameRecord   , private );
 };
 
-#define DBRedisLogin      CDBRedisInterface::getInstance().GetDBRedisLogin()        /// 登录相关;
-#define DBRedisPlayer     CDBRedisInterface::getInstance().GetDBRedisPlayer()       /// 玩家相关;
-#define DBRedisGame       CDBRedisInterface::getInstance().GetDBRedisGame()         /// 游戏相关;
-#define DBRedisMatch      CDBRedisInterface::getInstance().GetDBRedisMatch()        /// 比赛相关;
-#define DBRedisGameRecord CDBRedisInterface::getInstance().GetDBRedisGameRecord()   /// 游戏回放;
+#define RedisLogin      CDBRedisInterface::getInstance().GetDBRedisLogin()        /// 登录相关;
+#define RedisPlayer     CDBRedisInterface::getInstance().GetDBRedisPlayer()       /// 玩家相关;
+#define RedisGame       CDBRedisInterface::getInstance().GetDBRedisGame()         /// 游戏相关;
+#define RedisMatch      CDBRedisInterface::getInstance().GetDBRedisMatch()        /// 比赛相关;
+#define RedisGameRecord CDBRedisInterface::getInstance().GetDBRedisGameRecord()   /// 游戏回放;
 
 SS_NAMESPACE_END_DECL
 

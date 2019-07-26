@@ -3,7 +3,10 @@
 
 #include <server_share/common/common.h>
 
-// 游戏战绩KEY;
-const NLMISC::CSString REDIS_GAME_RECORD = "REDIS_GAME_RECORD";
+/// 游戏战绩KEY;
+const NLMISC::CSString REDIS_GAME_RECORD    = "REDIS_GAME_RECORD";
+
+/// 网关注册KEY;
+const NLMISC::CSString REDIS_FES_REDISTER   = "REDIS_FES_REDISTER";
 
 #endif//SS_DBREDIS_DEF_H_

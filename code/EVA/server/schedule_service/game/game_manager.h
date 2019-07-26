@@ -25,7 +25,7 @@ public:
     void UpdateHallInfo( TServiceId& , CSString& , uint32 RoleCount );
 
     ///  获取游戏服务信息;
-    CGameInfoPtr GetGameInfoPtr( void ){ return nullptr; }
+    CGameInfoPtr GetGameInfoPtr( CSString );
     CHallInfoPtr GetHallInfoPtr( void );
 
 private:

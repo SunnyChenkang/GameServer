@@ -57,7 +57,7 @@ public:
     ** 参数: Lifetime 单位秒,0代表永不删除;
     ** 返回: 成功返回0;
     */
-    sint32 SetRedisKeyLifeTime( const char* pRedisKey , sint32 RedisKeyLen , uint32 RedisLifeTime = 0 );
+    sint32 SetRedisLifeTime( const char* pRedisKey , sint32 RedisKeyLen , uint32 RedisLifeTime = 0 );
 
     /*
     ** 描述: 获取KEY对应的VALUE;

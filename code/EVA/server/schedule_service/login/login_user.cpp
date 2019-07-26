@@ -13,7 +13,7 @@ void CLoginUser::CallBackPlayerLogin( NLNET::CMessage& Message )
     CGameInfoPtr    GameInfoPtr = nullptr;
     NLNET::CMessage SendMessage("MSG_LOGIN");
 
-    /// 检查玩家是否需要从DB服务加载;
+    /// 检查是否存DBCache加载数据;
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
     if ( nullptr == PlayerPtr ) { PlayerPtr = PlayerManager.AllocPlayer( UserLogin.role_id() ); }
     if ( nullptr == PlayerPtr ) { return; }
@@ -27,11 +27,9 @@ void CLoginUser::CallBackPlayerLogin( NLNET::CMessage& Message )
     return;
 
 load:
+    /// 分配大厅服务器;
     GameInfoPtr = GameManager.GetGameInfoPtr();
-    if ( nullptr == GameInfoPtr ) {
-        return;
-    }
-    /// 通知DB服务器加载玩家数据;
+    if ( nullptr == GameInfoPtr ) { return; }
     UserLogin.set_game_service_id( GameInfoPtr->GetGameServiceID().get() );
     SendMessage.serial( &UserLogin );
     SS_NETWORK->send( "PSE" , SendMessage );

@@ -248,7 +248,7 @@ sint32 CDBRedis::SetRedisAppend( const char* pRedisKey , sint32 RedisKeyLen , co
     return len;
 }
 
-sint32 CDBRedis::SetRedisKeyLifeTime( const char* pRedisKey , sint32 RedisKeyLen , uint32 RedisLifeTime )
+sint32 CDBRedis::SetRedisLifeTime( const char* pRedisKey , sint32 RedisKeyLen , uint32 RedisLifeTime )
 {
     redisReply* pRedis = NULL;
     if ( 0 == RedisLifeTime )
@@ -257,7 +257,7 @@ sint32 CDBRedis::SetRedisKeyLifeTime( const char* pRedisKey , sint32 RedisKeyLen
     }
     else
     {
-        pRedis = ( redisReply* )Command( "EXPIER %b %u" , pRedisKey , ( size_t )RedisKeyLen , RedisLifeTime );
+        pRedis = ( redisReply* )Command( "EXPIRE %b %u" , pRedisKey , ( size_t )RedisKeyLen , RedisLifeTime );
     }
 
     REDIS_NORMAL_JUDGE( pRedis );
@@ -489,7 +489,8 @@ sint32 CDBRedis::GetMultiHashField( const char* pRedisKey , sint32 RedisKeyLen ,
     pRedis = ( redisReply* )CommandArgv( VstrOper , RedisField );
 
     REDIS_NORMAL_JUDGE( pRedis );
-    // 获取结果;
+
+    /// 获取结果;
     RedisValue.clear();
     for ( sint32 idx = 0; idx < pRedis->elements; idx++ )
     {

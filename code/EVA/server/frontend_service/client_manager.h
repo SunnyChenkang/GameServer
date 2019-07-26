@@ -31,6 +31,9 @@ public:
     void DeleteClientWEB ( TSockId   );
     void DeleteClientUDP ( SOCKET_ID );
 
+    /// 获取客户端数量;
+    uint32 GetClientCount( void ) { return m_RoleClientTable.size(); }
+
     /// 客户端会话列表;
     SS_PROPERTY( ROLECLIENT , RoleClientTable , private );
     SS_PROPERTY( UDPCLIENT  , UDPClientTable  , private );

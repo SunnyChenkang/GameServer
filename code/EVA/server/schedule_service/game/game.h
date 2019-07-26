@@ -9,6 +9,9 @@ class CGameInfo
     SS_PROPERTY( uint32           , GameMaxCount  , private );
     SS_PROPERTY( NLNET::TServiceId, GameServiceID , private );
     SS_PROPERTY( uint32           , GameCurrCount , private );
+
+    ///  游戏是否已满;
+    bool IsRoleFull( void ) { return this->GetGameCurrCount() >= this->GetGameMaxCount(); }
 };
 
 class CHallInfo
@@ -17,6 +20,9 @@ class CHallInfo
     SS_PROPERTY( uint32           , RoleMaxCount  , private );
     SS_PROPERTY( NLNET::TServiceId, HallServiceID , private );
     SS_PROPERTY( uint32           , RoleCurrCount , private );
+
+    /// 大厅是否已满;
+    bool IsHallFull( void ) { return this->GetRoleCurrCount() >= this->GetRoleMaxCount(); }
 };
 
 // game;

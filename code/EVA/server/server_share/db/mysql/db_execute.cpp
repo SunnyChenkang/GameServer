@@ -17,11 +17,11 @@ bool SS::CDBExecute::Connect( NLMISC::CSString Host , NLMISC::CSString User , NL
 
 void SS::CDBExecute::Close( void )
 {
-    for ( sint32 idx = 0; idx < 512; idx++ )
+    for ( auto& Element : m_StmtTable )
     {
-        if ( NULL == m_StmtTable[idx] ) continue;
-        m_StmtTable[idx]->Release();
-        m_StmtTable[idx] =  NULL;
+        if ( nullptr == Element ) { continue; }
+        Element->Release();
+        Element = nullptr;
     }
     m_StmtTable.clear();
     m_Connect.Close();

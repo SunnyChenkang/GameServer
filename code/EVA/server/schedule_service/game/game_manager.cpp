@@ -22,10 +22,10 @@ void CGameManager::LoadGameInfo( TServiceId& ServiceID )
         nlinfo( " load game info fails service id : " , ServiceID.get() );
         return;
     }
-    for ( auto Element : pGameConfig->StrValues )
+    for ( auto It = pGameConfig->StrValues.begin(); It != pGameConfig->StrValues.end(); ++It )
     {
         NLNET::TParsedCommandLine ParsedCommand;
-        ParsedCommand.parseParamList( Element );
+        ParsedCommand.parseParamList( *It );
         const TParsedCommandLine * pParseLine1 = ParsedCommand.getParam("");
         const TParsedCommandLine * pParseLine2 = ParsedCommand.getParam("");
         const TParsedCommandLine * pParseLine3 = ParsedCommand.getParam("");
@@ -46,10 +46,10 @@ void CGameManager::LoadHallInfo( void )
         nlinfo( " load hall info fails ... " );
         return;
     }
-    for ( auto Element : pHallConfig->StrValues )
+    for ( auto It = pHallConfig->StrValues.begin(); It != pHallConfig->StrValues.end(); ++It )
     {
         NLNET::TParsedCommandLine ParsedCommand;
-        ParsedCommand.parseParamList( Element );
+        ParsedCommand.parseParamList( *It );
         const TParsedCommandLine * pParsedLine1 = ParsedCommand.getParam("");
         const TParsedCommandLine * pParsedLine2 = ParsedCommand.getParam("");
         const TParsedCommandLine * pParsedLine3 = ParsedCommand.getParam("");
@@ -103,6 +103,27 @@ void CGameManager::RemoveHallInfo( TServiceId& ServiceID )
         }
         ++It;
     }
+}
+
+CGameInfoPtr CGameManager::GetGameInfoPtr( CSString GameName )
+{
+    for ( auto It = m_GameTable.begin(); It != m_GameTable.end(); ++It )
+    {
+        if ( !(*It)->GetGameName().compare( GameName ) ) { continue; }
+        if ( (*It)->IsRoleFull() ) { continue; }
+        return (*It);
+    }
+    return nullptr;
+}
+
+CHallInfoPtr CGameManager::GetHallInfoPtr( void )
+{
+    for ( auto It = m_HallTable.begin(); It != m_HallTable.end(); ++It )
+    {
+        if ( (*It)->IsHallFull() ) { continue; }
+        return (*It);
+    }
+    return nullptr;
 }
 
 SSE_NAMESPACE_END_DECL

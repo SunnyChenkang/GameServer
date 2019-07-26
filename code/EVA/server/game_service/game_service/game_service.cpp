@@ -22,14 +22,9 @@ void foo()
 void CGameService::init( void )
 {
     // 连接REDIS;
-    NLMISC::CSString RedisHost      = ConfigFile.getVar("RedisHost").asString();
-    NLMISC::CSString RedisPort      = ConfigFile.getVar("RedisPort").asString();
-    NLMISC::CSString RedisTimeOut   = ConfigFile.getVar("RedisTimeOut").asString();
-    NLMISC::CSString RedisPassword  = ConfigFile.getVar("RedisPassword").asString();
-    nlinfo( "RedisHost     %s" , RedisHost.c_str()     );
-    nlinfo( "RedisPort     %d" , RedisPort.atosi()     );
-    nlinfo( "RedisTimeOut  %d" , RedisTimeOut.atosi()  );
-    nlinfo( "RedisPassword %s" , RedisPassword.c_str() );
+    CSString RedisHost      = ConfigFile.getVar("RedisHost").asString();
+    CSString RedisPort      = ConfigFile.getVar("RedisPort").asString();
+    CSString RedisPassword  = ConfigFile.getVar("RedisPass").asString();
 
     // 注册消息;
     NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( GSE_LOGIN_CallBackItems , SS_ARRAYSIZE( GSE_LOGIN_CallBackItems ) );
@@ -67,5 +62,3 @@ void CGameService::release( void )
 }
 
 NLNET_SERVICE_MAIN( CGameService, "GSE", "game_service", 0  , "", "")
-
-
