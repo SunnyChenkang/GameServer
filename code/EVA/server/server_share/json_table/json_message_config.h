@@ -6,7 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonMessageCell : public CJsonBase
+class CMessageCell : public CJsonBase
 {
     SS_PROPERTY( NLMISC::CSString               , Name          , private );    /// 消息名字;
     SS_PROPERTY( NLMISC::CSString               , Desc          , private );    /// 消息描述;
@@ -25,12 +25,12 @@ class CJsonMessageCell : public CJsonBase
     PARSE_VALUE_END
 };
 
-class CJsonMessageConfig : public CJsonBase
+class CMessageConfig : public CJsonBase
 {
     PARSE_VALUE_BEGIN
 
     JsonParseBegin( JsonValue );
-    CJsonMessageCell* pMessageCell = new CJsonMessageCell();
+    CMessageCell* pMessageCell = new CMessageCell();
     pMessageCell->ParseJson( Values );
     m_JsonStringArray.insert(std::make_pair( pMessageCell->GetName() , pMessageCell ) );
     JsonParseEnd();

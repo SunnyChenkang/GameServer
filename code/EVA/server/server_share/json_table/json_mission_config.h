@@ -6,10 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonMissionCell;
-typedef std::shared_ptr< CJsonMissionCell > CJsonMissionCellPtr;
-
-class CJsonMissionCell : public CJsonBase
+class CMissionCell : public CJsonBase
 {
     SS_PROPERTY( MISSION_ID         , MissionID             , private );    // 任务ID;
     SS_PROPERTY( NLMISC::CSString   , MissionIcon           , private );    // 任务图标;
@@ -38,12 +35,12 @@ class CJsonMissionCell : public CJsonBase
     PARSE_VALUE_END
 };
 
-class CJsonMissionConfig : public CJsonBase
+class CMissionConfig : public CJsonBase
 {
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonMissionCell* pMissionCell = new CJsonMissionCell();
+    CMissionCell* pMissionCell = new CMissionCell();
     pMissionCell->ParseJson( Values );
     m_JsonStringArray.insert(std::make_pair( pMissionCell->GetMissionID() , pMissionCell ) );
     JsonParseArrayEnd();

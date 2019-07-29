@@ -7,7 +7,7 @@
 SS_NAMESPACE_BEGIN_DECL
 
 /// 游戏属性参数;
-class CJsonGameCell : public CJsonBase
+class CGameCell : public CJsonBase
 {
     SS_PROPERTY( NLMISC::CSString , GameName        , private );    // 游戏名字;
     SS_PROPERTY( uint32           , GameMax         , private );    // 游戏人数;
@@ -32,12 +32,12 @@ class CJsonGameCell : public CJsonBase
 };
 
 
-class CJsonGameConfig : public CJsonBase
+class CGameConfig : public CJsonBase
 {
     PARSE_VALUE_BEGIN
 
     JsonParseBegin( JsonValue );
-    CJsonGameCell* pGameCell = new CJsonGameCell();
+    CGameCell* pGameCell = new CGameCell();
     pGameCell->ParseJson( Values );
     m_JsonStringArray.insert(std::make_pair( pGameCell->GetGameName() , pGameCell ) );
     JsonParseEnd();

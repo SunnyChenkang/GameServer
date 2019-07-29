@@ -6,7 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonItemCell : public CJsonBase
+class CItemCell : public CJsonBase
 {
     SS_PROPERTY( ITEM_ID            , ItemID    , private );    // 道具ID;
     SS_PROPERTY( uint32             , ItemKind  , private );    // 道具种类;
@@ -25,12 +25,12 @@ class CJsonItemCell : public CJsonBase
     PARSE_VALUE_END
 };
 
-class CJsonItemConfig : public CJsonBase
+class CItemConfig : public CJsonBase
 {
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonItemCell* pItemCell = new CJsonItemCell();
+    CItemCell* pItemCell = new CItemCell();
     pItemCell->ParseJson( Values );
     m_JsonUint32Array.insert(std::make_pair( pItemCell->GetItemID() , pItemCell ) );
     JsonParseArrayEnd();

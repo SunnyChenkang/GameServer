@@ -6,10 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonStatisticsCell;
-typedef std::shared_ptr< CJsonStatisticsCell > CJsonStatisticsCellPtr;
-
-class CJsonStatisticsCell : public CJsonBase
+class CStatisticsCell : public CJsonBase
 {
     SS_PROPERTY( STATISTICS_ID    , StatisticsID       , private );  /// 统计ID;
     SS_PROPERTY( NLMISC::CSString , StatisticsContent  , private );  /// 统计描述;
@@ -24,12 +21,12 @@ class CJsonStatisticsCell : public CJsonBase
     PARSE_VALUE_END
 };
 
-class CJsonStatisticsConfig : public CJsonBase
+class CStatisticsConfig : public CJsonBase
 {
     PARSE_VALUE_ARRAY_BEGIN
 
     JsonParseArrayBegin( JsonValue );
-    CJsonStatisticsCell* pStatisticsCell = new CJsonStatisticsCell();
+    CStatisticsCell* pStatisticsCell = new CStatisticsCell();
     pStatisticsCell->ParseJson( Values );
     m_JsonUint32Array.insert(std::make_pair( pStatisticsCell->GetStatisticsID() , pStatisticsCell ) );
     JsonParseArrayEnd();

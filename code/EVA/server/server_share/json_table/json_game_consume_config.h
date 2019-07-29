@@ -6,7 +6,7 @@
 
 SS_NAMESPACE_BEGIN_DECL
 
-class CJsonRoomConsumeCell : public CJsonBase
+class CGameConsumeCell : public CJsonBase
 {
     SS_PROPERTY( uint32           , ConsumeID   , private );    // ÏûºÄID;
     SS_PROPERTY( NLMISC::CSString , GameName    , private );    // ÓÎÏ·Ãû×Ö;
@@ -29,11 +29,11 @@ class CJsonRoomConsumeCell : public CJsonBase
     PARSE_VALUE_END
 };
 
-class CJsonGameConsumeConfig : public CJsonBase
+class CGameConsumeConfig : public CJsonBase
 {
     PARSE_VALUE_ARRAY_BEGIN
     JsonParseArrayBegin( JsonValue );
-    CJsonRoomConsumeCell* pConsumeCell = new CJsonRoomConsumeCell();
+    CGameConsumeCell* pConsumeCell = new CGameConsumeCell();
     pConsumeCell->ParseJson( Values );
     m_JsonUint32Array.insert(std::make_pair( pConsumeCell->GetConsumeID() , pConsumeCell ) );
     JsonParseArrayEnd();
