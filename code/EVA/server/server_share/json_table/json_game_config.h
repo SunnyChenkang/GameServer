@@ -1,5 +1,5 @@
-#ifndef SS_JSON_ROOM_CONFIG_H_
-#define SS_JSON_ROOM_CONFIG_H_
+#ifndef SS_JSON_GAME_CONFIG_H_
+#define SS_JSON_GAME_CONFIG_H_
 
 #include <server_share/common/common.h>
 #include <server_share/json/json_base.h>
@@ -47,4 +47,4 @@ class CJsonGameConfig : public CJsonBase
 
 SS_NAMESPACE_END_DECL
 
-#endif //SS_JSON_ROOM_CONFIG_H_
+#endif //SS_JSON_GAME_CONFIG_H_

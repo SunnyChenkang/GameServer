@@ -14,7 +14,7 @@ enum TMatchMode
     Match_Bits   = Unknown,
 };
 
-TMatchMode FromString( const CSString& str );
+TMatchMode ToEnum( const CSString& str );
 const CSString ToString( TMatchMode );
 
 SSE_NAMESPACE_END_DECL
