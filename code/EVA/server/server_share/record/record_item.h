@@ -1,7 +1,7 @@
 #ifndef SERVER_SHARED_RECORDITEM_H_
 #define SERVER_SHARED_RECORDITEM_H_
 
-#include "db_record_base.h"
+#include "record_base.h"
 
 SS_NAMESPACE_BEGIN_DECL
 
@@ -28,13 +28,6 @@ public:
         NLNET::CMessage SendMessage("MSG_DB_ITEM");
         SendMessage.serial( RecordItem );
         SS_NETWORK->send( "PSE" , SendMessage );
-    }
-
-    // operator += ;
-    CRecordItem& operator += ( const CRecordItem& rhs )
-    {
-        this->m_ItemCount += rhs.m_ItemCount;
-        return *this;
     }
 
     SS_PROPERTY( ROLE_ID , RoleID       , private );

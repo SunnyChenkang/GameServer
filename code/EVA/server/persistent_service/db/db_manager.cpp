@@ -137,7 +137,7 @@ void CDBManager::RefreshDBStatistics( CRecordStatistics& rhs )
     rhs.ResetState();
 }
 
-void CDBManager::RefreshAllDBData( void )
+void CDBManager::CloseService( void )
 {
     
 }

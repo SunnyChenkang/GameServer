@@ -27,8 +27,7 @@ void CGameService::init( void )
     CSString RedisPassword  = ConfigFile.getVar("RedisPass").asString();
 
     // 注册消息;
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( GSE_LOGIN_CallBackItems , SS_ARRAYSIZE( GSE_LOGIN_CallBackItems ) );
-    //NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
+    SS_NETWORK->addCallbackArray( GSE_LOGIN_CallBackItems , SS_ARRAYSIZE( GSE_LOGIN_CallBackItems ) );
 
     // 注册断开函数;
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
@@ -40,12 +39,11 @@ void CGameService::init( void )
     EventRegister.getInstance();
     // 初始化定时器;
     TimerManager->init();
-    // 加载多语言;
-    CI18N::load( ConfigFile.getVar("Language").asString() );
 
     // 执行本地命令;
-    NLMISC::ICommand::execute( "load_room" , *InfoLog );
     NLMISC::ICommand::execute( "load_json" , *InfoLog );
+    NLMISC::ICommand::execute( "load_i18n" , *InfoLog );
+    NLMISC::ICommand::execute( "load_game" , *InfoLog );
 }
 
 bool CGameService::update( void )

@@ -1,6 +1,7 @@
 #include "game_manager.h"
 #include <game_service/player/player.h>
 #include <game_service/player/player_manager.h>
+#include <game_service/game_manager/game_register.h>
 
 GSE_NAMESPACE_BEGIN_DECL
 
@@ -46,7 +47,10 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
 
     /// 加入游戏;
     GameBasePtr->SetOwnerID( RoleID );
-    GameBasePtr->JoinGame( RoleID );
+    GameBasePtr->GameJoin( RoleID );
+
+    /// 更新游戏数据;
+    GameRegister.UpdateGameInfo( GameData.room_name() , 1 );
     return true;
 }
 
@@ -81,7 +85,7 @@ bool CGameManager::JoinGame( ROLE_ID RoleID , ROOM_ID RoomID )
     if ( nullptr == GameBasePtr ) { return false; }
 
     /// 加入游戏;
-    return GameBasePtr->JoinGame( RoleID );
+    return GameBasePtr->GameJoin( RoleID );
 }
 
 bool CGameManager::LeaveGame( ROLE_ID RoleID )
@@ -92,13 +96,17 @@ bool CGameManager::LeaveGame( ROLE_ID RoleID )
     if ( nullptr == GameBasePtr ) { return false; }
 
     /// 离开游戏;
-    return GameBasePtr->LeaveGame( RoleID );
+    return GameBasePtr->GameLeave( RoleID );
 }
 
 bool CGameManager::DeleteGame( ROOM_ID RoomID )
 {
     auto It = m_GameList.find( RoomID );
     if ( It == m_GameList.end() ) { return false; }
+
+    /// 更新游戏数据;
+    NLMISC::CSString GameName = (*It->second).GetCreateGameData().room_name();
+    GameRegister.UpdateGameInfo( GameName , -1 );
 
     /// 删除游戏实体;
     m_GameList.erase( It );

@@ -1,13 +1,14 @@
 #ifndef SERVER_SHARED_RECORDPLAYERINFO_H_
 #define SERVER_SHARED_RECORDPLAYERINFO_H_
 
-#include "db_record_base.h"
+#include "record_base.h"
 
 SS_NAMESPACE_BEGIN_DECL
 
 class CRecordPlayerInfo : public CRecordBase
 {
 public:
+    typedef NLMISC::CEnumBitset< PB_TRoleState , uint32 > ROLE_STATE;
     CRecordPlayerInfo( void );
     virtual ~CRecordPlayerInfo( void );
 
@@ -59,8 +60,8 @@ public:
     void DelRoleState( PB_TRoleState );
     void SetRoleState( PB_TRoleState );
 
-private:
-    NLMISC::CEnumBitset< PB_TRoleState , uint32 >  m_RoleState;     // ½ÇÉ«×´Ì¬;
+    /// ½ÇÉ«×´Ì¬;
+    SS_PROPERTY( ROLE_STATE , RoleState , private );
 };
 
 SS_NAMESPACE_END_DECL

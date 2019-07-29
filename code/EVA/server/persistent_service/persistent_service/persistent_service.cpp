@@ -24,16 +24,16 @@ using namespace PSE;
 
 void CPersistentService::init()
 {
-    // 注册消息;
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( PSE_LOGIN_CallBackItems , SS_ARRAYSIZE( PSE_LOGIN_CallBackItems ) );
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( PSE_DB_CallBackItems    , SS_ARRAYSIZE( PSE_DB_CallBackItems ) );
+    /// 注册消息;
+    SS_NETWORK->addCallbackArray( PSE_LOGIN_CallBackItems , SS_ARRAYSIZE( PSE_LOGIN_CallBackItems ) );
+    SS_NETWORK->addCallbackArray( PSE_DB_CallBackItems    , SS_ARRAYSIZE( PSE_DB_CallBackItems ) );
 
-    // 注册服务器断开;
+    /// 注册服务器断开;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "GSE" , CallBack_GSEDisconnection );
     SS_NETWORK->setServiceDownCallback( "FES" , CallBack_FESDisconnection );
 
-    // 启动数据库;
+    /// 启动数据库;
     NLMISC::CSString DBName     = ConfigFile.getVar("DataBaseName").asString();
     NLMISC::CSString DBHost     = ConfigFile.getVar("DataBaseHost").asString();
     NLMISC::CSString DBUser     = ConfigFile.getVar("DataBaseUser").asString();
@@ -42,30 +42,31 @@ void CPersistentService::init()
     DBConnect.InitDBConnect( DBHost , DBUser , DBPassword , DBName , DBPort.atosi() );
     DBConnect.StartDBThreads();
 
-    // 加载多语言;
+    /// 加载多语言;
     CI18N::load( ConfigFile.getVar("Language").asString() );
-    // 初始化定时器;
+    /// 初始化定时器;
     TimerManager->init();
-    // 执行本地命令;
+    /// 执行本地命令;
     NLMISC::ICommand::execute( "load_json" , *InfoLog );
+    NLMISC::ICommand::execute( "load_i18n" , *InfoLog );
 }
 
 bool CPersistentService::update( void )
 {
-    // 更新定时器;
+    /// 更新定时器;
     TimerManager->tickUpdate();
-    // 更新数据库;
+    /// 更新数据库;
     DBConnect.FrameMove();
     return true;
 }
 
 void CPersistentService::release( void )
 {
-    // 释放定时器;
-    TimerManager->release();
-    // 执行本地命令;
+    /// 执行本地命令;
     NLMISC::ICommand::execute( "close_service" , *InfoLog );
-    // 释放数据库;
+    /// 释放定时器;
+    TimerManager->release();
+    /// 释放数据库;
     DBConnect.CloseDBThreads();
 }
 

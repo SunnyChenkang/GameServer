@@ -10,27 +10,24 @@ void CLoginUser::CallBackPlayerLogin( NLNET::CMessage& Message )
     PB_UserLogin UserLogin;
     Message.serial( &UserLogin );
 
-    CGameInfoPtr    GameInfoPtr = nullptr;
-    NLNET::CMessage SendMessage("MSG_LOGIN");
-
     /// 检查是否存DBCache加载数据;
-    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
-    if ( nullptr == PlayerPtr ) { PlayerPtr = PlayerManager.AllocPlayer( UserLogin.role_id() ); }
+    NLNET::CMessage SendMessage( "MSG_LOGIN" );
+    CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() , true );
     if ( nullptr == PlayerPtr ) { return; }
-
-    if ( PlayerPtr->IsDBCacheLoadUser() ) {
-        goto load;
+    if ( PlayerPtr->IsLoadDBCache() ) {
+        goto load_cache;
     }
+
     /// 通知逻辑服务器构建玩家;
     SendMessage.serial( &UserLogin );
     SS_NETWORK->send( PlayerPtr->GetGameServiceId() , SendMessage );
     return;
 
-load:
     /// 分配大厅服务器;
-    GameInfoPtr = GameManager.GetGameInfoPtr();
-    if ( nullptr == GameInfoPtr ) { return; }
-    UserLogin.set_game_service_id( GameInfoPtr->GetGameServiceID().get() );
+load_cache:
+    TServiceId HallGoodSvrID = GameManager.GetGoodServiceID( CSString("Hall") );
+    if ( HallGoodSvrID == TServiceId::InvalidId ) { return; }
+    UserLogin.set_game_service_id( HallGoodSvrID.get() );
     SendMessage.serial( &UserLogin );
     SS_NETWORK->send( "PSE" , SendMessage );
 }
@@ -46,9 +43,9 @@ void CLoginUser::CallBackPlayerLoginFinish( NLNET::CMessage& Message )
     Message.serial( FrontendServiceId );
 
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
-    if ( nullptr == PlayerPtr ) return;
-    PlayerPtr->SetFrontendServiceId( FrontendServiceId );
+    if ( nullptr == PlayerPtr ) { return; }
     PlayerPtr->SetGameServiceId( GameServiceId );
+    PlayerPtr->SetFrontendServiceId( FrontendServiceId );
 }
 
 void CLoginUser::CallBackChangeScenes( NLNET::CMessage& Message )

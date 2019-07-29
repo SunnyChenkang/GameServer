@@ -2,35 +2,25 @@
 #define SSE_GAME_MANAGER_H_
 
 #include <schedule_service/schedule_service/schedule_service_def.h>
-#include "game.h"
 
 SSE_NAMESPACE_BEGIN_DECL
 
 class CGameManager : public NLMISC::CSingleton< CGameManager >
 {
 public:
-    CGameManager( void );
-   ~CGameManager( void );
+    CGameManager( void ){ m_GameList.clear(); }
+   ~CGameManager( void ){ };
 
-    ///  加载游戏配置;
-    void LoadGameInfo( TServiceId& );
-    void LoadHallInfo( void );
+    ///  更新游戏列表;
+    void UpdateGameList( TServiceId , RecordGameList& );
+    ///  删除游戏列表;
+    void DeleteGameList( TServiceId& );
 
-    ///  删除游戏配置;
-    void RemoveGameInfo( TServiceId& );
-    void RemoveHallInfo( TServiceId& );
+    ///  获取服务器信息;
+    TServiceId GetGoodServiceID( CSString& );
 
-    //   更新游戏信息;
-    void UpdateGameInfo( TServiceId& , CSString& , uint32 GameCount );
-    void UpdateHallInfo( TServiceId& , CSString& , uint32 RoleCount );
-
-    ///  获取游戏服务信息;
-    CGameInfoPtr GetGameInfoPtr( CSString );
-    CHallInfoPtr GetHallInfoPtr( void );
-
-private:
-    SS_PROPERTY( GAMETABLE , GameTable , private );
-    SS_PROPERTY( HALLTABLE , HallTable , private );
+    ///  游戏列表;
+    SS_PROPERTY( RecordGameTable , GameList , private );
 };
 
 SSE_NAMESPACE_END_DECL

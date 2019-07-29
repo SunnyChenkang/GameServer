@@ -1,4 +1,4 @@
-#include "db_record_statistics.h"
+#include "record_statistics.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

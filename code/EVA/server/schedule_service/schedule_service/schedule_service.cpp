@@ -22,8 +22,8 @@ void foo()
 void CScheduleService::init()
 {
     /// 注册消息;
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_LOGIN_CallBackItems , SS_ARRAYSIZE( SSE_LOGIN_CallBackItems ) );
-    /// NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( SSE_ROOM_CallBackItems  , SS_ARRAYSIZE( SSE_ROOM_CallBackItems  ) );
+    SS_NETWORK->addCallbackArray( SSE_LOGIN_CallBackItems , SS_ARRAYSIZE( SSE_LOGIN_CallBackItems ));
+    SS_NETWORK->addCallbackArray( SSE_GAME_CallBackItem   , SS_ARRAYSIZE( SSE_GAME_CallBackItem ));
 
     /// 注册服务器断开;
     SS_NETWORK->setServiceUpCallback  ( "GSE" , CallBack_GSEConnection    );

@@ -13,7 +13,7 @@
 
 #include <server_share/common/common.h>
 #include <server_share/buffer/buffer_fifo.h>
-#include <server_share/record/db_record_base.h>
+#include <server_share/record/record_base.h>
 
 SS_NAMESPACE_BEGIN_DECL
 

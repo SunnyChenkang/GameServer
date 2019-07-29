@@ -19,7 +19,7 @@ void foo()
 void CLoggerService::init( void )
 {
     /// 注册消息;
-    CUnifiedNetwork::getInstance()->addCallbackArray( LSE_DOT_CallBackItems , SS_ARRAYSIZE( LSE_DOT_CallBackItems ) );
+    SS_NETWORK->addCallbackArray( LSE_DOT_CallBackItems , SS_ARRAYSIZE( LSE_DOT_CallBackItems ) );
 
     /// 注册服务器断开;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );

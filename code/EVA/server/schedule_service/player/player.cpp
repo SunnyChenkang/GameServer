@@ -13,7 +13,7 @@ CPlayer::~CPlayer( void )
     
 }
 
-bool CPlayer::IsDBCacheLoadUser( void )
+bool CPlayer::IsLoadDBCache( void )
 {
     if ( m_FrontendServiceId == NLNET::TServiceId::InvalidId ) return true;
     if ( m_GameServiceId     == NLNET::TServiceId::InvalidId ) return true;

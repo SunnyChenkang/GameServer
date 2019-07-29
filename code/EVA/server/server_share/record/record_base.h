@@ -1,7 +1,7 @@
 #ifndef SERVER_SHARED_DBRECORDBASE_H_
 #define SERVER_SHARED_DBRECORDBASE_H_
 
-#include "db_record_def.h"
+#include "record_def.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

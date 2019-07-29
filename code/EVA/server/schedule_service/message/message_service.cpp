@@ -5,7 +5,7 @@ SSE_NAMESPACE_BEGIN_DECL
 
 void CallBack_GSEConnection( const std::string& ServiceName , NLNET::TServiceId ServiceId , void* )
 {
-    GameManager.LoadGameInfo( ServiceId );
+    
 }
 
 void CallBack_FESConnection( const std::string& ServiceName , NLNET::TServiceId ServiceId , void* )
@@ -20,7 +20,7 @@ void CallBack_PSEConnection( const std::string& ServiceName , NLNET::TServiceId 
 
 void CallBack_GSEDisconnection( const std::string& ServiceName , NLNET::TServiceId ServiceId , void* )
 {
-    GameManager.RemoveGameInfo( ServiceId );
+    GameManager.DeleteGameList( ServiceId );
 }
 
 void CallBack_FESDisconnection( const std::string& ServiceName , NLNET::TServiceId ServiceId , void* )

@@ -12,10 +12,8 @@ public:
     CPlayerManager( void );
    ~CPlayerManager( void );
 
-    /// 分配玩家实例;
-    CPlayerPtr AllocPlayer( ROLE_ID );
     /// 获取玩家数据;
-    CPlayerPtr GetPlayer  ( ROLE_ID );
+    CPlayerPtr GetPlayer( ROLE_ID , bool IsAdd = false );
 
     SS_PROPERTY( PLAYER_TABLE , PlayerTable , private );
 };

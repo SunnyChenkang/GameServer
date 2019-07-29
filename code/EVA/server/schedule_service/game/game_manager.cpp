@@ -2,128 +2,35 @@
 
 SSE_NAMESPACE_BEGIN_DECL
 
-CGameManager::CGameManager( void )
+void CGameManager::UpdateGameList( TServiceId ServiceID , RecordGameList& GameList )
 {
-    m_GameTable.clear();
-    m_HallTable.clear();
+    m_GameList[ ServiceID ] = GameList;
 }
 
-CGameManager::~CGameManager( void )
+void CGameManager::DeleteGameList( TServiceId& ServiceID )
 {
-
-}
-
-void CGameManager::LoadGameInfo( TServiceId& ServiceID )
-{
-    this->RemoveGameInfo( ServiceID );
-    NLMISC::CConfigFile::CVar* pGameConfig = NLNET::IService::getInstance()->ConfigFile.getVarPtr("");
-    if ( nullptr == pGameConfig )
-    {
-        nlinfo( " load game info fails service id : " , ServiceID.get() );
+    auto It = m_GameList.find( ServiceID );
+    if ( It == m_GameList.end() ) {
         return;
     }
-    for ( auto It = pGameConfig->StrValues.begin(); It != pGameConfig->StrValues.end(); ++It )
-    {
-        NLNET::TParsedCommandLine ParsedCommand;
-        ParsedCommand.parseParamList( *It );
-        const TParsedCommandLine * pParseLine1 = ParsedCommand.getParam("");
-        const TParsedCommandLine * pParseLine2 = ParsedCommand.getParam("");
-        const TParsedCommandLine * pParseLine3 = ParsedCommand.getParam("");
-        CGameInfoPtr GameInfoPtr = std::make_shared< CGameInfo >();
-        GameInfoPtr->SetGameName( pParseLine1->toString() );
-        GameInfoPtr->SetGameServiceID( NLNET::TServiceId( pParseLine2->toString() ));
-        GameInfoPtr->SetGameMaxCount( NLMISC::CSString(pParseLine3->toString()).atoui() );
-        m_GameTable.push_back( GameInfoPtr );
-    }
+    m_GameList.erase( It );
 }
 
-void CGameManager::LoadHallInfo( void )
+TServiceId CGameManager::GetGoodServiceID( CSString& GameName )
 {
-    m_HallTable.clear();
-    NLMISC::CConfigFile::CVar* pHallConfig = NLNET::IService::getInstance()->ConfigFile.getVarPtr( "" );
-    if ( nullptr == pHallConfig )
+    TServiceId ServiceID = TServiceId::InvalidId;
+    uint32 GameCount     = std::numeric_limits<uint32>::max();
+    for ( auto GameList = m_GameList.begin(); GameList != m_GameList.end(); ++GameList )
     {
-        nlinfo( " load hall info fails ... " );
-        return;
-    }
-    for ( auto It = pHallConfig->StrValues.begin(); It != pHallConfig->StrValues.end(); ++It )
-    {
-        NLNET::TParsedCommandLine ParsedCommand;
-        ParsedCommand.parseParamList( *It );
-        const TParsedCommandLine * pParsedLine1 = ParsedCommand.getParam("");
-        const TParsedCommandLine * pParsedLine2 = ParsedCommand.getParam("");
-        const TParsedCommandLine * pParsedLine3 = ParsedCommand.getParam("");
-        CHallInfoPtr HallInfoPtr = std::make_shared< CHallInfo >();
-        HallInfoPtr->SetHallName( pParsedLine1->toString() );
-        HallInfoPtr->SetHallServiceID( NLNET::TServiceId( pParsedLine2->toString() ) );
-        HallInfoPtr->SetRoleMaxCount ( NLMISC::CSString( pParsedLine3->toString() ).atoui() );
-        m_HallTable.push_back( HallInfoPtr );
-    }
-}
-
-void CGameManager::UpdateGameInfo( TServiceId& ServiceID , CSString& GameName , uint32 GameCount)
-{
-    for ( auto Element : m_GameTable )
-    {
-        if ( Element->GetGameServiceID() != ServiceID ) continue;
-        if ( Element->GetGameName() != GameName )       continue;
-        Element->SetGameCurrCount( GameCount );
-    }
-}
-
-void CGameManager::UpdateHallInfo( TServiceId& ServiceID , CSString& GameName , uint32 RoleCount )
-{
-    for ( auto Element : m_HallTable )
-    {
-        if ( Element->GetHallServiceID() != ServiceID ) continue;
-        if ( Element->GetHallName() != GameName )       continue;
-        Element->SetRoleCurrCount( RoleCount );
-    }
-}
-
-void CGameManager::RemoveGameInfo( TServiceId& ServiceID )
-{
-    for ( auto It = m_GameTable.begin(); It != m_GameTable.end() ; )
-    {
-        if ( (*It)->GetGameServiceID() == ServiceID ) {
-            m_GameTable.erase( It++ );
-            continue;
+        for ( auto Game : GameList->second )
+        {
+            if ( !Game.GetGameName().compare(GameName) ) { continue; }
+            if ( GameCount < Game.GetGameCurrCount() ){ continue; }
+            GameCount = Game.GetGameCurrCount();
+            ServiceID = GameList->first;
         }
-        ++It;
     }
-}
-
-void CGameManager::RemoveHallInfo( TServiceId& ServiceID )
-{
-    for ( auto It = m_HallTable.begin(); It != m_HallTable.end(); )
-    {
-        if ( (*It)->GetHallServiceID() == ServiceID ) {
-            m_HallTable.erase( It++ );
-            continue;
-        }
-        ++It;
-    }
-}
-
-CGameInfoPtr CGameManager::GetGameInfoPtr( CSString GameName )
-{
-    for ( auto It = m_GameTable.begin(); It != m_GameTable.end(); ++It )
-    {
-        if ( !(*It)->GetGameName().compare( GameName ) ) { continue; }
-        if ( (*It)->IsRoleFull() ) { continue; }
-        return (*It);
-    }
-    return nullptr;
-}
-
-CHallInfoPtr CGameManager::GetHallInfoPtr( void )
-{
-    for ( auto It = m_HallTable.begin(); It != m_HallTable.end(); ++It )
-    {
-        if ( (*It)->IsHallFull() ) { continue; }
-        return (*It);
-    }
-    return nullptr;
+    return ServiceID;
 }
 
 SSE_NAMESPACE_END_DECL

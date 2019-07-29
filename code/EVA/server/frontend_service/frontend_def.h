@@ -4,7 +4,6 @@
 #include "rudp/rudp_wrapper.h"
 #include <server_share/common/common.h>
 #include <server_share/json_table/json_load.h>
-#include <server_share/db/redis/db_redis_interface.h>
 
 FES_NAMESPACE_BEGIN_DECL
 

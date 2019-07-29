@@ -3,8 +3,8 @@
 
 #include <server_share/common/common.h>
 
-#include <server_share/record/db_record_dot_data.h>
-#include <server_share/record/db_record_player.h>
+#include <server_share/record/record_dot_data.h>
+#include <server_share/record/record_player.h>
 
 #include <server_share/json_table/json_load.h>
 #include <server_share/db/mysql/db_mysql.h>
@@ -17,6 +17,8 @@
 PSE_NAMESPACE_BEGIN_DECL
 
 using namespace SS;
+using namespace NLNET;
+using namespace NLMISC;
 
 /// MYSQL STMT;
 enum TSQLStmt

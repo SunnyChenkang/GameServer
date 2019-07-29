@@ -9,22 +9,16 @@ PSE_NAMESPACE_BEGIN_DECL
 
 void CLoginUser::UserLoginCallBack( PB_UserLogin& UserLogin )
 {
-    /// 玩家数据是否从数据库加载;
-    SyncLoadPlayerData* pLoadPlayerData = nullptr;
+    /// 是否数据库加载用户;
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( UserLogin.role_id() );
-    if ( PlayerPtr != nullptr )
+    if ( nullptr == PlayerPtr )
     {
-        goto load;
+        ThreadsLoadPlayer.PostToSub( new SyncLoadPlayerData( UserLogin ) , (PROC_MSG)SubLoadPlayerEntity );
+        return;
     }
 
-    /// 玩家从数据库加载到内存;
-    ThreadsLoadPlayer.PostToSub( new SyncLoadPlayerData( UserLogin ) , (PROC_MSG)SubLoadPlayerEntity );
-    return;
-
-load:
-    NLNET::TServiceId GameServiceID( NLNET::TServiceId( UserLogin.game_service_id() ) );
-
     /// 同步数据GSE数据;
+    TServiceId GameServiceID( UserLogin.game_service_id() );
     NLNET::CMessage SendMessage1( "MSG_LOADROLE" );
     SendMessage1.serial( PlayerPtr->GetRecordPlayer() );
     SS_NETWORK->send( GameServiceID , SendMessage1 );

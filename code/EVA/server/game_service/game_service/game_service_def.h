@@ -1,8 +1,9 @@
 #ifndef GSE_DEF_H_
 #define GSE_DEF_H_
 
-#include <server_share/record/db_record_dot_data.h>
-#include <server_share/record/db_record_player.h>
+#include <server_share/record/record_dot_data.h>
+#include <server_share/record/record_player.h>
+#include <server_share/record/record_game.h>
 
 #include <server_share/common/common.h>
 #include <server_share/common/sigslot.h>
@@ -17,7 +18,6 @@ GSE_NAMESPACE_BEGIN_DECL
 using namespace SS;
 using namespace NLNET;
 using namespace NLMISC;
-
 
 GSE_NAMESPACE_END_DECL
 

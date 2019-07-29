@@ -2,7 +2,7 @@
 #define SERVER_SHARED_RECORD_DEF_H_
 
 #include <server_share/common/common.h>
-#include "db_record_base.h"
+#include "record_base.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

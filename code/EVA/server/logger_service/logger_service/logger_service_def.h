@@ -3,7 +3,7 @@
 
 #include <server_share/common/common.h>
 #include <server_share/db/mysql/db_mysql.h>
-#include <server_share/record/db_record_dot_data.h>
+#include <server_share/record/record_dot_data.h>
 
 #include <logger_service/message/message_db_event.h>
 #include <logger_service/message/message_service.h>

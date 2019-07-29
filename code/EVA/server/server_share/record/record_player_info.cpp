@@ -1,4 +1,4 @@
-#include "db_record_player_info.h"
+#include "record_player_info.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

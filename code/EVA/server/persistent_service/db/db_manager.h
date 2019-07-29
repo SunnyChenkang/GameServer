@@ -24,8 +24,8 @@ public:
     void RefreshDBStatistics( TRecordStatisics& );
     void RefreshDBStatistics( CRecordStatistics& );
 
-    ///  更新全部存储;
-    void RefreshAllDBData( void );
+    ///  关闭服务器;
+    void CloseService( void );
 };
 
 #define DBManager CDBManager::instance()

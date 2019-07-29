@@ -1,11 +1,11 @@
 #ifndef SERVER_SHARED_RECORDPLAYER_H_
 #define SERVER_SHARED_RECORDPLAYER_H_
 
-#include "db_record_base.h"
-#include "db_record_player_info.h"
-#include "db_record_item.h"
-#include "db_record_mission.h"
-#include "db_record_statistics.h"
+#include "record_base.h"
+#include "record_player_info.h"
+#include "record_item.h"
+#include "record_mission.h"
+#include "record_statistics.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

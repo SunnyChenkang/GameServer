@@ -12,7 +12,7 @@ public:
    ~CPlayer( void );
 
     ///  是否需要加载用户;
-    bool IsDBCacheLoadUser( void );
+    bool IsLoadDBCache( void );
 
     ///  网关服务器;
     SS_PROPERTY( NLNET::TServiceId , FrontendServiceId , private );

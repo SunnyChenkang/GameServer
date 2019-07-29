@@ -23,10 +23,13 @@ public:
     bool CreateGame( ROLE_ID , PB_CreateRoom& );
     bool CreateGame2Scenes( ROLE_ID , PB_CreateRoom& );
 
-    /// 获取游戏实体;
+    ///  获取游戏实体;
     CGameBasePtr GetGameBasePtr( ROOM_ID );
 
-    /// 房间列表;
+    ///  获取游戏实体数量;
+    uint32 GetGameCount( void ) { return m_GameList.size(); }
+
+    ///  房间列表;
     SS_PROPERTY( GameList , GameList , private );
 };
 

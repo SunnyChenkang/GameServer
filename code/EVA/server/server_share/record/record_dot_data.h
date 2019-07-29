@@ -1,7 +1,7 @@
 #ifndef SERVER_SHARED_DBDOTDATA_H_
 #define SERVER_SHARED_DBDOTDATA_H_
 
-#include "db_record_base.h"
+#include "record_base.h"
 #include <server_share/db/mysql/db_statement.h>
 
 SS_NAMESPACE_BEGIN_DECL

@@ -1,4 +1,4 @@
-#include "db_record_base.h"
+#include "record_base.h"
 
 SS_NAMESPACE_BEGIN_DECL
 

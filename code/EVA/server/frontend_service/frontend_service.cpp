@@ -29,13 +29,7 @@ void foo()
 void CFrontEndService::init()
 {
     /// 注册消息;
-    NLNET::CUnifiedNetwork::getInstance()->addCallbackArray( LocalCallBackItems	 , SS_ARRAYSIZE( LocalCallBackItems ) );
-
-    /// 连接Redis数据库;
-    CSString RedisHost = ConfigFile.getVar("RedisHost").asString();
-    CSString RedisPort = ConfigFile.getVar("RedisPort").asString();
-    CSString RedisPass = ConfigFile.getVar("RedisPass").asString();
-    RedisLogin.Connect( RedisHost , RedisPort.atoui() , 3000 , RedisPass );
+    SS_NETWORK->addCallbackArray( LocalCallBackItems	 , SS_ARRAYSIZE( LocalCallBackItems ) );
 
     /// 检查断开连接服务器;
     SS_NETWORK->setServiceDownCallback( "SSE" , CallBack_SSEDisconnection );
