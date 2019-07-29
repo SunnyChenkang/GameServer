@@ -11,7 +11,8 @@ public:
     CRecordMatch( void );
     virtual ~CRecordMatch( void ) { };
 
-
+    SS_PROPERTY( NLMISC::CSString , GameName    , private );
+    SS_PROPERTY( uint32           , MatchTime   , private );
 };
 
 SS_NAMESPACE_END_DECL

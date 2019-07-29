@@ -10,7 +10,7 @@ void CallBack_RegisterGameInfo( NLNET::CMessage&, const std::string&, NLNET::TSe
 
 static NLNET::TUnifiedCallbackItem SSE_GAME_CallBackItem[] =
 {
-    { "MSG_GAME_REGISTER",              CallBack_RegisterGameInfo   },
+    { "MSG_GAME_REGISTER",  CallBack_RegisterGameInfo   },
 };
 
 SSE_NAMESPACE_END_DECL

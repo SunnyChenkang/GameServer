@@ -1,0 +1,5 @@
+#include "record_match.h"
+
+SS_NAMESPACE_BEGIN_DECL
+
+SS_NAMESPACE_END_DECL
