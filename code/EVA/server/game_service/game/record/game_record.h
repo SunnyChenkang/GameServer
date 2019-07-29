@@ -8,11 +8,7 @@ GSE_NAMESPACE_BEGIN_DECL
 
 class CGameRecord : public NLMISC::CSingleton< CGameRecord >
 {
-public:
-    //   保存战绩信息;
-    void SaveGameRecordBaseInfo( PB_GameRecordBseInfo& , ROLE_ID RoleID );
-    //   保存回放节点;
-    void SaveGameRecordNode( PB_GameRecordNode& , NLMISC::CSString );
+    
 };
 
 #define GameRecord CGameRecord::getInstance()

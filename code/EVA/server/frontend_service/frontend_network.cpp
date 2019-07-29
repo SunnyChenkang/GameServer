@@ -115,7 +115,7 @@ void CFrontendNetWork::CallBackRUDPMessage( void )
     }
 }
 
-PB_CreateRoom PB1;
+PB_CreateGame PB1;
 
 void CFrontendNetWork::HandlerForwardMessage( NLNET::CMessage& RevcMessage , CClientPtr ClientPtr )
 {

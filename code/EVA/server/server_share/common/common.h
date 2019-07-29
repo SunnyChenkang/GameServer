@@ -62,7 +62,7 @@
 #include <server_share/protobuf/msg_enum_id.pb.h>
 #include <server_share/protobuf/msg_login.pb.h>
 #include <server_share/protobuf/msg_player.pb.h>
-#include <server_share/protobuf/msg_room.pb.h>
+#include <server_share/protobuf/msg_game.pb.h>
 #include <server_share/protobuf/msg_item.pb.h>
 #include <server_share/protobuf/msg_mission.pb.h>
 #include <server_share/protobuf/msg_statistics.pb.h>

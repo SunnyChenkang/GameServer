@@ -7,10 +7,10 @@ GSE_NAMESPACE_BEGIN_DECL
 
 CGameBase::CGameBase( TCtorParam& GameData , uint32 )
 {
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( m_CreateGameData.room_name() );
+    m_GameID = GameData.game_id();
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( m_CreateGameData.game_name() );
     if ( nullptr == pGameCell ) { return; }
     m_RoleList.resize( pGameCell->GetGameMax() );
-    m_RoomID = GameData.room_id();
 }
 
 CGameBase::~CGameBase( void )
@@ -32,7 +32,7 @@ bool CGameBase::GameJoin( ROLE_ID RoleID )
         break;
     }
     /// 加入房间事件;
-    EventDefine.JoinGame( RoleID , GetRoomID() );
+    EventDefine.JoinGame( RoleID , m_GameID );
     return true;
 }
 
@@ -49,7 +49,7 @@ bool CGameBase::GameLeave( ROLE_ID RoleID )
         break;
     }
     /// 离开房间事件;
-    EventDefine.LeaveRoom( RoleID , GetRoomID() );
+    EventDefine.LeaveRoom( RoleID , m_GameID );
     return true;
 }
 
@@ -58,7 +58,7 @@ void CGameBase::GameStart( void )
     /// 游戏开始事件;
     for ( auto It = m_RoleList.begin(); It != m_RoleList.end(); ++It )
     {
-        EventDefine.GameStart( *It , GetRoomID() );
+        EventDefine.GameStart( *It , m_GameID );
     }
 }
 
@@ -67,7 +67,7 @@ void CGameBase::GameOwer( void )
     /// 游戏结束事件;
     for ( auto It = m_RoleList.begin(); It != m_RoleList.end(); ++It )
     {
-        EventDefine.GameOwer( *It , GetRoomID() );
+        EventDefine.GameOwer( *It , m_GameID );
     }
 }
 
@@ -82,7 +82,7 @@ bool CGameBase::GameIsRole( ROLE_ID RoleID )
 
 bool CGameBase::GameIsFull( void )
 {
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell<CJsonGameCell>( m_CreateGameData.room_name() );
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell<CJsonGameCell>( m_CreateGameData.game_name() );
     if ( nullptr == pGameCell ) { return false; }
     if ( this->GetRoleCount() >= pGameCell->GetGameMax() ) {
         return true;

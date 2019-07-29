@@ -9,8 +9,8 @@ GSE_NAMESPACE_BEGIN_DECL
 class CGameManager : public CSingleton< CGameManager >
 {
 public:
-    CGameManager( void );
-   ~CGameManager( void );
+    CGameManager( void ) { m_GameList.clear(); }
+   ~CGameManager( void ) { };
 
     ///  加入游戏;
     bool JoinGame( ROLE_ID , ROOM_ID );
@@ -20,14 +20,11 @@ public:
     bool DeleteGame( ROOM_ID );
 
     ///  创建游戏;
-    bool CreateGame( ROLE_ID , PB_CreateRoom& );
-    bool CreateGame2Scenes( ROLE_ID , PB_CreateRoom& );
+    bool CreateGame( ROLE_ID , PB_CreateGame& );
+    bool CreateGame2Scenes( ROLE_ID , PB_CreateGame& );
 
     ///  获取游戏实体;
     CGameBasePtr GetGameBasePtr( ROOM_ID );
-
-    ///  获取游戏实体数量;
-    uint32 GetGameCount( void ) { return m_GameList.size(); }
 
     ///  房间列表;
     SS_PROPERTY( GameList , GameList , private );

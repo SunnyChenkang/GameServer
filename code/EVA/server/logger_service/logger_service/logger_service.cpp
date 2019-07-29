@@ -43,14 +43,16 @@ void CLoggerService::init( void )
 
 bool CLoggerService::update( void )
 {
+    /// 更新定时器;
     TimerManager->tickUpdate();
-    DBConnect.FrameMove();
     return true;
 }
 
 void CLoggerService::release( void )
 {
+    /// 更新定时器;
     TimerManager->release();
+    /// 关闭数据库线程;
     DBConnect.CloseDBThreads();
 }
 

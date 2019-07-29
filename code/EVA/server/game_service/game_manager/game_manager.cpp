@@ -5,17 +5,7 @@
 
 GSE_NAMESPACE_BEGIN_DECL
 
-CGameManager::CGameManager( void )
-{
-    m_GameList.clear();
-}
-
-CGameManager::~CGameManager( void )
-{
-
-}
-
-bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
+bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateGame& GameData )
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
     if ( nullptr == PlayerPtr ) {
@@ -23,7 +13,7 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     }
 
     /// 检查游戏静态数据;
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( GameData.room_name() );
+    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( GameData.game_name() );
     if ( nullptr == pGameCell ) {
         return false;
     }
@@ -40,7 +30,7 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     }
 
     /// 保存游戏实体;
-    auto Res = m_GameList.insert( std::make_pair( GameData.room_id() , GameBasePtr ));
+    auto Res = m_GameList.insert( std::make_pair( GameData.game_id() , GameBasePtr ));
     if ( !Res.second ) {
         return false;
     }
@@ -50,11 +40,11 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateRoom& GameData )
     GameBasePtr->GameJoin( RoleID );
 
     /// 更新游戏数据;
-    GameRegister.UpdateGameInfo( GameData.room_name() , 1 );
+    GameRegister.UpdateGameInfo( GameData.game_name() , 1 );
     return true;
 }
 
-bool CGameManager::CreateGame2Scenes( ROLE_ID RoleID , PB_CreateRoom& GameData )
+bool CGameManager::CreateGame2Scenes( ROLE_ID RoleID , PB_CreateGame& GameData )
 {
     /// 检查是否需要切服务器;
     uint16 LocalServiceID = NLNET::IService::getInstance()->getServiceId().get();
@@ -105,7 +95,7 @@ bool CGameManager::DeleteGame( ROOM_ID RoomID )
     if ( It == m_GameList.end() ) { return false; }
 
     /// 更新游戏数据;
-    NLMISC::CSString GameName = (*It->second).GetCreateGameData().room_name();
+    NLMISC::CSString GameName = (*It->second).GetCreateGameData().game_name();
     GameRegister.UpdateGameInfo( GameName , -1 );
 
     /// 删除游戏实体;

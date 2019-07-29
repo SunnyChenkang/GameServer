@@ -1,32 +1,19 @@
 syntax = "proto2";
 package PROTOBUF;
 
-// 注册房间信息;
-message PB_RoomInfo
+// 创建游戏信息
+message PB_CreateGame
 {
-	optional string room_name	= 1;
-	optional uint32 room_count	= 2;
-}
-message PB_RoomInfoList
-{
-	optional uint32 	 role_count = 1;
-	repeated PB_RoomInfo room_list  = 2;
-	optional uint32 	 service_id = 3;
+	optional string 	game_name	= 1;	// 房间名字
+	optional uint32 	game_mode    = 2;	// 房间模式 对应玩法枚举
+	optional uint32 	consume_id	= 3;	// 消耗ID;
+	optional uint32 	game_id 			= 4;	// 房间ID;
+	optional uint32 	service_id  		= 5; 	// 服务器ID;
+	optional uint32 	special_kind	= 6;	// 特殊玩法;
 }
 
-// 创建房间信息
-message PB_CreateRoom
-{
-	optional string room_name	= 1;	// 房间名字
-	optional uint32 room_mode   = 2;	// 房间模式 对应玩法枚举
-	optional uint32 consume_id	= 3;	// 消耗ID;
-	optional uint32 room_id 	= 4;	// 房间ID;
-	optional uint32 service_id  = 5; 	// 服务器ID;
-	optional uint32 special_kind= 6;	// 特殊玩法;
-}
-
-// 离开房间信息;
-message PB_LeaveRoom
+// 离开游戏信息;
+message PB_LeaveGame
 {
 	optional uint32 role_id     = 1;	// 角色ID;
 }
@@ -42,54 +29,6 @@ message PB_UserOnline
 {
 	optional uint32 role_id     = 1;	// 角色ID;
 }
-
-// 战绩数据基础信息
-message PB_RecordRoleScore
-{
-	optional uint32 role_id = 1;
-	optional uint32 score   = 2;
-}
-message PB_RecordRoleScoreList
-{
-	repeated PB_RecordRoleScore role_score = 1;
-}
-message PB_GameRecordBseInfo
-{
-	optional uint32 				create_time 	= 1;	// 创建时间;
-	optional string 				uuid			= 2;	// 唯一标示;
-	optional PB_CreateRoom	 		create_room 	= 3;	// 房间数据;
-	repeated PB_RecordRoleScoreList	role_score_list = 4;	// 角色积分列表;
-}
-
-// 战绩回放节点;
-message PB_GameRecordRoleInfo
-{
-	optional uint32 				role_id   = 1;
-	optional uint32 				role_seat = 2;
-	optional int64 					score 	  = 3;
-	repeated uint32 				hand_card = 4;
-}
-message PB_GameRecordShowDown
-{
-	optional uint32 				role_id = 1;
-	optional int64 					score   = 2;
-}
-message PB_GameRecordNode
-{
-	optional uint32 				cmd_id	   		= 1;
-	repeated uint32 				card_value 		= 2;	
-	optional uint32 				card_index 		= 3;
-	optional uint32 				role_id    		= 4;
-	optional uint32 				action_wik 		= 5;
-	optional uint32 				param1	   		= 6;
-	optional uint32 				param2	   		= 7;
-	optional uint32 				param3	   		= 8;
-	optional PB_GameRecordRoleInfo	role_info  		= 9;
-	optional PB_CreateRoom			room_info  		= 10;
-	optional PB_GameRecordShowDown	showdown_info	= 11;
-	optional PB_GameRecordNode		next_node		= 12;	
-}
-
 
 
 

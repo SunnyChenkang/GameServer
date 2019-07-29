@@ -8,7 +8,7 @@ GSE_NAMESPACE_BEGIN_DECL
 class CGameBase
 {
 public:
-    typedef PB_CreateRoom        TCtorParam;
+    typedef PB_CreateGame        TCtorParam;
     typedef std::vector<ROLE_ID> GameRoleList;
 
     CGameBase( TCtorParam& , uint32 );
@@ -42,7 +42,7 @@ public:
     /// 获取玩家数量;
     virtual uint32 GetRoleCount( void );
 
-    SS_PROPERTY( ROOM_ID            , RoomID         , protected ); /// 房间ID;
+    SS_PROPERTY( ROOM_ID            , GameID         , protected ); /// 房间ID;
     SS_PROPERTY( ROLE_ID            , OwnerID        , protected ); /// 房主ID;
     SS_PROPERTY( GameRoleList       , RoleList       , protected ); /// 角色列表;
     SS_PROPERTY( TCtorParam         , CreateGameData , protected ); /// 创建游戏属性;
