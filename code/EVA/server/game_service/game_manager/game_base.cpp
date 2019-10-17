@@ -8,7 +8,7 @@ GSE_NAMESPACE_BEGIN_DECL
 CGameBase::CGameBase( TCtorParam& GameData , uint32 )
 {
     m_GameID = GameData.game_id();
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( m_CreateGameData.game_name() );
+    CGameCell* pGameCell = JsonGameConfig.GetJsonCell< CGameCell >( m_CreateGameData.game_name() );
     if ( nullptr == pGameCell ) { return; }
     m_RoleList.resize( pGameCell->GetGameMax() );
 }
@@ -82,7 +82,7 @@ bool CGameBase::GameIsRole( ROLE_ID RoleID )
 
 bool CGameBase::GameIsFull( void )
 {
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell<CJsonGameCell>( m_CreateGameData.game_name() );
+    CGameCell* pGameCell = JsonGameConfig.GetJsonCell<CGameCell>( m_CreateGameData.game_name() );
     if ( nullptr == pGameCell ) { return false; }
     if ( this->GetRoleCount() >= pGameCell->GetGameMax() ) {
         return true;

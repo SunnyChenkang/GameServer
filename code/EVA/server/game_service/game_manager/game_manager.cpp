@@ -13,7 +13,7 @@ bool CGameManager::CreateGame( ROLE_ID RoleID , PB_CreateGame& GameData )
     }
 
     /// 检查游戏静态数据;
-    CJsonGameCell* pGameCell = JsonGameConfig.GetJsonCell< CJsonGameCell >( GameData.game_name() );
+    CGameCell* pGameCell = JsonGameConfig.GetJsonCell< CGameCell >( GameData.game_name() );
     if ( nullptr == pGameCell ) {
         return false;
     }

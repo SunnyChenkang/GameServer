@@ -9,7 +9,7 @@ bool CItemManager::AddItem( ROLE_ID RoleID , ITEM_ID ItemID , uint32 ItemCount ,
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
     if ( nullptr == PlayerPtr )  { return false; }
-    CJsonItemCell* pItemCell = JsonItemConfig.GetJsonCell< CJsonItemCell >( ItemID );
+    CItemCell* pItemCell = JsonItemConfig.GetJsonCell< CItemCell >( ItemID );
     if ( NULL == pItemCell )     { return false; }
 
     CRecordItem* pRecordItem = GetItemInfo( RoleID , ItemID , true );

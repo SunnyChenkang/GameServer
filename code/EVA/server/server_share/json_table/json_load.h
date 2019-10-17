@@ -35,7 +35,7 @@ public:
 };
 
 SS_NAMESPACE_END_DECL
-
+#define JsonLoad                SS::CJsonLoad::instance()
 #define JsonMessageConfig       SS::CJsonLoad::instance().m_MessageConfig
 #define JsonGameConfig          SS::CJsonLoad::instance().m_GameConfig
 #define JsonGameConsumeConfig   SS::CJsonLoad::instance().m_GameConsumeConfig

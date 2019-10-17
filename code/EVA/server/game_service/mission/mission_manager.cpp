@@ -14,7 +14,7 @@ void CMissionManager::UpdateMission( ROLE_ID RoleID , MISSION_ID MissionID , uin
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
     if ( nullptr == PlayerPtr ) { return; }
-    CJsonMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CJsonMissionCell >( MissionID );
+    CMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CMissionCell >( MissionID );
     if ( NULL == pMissionCell ) { return; }
 
     /// 检查是否有效任务;
@@ -38,7 +38,7 @@ void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
     if ( nullptr == PlayerPtr )    { return; }
-    CJsonMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CJsonMissionCell >( MissionID );
+    CMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CMissionCell >( MissionID );
     if ( nullptr == pMissionCell ) { return; }
 
     /// 是否每日重置任务;
@@ -64,7 +64,7 @@ void CMissionManager::ResetMissionInfo( ROLE_ID RoleID , MISSION_ID MissionID )
 
 bool CMissionManager::IsInValidMission( MISSION_ID MissionID )
 {
-    CJsonMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CJsonMissionCell >( MissionID );
+    CMissionCell* pMissionCell = JsonMissionConfig.GetJsonCell< CMissionCell >( MissionID );
     if ( NULL == pMissionCell )
         return true;
 

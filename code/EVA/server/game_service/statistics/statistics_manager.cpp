@@ -13,7 +13,7 @@ void CStatisticsManager::UpdateStatistics( ROLE_ID RoleID , STATISTICS_ID Statis
 {
     CPlayerPtr PlayerPtr = PlayerManager.GetPlayer( RoleID );
     if ( nullptr == PlayerPtr )     { return; }
-    CJsonStatisticsCell* pStatisticsCell = JsonStatisticsConfig.GetJsonCell< CJsonStatisticsCell >( StatisticsID );
+    CStatisticsCell* pStatisticsCell = JsonStatisticsConfig.GetJsonCell< CStatisticsCell >( StatisticsID );
     if ( NULL == pStatisticsCell )  { return; }
 
     CRecordStatistics* pRecordStatistics = GetStatistics( RoleID , StatisticsID , true );
